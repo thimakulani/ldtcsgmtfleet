@@ -1,0 +1,601 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/external_repairs_mechanical-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="external_repairs_mechanical_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="external_repairs_mechanical_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="external_repairs_mechanical_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Mechanical ID: -->
+				<div class="form-group external_repairs_mechanical-external_mechanical_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="external_mechanical_id">Mechanical ID:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="external_mechanical_id"><%%VALUE(external_mechanical_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Department Inspector Name & Surname: -->
+				<div class="form-group external_repairs_mechanical-department_inspector_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="department_inspector_name_and_surname">Department Inspector Name & Surname:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="department_inspector_name_and_surname" id="department_inspector_name_and_surname" value="<%%VALUE(department_inspector_name_and_surname)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Inspector Persal Number: -->
+				<div class="form-group external_repairs_mechanical-department_inspector_persal_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="department_inspector_persal_number">Inspector Persal Number:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="department_inspector_persal_number" id="department_inspector_persal_number" value="<%%VALUE(department_inspector_persal_number)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Department Authorization Quote Note: -->
+				<div class="form-group external_repairs_mechanical-department_authorization_quote_note">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="department_authorization_quote_note">Department Authorization Quote Note:</label>
+					<div class="col-lg-9">
+						<textarea class="form-control" name="department_authorization_quote_note" id="department_authorization_quote_note" rows=" 5"><%%VALUE(department_authorization_quote_note)%%></textarea>
+					</div>
+				</div>
+
+				<!-- Field: Department Inspector Signature: -->
+				<div class="form-group external_repairs_mechanical-department_inspector_signature">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Department Inspector Signature: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#department_inspector_signature-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="department_inspector_signature-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 500 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="thumbnail.php?i=<%%VALUE(department_inspector_signature)%%>&t=external_repairs_mechanical&f=department_inspector_signature&v=dv" class="img-thumbnail" id="department_inspector_signature-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(department_inspector_signature)%%>
+								<%%REMOVEFILE(department_inspector_signature)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Inspection Approval Repair Note: -->
+				<div class="form-group external_repairs_mechanical-inspection_approval_repair_note">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="inspection_approval_repair_note">Inspection Approval Repair Note:</label>
+					<div class="col-lg-9">
+						<textarea class="form-control" name="inspection_approval_repair_note" id="inspection_approval_repair_note" rows=" 5"><%%VALUE(inspection_approval_repair_note)%%></textarea>
+					</div>
+				</div>
+
+				<!-- Field: Department Authorization Quote: -->
+				<div class="form-group external_repairs_mechanical-department_authorization_quote">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Department Authorization Quote: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#department_authorization_quote-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="department_authorization_quote-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5104 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="department_authorization_quote-link" href="link.php?t=external_repairs_mechanical&f=department_authorization_quote&i=<%%VALUE(external_mechanical_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(department_authorization_quote)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(department_authorization_quote)%%>
+								<%%REMOVEFILE(department_authorization_quote)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_department_authorization_quote = '<%%VALUE(department_authorization_quote)%%>'; if(e_department_authorization_quote == '' || e_department_authorization_quote == '&nbsp;' || e_department_authorization_quote == 'blank.gif') jQuery('#department_authorization_quote-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Service Provider Name: -->
+				<div class="form-group external_repairs_mechanical-service_provider_name">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="service_provider_name" data-parent_link="view_parent_modal">Service Provider Name:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(service_provider_name)%%><%%PLINK(service_provider_name)%%><%%ADDNEW(service_provider)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Service Provider Type: -->
+				<div class="form-group external_repairs_mechanical-service_provider_type">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="service_provider_type" data-parent_link="view_parent_modal">Service Provider Type:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(service_provider_type)%%><%%PLINK(service_provider_type)%%><%%ADDNEW(service_provider)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Service Provider Contacts: -->
+				<div class="form-group external_repairs_mechanical-service_provider_contact_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="service_provider_contact_details" data-parent_link="view_parent_modal">Service Provider Contacts:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(service_provider_contact_details)%%><%%PLINK(service_provider_contact_details)%%><%%ADDNEW(service_provider)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Service Provider Address: -->
+				<div class="form-group external_repairs_mechanical-service_provider_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="service_provider_address" data-parent_link="view_parent_modal">Service Provider Address:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(service_provider_address)%%><%%PLINK(service_provider_address)%%><%%ADDNEW(service_provider)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Service Provider Signature: -->
+				<div class="form-group external_repairs_mechanical-service_provider_signature">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Service Provider Signature: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#service_provider_signature-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="service_provider_signature-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 500 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="thumbnail.php?i=<%%VALUE(service_provider_signature)%%>&t=external_repairs_mechanical&f=service_provider_signature&v=dv" class="img-thumbnail" id="service_provider_signature-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(service_provider_signature)%%>
+								<%%REMOVEFILE(service_provider_signature)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Repair Quote Service Provider: -->
+				<div class="form-group external_repairs_mechanical-service_provider_repair_quote_upload">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Repair Quote Service Provider: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#service_provider_repair_quote_upload-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="service_provider_repair_quote_upload-description"><div class="alert alert-info bspacer-xs">Upload the quoatation of external mechanical repairs</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="service_provider_repair_quote_upload-link" href="link.php?t=external_repairs_mechanical&f=service_provider_repair_quote_upload&i=<%%VALUE(external_mechanical_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(service_provider_repair_quote_upload)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(service_provider_repair_quote_upload)%%>
+								<%%REMOVEFILE(service_provider_repair_quote_upload)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_service_provider_repair_quote_upload = '<%%VALUE(service_provider_repair_quote_upload)%%>'; if(e_service_provider_repair_quote_upload == '' || e_service_provider_repair_quote_upload == '&nbsp;' || e_service_provider_repair_quote_upload == 'blank.gif') jQuery('#service_provider_repair_quote_upload-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Repair Qoute Service Providers: -->
+				<div class="form-group external_repairs_mechanical-service_provider_repair_quote">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="service_provider_repair_quote">Repair Qoute Service Providers:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(service_provider_repair_quote)%%>
+					</div>
+				</div>
+
+				<!-- Field: Repair Requirement Note: -->
+				<div class="form-group external_repairs_mechanical-repair_requirement_note">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="repair_requirement_note">Repair Requirement Note:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(repair_requirement_note)%%>
+					</div>
+				</div>
+
+				<!-- Field: Merchant Type: -->
+				<div class="form-group external_repairs_mechanical-merchant_type">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="merchant_type" data-parent_link="view_parent_modal">Merchant Type:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(merchant_type)%%><%%PLINK(merchant_type)%%><%%ADDNEW(merchant)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Merchant code -->
+				<div class="form-group external_repairs_mechanical-merchant_code">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="merchant_code" data-parent_link="view_parent_modal">Merchant code</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(merchant_code)%%><%%PLINK(merchant_code)%%><%%ADDNEW(merchant)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Merchant Name: -->
+				<div class="form-group external_repairs_mechanical-merchant_name">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="merchant_name" data-parent_link="view_parent_modal">Merchant Name:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(merchant_name)%%><%%PLINK(merchant_name)%%><%%ADDNEW(merchant)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Merchant Contacts Details: -->
+				<div class="form-group external_repairs_mechanical-merchant_contacts_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="merchant_contacts_details" data-parent_link="view_parent_modal">Merchant Contacts Details:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(merchant_contacts_details)%%><%%PLINK(merchant_contacts_details)%%><%%ADDNEW(merchant)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Merchant Email Address: -->
+				<div class="form-group external_repairs_mechanical-merchant_email_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="merchant_email_address-edit-link" data-parent_link="view_parent_modal">Merchant Email Address:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(merchant_email_address)%%><%%PLINK(merchant_email_address)%%><%%ADDNEW(merchant)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Merchant Signature: -->
+				<div class="form-group external_repairs_mechanical-merchant_signature">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Merchant Signature: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#merchant_signature-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="merchant_signature-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 500 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="thumbnail.php?i=<%%VALUE(merchant_signature)%%>&t=external_repairs_mechanical&f=merchant_signature&v=dv" class="img-thumbnail" id="merchant_signature-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(merchant_signature)%%>
+								<%%REMOVEFILE(merchant_signature)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Merchant Address: -->
+				<div class="form-group external_repairs_mechanical-merchant_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="merchant_address" data-parent_link="view_parent_modal">Merchant Address:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(merchant_address)%%><%%PLINK(merchant_address)%%><%%ADDNEW(merchant)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Merchant Address Code: -->
+				<div class="form-group external_repairs_mechanical-merchant_address_code">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="merchant_address_code" data-parent_link="view_parent_modal">Merchant Address Code:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(merchant_address_code)%%><%%PLINK(merchant_address_code)%%><%%ADDNEW(merchant)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Date of Vehicle Send: -->
+				<div class="form-group external_repairs_mechanical-date_of_vehicle_send">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_of_vehicle_send">Date of Vehicle Send:</label>
+					<div class="col-lg-9">
+						<div class="input-group date datetimepicker"><input type="text" class="form-control" name="date_of_vehicle_send" id="date_of_vehicle_send" value="<%%VALUE(date_of_vehicle_send)%%>"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div>
+					</div>
+				</div>
+
+				<!-- Field: Authorization Number: -->
+				<div class="form-group external_repairs_mechanical-authorization_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="authorization_number" data-parent_link="view_parent_modal">Authorization Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(authorization_number)%%><%%PLINK(authorization_number)%%><%%ADDNEW(claim)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Instruction Note: -->
+				<div class="form-group external_repairs_mechanical-instruction_note">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="instruction_note" data-parent_link="view_parent_modal">Instruction Note: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#instruction_note-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="instruction_note-description"><div class="alert alert-info bspacer-xs">Briefly describe the instruction.</div></span>
+						<div class="lookup-flex"><%%COMBO(instruction_note)%%><%%PLINK(instruction_note)%%><%%ADDNEW(claim)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Work Allocation Reference Number: -->
+				<div class="form-group external_repairs_mechanical-work_allocation_reference_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="work_allocation_reference_number" data-parent_link="view_parent_modal">Work Allocation Reference Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(work_allocation_reference_number)%%><%%PLINK(work_allocation_reference_number)%%><%%ADDNEW(work_allocation)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Registration Number: -->
+				<div class="form-group external_repairs_mechanical-vehicle_registration_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_registration_number" data-parent_link="view_parent_modal">Registration Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(vehicle_registration_number)%%><%%PLINK(vehicle_registration_number)%%><%%ADDNEW(gmt_fleet_register)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Engine Number: -->
+				<div class="form-group external_repairs_mechanical-engine_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Engine Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="engine_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Make of Vehicle: -->
+				<div class="form-group external_repairs_mechanical-make_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Make of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="make_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Date of Vehicle Received: -->
+				<div class="form-group external_repairs_mechanical-date_of_vehicle_received">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_of_vehicle_received">Date of Vehicle Received:</label>
+					<div class="col-lg-9">
+						<div class="input-group date datetimepicker"><input type="text" class="form-control" name="date_of_vehicle_received" id="date_of_vehicle_received" value="<%%VALUE(date_of_vehicle_received)%%>"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div>
+					</div>
+				</div>
+
+				<!-- Field: Monitor Progress: -->
+				<div class="form-group external_repairs_mechanical-mechanical_repair_progress_monitor">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Monitor Progress: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#mechanical_repair_progress_monitor-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="mechanical_repair_progress_monitor-description"><div class="alert alert-info bspacer-xs">Monitor progress of repairs to ensure vehicle is repaired accordingly</div></span>
+						<%%COMBO(mechanical_repair_progress_monitor)%%>
+					</div>
+				</div>
+
+				<!-- Field: Monitor the Quality of Workmanship: -->
+				<div class="form-group external_repairs_mechanical-mechanical_repair_progress_monitor_quality_of_work_manship">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Monitor the Quality of Workmanship: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#mechanical_repair_progress_monitor_quality_of_work_manship-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="mechanical_repair_progress_monitor_quality_of_work_manship-description"><div class="alert alert-info bspacer-xs">Monitor workmanship quality of repaired vehicle.</div></span>
+						<%%COMBO(mechanical_repair_progress_monitor_quality_of_work_manship)%%>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Inspection Report: -->
+				<div class="form-group external_repairs_mechanical-vehicle_inspection_report">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Vehicle Inspection Report: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#vehicle_inspection_report-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="vehicle_inspection_report-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5040 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="vehicle_inspection_report-link" href="link.php?t=external_repairs_mechanical&f=vehicle_inspection_report&i=<%%VALUE(external_mechanical_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(vehicle_inspection_report)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(vehicle_inspection_report)%%>
+								<%%REMOVEFILE(vehicle_inspection_report)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_vehicle_inspection_report = '<%%VALUE(vehicle_inspection_report)%%>'; if(e_vehicle_inspection_report == '' || e_vehicle_inspection_report == '&nbsp;' || e_vehicle_inspection_report == 'blank.gif') jQuery('#vehicle_inspection_report-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Upload Invoice: -->
+				<div class="form-group external_repairs_mechanical-upload_invoice">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Upload Invoice: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#upload_invoice-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="upload_invoice-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5240 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="upload_invoice-link" href="link.php?t=external_repairs_mechanical&f=upload_invoice&i=<%%VALUE(external_mechanical_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(upload_invoice)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(upload_invoice)%%>
+								<%%REMOVEFILE(upload_invoice)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_upload_invoice = '<%%VALUE(upload_invoice)%%>'; if(e_upload_invoice == '' || e_upload_invoice == '&nbsp;' || e_upload_invoice == 'blank.gif') jQuery('#upload_invoice-link').hide(); });</script>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="external_repairs_mechanical_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			AppGini.once({
+				condition: function() { return bkLib != undefined; },
+				action: function() {
+					if($j('textarea#service_provider_repair_quote').length) new nicEditor({ fullPanel : true }).panelInstance('service_provider_repair_quote');
+					if($j('textarea#repair_requirement_note').length) new nicEditor({ fullPanel : true }).panelInstance('repair_requirement_note');
+				}
+			});
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			$j('#external_repairs_mechanical_dv_container-loading').addClass('hidden');
+			$j('#external_repairs_mechanical_dv_container').removeClass('hidden');
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) AppGini.focusFormElement('external_repairs_mechanical', 'department_inspector_name_and_surname');
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			// try to detect rich text changes by adding 'input' handler after nicedit is loaded ...
+			AppGini.detectContentEditableChanges();
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'external_repairs_mechanical',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=external_repairs_mechanical&id=<%%URLVALUE(external_mechanical_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=external_repairs_mechanical&id=<%%URLVALUE(external_mechanical_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

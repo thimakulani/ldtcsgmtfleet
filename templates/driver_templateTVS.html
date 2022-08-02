@@ -1,0 +1,30 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the driver_init() hook (in hooks/driver.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="driver-driver_id-<%%VALUE(driver_id)%%>" class="driver-driver_id text-right"><%%VALUE(driver_id)%%></td>
+		<td id="driver-drivers_name_and_surname-<%%VALUE(driver_id)%%>" class="driver-drivers_name_and_surname"><%%VALUE(drivers_name_and_surname)%%></td>
+		<td id="driver-drivers_persal_number-<%%VALUE(driver_id)%%>" class="driver-drivers_persal_number"><%%VALUE(drivers_persal_number)%%></td>
+		<td id="driver-drivers_contact_details-<%%VALUE(driver_id)%%>" class="driver-drivers_contact_details"><%%VALUE(drivers_contact_details)%%></td>
+		<td id="driver-drivers_email_address-<%%VALUE(driver_id)%%>" class="driver-drivers_email_address"><a href="mailto:<%%VALUE(drivers_email_address)%%>" title="<%%VALUE(drivers_email_address)%%>" class="btn btn-default"><i class="glyphicon glyphicon-envelope text-info"></i></a></td>
+		<td id="driver-drivers_license-<%%VALUE(driver_id)%%>" class="driver-drivers_license"><%%VALUE(drivers_license)%%></td>
+		<td id="driver-drivers_license_code-<%%VALUE(driver_id)%%>" class="driver-drivers_license_code"><%%VALUE(drivers_license_code)%%></td>
+		<td id="driver-drivers_license_number-<%%VALUE(driver_id)%%>" class="driver-drivers_license_number"><%%VALUE(drivers_license_number)%%></td>
+		<td id="driver-drivers_license_upload-<%%VALUE(driver_id)%%>" class="driver-drivers_license_upload"><a href="link.php?t=driver&f=drivers_license_upload&i=<%%VALUE(driver_id)%%>" target="_blank" title="<%%VALUE(drivers_license_upload)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="driver-drivers_license_expire_date-<%%VALUE(driver_id)%%>" class="driver-drivers_license_expire_date"><%%VALUE(drivers_license_expire_date)%%></td>
+		<td id="driver-drivers_license_renewal_date-<%%VALUE(driver_id)%%>" class="driver-drivers_license_renewal_date"><%%VALUE(drivers_license_renewal_date)%%></td>
+		<td id="driver-drivers_log_history-<%%VALUE(driver_id)%%>" class="driver-drivers_log_history"><%%VALUE(drivers_log_history)%%></td>
+		<td id="driver-drivers_license_penalties-<%%VALUE(driver_id)%%>" class="driver-drivers_license_penalties"><%%VALUE(drivers_license_penalties)%%></td>
+		<td id="driver-drivers_license_penalties_date-<%%VALUE(driver_id)%%>" class="driver-drivers_license_penalties_date"><%%VALUE(drivers_license_penalties_date)%%></td>
+		<td id="driver-drivers_license_penalty_details-<%%VALUE(driver_id)%%>" class="driver-drivers_license_penalty_details"><%%VALUE(drivers_license_penalty_details)%%></td>
+		<td id="driver-drivers_license_penalty_details_uploads-<%%VALUE(driver_id)%%>" class="driver-drivers_license_penalty_details_uploads"><a href="link.php?t=driver&f=drivers_license_penalty_details_uploads&i=<%%VALUE(driver_id)%%>" target="_blank" title="<%%VALUE(drivers_license_penalty_details_uploads)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="driver-involved_in_accident-<%%VALUE(driver_id)%%>" class="driver-involved_in_accident"><%%VALUE(involved_in_accident)%%></td>
+		<td id="driver-accident_report-<%%VALUE(driver_id)%%>" class="driver-accident_report"><a href="link.php?t=driver&f=accident_report&i=<%%VALUE(driver_id)%%>" target="_blank" title="<%%VALUE(accident_report)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<script>$j(function() {
+			var e_drivers_license_upload = '<%%VALUE(drivers_license_upload)%%>'; if(e_drivers_license_upload == '' || e_drivers_license_upload == '&nbsp;') $j(/*<*/ '#driver-drivers_license_upload-<%%VALUE(driver_id)%%>' /*>*/).html('');
+			var e_drivers_license_penalty_details_uploads = '<%%VALUE(drivers_license_penalty_details_uploads)%%>'; if(e_drivers_license_penalty_details_uploads == '' || e_drivers_license_penalty_details_uploads == '&nbsp;') $j(/*<*/ '#driver-drivers_license_penalty_details_uploads-<%%VALUE(driver_id)%%>' /*>*/).html('');
+			var e_accident_report = '<%%VALUE(accident_report)%%>'; if(e_accident_report == '' || e_accident_report == '&nbsp;') $j(/*<*/ '#driver-accident_report-<%%VALUE(driver_id)%%>' /*>*/).html('');
+		});</script>

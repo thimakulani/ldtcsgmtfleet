@@ -1,0 +1,33 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the claim_init() hook (in hooks/claim.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="claim-claim_id-<%%VALUE(claim_id)%%>" class="claim-claim_id text-right"><%%SELECT%%><%%VALUE(claim_id)%%><%%ENDSELECT%%></td>
+		<td id="claim-claim_code-<%%VALUE(claim_id)%%>" class="claim-claim_code"><%%SELECT%%><%%VALUE(claim_code)%%><%%ENDSELECT%%></td>
+		<td id="claim-claim_status-<%%VALUE(claim_id)%%>" class="claim-claim_status"><%%SELECT%%><%%VALUE(claim_status)%%><%%ENDSELECT%%></td>
+		<td id="claim-claim_category-<%%VALUE(claim_id)%%>" class="claim-claim_category"><%%SELECT%%><%%VALUE(claim_category)%%><%%ENDSELECT%%></td>
+		<td id="claim-cost_centre-<%%VALUE(claim_id)%%>" class="claim-cost_centre"><%%SELECT%%><%%VALUE(cost_centre)%%><%%ENDSELECT%%></td>
+		<td id="claim-client_identification-<%%VALUE(claim_id)%%>" class="claim-client_identification"><%%SELECT%%><%%VALUE(client_identification)%%><%%ENDSELECT%%></td>
+		<td id="claim-department_name-<%%VALUE(claim_id)%%>" class="claim-department_name"><%%SELECT%%><%%VALUE(department_name)%%><%%ENDSELECT%%></td>
+		<td id="claim-district-<%%VALUE(claim_id)%%>" class="claim-district"><%%SELECT%%><%%VALUE(district)%%><%%ENDSELECT%%></td>
+		<td id="claim-province-<%%VALUE(claim_id)%%>" class="claim-province"><%%SELECT%%><%%VALUE(province)%%><%%ENDSELECT%%></td>
+		<td id="claim-merchant_name-<%%VALUE(claim_id)%%>" class="claim-merchant_name"><%%SELECT%%><%%VALUE(merchant_name)%%><%%ENDSELECT%%></td>
+		<td id="claim-vehicle_registration_number-<%%VALUE(claim_id)%%>" class="claim-vehicle_registration_number"><%%SELECT%%><%%VALUE(vehicle_registration_number)%%><%%ENDSELECT%%></td>
+		<td id="claim-model-<%%VALUE(claim_id)%%>" class="claim-model"><%%SELECT%%><%%VALUE(model)%%><%%ENDSELECT%%></td>
+		<td id="claim-closing_km-<%%VALUE(claim_id)%%>" class="claim-closing_km"><%%SELECT%%><%%VALUE(closing_km)%%><%%ENDSELECT%%></td>
+		<td id="claim-pre_authorization_date-<%%VALUE(claim_id)%%>" class="claim-pre_authorization_date"><%%SELECT%%><%%VALUE(pre_authorization_date)%%><%%ENDSELECT%%></td>
+		<td id="claim-instruction_note-<%%VALUE(claim_id)%%>" class="claim-instruction_note"><%%SELECT%%><%%VALUE(instruction_note)%%><%%ENDSELECT%%></td>
+		<td id="claim-invoice_date-<%%VALUE(claim_id)%%>" class="claim-invoice_date"><%%SELECT%%><%%VALUE(invoice_date)%%><%%ENDSELECT%%></td>
+		<td id="claim-upload_invoice-<%%VALUE(claim_id)%%>" class="claim-upload_invoice"><a href="link.php?t=claim&f=upload_invoice&i=<%%VALUE(claim_id)%%>" target="_blank" title="<%%VALUE(upload_invoice)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="claim-payment_date-<%%VALUE(claim_id)%%>" class="claim-payment_date"><%%SELECT%%><%%VALUE(payment_date)%%><%%ENDSELECT%%></td>
+		<td id="claim-authorization_number-<%%VALUE(claim_id)%%>" class="claim-authorization_number"><%%SELECT%%><%%VALUE(authorization_number)%%><%%ENDSELECT%%></td>
+		<td id="claim-clearance_number-<%%VALUE(claim_id)%%>" class="claim-clearance_number"><%%SELECT%%><%%VALUE(clearance_number)%%><%%ENDSELECT%%></td>
+		<td id="claim-vehicle_collected_date-<%%VALUE(claim_id)%%>" class="claim-vehicle_collected_date"><%%SELECT%%><%%VALUE(vehicle_collected_date)%%><%%ENDSELECT%%></td>
+		<td id="claim-total_claimed-<%%VALUE(claim_id)%%>" class="claim-total_claimed text-right"><%%SELECT%%><%%VALUE(total_claimed)%%><%%ENDSELECT%%></td>
+		<td id="claim-total_authorized-<%%VALUE(claim_id)%%>" class="claim-total_authorized text-right"><%%SELECT%%><%%VALUE(total_authorized)%%><%%ENDSELECT%%></td>
+		<script>$j(function() {
+			var e_upload_invoice = '<%%VALUE(upload_invoice)%%>'; if(e_upload_invoice == '' || e_upload_invoice == '&nbsp;') $j(/*<*/ '#claim-upload_invoice-<%%VALUE(claim_id)%%>' /*>*/).html('');
+		});</script>

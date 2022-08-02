@@ -1,0 +1,190 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: History ID: -->
+		<div class="form-group vehicle_history-history_id" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">History ID:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(history_id)%%></div>
+			</div>
+		</div>
+		<!-- Field: Registration Number: -->
+		<div class="form-group vehicle_history-vehicle_registration_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Registration Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="vehicle_registration_number<%%RND1%%>"><%%COMBOTEXT(vehicle_registration_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Engine Number: -->
+		<div class="form-group vehicle_history-engine_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Engine Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="engine_number<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Purchase Price (R): -->
+		<div class="form-group vehicle_history-purchased_price" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Purchase Price (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="purchased_price<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Old Registration Number: -->
+		<div class="form-group vehicle_history-old_registration_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Old Registration Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="old_registration_number<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: New Vehicle Registration Number: -->
+		<div class="form-group vehicle_history-new_vehicle_registration_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">New Vehicle Registration Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(new_vehicle_registration_number)%%></div>
+			</div>
+		</div>
+		<!-- Field: Date of  Vehicle Transfer: -->
+		<div class="form-group vehicle_history-date_of_vehicle_transfer" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Date of  Vehicle Transfer:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(date_of_vehicle_transfer)%%></div>
+			</div>
+		</div>
+		<!-- Field: Comments: -->
+		<div class="form-group vehicle_history-comments" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Comments:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(comments)%%></div>
+			</div>
+		</div>
+		<!-- Field: Renewal Of License: -->
+		<div class="form-group vehicle_history-renewal_of_license" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Renewal Of License:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="renewal_of_license<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Date of Service: -->
+		<div class="form-group vehicle_history-date_of_service" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Date of Service:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="date_of_service<%%RND1%%>"><%%COMBOTEXT(date_of_service)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Date of Next Service: -->
+		<div class="form-group vehicle_history-date_of_next_service" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Date of Next Service:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="date_of_next_service<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Purchased Order Number: -->
+		<div class="form-group vehicle_history-purchased_order_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Purchased Order Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="purchased_order_number<%%RND1%%>"><%%COMBOTEXT(purchased_order_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Claims Code: -->
+		<div class="form-group vehicle_history-claim_code" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Claims Code:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="claim_code<%%RND1%%>"><%%COMBOTEXT(claim_code)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Tyre Inspection Report: -->
+		<div class="form-group vehicle_history-tyre_inspection_report" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tyre Inspection Report:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(tyre_inspection_report)%%></div>
+			</div>
+		</div>
+		<!-- Field: Inspection Certification No: -->
+		<div class="form-group vehicle_history-inspection_certification_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Inspection Certification No:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="inspection_certification_number<%%RND1%%>"><%%COMBOTEXT(inspection_certification_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Document Check List Report: -->
+		<div class="form-group vehicle_history-document_checklist_report" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Document Check List Report:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(document_checklist_report)%%></div>
+			</div>
+		</div>
+		<!-- Field: Next Inspection Date: -->
+		<div class="form-group vehicle_history-next_inspection_date" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Next Inspection Date:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="next_inspection_date<%%RND1%%>"><%%COMBOTEXT(next_inspection_date)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Breakdown of Vehicle?: -->
+		<div class="form-group vehicle_history-breakdown_of_vehicle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Breakdown of Vehicle?:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(breakdown_of_vehicle)%%></div>
+			</div>
+		</div>
+		<!-- Field: Date of Vehicle Breakdown: -->
+		<div class="form-group vehicle_history-date_of_vehicle_breakdown" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Date of Vehicle Breakdown:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(date_of_vehicle_breakdown)%%></div>
+			</div>
+		</div>
+		<!-- Field: Description of Vehicle Breakdown: -->
+		<div class="form-group vehicle_history-description_of_vehicle_breakdown" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Description of Vehicle Breakdown:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(description_of_vehicle_breakdown)%%></div>
+			</div>
+		</div>
+		<!-- Field: Closing KM: -->
+		<div class="form-group vehicle_history-closing_km" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Closing KM:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="closing_km<%%RND1%%>"><%%COMBOTEXT(closing_km)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Date of Vehicle Re-activation: -->
+		<div class="form-group vehicle_history-date_of_vehicle_reactivation" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Date of Vehicle Re-activation:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(date_of_vehicle_reactivation)%%></div>
+			</div>
+		</div>
+		<!-- Field: Total Repairing Cost (R): -->
+		<div class="form-group vehicle_history-total_cost" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Total Repairing Cost (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="total_cost<%%RND1%%>"><%%COMBOTEXT(total_cost)%%></span></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>

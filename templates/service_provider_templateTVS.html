@@ -1,0 +1,17 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the service_provider_init() hook (in hooks/service_provider.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="service_provider-service_provider_id-<%%VALUE(service_provider_id)%%>" class="service_provider-service_provider_id text-right"><%%VALUE(service_provider_id)%%></td>
+		<td id="service_provider-service_provider_type-<%%VALUE(service_provider_id)%%>" class="service_provider-service_provider_type"><%%VALUE(service_provider_type)%%></td>
+		<td id="service_provider-service_provider_name-<%%VALUE(service_provider_id)%%>" class="service_provider-service_provider_name"><%%VALUE(service_provider_name)%%></td>
+		<td id="service_provider-service_provider_contact_email-<%%VALUE(service_provider_id)%%>" class="service_provider-service_provider_contact_email"><a href="mailto:<%%VALUE(service_provider_contact_email)%%>" title="<%%VALUE(service_provider_contact_email)%%>" class="btn btn-default"><i class="glyphicon glyphicon-envelope text-info"></i></a></td>
+		<td id="service_provider-service_provider_contact_details-<%%VALUE(service_provider_id)%%>" class="service_provider-service_provider_contact_details"><%%VALUE(service_provider_contact_details)%%></td>
+		<td id="service_provider-service_provider_street_address-<%%VALUE(service_provider_id)%%>" class="service_provider-service_provider_street_address"><%%VALUE(service_provider_street_address)%%></td>
+		<td id="service_provider-service_provider_branch_code-<%%VALUE(service_provider_id)%%>" class="service_provider-service_provider_branch_code"><%%VALUE(service_provider_branch_code)%%></td>
+		<td id="service_provider-service_provider_branch-<%%VALUE(service_provider_id)%%>" class="service_provider-service_provider_branch"><%%VALUE(service_provider_branch)%%></td>
+		<td id="service_provider-service_provider_city-<%%VALUE(service_provider_id)%%>" class="service_provider-service_provider_city"><%%VALUE(service_provider_city)%%></td>
+		<td id="service_provider-service_provider_address_code-<%%VALUE(service_provider_id)%%>" class="service_provider-service_provider_address_code"><%%VALUE(service_provider_address_code)%%></td>

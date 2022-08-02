@@ -1,0 +1,268 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Costing ID: -->
+		<div class="form-group costing-costing_id" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Costing ID:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(costing_id)%%></div>
+			</div>
+		</div>
+		<!-- Field: Government Garage Name: -->
+		<div class="form-group costing-government_garage_name" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Government Garage Name:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="government_garage_name<%%RND1%%>"><%%COMBOTEXT(government_garage_name)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Supervisor Name & Surname: -->
+		<div class="form-group costing-supervisor_name_and_surname" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Supervisor Name & Surname:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(supervisor_name_and_surname)%%></div>
+			</div>
+		</div>
+		<!-- Field: Supervisor Contact Details: -->
+		<div class="form-group costing-supervisor_contact_details" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Supervisor Contact Details:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(supervisor_contact_details)%%></div>
+			</div>
+		</div>
+		<!-- Field: Supervisor Email Address: -->
+		<div class="form-group costing-supervisor_email_address" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Supervisor Email Address:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(supervisor_email_address)%%></div>
+			</div>
+		</div>
+		<!-- Field: Supervisor Signature: -->
+		<div class="form-group costing-supervisor_signature" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Supervisor Signature:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img id="supervisor_signatureImg" src="thumbnail.php?t=costing&f=supervisor_signature&i=<%%VALUE(supervisor_signature)%%>&v=dv" class="img-thumbnail"></div>
+			</div>
+		</div>
+		<!-- Field: Job Card Number: -->
+		<div class="form-group costing-job_card_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Job Card Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="job_card_number<%%RND1%%>"><%%COMBOTEXT(job_card_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Registration Number: -->
+		<div class="form-group costing-vehicle_registration_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Registration Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="vehicle_registration_number<%%RND1%%>"><%%COMBOTEXT(vehicle_registration_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Engine Number: -->
+		<div class="form-group costing-engine_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Engine Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="engine_number<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Make of Vehicle: -->
+		<div class="form-group costing-make_of_vehicle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Make of Vehicle:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="make_of_vehicle<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Reconciliation of Total Cost By Costing Officer: -->
+		<div class="form-group costing-reconciliation_of_total_costs_by_costing_officer" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Reconciliation of Total Cost By Costing Officer:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(reconciliation_of_total_costs_by_costing_officer)%%></div>
+			</div>
+		</div>
+		<!-- Field: Costing Officer Name & Surname: -->
+		<div class="form-group costing-costing_officer_name_and_surname" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Costing Officer Name & Surname:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(costing_officer_name_and_surname)%%></div>
+			</div>
+		</div>
+		<!-- Field: Costing Officer Contact Details: -->
+		<div class="form-group costing-costing_officer_contact_details" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Costing Officer Contact Details:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(costing_officer_contact_details)%%></div>
+			</div>
+		</div>
+		<!-- Field: Costing Officer Email Address: -->
+		<div class="form-group costing-costing_officer_email_address" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Costing Officer Email Address:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(costing_officer_email_address)%%></div>
+			</div>
+		</div>
+		<!-- Field: Costing Officer Signature: -->
+		<div class="form-group costing-costing_officer_signature" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Costing Officer Signature:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img id="costing_officer_signatureImg" src="thumbnail.php?t=costing&f=costing_officer_signature&i=<%%VALUE(costing_officer_signature)%%>&v=dv" class="img-thumbnail"></div>
+			</div>
+		</div>
+		<!-- Field: Material Cost (R): -->
+		<div class="form-group costing-material_cost" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Material Cost (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(material_cost)%%></div>
+			</div>
+		</div>
+		<!-- Field: Spare Orders Quotation (R): -->
+		<div class="form-group costing-spares_orders_quotation" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Spare Orders Quotation (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(spares_orders_quotation)%%></div>
+			</div>
+		</div>
+		<!-- Field: Spare Orders Quotation Upload: -->
+		<div class="form-group costing-spares_orders_quotation_upload" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Spare Orders Quotation Upload:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="spares_orders_quotation_upload-link" href="link.php?t=costing&f=spares_orders_quotation_upload&i=<%%VALUE(costing_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(spares_orders_quotation_upload)%%>"></i></a><script>jQuery(function() { var e_spares_orders_quotation_upload = '<%%VALUE(spares_orders_quotation_upload)%%>'; if(e_spares_orders_quotation_upload == '' || e_spares_orders_quotation_upload == '&nbsp;' || e_spares_orders_quotation_upload == 'blank.gif') jQuery('#spares_orders_quotation_upload-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Standard Labour Cost per Hour: -->
+		<div class="form-group costing-standard_labour_cost_per_hour" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Standard Labour Cost per Hour:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(standard_labour_cost_per_hour)%%></div>
+			</div>
+		</div>
+		<!-- Field: Labour Quotation (R): -->
+		<div class="form-group costing-labour_quotation" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Labour Quotation (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(labour_quotation)%%></div>
+			</div>
+		</div>
+		<!-- Field: Labour Quotation Upload: -->
+		<div class="form-group costing-labour_quotation_upload" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Labour Quotation Upload:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="labour_quotation_upload-link" href="link.php?t=costing&f=labour_quotation_upload&i=<%%VALUE(costing_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(labour_quotation_upload)%%>"></i></a><script>jQuery(function() { var e_labour_quotation_upload = '<%%VALUE(labour_quotation_upload)%%>'; if(e_labour_quotation_upload == '' || e_labour_quotation_upload == '&nbsp;' || e_labour_quotation_upload == 'blank.gif') jQuery('#labour_quotation_upload-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Vat 15 % (R): -->
+		<div class="form-group costing-vat" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Vat 15 % (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(vat)%%></div>
+			</div>
+		</div>
+		<!-- Field: Total Amount (R): -->
+		<div class="form-group costing-total_amount" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Total Amount (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(total_amount)%%></div>
+			</div>
+		</div>
+		<!-- Field: Workshop Manager Name & Surname: -->
+		<div class="form-group costing-workshop_manager_name_and_surname" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Workshop Manager Name & Surname:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(workshop_manager_name_and_surname)%%></div>
+			</div>
+		</div>
+		<!-- Field: Workshop Manager Contact Details: -->
+		<div class="form-group costing-workshop_manager_contact_details" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Workshop Manager Contact Details:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(workshop_manager_contact_details)%%></div>
+			</div>
+		</div>
+		<!-- Field: Workshop Manager Email Address: -->
+		<div class="form-group costing-workshop_manager_email_address" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Workshop Manager Email Address:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(workshop_manager_email_address)%%></div>
+			</div>
+		</div>
+		<!-- Field: Workshop Manager Signature: -->
+		<div class="form-group costing-workshop_manager_signature" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Workshop Manager Signature:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img id="workshop_manager_signatureImg" src="thumbnail.php?t=costing&f=workshop_manager_signature&i=<%%VALUE(workshop_manager_signature)%%>&v=dv" class="img-thumbnail"></div>
+			</div>
+		</div>
+		<!-- Field: Internal Requisition to Stores Approved: -->
+		<div class="form-group costing-invoice_approved" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Internal Requisition to Stores Approved:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(invoice_approved)%%></div>
+			</div>
+		</div>
+		<!-- Field: Invoice Date: -->
+		<div class="form-group costing-invoice_date" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Invoice Date:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(invoice_date)%%></div>
+			</div>
+		</div>
+		<!-- Field: Invoice Upload: -->
+		<div class="form-group costing-upload_invoice" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Invoice Upload:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="upload_invoice-link" href="link.php?t=costing&f=upload_invoice&i=<%%VALUE(costing_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(upload_invoice)%%>"></i></a><script>jQuery(function() { var e_upload_invoice = '<%%VALUE(upload_invoice)%%>'; if(e_upload_invoice == '' || e_upload_invoice == '&nbsp;' || e_upload_invoice == 'blank.gif') jQuery('#upload_invoice-link').hide(); });</script></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>
+<!-- child records -->
+<div class="panel-body">
+	<div id="costing-children"></div>
+</div>
+
+<script>
+	$j(function() {
+		/* prevent loading child records in multiple DVP */
+		if($j('[id=costing-children]').length > 1) return;
+
+		post(
+			'parent-children.php', {
+				ParentTable: 'costing',
+				SelectedID: '<%%VALUE(costing_id)%%>',
+				Operation: 'show-children-printable'
+			},
+			'costing-children',
+			'disable-element',
+			'loading-element',
+			apply_persisting_children
+		);
+
+		$j('form').on('click', '#children-tabs button[data-target]', function() {
+			$j(this).toggleClass('active');
+			persist_expanded_child($j(this).attr('id'));
+		});
+	})
+</script>
+

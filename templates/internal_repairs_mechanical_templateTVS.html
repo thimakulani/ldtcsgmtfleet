@@ -1,0 +1,31 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the internal_repairs_mechanical_init() hook (in hooks/internal_repairs_mechanical.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="internal_repairs_mechanical-internal_mechanical_id-<%%VALUE(internal_mechanical_id)%%>" class="internal_repairs_mechanical-internal_mechanical_id text-right"><%%VALUE(internal_mechanical_id)%%></td>
+		<td id="internal_repairs_mechanical-workshop_name-<%%VALUE(internal_mechanical_id)%%>" class="internal_repairs_mechanical-workshop_name"><%%VALUE(workshop_name)%%></td>
+		<td id="internal_repairs_mechanical-artisan_name_and_surname-<%%VALUE(internal_mechanical_id)%%>" class="internal_repairs_mechanical-artisan_name_and_surname"><%%VALUE(artisan_name_and_surname)%%></td>
+		<td id="internal_repairs_mechanical-artisan_contacts-<%%VALUE(internal_mechanical_id)%%>" class="internal_repairs_mechanical-artisan_contacts"><%%VALUE(artisan_contacts)%%></td>
+		<td id="internal_repairs_mechanical-artisan_email_address-<%%VALUE(internal_mechanical_id)%%>" class="internal_repairs_mechanical-artisan_email_address"><a href="mailto:<%%VALUE(artisan_email_address)%%>"><%%VALUE(artisan_email_address)%%></a></td>
+		<td id="internal_repairs_mechanical-artisan_signature-<%%VALUE(internal_mechanical_id)%%>" class="internal_repairs_mechanical-artisan_signature"><img src="thumbnail.php?i=<%%VALUE(artisan_signature)%%>&t=internal_repairs_mechanical&f=artisan_signature&v=tv" class="img-thumbnail"></td>
+		<td id="internal_repairs_mechanical-artisan_note_of_starting_time-<%%VALUE(internal_mechanical_id)%%>" class="internal_repairs_mechanical-artisan_note_of_starting_time"><%%VALUE(artisan_note_of_starting_time)%%></td>
+		<td id="internal_repairs_mechanical-job_card_number-<%%VALUE(internal_mechanical_id)%%>" class="internal_repairs_mechanical-job_card_number"><%%VALUE(job_card_number)%%></td>
+		<td id="internal_repairs_mechanical-work_allocation_reference_number-<%%VALUE(internal_mechanical_id)%%>" class="internal_repairs_mechanical-work_allocation_reference_number"><%%VALUE(work_allocation_reference_number)%%></td>
+		<td id="internal_repairs_mechanical-vehicle_registration_number-<%%VALUE(internal_mechanical_id)%%>" class="internal_repairs_mechanical-vehicle_registration_number"><%%VALUE(vehicle_registration_number)%%></td>
+		<td id="internal_repairs_mechanical-engine_number-<%%VALUE(internal_mechanical_id)%%>" class="internal_repairs_mechanical-engine_number"><%%VALUE(engine_number)%%></td>
+		<td id="internal_repairs_mechanical-make_of_vehicle-<%%VALUE(internal_mechanical_id)%%>" class="internal_repairs_mechanical-make_of_vehicle"><%%VALUE(make_of_vehicle)%%></td>
+		<td id="internal_repairs_mechanical-pre_repair_inspections-<%%VALUE(internal_mechanical_id)%%>" class="internal_repairs_mechanical-pre_repair_inspections"><%%VALUE(pre_repair_inspections)%%></td>
+		<td id="internal_repairs_mechanical-artisan_dismantling_solution-<%%VALUE(internal_mechanical_id)%%>" class="internal_repairs_mechanical-artisan_dismantling_solution"><%%VALUE(artisan_dismantling_solution)%%></td>
+		<td id="internal_repairs_mechanical-spares_order_quotation-<%%VALUE(internal_mechanical_id)%%>" class="internal_repairs_mechanical-spares_order_quotation"><a href="link.php?t=internal_repairs_mechanical&f=spares_order_quotation&i=<%%VALUE(internal_mechanical_id)%%>" target="_blank" title="<%%VALUE(spares_order_quotation)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="internal_repairs_mechanical-spares_order_description-<%%VALUE(internal_mechanical_id)%%>" class="internal_repairs_mechanical-spares_order_description"><%%VALUE(spares_order_description)%%></td>
+		<td id="internal_repairs_mechanical-artisan_note_of_completion_time-<%%VALUE(internal_mechanical_id)%%>" class="internal_repairs_mechanical-artisan_note_of_completion_time"><%%VALUE(artisan_note_of_completion_time)%%></td>
+		<td id="internal_repairs_mechanical-inspection_bay_lane_number-<%%VALUE(internal_mechanical_id)%%>" class="internal_repairs_mechanical-inspection_bay_lane_number"><%%VALUE(inspection_bay_lane_number)%%></td>
+		<td id="internal_repairs_mechanical-inspection_bay_report-<%%VALUE(internal_mechanical_id)%%>" class="internal_repairs_mechanical-inspection_bay_report"><a href="link.php?t=internal_repairs_mechanical&f=inspection_bay_report&i=<%%VALUE(internal_mechanical_id)%%>" target="_blank" title="<%%VALUE(inspection_bay_report)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="internal_repairs_mechanical-total_labour_time-<%%VALUE(internal_mechanical_id)%%>" class="internal_repairs_mechanical-total_labour_time"><%%VALUE(total_labour_time)%%></td>
+		<script>$j(function() {
+			var e_spares_order_quotation = '<%%VALUE(spares_order_quotation)%%>'; if(e_spares_order_quotation == '' || e_spares_order_quotation == '&nbsp;') $j(/*<*/ '#internal_repairs_mechanical-spares_order_quotation-<%%VALUE(internal_mechanical_id)%%>' /*>*/).html('');
+			var e_inspection_bay_report = '<%%VALUE(inspection_bay_report)%%>'; if(e_inspection_bay_report == '' || e_inspection_bay_report == '&nbsp;') $j(/*<*/ '#internal_repairs_mechanical-inspection_bay_report-<%%VALUE(internal_mechanical_id)%%>' /*>*/).html('');
+		});</script>

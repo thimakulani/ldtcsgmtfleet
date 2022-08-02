@@ -1,0 +1,407 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/gate_security-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="gate_security_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="gate_security_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="gate_security_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Gate Security User ID: -->
+				<div class="form-group gate_security-gate_security_user_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="gate_security_user_id">Gate Security User ID:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="gate_security_user_id"><%%VALUE(gate_security_user_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Gate Security Name & Surname: -->
+				<div class="form-group gate_security-gate_security_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="gate_security_name_and_surname">Gate Security Name & Surname:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="gate_security_name_and_surname" id="gate_security_name_and_surname" value="<%%VALUE(gate_security_name_and_surname)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Gate security Contact Details: -->
+				<div class="form-group gate_security-gate_security_contact_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="gate_security_contact_details">Gate security Contact Details:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="gate_security_contact_details" id="gate_security_contact_details" value="<%%VALUE(gate_security_contact_details)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Gate security signature -->
+				<div class="form-group gate_security-gate_security_signature">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="gate_security_signature">Gate security signature</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="gate_security_signature" id="gate_security_signature" value="<%%VALUE(gate_security_signature)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Date of Vehicle Entrance: -->
+				<div class="form-group gate_security-date_of_vehicle_entrance">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_of_vehicle_entrance">Date of Vehicle Entrance:</label>
+					<div class="col-lg-9">
+						<div class="input-group date datetimepicker"><input type="text" class="form-control" name="date_of_vehicle_entrance" id="date_of_vehicle_entrance" value="<%%VALUE(date_of_vehicle_entrance)%%>"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div>
+					</div>
+				</div>
+
+				<!-- Field: Registration Number: -->
+				<div class="form-group gate_security-vehicle_registration_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_registration_number" data-parent_link="view_parent_modal">Registration Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(vehicle_registration_number)%%><%%PLINK(vehicle_registration_number)%%><%%ADDNEW(gmt_fleet_register)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Engine Number: -->
+				<div class="form-group gate_security-engine_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Engine Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="engine_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Make of Vehicle: -->
+				<div class="form-group gate_security-make_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Make of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="make_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Colour: -->
+				<div class="form-group gate_security-vehicle_colour">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Vehicle Colour:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="vehicle_colour"></div>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Inspection: -->
+				<div class="form-group gate_security-vehicle_inspection">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Vehicle Inspection:</label>
+					<div class="col-lg-9">
+						<%%COMBO(vehicle_inspection)%%>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Tires Size: -->
+				<div class="form-group gate_security-vehicle_tires_size">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_tires_size">Vehicle Tires Size:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="vehicle_tires_size" id="vehicle_tires_size" value="<%%VALUE(vehicle_tires_size)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Tires Check: -->
+				<div class="form-group gate_security-vehicle_tires_check">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Vehicle Tires Check:</label>
+					<div class="col-lg-9">
+						<%%COMBO(vehicle_tires_check)%%>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Mirrow Check: -->
+				<div class="form-group gate_security-vehicle_mirrow_check">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Vehicle Mirrow Check:</label>
+					<div class="col-lg-9">
+						<%%COMBO(vehicle_mirrow_check)%%>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Interiour Condition: -->
+				<div class="form-group gate_security-vehicle_interiour_condition">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_interiour_condition">Vehicle Interiour Condition:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(vehicle_interiour_condition)%%>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Exteriour Condition: -->
+				<div class="form-group gate_security-vehicle_exteriour_condition">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_exteriour_condition">Vehicle Exteriour Condition:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(vehicle_exteriour_condition)%%>
+					</div>
+				</div>
+
+				<!-- Field: Gate Security Company Name: -->
+				<div class="form-group gate_security-gate_security_company_name">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="gate_security_company_name">Gate Security Company Name:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="gate_security_company_name" id="gate_security_company_name" value="<%%VALUE(gate_security_company_name)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Gate Security Company Contact Details: -->
+				<div class="form-group gate_security-gate_security_company_contact_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="gate_security_company_contact_details">Gate Security Company Contact Details:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="gate_security_company_contact_details" id="gate_security_company_contact_details" value="<%%VALUE(gate_security_company_contact_details)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Gate Security Manager  Name and Surname: -->
+				<div class="form-group gate_security-gate_security_manager_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="gate_security_manager_name_and_surname">Gate Security Manager  Name and Surname:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="gate_security_manager_name_and_surname" id="gate_security_manager_name_and_surname" value="<%%VALUE(gate_security_manager_name_and_surname)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Gate Security Manager Contact Details: -->
+				<div class="form-group gate_security-gate_security_manager_contact_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="gate_security_manager_contact_details">Gate Security Manager Contact Details:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="gate_security_manager_contact_details" id="gate_security_manager_contact_details" value="<%%VALUE(gate_security_manager_contact_details)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Gate Security Company Address: -->
+				<div class="form-group gate_security-gate_security_company_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="gate_security_company_address">Gate Security Company Address:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(gate_security_company_address)%%>
+					</div>
+				</div>
+
+				<!-- Field: Inspection Of Vehicle Report: -->
+				<div class="form-group gate_security-inspection_of_vehicle_report">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Inspection Of Vehicle Report: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#inspection_of_vehicle_report-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="inspection_of_vehicle_report-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5204 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="inspection_of_vehicle_report-link" href="link.php?t=gate_security&f=inspection_of_vehicle_report&i=<%%VALUE(gate_security_user_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(inspection_of_vehicle_report)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(inspection_of_vehicle_report)%%>
+								<%%REMOVEFILE(inspection_of_vehicle_report)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_inspection_of_vehicle_report = '<%%VALUE(inspection_of_vehicle_report)%%>'; if(e_inspection_of_vehicle_report == '' || e_inspection_of_vehicle_report == '&nbsp;' || e_inspection_of_vehicle_report == 'blank.gif') jQuery('#inspection_of_vehicle_report-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Record Of Vehicle: -->
+				<div class="form-group gate_security-record_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Record Of Vehicle:</label>
+					<div class="col-lg-9">
+						<%%COMBO(record_of_vehicle)%%>
+					</div>
+				</div>
+
+				<!-- Field: Date of Vehicle Exit: -->
+				<div class="form-group gate_security-date_of_vehicle_exit">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_of_vehicle_exit">Date of Vehicle Exit:</label>
+					<div class="col-lg-9">
+						<div class="input-group date datetimepicker"><input type="text" class="form-control" name="date_of_vehicle_exit" id="date_of_vehicle_exit" value="<%%VALUE(date_of_vehicle_exit)%%>"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="gate_security_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			AppGini.once({
+				condition: function() { return bkLib != undefined; },
+				action: function() {
+					if($j('textarea#vehicle_interiour_condition').length) new nicEditor({ fullPanel : true }).panelInstance('vehicle_interiour_condition');
+					if($j('textarea#vehicle_exteriour_condition').length) new nicEditor({ fullPanel : true }).panelInstance('vehicle_exteriour_condition');
+					if($j('textarea#gate_security_company_address').length) new nicEditor({ fullPanel : true }).panelInstance('gate_security_company_address');
+				}
+			});
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			$j('#gate_security_dv_container-loading').addClass('hidden');
+			$j('#gate_security_dv_container').removeClass('hidden');
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) AppGini.focusFormElement('gate_security', 'gate_security_name_and_surname');
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			// try to detect rich text changes by adding 'input' handler after nicedit is loaded ...
+			AppGini.detectContentEditableChanges();
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'gate_security',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=gate_security&id=<%%URLVALUE(gate_security_user_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=gate_security&id=<%%URLVALUE(gate_security_user_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

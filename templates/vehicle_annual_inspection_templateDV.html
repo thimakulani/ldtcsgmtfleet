@@ -1,0 +1,577 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/vehicle_annual_inspection-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="vehicle_annual_inspection_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="vehicle_annual_inspection_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="vehicle_annual_inspection_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Asset ID: -->
+				<div class="form-group vehicle_annual_inspection-fleet_asset_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="fleet_asset_id">Asset ID:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="fleet_asset_id"><%%VALUE(fleet_asset_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Registration Number: -->
+				<div class="form-group vehicle_annual_inspection-vehicle_registration_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_registration_number" data-parent_link="view_parent_modal">Registration Number:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(vehicle_registration_number)%%><%%PLINK(vehicle_registration_number)%%><%%ADDNEW(gmt_fleet_register)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Register Number: -->
+				<div class="form-group vehicle_annual_inspection-register_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="register_number" data-parent_link="view_parent_modal">Register Number:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(register_number)%%><%%PLINK(register_number)%%><%%ADDNEW(gmt_fleet_register)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Engine Number: -->
+				<div class="form-group vehicle_annual_inspection-engine_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Engine Number:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="engine_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Chassis/Vin Number: -->
+				<div class="form-group vehicle_annual_inspection-chassis_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Chassis/Vin Number:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="chassis_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Make of Vehicle: -->
+				<div class="form-group vehicle_annual_inspection-make_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Make of Vehicle:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="make_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Model of Vehicle: -->
+				<div class="form-group vehicle_annual_inspection-model_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Model of Vehicle:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="model_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Year Model Specification: -->
+				<div class="form-group vehicle_annual_inspection-year_model_specification">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Year Model Specification:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="year_model_specification"></div>
+					</div>
+				</div>
+
+				<!-- Field: Engine Capacity (cc): -->
+				<div class="form-group vehicle_annual_inspection-engine_capacity">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Engine Capacity (cc):<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="engine_capacity"></div>
+					</div>
+				</div>
+
+				<!-- Field: Tyre Size (Radial): -->
+				<div class="form-group vehicle_annual_inspection-tyre_size">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Tyre Size (Radial):</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="tyre_size"></div>
+					</div>
+				</div>
+
+				<!-- Field: Transmission: -->
+				<div class="form-group vehicle_annual_inspection-transmission">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Transmission:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="transmission"></div>
+					</div>
+				</div>
+
+				<!-- Field: Fuel Type: -->
+				<div class="form-group vehicle_annual_inspection-fuel_type">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Fuel Type:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="fuel_type"></div>
+					</div>
+				</div>
+
+				<!-- Field: Type of Vehicle: -->
+				<div class="form-group vehicle_annual_inspection-type_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Type of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="type_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Colour of Vehicle: -->
+				<div class="form-group vehicle_annual_inspection-colour_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Colour of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="colour_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Application Status: -->
+				<div class="form-group vehicle_annual_inspection-application_status">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Application Status:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="application_status"></div>
+					</div>
+				</div>
+
+				<!-- Field: License Expiry Date: -->
+				<div class="form-group vehicle_annual_inspection-renewal_of_license">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">License Expiry Date:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="renewal_of_license"></div>
+					</div>
+				</div>
+
+				<!-- Field: Barcode Number: -->
+				<div class="form-group vehicle_annual_inspection-barcode_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Barcode Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="barcode_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Last Entry of Figure in Log Book: -->
+				<div class="form-group vehicle_annual_inspection-last_entry_logbook">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="last_entry_logbook-dd">Last Entry of Figure in Log Book:</label>
+					<div class="col-lg-9">
+						<%%COMBO(last_entry_logbook)%%>
+					</div>
+				</div>
+
+				<!-- Field: Photo of Vehicle: -->
+				<div class="form-group vehicle_annual_inspection-photo_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Photo of Vehicle: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#photo_of_vehicle-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="photo_of_vehicle-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 1024 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a href="<%%BASE_UPLOAD_PATH%%><%%VALUE(photo_of_vehicle)%%>" data-lightbox="vehicle_annual_inspection_dv"><img src="thumbnail.php?i=<%%VALUE(photo_of_vehicle)%%>&t=vehicle_annual_inspection&f=photo_of_vehicle&v=dv" class="img-thumbnail" id="photo_of_vehicle-image"></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(photo_of_vehicle)%%>
+								<%%REMOVEFILE(photo_of_vehicle)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>/* disable links to empty images */ $j(function() { var e_photo_of_vehicle = '<%%VALUE(photo_of_vehicle)%%>'; if(e_photo_of_vehicle == '' || e_photo_of_vehicle == '&nbsp;' || e_photo_of_vehicle == 'blank.gif') { $j('#photo_of_vehicle-link').hide(); $j('#photo_of_vehicle-image').parents('a').attr('href', '').on('click', function(e) { e.preventDefault(); }); } });</script>
+					</div>
+				</div>
+
+				<!-- Field: Department Name: -->
+				<div class="form-group vehicle_annual_inspection-department_name">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="department_name" data-parent_link="view_parent_modal">Department Name:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(department_name)%%><%%PLINK(department_name)%%><%%ADDNEW(departments)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Province: -->
+				<div class="form-group vehicle_annual_inspection-province">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="province" data-parent_link="view_parent_modal">Province:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(province)%%><%%PLINK(province)%%><%%ADDNEW(province)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: District and Station: -->
+				<div class="form-group vehicle_annual_inspection-district">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="district" data-parent_link="view_parent_modal">District and Station:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(district)%%><%%PLINK(district)%%><%%ADDNEW(districts)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Mechanical Inspection: -->
+				<div class="form-group vehicle_annual_inspection-mechanical_inspection">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="mechanical_inspection">Mechanical Inspection:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(mechanical_inspection)%%>
+					</div>
+				</div>
+
+				<!-- Field: Upholstery: -->
+				<div class="form-group vehicle_annual_inspection-upholstery">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="upholstery">Upholstery:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(upholstery)%%>
+					</div>
+				</div>
+
+				<!-- Field: Electrical Inspection: -->
+				<div class="form-group vehicle_annual_inspection-electrical_inspection">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="electrical_inspection">Electrical Inspection:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(electrical_inspection)%%>
+					</div>
+				</div>
+
+				<!-- Field: Wheel Spanner: -->
+				<div class="form-group vehicle_annual_inspection-wheel_spanner">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="wheel_spanner">Wheel Spanner:</label>
+					<div class="col-lg-9">
+						<%%COMBO(wheel_spanner)%%>
+					</div>
+				</div>
+
+				<!-- Field: Spare Wheel: -->
+				<div class="form-group vehicle_annual_inspection-spare_wheel">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="spare_wheel">Spare Wheel:</label>
+					<div class="col-lg-9">
+						<%%COMBO(spare_wheel)%%>
+					</div>
+				</div>
+
+				<!-- Field: Jack: -->
+				<div class="form-group vehicle_annual_inspection-jack">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="jack">Jack:</label>
+					<div class="col-lg-9">
+						<%%COMBO(jack)%%>
+					</div>
+				</div>
+
+				<!-- Field: Radio: -->
+				<div class="form-group vehicle_annual_inspection-radio">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="radio">Radio:</label>
+					<div class="col-lg-9">
+						<%%COMBO(radio)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tri-Angle: -->
+				<div class="form-group vehicle_annual_inspection-triangle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="triangle">Tri-Angle:</label>
+					<div class="col-lg-9">
+						<%%COMBO(triangle)%%>
+					</div>
+				</div>
+
+				<!-- Field: Log Book: -->
+				<div class="form-group vehicle_annual_inspection-log_book">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="log_book">Log Book:</label>
+					<div class="col-lg-9">
+						<%%COMBO(log_book)%%>
+					</div>
+				</div>
+
+				<!-- Field: Iternary: -->
+				<div class="form-group vehicle_annual_inspection-iternary">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="iternary">Iternary:</label>
+					<div class="col-lg-9">
+						<%%COMBO(iternary)%%>
+					</div>
+				</div>
+
+				<!-- Field: Fuel Card: -->
+				<div class="form-group vehicle_annual_inspection-fuel_card">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="fuel_card">Fuel Card:</label>
+					<div class="col-lg-9">
+						<%%COMBO(fuel_card)%%>
+					</div>
+				</div>
+
+				<!-- Field: Remarks / Recommendation: -->
+				<div class="form-group vehicle_annual_inspection-recommendation">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="recommendation">Remarks / Recommendation:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(recommendation)%%>
+					</div>
+				</div>
+
+				<!-- Field: Documents: -->
+				<div class="form-group vehicle_annual_inspection-documents">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Documents: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#documents-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="documents-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5120 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="documents-link" href="link.php?t=vehicle_annual_inspection&f=documents&i=<%%VALUE(fleet_asset_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(documents)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(documents)%%>
+								<%%REMOVEFILE(documents)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_documents = '<%%VALUE(documents)%%>'; if(e_documents == '' || e_documents == '&nbsp;' || e_documents == 'blank.gif') jQuery('#documents-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Checking Officer: -->
+				<div class="form-group vehicle_annual_inspection-checking_officer_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="checking_officer_name_and_surname">Checking Officer:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="checking_officer_name_and_surname" id="checking_officer_name_and_surname" value="<%%VALUE(checking_officer_name_and_surname)%%>" required>
+					</div>
+				</div>
+
+				<!-- Field: Checking Officer Contact  Email: -->
+				<div class="form-group vehicle_annual_inspection-checking_officer_contact_email">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="checking_officer_contact_email-edit-link">Checking Officer Contact  Email:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<div>
+							<a id="checking_officer_contact_email-link" href="mailto:<%%VALUE(checking_officer_contact_email)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-envelope text-info" title="<%%VALUE(checking_officer_contact_email)%%>"></i></a>
+							<label for="checking_officer_contact_email"><button type="button" id="checking_officer_contact_email-edit-link" class="btn btn-default vspacer-sm" data-toggle="collapse" data-target="#checking_officer_contact_email" title="<%%TRANSLATION(Edit)%%>"><i class="glyphicon glyphicon-pencil"></i></button></label>
+							<input maxlength="40" type="text" class="form-control collapse" name="checking_officer_contact_email" id="checking_officer_contact_email" value="<%%VALUE(checking_officer_contact_email)%%>" required>
+						</div><script>jQuery(function() { var e_checking_officer_contact_email = '<%%VALUE(checking_officer_contact_email)%%>'; if(e_checking_officer_contact_email == '' || e_checking_officer_contact_email == '&nbsp;' || e_checking_officer_contact_email == 'blank.gif') jQuery('#checking_officer_contact_email-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Date of Inspection: -->
+				<div class="form-group vehicle_annual_inspection-date_of_inspection">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_of_inspection-dd">Date of Inspection:</label>
+					<div class="col-lg-9">
+						<%%COMBO(date_of_inspection)%%>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="vehicle_annual_inspection_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			AppGini.once({
+				condition: function() { return bkLib != undefined; },
+				action: function() {
+					if($j('textarea#mechanical_inspection').length) new nicEditor({ fullPanel : true }).panelInstance('mechanical_inspection');
+					if($j('textarea#upholstery').length) new nicEditor({ fullPanel : true }).panelInstance('upholstery');
+					if($j('textarea#electrical_inspection').length) new nicEditor({ fullPanel : true }).panelInstance('electrical_inspection');
+					if($j('textarea#recommendation').length) new nicEditor({ fullPanel : true }).panelInstance('recommendation');
+				}
+			});
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) {
+				AppGini.once({
+					condition: function() {
+						return $j('.form-group.vehicle_annual_inspection-vehicle_registration_number')
+									.find('.nicEdit-main, .select2-container, input[type=radio]')
+									.length > 0
+								// or read-only DV
+								|| (!$j('#update').length && !$j('#insert').length);
+					},
+					action: function() {
+						$j('#vehicle_annual_inspection_dv_container-loading').addClass('hidden');
+						$j('#vehicle_annual_inspection_dv_container').removeClass('hidden');
+						AppGini.focusFormElement('vehicle_annual_inspection', 'vehicle_registration_number');
+					},
+					timeout:  5000,
+					doActionOnTimeout:  true
+				});
+			} else {
+				$j('#vehicle_annual_inspection_dv_container-loading').addClass('hidden');
+				$j('#vehicle_annual_inspection_dv_container').removeClass('hidden');
+			}
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			// try to detect rich text changes by adding 'input' handler after nicedit is loaded ...
+			AppGini.detectContentEditableChanges();
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'vehicle_annual_inspection',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=vehicle_annual_inspection&id=<%%URLVALUE(fleet_asset_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=vehicle_annual_inspection&id=<%%URLVALUE(fleet_asset_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

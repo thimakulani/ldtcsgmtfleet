@@ -1,0 +1,303 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Daily Checked ID: -->
+		<div class="form-group vehicle_daily_check_list-vehicle_daily_check_list_id" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Daily Checked ID:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(vehicle_daily_check_list_id)%%></div>
+			</div>
+		</div>
+		<!-- Field: Inspection Certification No: -->
+		<div class="form-group vehicle_daily_check_list-inspection_certification_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Inspection Certification No:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(inspection_certification_number)%%></div>
+			</div>
+		</div>
+		<!-- Field: Registration Number: -->
+		<div class="form-group vehicle_daily_check_list-vehicle_registration_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Registration Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="vehicle_registration_number<%%RND1%%>"><%%COMBOTEXT(vehicle_registration_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Make of Vehicle: -->
+		<div class="form-group vehicle_daily_check_list-make_of_vehicle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Make of Vehicle:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="make_of_vehicle<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Odometer Reading KM: -->
+		<div class="form-group vehicle_daily_check_list-closing_km" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Odometer Reading KM:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="closing_km<%%RND1%%>"><%%COMBOTEXT(closing_km)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Dashboard: -->
+		<div class="form-group vehicle_daily_check_list-dashboard" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Dashboard:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(dashboard)%%></div>
+			</div>
+		</div>
+		<!-- Field: Seats: -->
+		<div class="form-group vehicle_daily_check_list-seats" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Seats:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(seats)%%></div>
+			</div>
+		</div>
+		<!-- Field: Carpets: -->
+		<div class="form-group vehicle_daily_check_list-carpets" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Carpets:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(carpets)%%></div>
+			</div>
+		</div>
+		<!-- Field: Wipers: -->
+		<div class="form-group vehicle_daily_check_list-wipers" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Wipers:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(wipers)%%></div>
+			</div>
+		</div>
+		<!-- Field: Head Lights: -->
+		<div class="form-group vehicle_daily_check_list-head_lights" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Head Lights:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(head_lights)%%></div>
+			</div>
+		</div>
+		<!-- Field: Tail lights: -->
+		<div class="form-group vehicle_daily_check_list-tail_lights" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tail lights:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(tail_lights)%%></div>
+			</div>
+		</div>
+		<!-- Field: Brake Lights: -->
+		<div class="form-group vehicle_daily_check_list-brake_lights" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Brake Lights:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(brake_lights)%%></div>
+			</div>
+		</div>
+		<!-- Field: Indicators: -->
+		<div class="form-group vehicle_daily_check_list-indicators" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Indicators:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(indicators)%%></div>
+			</div>
+		</div>
+		<!-- Field: Windscreen: -->
+		<div class="form-group vehicle_daily_check_list-windscreen" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Windscreen:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(windscreen)%%></div>
+			</div>
+		</div>
+		<!-- Field: Windows: -->
+		<div class="form-group vehicle_daily_check_list-windows" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Windows:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(windows)%%></div>
+			</div>
+		</div>
+		<!-- Field: Mirrors: -->
+		<div class="form-group vehicle_daily_check_list-mirrors" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Mirrors:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(mirrors)%%></div>
+			</div>
+		</div>
+		<!-- Field: Wheels: -->
+		<div class="form-group vehicle_daily_check_list-wheels" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Wheels:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(wheels)%%></div>
+			</div>
+		</div>
+		<!-- Field: Hubcaps: -->
+		<div class="form-group vehicle_daily_check_list-hubcaps" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Hubcaps:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(hubcaps)%%></div>
+			</div>
+		</div>
+		<!-- Field: Sparewheel: -->
+		<div class="form-group vehicle_daily_check_list-sparewheel" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Sparewheel:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(sparewheel)%%></div>
+			</div>
+		</div>
+		<!-- Field: Tools: -->
+		<div class="form-group vehicle_daily_check_list-tools" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tools:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(tools)%%></div>
+			</div>
+		</div>
+		<!-- Field: Engine Oil: -->
+		<div class="form-group vehicle_daily_check_list-engine_oil" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Engine Oil:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(engine_oil)%%></div>
+			</div>
+		</div>
+		<!-- Field: Power Wheel Steering Oil: -->
+		<div class="form-group vehicle_daily_check_list-power_steering_oil" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Power Wheel Steering Oil:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(power_steering_oil)%%></div>
+			</div>
+		</div>
+		<!-- Field: Gearbox Oil: -->
+		<div class="form-group vehicle_daily_check_list-gearbox_oil" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Gearbox Oil:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(gearbox_oil)%%></div>
+			</div>
+		</div>
+		<!-- Field: Coolant Level: -->
+		<div class="form-group vehicle_daily_check_list-coolant" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Coolant Level:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(coolant)%%></div>
+			</div>
+		</div>
+		<!-- Field: Brake oil -->
+		<div class="form-group vehicle_daily_check_list-brake_oil" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Brake oil</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(brake_oil)%%></div>
+			</div>
+		</div>
+		<!-- Field: Battery: -->
+		<div class="form-group vehicle_daily_check_list-battery" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Battery:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(battery)%%></div>
+			</div>
+		</div>
+		<!-- Field: Brakes Front: -->
+		<div class="form-group vehicle_daily_check_list-brakes_front" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Brakes Front:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(brakes_front)%%></div>
+			</div>
+		</div>
+		<!-- Field: Brakes Rear: -->
+		<div class="form-group vehicle_daily_check_list-brakes_rear" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Brakes Rear:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(brakes_rear)%%></div>
+			</div>
+		</div>
+		<!-- Field: Fuel Level: -->
+		<div class="form-group vehicle_daily_check_list-fuel_level" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Fuel Level:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(fuel_level)%%></div>
+			</div>
+		</div>
+		<!-- Field: Vehicle Fluid Leaks -->
+		<div class="form-group vehicle_daily_check_list-vehicle_fluid_leaks" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Vehicle Fluid Leaks</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(vehicle_fluid_leaks)%%></div>
+			</div>
+		</div>
+		<!-- Field: Note: -->
+		<div class="form-group vehicle_daily_check_list-note" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Note:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(note)%%></div>
+			</div>
+		</div>
+		<!-- Field: Document Check List Report: -->
+		<div class="form-group vehicle_daily_check_list-document_checklist_report" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Document Check List Report:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="document_checklist_report-link" href="link.php?t=vehicle_daily_check_list&f=document_checklist_report&i=<%%VALUE(vehicle_daily_check_list_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(document_checklist_report)%%>"></i></a><script>jQuery(function() { var e_document_checklist_report = '<%%VALUE(document_checklist_report)%%>'; if(e_document_checklist_report == '' || e_document_checklist_report == '&nbsp;' || e_document_checklist_report == 'blank.gif') jQuery('#document_checklist_report-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Next Inspection Date: -->
+		<div class="form-group vehicle_daily_check_list-next_inspection_date" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Next Inspection Date:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(next_inspection_date)%%></div>
+			</div>
+		</div>
+		<!-- Field: Driver's Surname: -->
+		<div class="form-group vehicle_daily_check_list-drivers_surname" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver's Surname:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="drivers_surname<%%RND1%%>"><%%COMBOTEXT(drivers_surname)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Driver's Persal Number: -->
+		<div class="form-group vehicle_daily_check_list-drivers_persal_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver's Persal Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="drivers_persal_number<%%RND1%%>"></span></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>
+<!-- child records -->
+<div class="panel-body">
+	<div id="vehicle_daily_check_list-children"></div>
+</div>
+
+<script>
+	$j(function() {
+		/* prevent loading child records in multiple DVP */
+		if($j('[id=vehicle_daily_check_list-children]').length > 1) return;
+
+		post(
+			'parent-children.php', {
+				ParentTable: 'vehicle_daily_check_list',
+				SelectedID: '<%%VALUE(vehicle_daily_check_list_id)%%>',
+				Operation: 'show-children-printable'
+			},
+			'vehicle_daily_check_list-children',
+			'disable-element',
+			'loading-element',
+			apply_persisting_children
+		);
+
+		$j('form').on('click', '#children-tabs button[data-target]', function() {
+			$j(this).toggleClass('active');
+			persist_expanded_child($j(this).attr('id'));
+		});
+	})
+</script>
+

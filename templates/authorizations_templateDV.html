@@ -1,0 +1,447 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/authorizations-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="authorizations_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="authorizations_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="authorizations_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Authorize ID: -->
+				<div class="form-group authorizations-authorize_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="authorize_id">Authorize ID:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="authorize_id"><%%VALUE(authorize_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Job/Claims Code: -->
+				<div class="form-group authorizations-job_code">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="job_code" data-parent_link="view_parent_modal">Job/Claims Code:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(job_code)%%><%%PLINK(job_code)%%><%%ADDNEW(claim)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Job/Claims  Status: -->
+				<div class="form-group authorizations-job_status">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="job_status" data-parent_link="view_parent_modal">Job/Claims  Status:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(job_status)%%><%%PLINK(job_status)%%><%%ADDNEW(claim_status)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Job/Claims  Status Date: -->
+				<div class="form-group authorizations-job_status_date">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="job_status_date-dd">Job/Claims  Status Date:</label>
+					<div class="col-lg-9">
+						<%%COMBO(job_status_date)%%>
+					</div>
+				</div>
+
+				<!-- Field: Job/Claims  Status Age: -->
+				<div class="form-group authorizations-job_status_age">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="job_status_age">Job/Claims  Status Age: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#job_status_age-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="job_status_age-description"><div class="alert alert-info bspacer-xs">Determine the job status age.</div></span>
+						<input maxlength="40" type="text" class="form-control" name="job_status_age" id="job_status_age" value="<%%VALUE(job_status_age)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Job/Claims Age: -->
+				<div class="form-group authorizations-job_age">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="job_age">Job/Claims Age: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#job_age-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="job_age-description"><div class="alert alert-info bspacer-xs">Determine the job age.</div></span>
+						<input maxlength="40" type="text" class="form-control" name="job_age" id="job_age" value="<%%VALUE(job_age)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Job/Claims  Category: -->
+				<div class="form-group authorizations-job_category">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="job_category" data-parent_link="view_parent_modal">Job/Claims  Category: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#job_category-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="job_category-description"><div class="alert alert-info bspacer-xs">Classified the job category.</div></span>
+						<div class="lookup-flex"><%%COMBO(job_category)%%><%%PLINK(job_category)%%><%%ADDNEW(claim_category)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Job/Claims  Odometer (km): -->
+				<div class="form-group authorizations-job_odometer">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Job/Claims  Odometer (km):</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="job_odometer"></div>
+					</div>
+				</div>
+
+				<!-- Field: Instruction Note: -->
+				<div class="form-group authorizations-instruction_note">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Instruction Note: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#instruction_note-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="instruction_note-description"><div class="alert alert-info bspacer-xs">Briefly describe the instruction.</div></span>
+						<div class="form-control-static" id="instruction_note"></div>
+					</div>
+				</div>
+
+				<!-- Field: Pre Authorisation Date: -->
+				<div class="form-group authorizations-pre_authorisation_date">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Pre Authorisation Date:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="pre_authorisation_date"></div>
+					</div>
+				</div>
+
+				<!-- Field: Authorisation Date: -->
+				<div class="form-group authorizations-authorisation_date">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="authorisation_date-dd">Authorisation Date:</label>
+					<div class="col-lg-9">
+						<%%COMBO(authorisation_date)%%>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Registration: -->
+				<div class="form-group authorizations-vehicle_registration_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_registration_number" data-parent_link="view_parent_modal">Vehicle Registration:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(vehicle_registration_number)%%><%%PLINK(vehicle_registration_number)%%><%%ADDNEW(claim)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Model of Vehicle: -->
+				<div class="form-group authorizations-make_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Model of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="make_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Client: -->
+				<div class="form-group authorizations-client">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="client" data-parent_link="view_parent_modal">Client:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(client)%%><%%PLINK(client)%%><%%ADDNEW(claim)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Province Name: -->
+				<div class="form-group authorizations-province_name">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="province_name" data-parent_link="view_parent_modal">Province Name:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(province_name)%%><%%PLINK(province_name)%%><%%ADDNEW(province)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Merchant Code: -->
+				<div class="form-group authorizations-merchant_code">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="merchant_code" data-parent_link="view_parent_modal">Merchant Code:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(merchant_code)%%><%%PLINK(merchant_code)%%><%%ADDNEW(merchant)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Merchant Name: -->
+				<div class="form-group authorizations-merchant_name">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Merchant Name:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="merchant_name"></div>
+					</div>
+				</div>
+
+				<!-- Field: Merchant Contact e-Mail: -->
+				<div class="form-group authorizations-merchant_contact_email">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Merchant Contact e-Mail:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="merchant_contact_email"></div>
+					</div>
+				</div>
+
+				<!-- Field: Merchant Street Address: -->
+				<div class="form-group authorizations-merchant_street_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Merchant Street Address:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="merchant_street_address"></div>
+					</div>
+				</div>
+
+				<!-- Field: Merchant Suburb: -->
+				<div class="form-group authorizations-merchant_suburb">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Merchant Suburb:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="merchant_suburb"></div>
+					</div>
+				</div>
+
+				<!-- Field: Merchant City: -->
+				<div class="form-group authorizations-merchant_city">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Merchant City:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="merchant_city"></div>
+					</div>
+				</div>
+
+				<!-- Field: Merchant Address Code: -->
+				<div class="form-group authorizations-merchant_address_code">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Merchant Address Code:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="merchant_address_code"></div>
+					</div>
+				</div>
+
+				<!-- Field: Merchant Phone: -->
+				<div class="form-group authorizations-merchant_contact_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Merchant Phone:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="merchant_contact_details"></div>
+					</div>
+				</div>
+
+				<!-- Field: Total Amount Claim (R): -->
+				<div class="form-group authorizations-total_claim">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Total Amount Claim (R):</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="total_claim"></div>
+					</div>
+				</div>
+
+				<!-- Field: Total Authorised (R): -->
+				<div class="form-group authorizations-total_authorised">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Total Authorised (R):</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="total_authorised"></div>
+					</div>
+				</div>
+
+				<!-- Field: Authorization Number: -->
+				<div class="form-group authorizations-authorization_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Authorization Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="authorization_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Last Fuel Transaction Date: -->
+				<div class="form-group authorizations-last_fuel_transaction_date">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="last_fuel_transaction_date-dd">Last Fuel Transaction Date:</label>
+					<div class="col-lg-9">
+						<%%COMBO(last_fuel_transaction_date)%%>
+					</div>
+				</div>
+
+				<!-- Field: External Repairs: -->
+				<div class="form-group authorizations-external_repairs">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="external_repairs">External Repairs:</label>
+					<div class="col-lg-9">
+						<%%COMBO(external_repairs)%%>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="authorizations_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) {
+				AppGini.once({
+					condition: function() {
+						return $j('.form-group.authorizations-job_code')
+									.find('.nicEdit-main, .select2-container, input[type=radio]')
+									.length > 0
+								// or read-only DV
+								|| (!$j('#update').length && !$j('#insert').length);
+					},
+					action: function() {
+						$j('#authorizations_dv_container-loading').addClass('hidden');
+						$j('#authorizations_dv_container').removeClass('hidden');
+						AppGini.focusFormElement('authorizations', 'job_code');
+					},
+					timeout:  5000,
+					doActionOnTimeout:  true
+				});
+			} else {
+				$j('#authorizations_dv_container-loading').addClass('hidden');
+				$j('#authorizations_dv_container').removeClass('hidden');
+			}
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'authorizations',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=authorizations&id=<%%URLVALUE(authorize_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=authorizations&id=<%%URLVALUE(authorize_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

@@ -1,0 +1,50 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the breakdown_services_init() hook (in hooks/breakdown_services.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="breakdown_services-breakdown_id-<%%VALUE(breakdown_id)%%>" class="breakdown_services-breakdown_id text-right"><%%VALUE(breakdown_id)%%></td>
+		<td id="breakdown_services-breakdown_of_vehicle-<%%VALUE(breakdown_id)%%>" class="breakdown_services-breakdown_of_vehicle"><%%VALUE(breakdown_of_vehicle)%%></td>
+		<td id="breakdown_services-breakdown_during_office_hours-<%%VALUE(breakdown_id)%%>" class="breakdown_services-breakdown_during_office_hours"><%%VALUE(breakdown_during_office_hours)%%></td>
+		<td id="breakdown_services-breakdown_within_or_outside_the_province-<%%VALUE(breakdown_id)%%>" class="breakdown_services-breakdown_within_or_outside_the_province"><%%VALUE(breakdown_within_or_outside_the_province)%%></td>
+		<td id="breakdown_services-description_of_vehicle_breakdown_notes-<%%VALUE(breakdown_id)%%>" class="breakdown_services-description_of_vehicle_breakdown_notes"><%%VALUE(description_of_vehicle_breakdown_notes)%%></td>
+		<td id="breakdown_services-description_of_vehicle_breakdown-<%%VALUE(breakdown_id)%%>" class="breakdown_services-description_of_vehicle_breakdown"><a href="link.php?t=breakdown_services&f=description_of_vehicle_breakdown&i=<%%VALUE(breakdown_id)%%>" target="_blank" title="<%%VALUE(description_of_vehicle_breakdown)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="breakdown_services-date_of_vehicle_breakdown-<%%VALUE(breakdown_id)%%>" class="breakdown_services-date_of_vehicle_breakdown"><%%VALUE(date_of_vehicle_breakdown)%%></td>
+		<td id="breakdown_services-work_allocation_reference_number-<%%VALUE(breakdown_id)%%>" class="breakdown_services-work_allocation_reference_number"><%%VALUE(work_allocation_reference_number)%%></td>
+		<td id="breakdown_services-job_card_number-<%%VALUE(breakdown_id)%%>" class="breakdown_services-job_card_number"><%%VALUE(job_card_number)%%></td>
+		<td id="breakdown_services-vehicle_registration_number-<%%VALUE(breakdown_id)%%>" class="breakdown_services-vehicle_registration_number"><%%VALUE(vehicle_registration_number)%%></td>
+		<td id="breakdown_services-engine_number-<%%VALUE(breakdown_id)%%>" class="breakdown_services-engine_number"><%%VALUE(engine_number)%%></td>
+		<td id="breakdown_services-closing_km-<%%VALUE(breakdown_id)%%>" class="breakdown_services-closing_km"><%%VALUE(closing_km)%%></td>
+		<td id="breakdown_services-date_of_vehicle_reactivation-<%%VALUE(breakdown_id)%%>" class="breakdown_services-date_of_vehicle_reactivation"><%%VALUE(date_of_vehicle_reactivation)%%></td>
+		<td id="breakdown_services-type_of_expenditure-<%%VALUE(breakdown_id)%%>" class="breakdown_services-type_of_expenditure"><%%VALUE(type_of_expenditure)%%></td>
+		<td id="breakdown_services-labour_category-<%%VALUE(breakdown_id)%%>" class="breakdown_services-labour_category"><%%VALUE(labour_category)%%></td>
+		<td id="breakdown_services-part_number-<%%VALUE(breakdown_id)%%>" class="breakdown_services-part_number"><%%VALUE(part_number)%%></td>
+		<td id="breakdown_services-part_name-<%%VALUE(breakdown_id)%%>" class="breakdown_services-part_name"><%%VALUE(part_name)%%></td>
+		<td id="breakdown_services-part_manufacturer_name-<%%VALUE(breakdown_id)%%>" class="breakdown_services-part_manufacturer_name"><%%VALUE(part_manufacturer_name)%%></td>
+		<td id="breakdown_services-quantity-<%%VALUE(breakdown_id)%%>" class="breakdown_services-quantity"><%%VALUE(quantity)%%></td>
+		<td id="breakdown_services-expense_of_item-<%%VALUE(breakdown_id)%%>" class="breakdown_services-expense_of_item text-right"><%%VALUE(expense_of_item)%%></td>
+		<td id="breakdown_services-labour_category_1-<%%VALUE(breakdown_id)%%>" class="breakdown_services-labour_category_1"><%%VALUE(labour_category_1)%%></td>
+		<td id="breakdown_services-part_number_1-<%%VALUE(breakdown_id)%%>" class="breakdown_services-part_number_1"><%%VALUE(part_number_1)%%></td>
+		<td id="breakdown_services-part_name_1-<%%VALUE(breakdown_id)%%>" class="breakdown_services-part_name_1"><%%VALUE(part_name_1)%%></td>
+		<td id="breakdown_services-part_manufacturer_name_1-<%%VALUE(breakdown_id)%%>" class="breakdown_services-part_manufacturer_name_1"><%%VALUE(part_manufacturer_name_1)%%></td>
+		<td id="breakdown_services-quantity_1-<%%VALUE(breakdown_id)%%>" class="breakdown_services-quantity_1"><%%VALUE(quantity_1)%%></td>
+		<td id="breakdown_services-expense_of_item_1-<%%VALUE(breakdown_id)%%>" class="breakdown_services-expense_of_item_1 text-right"><%%VALUE(expense_of_item_1)%%></td>
+		<td id="breakdown_services-material_cost-<%%VALUE(breakdown_id)%%>" class="breakdown_services-material_cost text-right"><%%VALUE(material_cost)%%></td>
+		<td id="breakdown_services-average_worktime_hrs-<%%VALUE(breakdown_id)%%>" class="breakdown_services-average_worktime_hrs"><%%VALUE(average_worktime_hrs)%%></td>
+		<td id="breakdown_services-standard_labour_cost_per_hour-<%%VALUE(breakdown_id)%%>" class="breakdown_services-standard_labour_cost_per_hour text-right"><%%VALUE(standard_labour_cost_per_hour)%%></td>
+		<td id="breakdown_services-labour_charges-<%%VALUE(breakdown_id)%%>" class="breakdown_services-labour_charges text-right"><%%VALUE(labour_charges)%%></td>
+		<td id="breakdown_services-vat-<%%VALUE(breakdown_id)%%>" class="breakdown_services-vat text-right"><%%VALUE(vat)%%></td>
+		<td id="breakdown_services-total_amount-<%%VALUE(breakdown_id)%%>" class="breakdown_services-total_amount text-right"><%%VALUE(total_amount)%%></td>
+		<td id="breakdown_services-workshop_name-<%%VALUE(breakdown_id)%%>" class="breakdown_services-workshop_name"><%%VALUE(workshop_name)%%></td>
+		<td id="breakdown_services-work_order_status-<%%VALUE(breakdown_id)%%>" class="breakdown_services-work_order_status"><%%VALUE(work_order_status)%%></td>
+		<td id="breakdown_services-comments-<%%VALUE(breakdown_id)%%>" class="breakdown_services-comments"><%%VALUE(comments)%%></td>
+		<td id="breakdown_services-upload_invoice-<%%VALUE(breakdown_id)%%>" class="breakdown_services-upload_invoice"><a href="link.php?t=breakdown_services&f=upload_invoice&i=<%%VALUE(breakdown_id)%%>" target="_blank" title="<%%VALUE(upload_invoice)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="breakdown_services-receptionist-<%%VALUE(breakdown_id)%%>" class="breakdown_services-receptionist"><%%VALUE(receptionist)%%></td>
+		<td id="breakdown_services-receptionist_contact_email-<%%VALUE(breakdown_id)%%>" class="breakdown_services-receptionist_contact_email"><%%VALUE(receptionist_contact_email)%%></td>
+		<td id="breakdown_services-date_captured-<%%VALUE(breakdown_id)%%>" class="breakdown_services-date_captured"><%%VALUE(date_captured)%%></td>
+		<script>$j(function() {
+			var e_description_of_vehicle_breakdown = '<%%VALUE(description_of_vehicle_breakdown)%%>'; if(e_description_of_vehicle_breakdown == '' || e_description_of_vehicle_breakdown == '&nbsp;') $j(/*<*/ '#breakdown_services-description_of_vehicle_breakdown-<%%VALUE(breakdown_id)%%>' /*>*/).html('');
+			var e_upload_invoice = '<%%VALUE(upload_invoice)%%>'; if(e_upload_invoice == '' || e_upload_invoice == '&nbsp;') $j(/*<*/ '#breakdown_services-upload_invoice-<%%VALUE(breakdown_id)%%>' /*>*/).html('');
+		});</script>

@@ -1,0 +1,667 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/gmt_fleet_register-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="gmt_fleet_register_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="gmt_fleet_register_dv_container"><div class="panel-body" id="gmt_fleet_register_dv_container"><b style="color:#77060A;">WORKFLOW PROCESS: >>>>>> START FROM RIGHT TO LEFT <<<<<< VEHICLE GENERAL HISTORY AND END @ BILLING:</b><p>
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+				<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="vehicle_history_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="vehicle_history_link"><i class="glyphicon glyphicon-time"></i> Vehicle General History:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="vehicle_history_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="xs_vehicle_history_link"><i class="glyphicon glyphicon-time"></i> Vehicle General History:</a>
+			<input type="hidden" id="vehicle_history_hclink" value="vehicle_history_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="vehicle_payments_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="vehicle_payments_link"><i class="glyphicon glyphicon-usd"></i> Vehicle Payments:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="vehicle_payments_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="xs_vehicle_payments_link"><i class="glyphicon glyphicon-usd"></i> Vehicle Payments:</a>
+			<input type="hidden" id="vehicle_payments_hclink" value="vehicle_payments_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="insurance_payments_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="insurance_payments_link"><i class="glyphicon glyphicon-credit-card"></i> Insurance Payments:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="insurance_payments_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="xs_insurance_payments_link"><i class="glyphicon glyphicon-credit-card"></i> Insurance Payments:</a>
+			<input type="hidden" id="insurance_payments_hclink" value="insurance_payments_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="authorizations_hclink" value="authorizations_view.php?filterer_make_of_vehicle=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="service_schedule_hclink" value="service_schedule_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="accidents_hclink" value="accidents_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="claim_hclink" value="claim_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="accidents_hclink" value="accidents_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="claim_hclink" value="claim_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+			
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="tyre_log_sheet_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="tyre_log_sheet_link"><i class="glyphicon glyphicon-scale"></i> Tyre Data:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="tyre_log_sheet_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="xs_tyre_log_sheet_link"><i class="glyphicon glyphicon-scale"></i> Tyre Data:</a>
+			<input type="hidden" id="tyre_log_sheet_hclink" value="tyre_log_sheet_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="vehicle_daily_check_list_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="vehicle_daily_check_list_link"><i class="glyphicon glyphicon-tasks"></i> Vehicle Daily Check List:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="vehicle_daily_check_list_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="xs_vehicle_daily_check_list_link"><i class="glyphicon glyphicon-tasks"></i> Vehicle Daily Check List:</a>
+			<input type="hidden" id="vehicle_daily_check_list_hclink" value="vehicle_daily_check_list_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+		
+				<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="identification_of_defects_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="identification_of_defects_link"><i class="glyphicon glyphicon-text-height"></i> Identification Of Defects:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="identification_of_defects_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="xs_identification_of_defects_link"><i class="glyphicon glyphicon-text-height"></i> Identification Of Defects:</a>
+			<input type="hidden" id="identification_of_defects_hclink" value="identification_of_defects_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+				
+			<input type="hidden" id="breakdowns_hclink" value="breakdowns_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="modification_to_vehicle_hclink" value="modification_to_vehicle_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="vehicle_handing_over_checklist_hclink" value="vehicle_handing_over_checklist_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="vehicle_return_check_list_hclink" value="vehicle_return_check_list_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+		
+		
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="gate_security_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="gate_security_link"><i class="glyphicon glyphicon-eye-close"></i> Gate Security:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="gate_security_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="xs_gate_security_link"><i class="glyphicon glyphicon-eye-close"></i> Gate Security:</a>
+			<input type="hidden" id="gate_security_hclink" value="gate_security_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="reception_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="reception_link"><i class="glyphicon glyphicon-bell"></i> Reception:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="reception_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="xs_reception_link"><i class="glyphicon glyphicon-bell"></i> Reception:</a>
+			<input type="hidden" id="reception_hclink" value="reception_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="inspection_bay_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="inspection_bay_link"><i class="glyphicon glyphicon-thumbs-up"></i> Inspection Bay:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="inspection_bay_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="xs_inspection_bay_link"><i class="glyphicon glyphicon-thumbs-up"></i> Inspection Bay:</a>
+			<input type="hidden" id="inspection_bay_hclink" value="inspection_bay_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="work_allocation_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="work_allocation_link"><i class="glyphicon glyphicon-paperclip"></i> Work Allocation:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="work_allocation_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="xs_work_allocation_link"><i class="glyphicon glyphicon-paperclip"></i> Work Allocation:</a>
+			<input type="hidden" id="work_allocation_hclink" value="work_allocation_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+				<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="ordering_of_spares_for_internal_repairs_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="ordering_of_spares_for_internal_repairs_link"><i class="glyphicon glyphicon-level-up"></i> Ordering Of Spares For Internal Repairs:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="ordering_of_spares_for_internal_repairs_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="xs_ordering_of_spares_for_internal_repairs_link"><i class="glyphicon glyphicon-level-up"></i> Ordering Of Spares For Internal Repairs:</a>
+			<input type="hidden" id="ordering_of_spares_for_internal_repairs_hclink" value="ordering_of_spares_for_internal_repairs_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="purchase_orders_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="purchase_orders_link"><i class="glyphicon glyphicon-leaf"></i> Purchase Orders:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="purchase_orders_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="xs_purchase_orders_link"><i class="glyphicon glyphicon-leaf"></i> Purchase Orders:</a>
+			<input type="hidden" id="purchase_orders_hclink" value="purchase_orders_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="collection_of_repaired_vehicles_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="collection_of_repaired_vehicles_link"><i class="glyphicon glyphicon-equalizer"></i> Collection Of Repaired Vehicles:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="collection_of_repaired_vehicles_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="xs_collection_of_repaired_vehicles_link"><i class="glyphicon glyphicon-equalizer"></i> Collection Of Repaired Vehicles:</a>
+			<input type="hidden" id="collection_of_repaired_vehicles_hclink" value="collection_of_repaired_vehicles_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="withdrawal_vehicle_from_operation_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="withdrawal_vehicle_from_operation_link"><i class="glyphicon glyphicon-trash"></i> Withdrawal Of Vehicle:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="withdrawal_vehicle_from_operation_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="xs_withdrawal_vehicle_from_operation_link"><i class="glyphicon glyphicon-trash"></i> Withdrawal Of Vehicle:</a>
+			<input type="hidden" id="withdrawal_vehicle_from_operation_hclink" value="withdrawal_vehicle_from_operation_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+			
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="costing_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="costing_link"><i class="glyphicon glyphicon-shopping-cart"></i> Costing:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="costing_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="xs_costing_link"><i class="glyphicon glyphicon-shopping-cart"></i> Costing:</a>
+			<input type="hidden" id="costing_hclink" value="costing_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="billing_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="billing_link"><i class="glyphicon glyphicon-gbp"></i> Billing:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="billing_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>" id="xs_billing_link"><i class="glyphicon glyphicon-gbp"></i> Billing:</a>
+			<input type="hidden" id="billing_hclink" value="billing_view.php?filterer_vehicle_registration_number=<%%URLVALUE(fleet_asset_id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="gmt_fleet_register_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Asset ID: -->
+				<div class="form-group gmt_fleet_register-fleet_asset_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="fleet_asset_id">Asset ID:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="fleet_asset_id"><%%VALUE(fleet_asset_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Registration Number: -->
+				<div class="form-group gmt_fleet_register-vehicle_registration_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_registration_number">Registration Number:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<input maxlength="25" type="text" class="form-control" name="vehicle_registration_number" id="vehicle_registration_number" value="<%%VALUE(vehicle_registration_number)%%>" required><div class="text-danger vspacer-md" id="vehicle_registration_number-uniqueness-note" style="display: none;"><%%TRANSLATION(unique field error)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Register Number: -->
+				<div class="form-group gmt_fleet_register-register_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="register_number">Register Number:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="register_number" id="register_number" value="<%%VALUE(register_number)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Engine Number: -->
+				<div class="form-group gmt_fleet_register-engine_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="engine_number">Engine Number:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<input maxlength="35" type="text" class="form-control" name="engine_number" id="engine_number" value="<%%VALUE(engine_number)%%>" required><div class="text-danger vspacer-md" id="engine_number-uniqueness-note" style="display: none;"><%%TRANSLATION(unique field error)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Chassis/Vin Number: -->
+				<div class="form-group gmt_fleet_register-chassis_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="chassis_number">Chassis/Vin Number:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<input maxlength="35" type="text" class="form-control" name="chassis_number" id="chassis_number" value="<%%VALUE(chassis_number)%%>" required><div class="text-danger vspacer-md" id="chassis_number-uniqueness-note" style="display: none;"><%%TRANSLATION(unique field error)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Make of Vehicle/Dealer Name: -->
+				<div class="form-group gmt_fleet_register-dealer_name">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="dealer_name" data-parent_link="view_parent_modal">Make of Vehicle/Dealer Name:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(dealer_name)%%><%%PLINK(dealer_name)%%><%%ADDNEW(dealer)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Make of Vehicle: -->
+				<div class="form-group gmt_fleet_register-make_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="make_of_vehicle" data-parent_link="view_parent_modal">Make of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(make_of_vehicle)%%><%%PLINK(make_of_vehicle)%%><%%ADDNEW(dealer)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Model of Vehicle: -->
+				<div class="form-group gmt_fleet_register-model_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="model_of_vehicle">Model of Vehicle:</label>
+					<div class="col-lg-9">
+						<input maxlength="45" type="text" class="form-control" name="model_of_vehicle" id="model_of_vehicle" value="<%%VALUE(model_of_vehicle)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Year Model Specification: -->
+				<div class="form-group gmt_fleet_register-year_model_specification">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="year_model_specification" data-parent_link="view_parent_modal">Year Model Specification:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(year_model_specification)%%><%%PLINK(year_model_specification)%%><%%ADDNEW(year_model)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Engine Capacity (cc): -->
+				<div class="form-group gmt_fleet_register-engine_capacity">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="engine_capacity">Engine Capacity (cc):</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="engine_capacity" id="engine_capacity" value="<%%VALUE(engine_capacity)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Tyre Size (Radial): -->
+				<div class="form-group gmt_fleet_register-tyre_size">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="tyre_size">Tyre Size (Radial):</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="tyre_size" id="tyre_size" value="<%%VALUE(tyre_size)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Transmission: -->
+				<div class="form-group gmt_fleet_register-transmission">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="transmission" data-parent_link="view_parent_modal">Transmission:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(transmission)%%><%%PLINK(transmission)%%><%%ADDNEW(transmission)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Fuel Type: -->
+				<div class="form-group gmt_fleet_register-fuel_type">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="fuel_type" data-parent_link="view_parent_modal">Fuel Type:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(fuel_type)%%><%%PLINK(fuel_type)%%><%%ADDNEW(fuel_type)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Type of Vehicle: -->
+				<div class="form-group gmt_fleet_register-type_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="type_of_vehicle" data-parent_link="view_parent_modal">Type of Vehicle:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(type_of_vehicle)%%><%%PLINK(type_of_vehicle)%%><%%ADDNEW(body_type)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Colour of Vehicle: -->
+				<div class="form-group gmt_fleet_register-colour_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="colour_of_vehicle" data-parent_link="view_parent_modal">Colour of Vehicle:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(colour_of_vehicle)%%><%%PLINK(colour_of_vehicle)%%><%%ADDNEW(vehicle_colour)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Application Status: -->
+				<div class="form-group gmt_fleet_register-application_status">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="application_status" data-parent_link="view_parent_modal">Application Status:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(application_status)%%><%%PLINK(application_status)%%><%%ADDNEW(application_status)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Case Number (If Vehicle Stolen): -->
+				<div class="form-group gmt_fleet_register-case_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="case_number">Case Number (If Vehicle Stolen):</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="case_number" id="case_number" value="<%%VALUE(case_number)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Barcode Number: -->
+				<div class="form-group gmt_fleet_register-barcode_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="barcode_number">Barcode Number:</label>
+					<div class="col-lg-9">
+						<input maxlength="35" type="text" class="form-control" name="barcode_number" id="barcode_number" value="<%%VALUE(barcode_number)%%>"><div class="text-danger vspacer-md" id="barcode_number-uniqueness-note" style="display: none;"><%%TRANSLATION(unique field error)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Purchase Price: -->
+				<div class="form-group gmt_fleet_register-purchase_price">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="purchase_price">Purchase Price:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="purchase_price" id="purchase_price" value="<%%VALUE(purchase_price)%%>" required>
+					</div>
+				</div>
+
+				<!-- Field: Depreciation Value: -->
+				<div class="form-group gmt_fleet_register-depreciation_value">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="depreciation_value">Depreciation Value:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="depreciation_value" id="depreciation_value" value="<%%VALUE(depreciation_value)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Photo of Vehicle: -->
+				<div class="form-group gmt_fleet_register-photo_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Photo of Vehicle: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#photo_of_vehicle-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="photo_of_vehicle-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 1024 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a href="<%%BASE_UPLOAD_PATH%%><%%VALUE(photo_of_vehicle)%%>" data-lightbox="gmt_fleet_register_dv"><img src="thumbnail.php?i=<%%VALUE(photo_of_vehicle)%%>&t=gmt_fleet_register&f=photo_of_vehicle&v=dv" class="img-thumbnail" id="photo_of_vehicle-image"></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(photo_of_vehicle)%%>
+								<%%REMOVEFILE(photo_of_vehicle)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>/* disable links to empty images */ $j(function() { var e_photo_of_vehicle = '<%%VALUE(photo_of_vehicle)%%>'; if(e_photo_of_vehicle == '' || e_photo_of_vehicle == '&nbsp;' || e_photo_of_vehicle == 'blank.gif') { $j('#photo_of_vehicle-link').hide(); $j('#photo_of_vehicle-image').parents('a').attr('href', '').on('click', function(e) { e.preventDefault(); }); } });</script>
+					</div>
+				</div>
+
+				<!-- Field: Owner of Vehicle Name & Surname: -->
+				<div class="form-group gmt_fleet_register-user_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="user_name_and_surname">Owner of Vehicle Name & Surname:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="user_name_and_surname" id="user_name_and_surname" value="<%%VALUE(user_name_and_surname)%%>" required>
+					</div>
+				</div>
+
+				<!-- Field: User Contact Email: -->
+				<div class="form-group gmt_fleet_register-user_contact_email">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="user_contact_email-edit-link">User Contact Email:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<div>
+							<a id="user_contact_email-link" href="mailto:<%%VALUE(user_contact_email)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-envelope text-info" title="<%%VALUE(user_contact_email)%%>"></i></a>
+							<label for="user_contact_email"><button type="button" id="user_contact_email-edit-link" class="btn btn-default vspacer-sm" data-toggle="collapse" data-target="#user_contact_email" title="<%%TRANSLATION(Edit)%%>"><i class="glyphicon glyphicon-pencil"></i></button></label>
+							<input maxlength="40" type="text" class="form-control collapse" name="user_contact_email" id="user_contact_email" value="<%%VALUE(user_contact_email)%%>" required>
+						</div><script>jQuery(function() { var e_user_contact_email = '<%%VALUE(user_contact_email)%%>'; if(e_user_contact_email == '' || e_user_contact_email == '&nbsp;' || e_user_contact_email == 'blank.gif') jQuery('#user_contact_email-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Contact Number: -->
+				<div class="form-group gmt_fleet_register-contact_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="contact_number">Contact Number:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<input maxlength="16" type="text" class="form-control" name="contact_number" id="contact_number" value="<%%VALUE(contact_number)%%>" required>
+					</div>
+				</div>
+
+				<!-- Field: Department Name: -->
+				<div class="form-group gmt_fleet_register-department_name">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="department_name" data-parent_link="view_parent_modal">Department Name:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(department_name)%%><%%PLINK(department_name)%%><%%ADDNEW(departments)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Department Address: -->
+				<div class="form-group gmt_fleet_register-department_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="department_address">Department Address:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(department_address)%%>
+					</div>
+				</div>
+
+				<!-- Field: Province: -->
+				<div class="form-group gmt_fleet_register-province">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="province" data-parent_link="view_parent_modal">Province:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(province)%%><%%PLINK(province)%%><%%ADDNEW(province)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: District and Station: -->
+				<div class="form-group gmt_fleet_register-district">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="district" data-parent_link="view_parent_modal">District and Station:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(district)%%><%%PLINK(district)%%><%%ADDNEW(districts)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Driver's Name & Surname: -->
+				<div class="form-group gmt_fleet_register-drivers_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="drivers_name_and_surname" data-parent_link="view_parent_modal">Driver's Name & Surname:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(drivers_name_and_surname)%%><%%PLINK(drivers_name_and_surname)%%><%%ADDNEW(driver)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Driver's Persal Number: -->
+				<div class="form-group gmt_fleet_register-drivers_persal_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver's Persal Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="drivers_persal_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Department Name of Driver: -->
+				<div class="form-group gmt_fleet_register-department_name_of_driver">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="department_name_of_driver" data-parent_link="view_parent_modal">Department Name of Driver:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(department_name_of_driver)%%><%%PLINK(department_name_of_driver)%%><%%ADDNEW(departments)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Driver's Contact Details: -->
+				<div class="form-group gmt_fleet_register-drivers_contact_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver's Contact Details:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="drivers_contact_details"></div>
+					</div>
+				</div>
+
+				<!-- Field: Documents: -->
+				<div class="form-group gmt_fleet_register-documents">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Documents: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#documents-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="documents-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5120 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="documents-link" href="link.php?t=gmt_fleet_register&f=documents&i=<%%VALUE(fleet_asset_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(documents)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(documents)%%>
+								<%%REMOVEFILE(documents)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_documents = '<%%VALUE(documents)%%>'; if(e_documents == '' || e_documents == '&nbsp;' || e_documents == 'blank.gif') jQuery('#documents-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Date Auctioned: -->
+				<div class="form-group gmt_fleet_register-date_auctioned">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_auctioned-dd">Date Auctioned:</label>
+					<div class="col-lg-9">
+						<%%COMBO(date_auctioned)%%>
+					</div>
+				</div>
+
+				<!-- Field: Venue: -->
+				<div class="form-group gmt_fleet_register-venue">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="venue">Venue:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="venue" id="venue" value="<%%VALUE(venue)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Comments: -->
+				<div class="form-group gmt_fleet_register-comments">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="comments">Comments:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(comments)%%>
+					</div>
+				</div>
+
+				<!-- Field: License Expiry Date: -->
+				<div class="form-group gmt_fleet_register-renewal_of_license">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="renewal_of_license-dd">License Expiry Date:</label>
+					<div class="col-lg-9">
+						<%%COMBO(renewal_of_license)%%>
+					</div>
+				</div>
+
+				<!-- Field: MM Code: -->
+				<div class="form-group gmt_fleet_register-mm_code">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="mm_code">MM Code:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="mm_code" id="mm_code" value="<%%VALUE(mm_code)%%>">
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="gmt_fleet_register_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="gmt_fleet_register-children" class="children-tabs">
+				<div class="text-center"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+			</div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			AppGini.once({
+				condition: function() { return bkLib != undefined; },
+				action: function() {
+					if($j('textarea#department_address').length) new nicEditor({ fullPanel : true }).panelInstance('department_address');
+					if($j('textarea#comments').length) new nicEditor({ fullPanel : true }).panelInstance('comments');
+				}
+			});
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			$j('#gmt_fleet_register_dv_container-loading').addClass('hidden');
+			$j('#gmt_fleet_register_dv_container').removeClass('hidden');
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) AppGini.focusFormElement('gmt_fleet_register', 'vehicle_registration_number');
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			// try to detect rich text changes by adding 'input' handler after nicedit is loaded ...
+			AppGini.detectContentEditableChanges();
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+			if(embedded_mode) {
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function() {
+					$j('a[href]:not([href^="#"]):not([href^="javascript"]):not([href$="Embedded=1"]):not([href*="link.php?t="]):not([href^="mailto:"]):not([href$=".jpg"]):not([href$=".png"]):not([href$=".gif"])').each(
+						function() {
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode) {
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			} else {
+				post(
+					'parent-children.php', {
+						ParentTable: 'gmt_fleet_register',
+						SelectedID: '<%%VALUE(fleet_asset_id)%%>',
+						Operation: 'show-children'
+					},
+					'gmt_fleet_register-children'
+				);
+			}
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'gmt_fleet_register',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+			enforce_uniqueness('gmt_fleet_register', 'vehicle_registration_number');
+			enforce_uniqueness('gmt_fleet_register', 'engine_number');
+			enforce_uniqueness('gmt_fleet_register', 'chassis_number');
+			enforce_uniqueness('gmt_fleet_register', 'barcode_number');
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=gmt_fleet_register&id=<%%URLVALUE(fleet_asset_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=gmt_fleet_register&id=<%%URLVALUE(fleet_asset_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

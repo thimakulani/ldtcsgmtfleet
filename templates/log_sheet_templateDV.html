@@ -1,0 +1,703 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/log_sheet-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="log_sheet_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="log_sheet_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+			<input type="hidden" id="vehicle_history_hclink" value="vehicle_history_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="vehicle_payments_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>" id="vehicle_payments_link"><i class="glyphicon glyphicon-usd"></i> Vehicle Payments:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="vehicle_payments_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>" id="xs_vehicle_payments_link"><i class="glyphicon glyphicon-usd"></i> Vehicle Payments:</a>
+			<input type="hidden" id="vehicle_payments_hclink" value="vehicle_payments_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="authorizations_view.php?filterer_job_odometer=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>" id="authorizations_link"><i class="glyphicon glyphicon-paste"></i> Authorization Report:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="authorizations_view.php?filterer_job_odometer=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>" id="xs_authorizations_link"><i class="glyphicon glyphicon-paste"></i> Authorization Report:</a>
+			<input type="hidden" id="authorizations_hclink" value="authorizations_view.php?filterer_job_odometer=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="service_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>" id="service_link"><i class="glyphicon glyphicon-calendar"></i> Service:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="service_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>" id="xs_service_link"><i class="glyphicon glyphicon-calendar"></i> Service:</a>
+			<input type="hidden" id="service_hclink" value="service_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="purchase_orders_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>" id="purchase_orders_link"><i class="glyphicon glyphicon-leaf"></i> Purchase Orders:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="purchase_orders_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>" id="xs_purchase_orders_link"><i class="glyphicon glyphicon-leaf"></i> Purchase Orders:</a>
+			<input type="hidden" id="purchase_orders_hclink" value="purchase_orders_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="accidents_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>" id="accidents_link"><i class="glyphicon glyphicon-warning-sign"></i> Accident:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="accidents_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>" id="xs_accidents_link"><i class="glyphicon glyphicon-warning-sign"></i> Accident:</a>
+			<input type="hidden" id="accidents_hclink" value="accidents_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="claim_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>" id="claim_link"><i class="glyphicon glyphicon-compressed"></i> Claims:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="claim_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>" id="xs_claim_link"><i class="glyphicon glyphicon-compressed"></i> Claims:</a>
+			<input type="hidden" id="claim_hclink" value="claim_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="vehicle_daily_check_list_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>" id="vehicle_daily_check_list_link"><i class="glyphicon glyphicon-tasks"></i> Vehicle Daily Check List:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="vehicle_daily_check_list_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>" id="xs_vehicle_daily_check_list_link"><i class="glyphicon glyphicon-tasks"></i> Vehicle Daily Check List:</a>
+			<input type="hidden" id="vehicle_daily_check_list_hclink" value="vehicle_daily_check_list_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="breakdown_services_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>" id="breakdown_services_link"><i class="glyphicon glyphicon-wrench"></i> Breakdown Services:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="breakdown_services_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>" id="xs_breakdown_services_link"><i class="glyphicon glyphicon-wrench"></i> Breakdown Services:</a>
+			<input type="hidden" id="breakdown_services_hclink" value="breakdown_services_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>">
+				<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="modification_to_vehicle_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>" id="modification_to_vehicle_link"><i class="glyphicon glyphicon-scissors"></i> Modification to Vehicle:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="modification_to_vehicle_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>" id="xs_modification_to_vehicle_link"><i class="glyphicon glyphicon-scissors"></i> Modification to Vehicle:</a>
+			<input type="hidden" id="modification_to_vehicle_hclink" value="modification_to_vehicle_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>">
+		<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="vehicle_handing_over_checklist_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>" id="vehicle_handing_over_checklist_link"><i class="glyphicon glyphicon-signal"></i> Vehicle Handing Over Checklist:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="vehicle_handing_over_checklist_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>" id="xs_vehicle_handing_over_checklist_link"><i class="glyphicon glyphicon-signal"></i> Vehicle Handing Over Checklist:</a>
+			<input type="hidden" id="vehicle_handing_over_checklist_hclink" value="vehicle_handing_over_checklist_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="vehicle_return_check_list_hclink" value="vehicle_return_check_list_view.php?filterer_closing_km=<%%URLVALUE(fuel_log_sheet_id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="log_sheet_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Fuel Log Sheet ID: -->
+				<div class="form-group log_sheet-fuel_log_sheet_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="fuel_log_sheet_id">Fuel Log Sheet ID:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="fuel_log_sheet_id"><%%VALUE(fuel_log_sheet_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Registration Number: -->
+				<div class="form-group log_sheet-vehicle_registration_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_registration_number" data-parent_link="view_parent_modal">Registration Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(vehicle_registration_number)%%><%%PLINK(vehicle_registration_number)%%><%%ADDNEW(gmt_fleet_register)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Register Number: -->
+				<div class="form-group log_sheet-register_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="register_number" data-parent_link="view_parent_modal">Register Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(register_number)%%><%%PLINK(register_number)%%><%%ADDNEW(gmt_fleet_register)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Make of Vehicle: -->
+				<div class="form-group log_sheet-make_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Make of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="make_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Model of Vehicle: -->
+				<div class="form-group log_sheet-model_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="model_of_vehicle" data-parent_link="view_parent_modal">Model of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(model_of_vehicle)%%><%%PLINK(model_of_vehicle)%%><%%ADDNEW(gmt_fleet_register)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Year Model Specification: -->
+				<div class="form-group log_sheet-year_model_specification">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Year Model Specification:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="year_model_specification"></div>
+					</div>
+				</div>
+
+				<!-- Field: Colour of Vehicle: -->
+				<div class="form-group log_sheet-colour_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="colour_of_vehicle" data-parent_link="view_parent_modal">Colour of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(colour_of_vehicle)%%><%%PLINK(colour_of_vehicle)%%><%%ADDNEW(vehicle_colour)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Engine Capacity (cc): -->
+				<div class="form-group log_sheet-engine_capacity">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Engine Capacity (cc):</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="engine_capacity"></div>
+					</div>
+				</div>
+
+				<!-- Field: License Expiry Date: -->
+				<div class="form-group log_sheet-renewal_of_license">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="renewal_of_license-dd">License Expiry Date:</label>
+					<div class="col-lg-9">
+						<%%COMBO(renewal_of_license)%%>
+					</div>
+				</div>
+
+				<!-- Field: District and Station: -->
+				<div class="form-group log_sheet-district">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">District and Station:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="district"></div>
+					</div>
+				</div>
+
+				<!-- Field: Log Sheet - Year & Month: -->
+				<div class="form-group log_sheet-month">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="month-dd">Log Sheet - Year & Month:</label>
+					<div class="col-lg-9">
+						<%%COMBO(month)%%>
+					</div>
+				</div>
+
+				<!-- Field: Driver's Surname: -->
+				<div class="form-group log_sheet-drivers_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="drivers_name_and_surname" data-parent_link="view_parent_modal">Driver's Surname:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(drivers_name_and_surname)%%><%%PLINK(drivers_name_and_surname)%%><%%ADDNEW(driver)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Driver's Persal Number: -->
+				<div class="form-group log_sheet-drivers_persal_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver's Persal Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="drivers_persal_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Odometer Reading/Opening KM: -->
+				<div class="form-group log_sheet-opening_km">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="opening_km">Odometer Reading/Opening KM:</label>
+					<div class="col-lg-9">
+						<input maxlength="15" type="text" class="form-control" name="opening_km" id="opening_km" value="<%%VALUE(opening_km)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Total Trip Distance KM: -->
+				<div class="form-group log_sheet-total_trip_distance">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="total_trip_distance">Total Trip Distance KM:</label>
+					<div class="col-lg-9">
+						<input maxlength="15" type="text" class="form-control" name="total_trip_distance" id="total_trip_distance" value="<%%VALUE(total_trip_distance)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Odometer Reading/Closing KM: -->
+				<div class="form-group log_sheet-closing_km">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="closing_km">Odometer Reading/Closing KM:</label>
+					<div class="col-lg-9">
+						<input maxlength="15" type="text" class="form-control" name="closing_km" id="closing_km" value="<%%VALUE(closing_km)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Fuel Type: -->
+				<div class="form-group log_sheet-fuel_type">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="fuel_type" data-parent_link="view_parent_modal">Fuel Type:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(fuel_type)%%><%%PLINK(fuel_type)%%><%%ADDNEW(fuel_type)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Fuel Tank Capacity: -->
+				<div class="form-group log_sheet-fuel_tank_capacity">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="fuel_tank_capacity">Fuel Tank Capacity:</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="fuel_tank_capacity" id="fuel_tank_capacity" value="<%%VALUE(fuel_tank_capacity)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Vendor/Fuel Station/Garage: -->
+				<div class="form-group log_sheet-vendor">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vendor">Vendor/Fuel Station/Garage:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="vendor" id="vendor" value="<%%VALUE(vendor)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Fuel Cost Litre (R/L): -->
+				<div class="form-group log_sheet-fuel_cost_litre">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="fuel_cost_litre">Fuel Cost Litre (R/L):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="fuel_cost_litre" id="fuel_cost_litre" value="<%%VALUE(fuel_cost_litre)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Refuel Quantity L [1]: -->
+				<div class="form-group log_sheet-refuel_quantity_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="refuel_quantity_1">Refuel Quantity L [1]: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#refuel_quantity_1-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="refuel_quantity_1-description"><div class="alert alert-info bspacer-xs">Amount of fuel (L)</div></span>
+						<input maxlength="13" type="text" class="form-control" name="refuel_quantity_1" id="refuel_quantity_1" value="<%%VALUE(refuel_quantity_1)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Refuel Date (First Time ): -->
+				<div class="form-group log_sheet-refuel_first_time_date">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="refuel_first_time_date-dd">Refuel Date (First Time ):</label>
+					<div class="col-lg-9">
+						<%%COMBO(refuel_first_time_date)%%>
+					</div>
+				</div>
+
+				<!-- Field: Trip Distance After 1st Refuel KM: -->
+				<div class="form-group log_sheet-trip_distance_refuel_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="trip_distance_refuel_1">Trip Distance After 1st Refuel KM:</label>
+					<div class="col-lg-9">
+						<input maxlength="15" type="text" class="form-control" name="trip_distance_refuel_1" id="trip_distance_refuel_1" value="<%%VALUE(trip_distance_refuel_1)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Refuel Quantity  L [2]: -->
+				<div class="form-group log_sheet-refuel_quantity_2">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="refuel_quantity_2">Refuel Quantity  L [2]: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#refuel_quantity_2-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="refuel_quantity_2-description"><div class="alert alert-info bspacer-xs">Amount of fuel (L)</div></span>
+						<input maxlength="13" type="text" class="form-control" name="refuel_quantity_2" id="refuel_quantity_2" value="<%%VALUE(refuel_quantity_2)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Refuel Date (Second Time ): -->
+				<div class="form-group log_sheet-refuel_second_time_date">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="refuel_second_time_date-dd">Refuel Date (Second Time ):</label>
+					<div class="col-lg-9">
+						<%%COMBO(refuel_second_time_date)%%>
+					</div>
+				</div>
+
+				<!-- Field: Trip Distance After 2nd Refuel KM: -->
+				<div class="form-group log_sheet-trip_distance_refuel_2">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="trip_distance_refuel_2">Trip Distance After 2nd Refuel KM:</label>
+					<div class="col-lg-9">
+						<input maxlength="15" type="text" class="form-control" name="trip_distance_refuel_2" id="trip_distance_refuel_2" value="<%%VALUE(trip_distance_refuel_2)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Refuel Quantity L [3]: -->
+				<div class="form-group log_sheet-refuel_quantity_3">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="refuel_quantity_3">Refuel Quantity L [3]: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#refuel_quantity_3-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="refuel_quantity_3-description"><div class="alert alert-info bspacer-xs">Amount of fuel (L)</div></span>
+						<input maxlength="13" type="text" class="form-control" name="refuel_quantity_3" id="refuel_quantity_3" value="<%%VALUE(refuel_quantity_3)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Refuel Date (Third Time ): -->
+				<div class="form-group log_sheet-refuel_third_time_date">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="refuel_third_time_date-dd">Refuel Date (Third Time ):</label>
+					<div class="col-lg-9">
+						<%%COMBO(refuel_third_time_date)%%>
+					</div>
+				</div>
+
+				<!-- Field: Trip Distance After 3rd Refuel KM: -->
+				<div class="form-group log_sheet-trip_distance_refuel_3">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="trip_distance_refuel_3">Trip Distance After 3rd Refuel KM:</label>
+					<div class="col-lg-9">
+						<input maxlength="15" type="text" class="form-control" name="trip_distance_refuel_3" id="trip_distance_refuel_3" value="<%%VALUE(trip_distance_refuel_3)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Refuel Quantity L [4]: -->
+				<div class="form-group log_sheet-refuel_quantity_4">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="refuel_quantity_4">Refuel Quantity L [4]: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#refuel_quantity_4-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="refuel_quantity_4-description"><div class="alert alert-info bspacer-xs">Amount of fuel (L)</div></span>
+						<input maxlength="13" type="text" class="form-control" name="refuel_quantity_4" id="refuel_quantity_4" value="<%%VALUE(refuel_quantity_4)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Refuel Date (Fouth Time ): -->
+				<div class="form-group log_sheet-refuel_fourth_time_date">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="refuel_fourth_time_date-dd">Refuel Date (Fouth Time ):</label>
+					<div class="col-lg-9">
+						<%%COMBO(refuel_fourth_time_date)%%>
+					</div>
+				</div>
+
+				<!-- Field: Trip Distance After 4th Refuel KM: -->
+				<div class="form-group log_sheet-trip_distance_refuel_4">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="trip_distance_refuel_4">Trip Distance After 4th Refuel KM:</label>
+					<div class="col-lg-9">
+						<input maxlength="15" type="text" class="form-control" name="trip_distance_refuel_4" id="trip_distance_refuel_4" value="<%%VALUE(trip_distance_refuel_4)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Refuel Quantity L [5]: -->
+				<div class="form-group log_sheet-refuel_quantity_5">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="refuel_quantity_5">Refuel Quantity L [5]: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#refuel_quantity_5-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="refuel_quantity_5-description"><div class="alert alert-info bspacer-xs">Amount of fuel (L)</div></span>
+						<input maxlength="13" type="text" class="form-control" name="refuel_quantity_5" id="refuel_quantity_5" value="<%%VALUE(refuel_quantity_5)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Refuel Date (Fifth Time ): -->
+				<div class="form-group log_sheet-refuel_fifth_time_date">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="refuel_fifth_time_date-dd">Refuel Date (Fifth Time ):</label>
+					<div class="col-lg-9">
+						<%%COMBO(refuel_fifth_time_date)%%>
+					</div>
+				</div>
+
+				<!-- Field: Trip Distance After 5th Refuel KM: -->
+				<div class="form-group log_sheet-trip_distance_refuel_5">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="trip_distance_refuel_5">Trip Distance After 5th Refuel KM:</label>
+					<div class="col-lg-9">
+						<input maxlength="15" type="text" class="form-control" name="trip_distance_refuel_5" id="trip_distance_refuel_5" value="<%%VALUE(trip_distance_refuel_5)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Refuel Quantity L [6]: -->
+				<div class="form-group log_sheet-refuel_quantity_6">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="refuel_quantity_6">Refuel Quantity L [6]: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#refuel_quantity_6-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="refuel_quantity_6-description"><div class="alert alert-info bspacer-xs">Amount of fuel (L)</div></span>
+						<input maxlength="13" type="text" class="form-control" name="refuel_quantity_6" id="refuel_quantity_6" value="<%%VALUE(refuel_quantity_6)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Trip Distance After 6th Refuel KM: -->
+				<div class="form-group log_sheet-trip_distance_refuel_6">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="trip_distance_refuel_6">Trip Distance After 6th Refuel KM:</label>
+					<div class="col-lg-9">
+						<input maxlength="15" type="text" class="form-control" name="trip_distance_refuel_6" id="trip_distance_refuel_6" value="<%%VALUE(trip_distance_refuel_6)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Refuel Date (Sixth Time ): -->
+				<div class="form-group log_sheet-refuel_sixth_time_date">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="refuel_sixth_time_date-dd">Refuel Date (Sixth Time ):</label>
+					<div class="col-lg-9">
+						<%%COMBO(refuel_sixth_time_date)%%>
+					</div>
+				</div>
+
+				<!-- Field: Times Refuel Current Month: -->
+				<div class="form-group log_sheet-times_refuel_current_month">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="times_refuel_current_month">Times Refuel Current Month:</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="times_refuel_current_month" id="times_refuel_current_month" value="<%%VALUE(times_refuel_current_month)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Total Fuel Quantity (L): -->
+				<div class="form-group log_sheet-total_fuel_quantity">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="total_fuel_quantity">Total Fuel Quantity (L):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="total_fuel_quantity" id="total_fuel_quantity" value="<%%VALUE(total_fuel_quantity)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Fuel Consumption (Km/L): -->
+				<div class="form-group log_sheet-fuel_consumption">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="fuel_consumption">Fuel Consumption (Km/L):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="fuel_consumption" id="fuel_consumption" value="<%%VALUE(fuel_consumption)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Fuel Total Cost (R): -->
+				<div class="form-group log_sheet-fuel_total_cost">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="fuel_total_cost">Fuel Total Cost (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="fuel_total_cost" id="fuel_total_cost" value="<%%VALUE(fuel_total_cost)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Payment with e-Fuel Card? -->
+				<div class="form-group log_sheet-payment_e_fuel_card">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Payment with e-Fuel Card?</label>
+					<div class="col-lg-9">
+						<%%COMBO(payment_e_fuel_card)%%>
+					</div>
+				</div>
+
+				<!-- Field: Captured By: -->
+				<div class="form-group log_sheet-captured_by">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="captured_by">Captured By:</label>
+					<div class="col-lg-9">
+						<input maxlength="35" type="text" class="form-control" name="captured_by" id="captured_by" value="<%%VALUE(captured_by)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Comments: -->
+				<div class="form-group log_sheet-comments">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="comments">Comments:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(comments)%%>
+					</div>
+				</div>
+
+				<!-- Field: Date Captured: -->
+				<div class="form-group log_sheet-date_captured">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_captured-dd">Date Captured:</label>
+					<div class="col-lg-9">
+						<%%COMBO(date_captured)%%>
+					</div>
+				</div>
+
+				<!-- Field: Complete Fill Up: -->
+				<div class="form-group log_sheet-complete_fill_up">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Complete Fill Up:</label>
+					<div class="col-lg-9">
+						<%%COMBO(complete_fill_up)%%>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="log_sheet_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="log_sheet-children" class="children-tabs">
+				<div class="text-center"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+			</div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			AppGini.once({
+				condition: function() { return bkLib != undefined; },
+				action: function() {
+					if($j('textarea#comments').length) new nicEditor({ fullPanel : true }).panelInstance('comments');
+				}
+			});
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) {
+				AppGini.once({
+					condition: function() {
+						return $j('.form-group.log_sheet-vehicle_registration_number')
+									.find('.nicEdit-main, .select2-container, input[type=radio]')
+									.length > 0
+								// or read-only DV
+								|| (!$j('#update').length && !$j('#insert').length);
+					},
+					action: function() {
+						$j('#log_sheet_dv_container-loading').addClass('hidden');
+						$j('#log_sheet_dv_container').removeClass('hidden');
+						AppGini.focusFormElement('log_sheet', 'vehicle_registration_number');
+					},
+					timeout:  5000,
+					doActionOnTimeout:  true
+				});
+			} else {
+				$j('#log_sheet_dv_container-loading').addClass('hidden');
+				$j('#log_sheet_dv_container').removeClass('hidden');
+			}
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			// try to detect rich text changes by adding 'input' handler after nicedit is loaded ...
+			AppGini.detectContentEditableChanges();
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+			if(embedded_mode) {
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function() {
+					$j('a[href]:not([href^="#"]):not([href^="javascript"]):not([href$="Embedded=1"]):not([href*="link.php?t="]):not([href^="mailto:"]):not([href$=".jpg"]):not([href$=".png"]):not([href$=".gif"])').each(
+						function() {
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode) {
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			} else {
+				post(
+					'parent-children.php', {
+						ParentTable: 'log_sheet',
+						SelectedID: '<%%VALUE(fuel_log_sheet_id)%%>',
+						Operation: 'show-children'
+					},
+					'log_sheet-children'
+				);
+			}
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'log_sheet',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=log_sheet&id=<%%URLVALUE(fuel_log_sheet_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=log_sheet&id=<%%URLVALUE(fuel_log_sheet_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

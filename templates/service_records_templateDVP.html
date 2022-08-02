@@ -1,0 +1,120 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Records ID: -->
+		<div class="form-group service_records-records_id" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Records ID:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(records_id)%%></div>
+			</div>
+		</div>
+		<!-- Field: Vehicle & Engine Number: -->
+		<div class="form-group service_records-vehicle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Vehicle & Engine Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="vehicle<%%RND1%%>"><%%COMBOTEXT(vehicle)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Image 1 -->
+		<div class="form-group service_records-image_1" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Image 1</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img id="image_1Img" src="thumbnail.php?t=service_records&f=image_1&i=<%%VALUE(image_1)%%>&v=dv" class="img-thumbnail"></div>
+			</div>
+		</div>
+		<!-- Field: Image 2 -->
+		<div class="form-group service_records-image_2" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Image 2</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img id="image_2Img" src="thumbnail.php?t=service_records&f=image_2&i=<%%VALUE(image_2)%%>&v=dv" class="img-thumbnail"></div>
+			</div>
+		</div>
+		<!-- Field: Image 3 -->
+		<div class="form-group service_records-image_3" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Image 3</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img id="image_3Img" src="thumbnail.php?t=service_records&f=image_3&i=<%%VALUE(image_3)%%>&v=dv" class="img-thumbnail"></div>
+			</div>
+		</div>
+		<!-- Field: Image 4 -->
+		<div class="form-group service_records-image_4" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Image 4</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img id="image_4Img" src="thumbnail.php?t=service_records&f=image_4&i=<%%VALUE(image_4)%%>&v=dv" class="img-thumbnail"></div>
+			</div>
+		</div>
+		<!-- Field: Image 5 -->
+		<div class="form-group service_records-image_5" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Image 5</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img id="image_5Img" src="thumbnail.php?t=service_records&f=image_5&i=<%%VALUE(image_5)%%>&v=dv" class="img-thumbnail"></div>
+			</div>
+		</div>
+		<!-- Field: Document 1: -->
+		<div class="form-group service_records-document_1" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Document 1:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="document_1-link" href="link.php?t=service_records&f=document_1&i=<%%VALUE(records_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(document_1)%%>"></i></a><script>jQuery(function() { var e_document_1 = '<%%VALUE(document_1)%%>'; if(e_document_1 == '' || e_document_1 == '&nbsp;' || e_document_1 == 'blank.gif') jQuery('#document_1-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Document 2: -->
+		<div class="form-group service_records-document_2" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Document 2:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="document_2-link" href="link.php?t=service_records&f=document_2&i=<%%VALUE(records_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(document_2)%%>"></i></a><script>jQuery(function() { var e_document_2 = '<%%VALUE(document_2)%%>'; if(e_document_2 == '' || e_document_2 == '&nbsp;' || e_document_2 == 'blank.gif') jQuery('#document_2-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Document 3: -->
+		<div class="form-group service_records-document_3" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Document 3:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="document_3-link" href="link.php?t=service_records&f=document_3&i=<%%VALUE(records_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(document_3)%%>"></i></a><script>jQuery(function() { var e_document_3 = '<%%VALUE(document_3)%%>'; if(e_document_3 == '' || e_document_3 == '&nbsp;' || e_document_3 == 'blank.gif') jQuery('#document_3-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Document 4: -->
+		<div class="form-group service_records-document_4" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Document 4:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="document_4-link" href="link.php?t=service_records&f=document_4&i=<%%VALUE(records_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(document_4)%%>"></i></a><script>jQuery(function() { var e_document_4 = '<%%VALUE(document_4)%%>'; if(e_document_4 == '' || e_document_4 == '&nbsp;' || e_document_4 == 'blank.gif') jQuery('#document_4-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Document 5: -->
+		<div class="form-group service_records-document_5" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Document 5:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="document_5-link" href="link.php?t=service_records&f=document_5&i=<%%VALUE(records_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(document_5)%%>"></i></a><script>jQuery(function() { var e_document_5 = '<%%VALUE(document_5)%%>'; if(e_document_5 == '' || e_document_5 == '&nbsp;' || e_document_5 == 'blank.gif') jQuery('#document_5-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Description: -->
+		<div class="form-group service_records-description" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Description:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(description)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>

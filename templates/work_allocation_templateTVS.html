@@ -1,0 +1,22 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the work_allocation_init() hook (in hooks/work_allocation.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="work_allocation-work_allocation_id-<%%VALUE(work_allocation_id)%%>" class="work_allocation-work_allocation_id text-right"><%%VALUE(work_allocation_id)%%></td>
+		<td id="work_allocation-district-<%%VALUE(work_allocation_id)%%>" class="work_allocation-district"><%%VALUE(district)%%></td>
+		<td id="work_allocation-location-<%%VALUE(work_allocation_id)%%>" class="work_allocation-location"><%%VALUE(location)%%></td>
+		<td id="work_allocation-cost_centre-<%%VALUE(work_allocation_id)%%>" class="work_allocation-cost_centre"><%%VALUE(cost_centre)%%></td>
+		<td id="work_allocation-supervisor_name_and_surname-<%%VALUE(work_allocation_id)%%>" class="work_allocation-supervisor_name_and_surname"><%%VALUE(supervisor_name_and_surname)%%></td>
+		<td id="work_allocation-supervisor_contact_details-<%%VALUE(work_allocation_id)%%>" class="work_allocation-supervisor_contact_details"><%%VALUE(supervisor_contact_details)%%></td>
+		<td id="work_allocation-supervisor_email_address-<%%VALUE(work_allocation_id)%%>" class="work_allocation-supervisor_email_address"><a href="mailto:<%%VALUE(supervisor_email_address)%%>" title="<%%VALUE(supervisor_email_address)%%>" class="btn btn-default"><i class="glyphicon glyphicon-envelope text-info"></i></a></td>
+		<td id="work_allocation-supervisor_signature-<%%VALUE(work_allocation_id)%%>" class="work_allocation-supervisor_signature"><img src="thumbnail.php?i=<%%VALUE(supervisor_signature)%%>&t=work_allocation&f=supervisor_signature&v=tv" class="img-thumbnail"></td>
+		<td id="work_allocation-economical_repair-<%%VALUE(work_allocation_id)%%>" class="work_allocation-economical_repair"><%%VALUE(economical_repair)%%></td>
+		<td id="work_allocation-uneconomical_repair-<%%VALUE(work_allocation_id)%%>" class="work_allocation-uneconomical_repair"><%%VALUE(uneconomical_repair)%%></td>
+		<td id="work_allocation-work_allocation_reference_number-<%%VALUE(work_allocation_id)%%>" class="work_allocation-work_allocation_reference_number"><%%VALUE(work_allocation_reference_number)%%></td>
+		<td id="work_allocation-vehicle_registration_number-<%%VALUE(work_allocation_id)%%>" class="work_allocation-vehicle_registration_number"><%%VALUE(vehicle_registration_number)%%></td>
+		<td id="work_allocation-engine_number-<%%VALUE(work_allocation_id)%%>" class="work_allocation-engine_number"><%%VALUE(engine_number)%%></td>
+		<td id="work_allocation-make_of_vehicle-<%%VALUE(work_allocation_id)%%>" class="work_allocation-make_of_vehicle"><%%VALUE(make_of_vehicle)%%></td>
+		<td id="work_allocation-date_captured-<%%VALUE(work_allocation_id)%%>" class="work_allocation-date_captured"><%%VALUE(date_captured)%%></td>

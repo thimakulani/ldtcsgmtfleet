@@ -1,0 +1,597 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Purchase Order ID: -->
+		<div class="form-group purchase_orders-purchase_order_id" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Purchase Order ID:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(purchase_order_id)%%></div>
+			</div>
+		</div>
+		<!-- Field: Purchased Order Number: -->
+		<div class="form-group purchase_orders-purchased_order_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Purchased Order Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(purchased_order_number)%%></div>
+			</div>
+		</div>
+		<!-- Field: Purchased Date: -->
+		<div class="form-group purchase_orders-purchased_date" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Purchased Date:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(purchased_date)%%></div>
+			</div>
+		</div>
+		<!-- Field: Purchaser: -->
+		<div class="form-group purchase_orders-purchaser" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Purchaser:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(purchaser)%%></div>
+			</div>
+		</div>
+		<!-- Field: Registration Number: -->
+		<div class="form-group purchase_orders-vehicle_registration_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Registration Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="vehicle_registration_number<%%RND1%%>"><%%COMBOTEXT(vehicle_registration_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Type of Vehicle: -->
+		<div class="form-group purchase_orders-type_of_vehicle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Type of Vehicle:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="type_of_vehicle<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Manufacturer: -->
+		<div class="form-group purchase_orders-manufacturer" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Manufacturer:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="manufacturer<%%RND1%%>"><%%COMBOTEXT(manufacturer)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Service Type: -->
+		<div class="form-group purchase_orders-service_type" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Service Type:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(service_type)%%></div>
+			</div>
+		</div>
+		<!-- Field: Service Category: -->
+		<div class="form-group purchase_orders-service_category" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Service Category:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="service_category<%%RND1%%>"><%%COMBOTEXT(service_category)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Service Item: -->
+		<div class="form-group purchase_orders-service_item" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Service Item:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(service_item)%%></div>
+			</div>
+		</div>
+		<!-- Field: Documents (Upload Quotation): -->
+		<div class="form-group purchase_orders-upload_quotation" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Documents (Upload Quotation):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="upload_quotation-link" href="link.php?t=purchase_orders&f=upload_quotation&i=<%%VALUE(purchase_order_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(upload_quotation)%%>"></i></a><script>jQuery(function() { var e_upload_quotation = '<%%VALUE(upload_quotation)%%>'; if(e_upload_quotation == '' || e_upload_quotation == '&nbsp;' || e_upload_quotation == 'blank.gif') jQuery('#upload_quotation-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Due Date: -->
+		<div class="form-group purchase_orders-due_date" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Due Date:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(due_date)%%></div>
+			</div>
+		</div>
+		<!-- Field: Merchant Name: -->
+		<div class="form-group purchase_orders-merchant_name" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Merchant Name:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="merchant_name<%%RND1%%>"><%%COMBOTEXT(merchant_name)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Date of Service: -->
+		<div class="form-group purchase_orders-date_of_service" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Date of Service:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(date_of_service)%%></div>
+			</div>
+		</div>
+		<!-- Field: Odometer Reading (km): -->
+		<div class="form-group purchase_orders-closing_km" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Odometer Reading (km):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="closing_km<%%RND1%%>"><%%COMBOTEXT(closing_km)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Labour Category: -->
+		<div class="form-group purchase_orders-labour_category_1" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Labour Category:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(labour_category_1)%%></div>
+			</div>
+		</div>
+		<!-- Field: Part Number (1): -->
+		<div class="form-group purchase_orders-part_number_1" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Number (1):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_number_1<%%RND1%%>"><%%COMBOTEXT(part_number_1)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Part Name (1): -->
+		<div class="form-group purchase_orders-part_name_1" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Name (1):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_name_1<%%RND1%%>"><%%COMBOTEXT(part_name_1)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Part Manufacturer Name (1): -->
+		<div class="form-group purchase_orders-part_manufacturer_name_1" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Manufacturer Name (1):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_manufacturer_name_1<%%RND1%%>"><%%COMBOTEXT(part_manufacturer_name_1)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Quantity -->
+		<div class="form-group purchase_orders-quantity_1" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Quantity</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(quantity_1)%%></div>
+			</div>
+		</div>
+		<!-- Field: Expense Of Item 1 (R): -->
+		<div class="form-group purchase_orders-expense_of_item_1" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Expense Of Item 1 (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(expense_of_item_1)%%></div>
+			</div>
+		</div>
+		<!-- Field: Labour Category: -->
+		<div class="form-group purchase_orders-labour_category_2" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Labour Category:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(labour_category_2)%%></div>
+			</div>
+		</div>
+		<!-- Field: Part Number (2): -->
+		<div class="form-group purchase_orders-part_number_2" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Number (2):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_number_2<%%RND1%%>"><%%COMBOTEXT(part_number_2)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Part Name (2): -->
+		<div class="form-group purchase_orders-part_name_2" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Name (2):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_name_2<%%RND1%%>"><%%COMBOTEXT(part_name_2)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Part Manufacturer Name (2): -->
+		<div class="form-group purchase_orders-part_manufacturer_name_2" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Manufacturer Name (2):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_manufacturer_name_2<%%RND1%%>"><%%COMBOTEXT(part_manufacturer_name_2)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Quantity -->
+		<div class="form-group purchase_orders-quantity_2" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Quantity</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(quantity_2)%%></div>
+			</div>
+		</div>
+		<!-- Field: Expense Of Item 2 (R): -->
+		<div class="form-group purchase_orders-expense_of_item_2" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Expense Of Item 2 (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(expense_of_item_2)%%></div>
+			</div>
+		</div>
+		<!-- Field: Labour Category: -->
+		<div class="form-group purchase_orders-labour_category_3" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Labour Category:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(labour_category_3)%%></div>
+			</div>
+		</div>
+		<!-- Field: Part Number (3): -->
+		<div class="form-group purchase_orders-part_number_3" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Number (3):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_number_3<%%RND1%%>"><%%COMBOTEXT(part_number_3)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Part Name (3): -->
+		<div class="form-group purchase_orders-part_name_3" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Name (3):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_name_3<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Part Manufacturer Name (3): -->
+		<div class="form-group purchase_orders-part_manufacturer_name_3" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Manufacturer Name (3):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_manufacturer_name_3<%%RND1%%>"><%%COMBOTEXT(part_manufacturer_name_3)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Quantity -->
+		<div class="form-group purchase_orders-quantity_3" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Quantity</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(quantity_3)%%></div>
+			</div>
+		</div>
+		<!-- Field: Expense Of Item 3 (R): -->
+		<div class="form-group purchase_orders-expense_of_item_3" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Expense Of Item 3 (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(expense_of_item_3)%%></div>
+			</div>
+		</div>
+		<!-- Field: Labour Category: -->
+		<div class="form-group purchase_orders-labour_category_4" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Labour Category:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(labour_category_4)%%></div>
+			</div>
+		</div>
+		<!-- Field: Part Number (4): -->
+		<div class="form-group purchase_orders-part_number_4" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Number (4):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_number_4<%%RND1%%>"><%%COMBOTEXT(part_number_4)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Part Name (4): -->
+		<div class="form-group purchase_orders-part_name_4" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Name (4):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_name_4<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Part Manufacturer Name  (4): -->
+		<div class="form-group purchase_orders-part_manufacturer_name_4" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Manufacturer Name  (4):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_manufacturer_name_4<%%RND1%%>"><%%COMBOTEXT(part_manufacturer_name_4)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Quantity -->
+		<div class="form-group purchase_orders-quantity_4" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Quantity</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(quantity_4)%%></div>
+			</div>
+		</div>
+		<!-- Field: Expense Of Item 4 (R): -->
+		<div class="form-group purchase_orders-expense_of_item_4" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Expense Of Item 4 (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(expense_of_item_4)%%></div>
+			</div>
+		</div>
+		<!-- Field: Labour Category: -->
+		<div class="form-group purchase_orders-labour_category_5" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Labour Category:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(labour_category_5)%%></div>
+			</div>
+		</div>
+		<!-- Field: Part Number (5): -->
+		<div class="form-group purchase_orders-part_number_5" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Number (5):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_number_5<%%RND1%%>"><%%COMBOTEXT(part_number_5)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Part Name (5): -->
+		<div class="form-group purchase_orders-part_name_5" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Name (5):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_name_5<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Part Manufacturer Name (5): -->
+		<div class="form-group purchase_orders-part_manufacturer_name_5" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Manufacturer Name (5):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_manufacturer_name_5<%%RND1%%>"><%%COMBOTEXT(part_manufacturer_name_5)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Quantity -->
+		<div class="form-group purchase_orders-quantity_5" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Quantity</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(quantity_5)%%></div>
+			</div>
+		</div>
+		<!-- Field: Expense Of Item 5 (R): -->
+		<div class="form-group purchase_orders-expense_of_item_5" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Expense Of Item 5 (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(expense_of_item_5)%%></div>
+			</div>
+		</div>
+		<!-- Field: Labour Category: -->
+		<div class="form-group purchase_orders-labour_category_6" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Labour Category:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(labour_category_6)%%></div>
+			</div>
+		</div>
+		<!-- Field: Part Number (6): -->
+		<div class="form-group purchase_orders-part_number_6" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Number (6):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_number_6<%%RND1%%>"><%%COMBOTEXT(part_number_6)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Part Name (6): -->
+		<div class="form-group purchase_orders-part_name_6" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Name (6):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_name_6<%%RND1%%>"><%%COMBOTEXT(part_name_6)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Part Manufacturer Name (6): -->
+		<div class="form-group purchase_orders-part_manufacturer_name_6" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Manufacturer Name (6):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_manufacturer_name_6<%%RND1%%>"><%%COMBOTEXT(part_manufacturer_name_6)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Quantity -->
+		<div class="form-group purchase_orders-quantity_6" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Quantity</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(quantity_6)%%></div>
+			</div>
+		</div>
+		<!-- Field: Expense Of Item 6 (R): -->
+		<div class="form-group purchase_orders-expense_of_item_6" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Expense Of Item 6 (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(expense_of_item_6)%%></div>
+			</div>
+		</div>
+		<!-- Field: Labour Category: -->
+		<div class="form-group purchase_orders-labour_category_7" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Labour Category:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(labour_category_7)%%></div>
+			</div>
+		</div>
+		<!-- Field: Part Number (7): -->
+		<div class="form-group purchase_orders-part_number_7" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Number (7):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_number_7<%%RND1%%>"><%%COMBOTEXT(part_number_7)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Part Name (7): -->
+		<div class="form-group purchase_orders-part_name_7" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Name (7):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_name_7<%%RND1%%>"><%%COMBOTEXT(part_name_7)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Part Manufacturer Name (7): -->
+		<div class="form-group purchase_orders-part_manufacturer_name_7" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Manufacturer Name (7):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_manufacturer_name_7<%%RND1%%>"><%%COMBOTEXT(part_manufacturer_name_7)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Quantity -->
+		<div class="form-group purchase_orders-quantity_7" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Quantity</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(quantity_7)%%></div>
+			</div>
+		</div>
+		<!-- Field: Expense Of Item 7 (R): -->
+		<div class="form-group purchase_orders-expense_of_item_7" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Expense Of Item 7 (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(expense_of_item_7)%%></div>
+			</div>
+		</div>
+		<!-- Field: Labour Category: -->
+		<div class="form-group purchase_orders-labour_category_8" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Labour Category:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(labour_category_8)%%></div>
+			</div>
+		</div>
+		<!-- Field: Part Number (8): -->
+		<div class="form-group purchase_orders-part_number_8" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Number (8):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_number_8<%%RND1%%>"><%%COMBOTEXT(part_number_8)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Part Name (8): -->
+		<div class="form-group purchase_orders-part_name_8" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Name (8):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_name_8<%%RND1%%>"><%%COMBOTEXT(part_name_8)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Part Manufacturer Name (8): -->
+		<div class="form-group purchase_orders-part_manufacturer_name_8" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Manufacturer Name (8):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_manufacturer_name_8<%%RND1%%>"><%%COMBOTEXT(part_manufacturer_name_8)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Expense Of Item 8 (R): -->
+		<div class="form-group purchase_orders-expense_of_item_8" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Expense Of Item 8 (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(expense_of_item_8)%%></div>
+			</div>
+		</div>
+		<!-- Field: Material Cost (R); -->
+		<div class="form-group purchase_orders-material_cost" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Material Cost (R);</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(material_cost)%%></div>
+			</div>
+		</div>
+		<!-- Field: Average Worktime Hrs: -->
+		<div class="form-group purchase_orders-average_worktime_hrs" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Average Worktime Hrs:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(average_worktime_hrs)%%></div>
+			</div>
+		</div>
+		<!-- Field: Standard Labour Cost per Hour: -->
+		<div class="form-group purchase_orders-standard_labour_cost_per_hour" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Standard Labour Cost per Hour:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(standard_labour_cost_per_hour)%%></div>
+			</div>
+		</div>
+		<!-- Field: Labour Charges (R): -->
+		<div class="form-group purchase_orders-labour_charges" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Labour Charges (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(labour_charges)%%></div>
+			</div>
+		</div>
+		<!-- Field: Vat 15 % (R): -->
+		<div class="form-group purchase_orders-vat" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Vat 15 % (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(vat)%%></div>
+			</div>
+		</div>
+		<!-- Field: Total Amount (R): -->
+		<div class="form-group purchase_orders-total_amount" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Total Amount (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(total_amount)%%></div>
+			</div>
+		</div>
+		<!-- Field: Workshop Name: -->
+		<div class="form-group purchase_orders-workshop_name" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Workshop Name:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="workshop_name<%%RND1%%>"><%%COMBOTEXT(workshop_name)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Work Order ID: -->
+		<div class="form-group purchase_orders-work_order_id" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Work Order ID:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="work_order_id<%%RND1%%>"><%%COMBOTEXT(work_order_id)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Job Card Number: -->
+		<div class="form-group purchase_orders-job_card_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Job Card Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="job_card_number<%%RND1%%>"><%%COMBOTEXT(job_card_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Actual Completion Date: -->
+		<div class="form-group purchase_orders-completion_date" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Actual Completion Date:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(completion_date)%%></div>
+			</div>
+		</div>
+		<!-- Field: Comments: -->
+		<div class="form-group purchase_orders-comments" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Comments:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(comments)%%></div>
+			</div>
+		</div>
+		<!-- Field: Documents (Upload Invoice): -->
+		<div class="form-group purchase_orders-upload_invoice" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Documents (Upload Invoice):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="upload_invoice-link" href="link.php?t=purchase_orders&f=upload_invoice&i=<%%VALUE(purchase_order_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(upload_invoice)%%>"></i></a><script>jQuery(function() { var e_upload_invoice = '<%%VALUE(upload_invoice)%%>'; if(e_upload_invoice == '' || e_upload_invoice == '&nbsp;' || e_upload_invoice == 'blank.gif') jQuery('#upload_invoice-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Date Captured: -->
+		<div class="form-group purchase_orders-date_captured" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Date Captured:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(date_captured)%%></div>
+			</div>
+		</div>
+		<!-- Field: Information Capture By  (Name & Surname): -->
+		<div class="form-group purchase_orders-data_capturer" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Information Capture By  (Name & Surname):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(data_capturer)%%></div>
+			</div>
+		</div>
+		<!-- Field: Data Capturer Contact e-Mail: -->
+		<div class="form-group purchase_orders-data_capturer_contact_email" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Data Capturer Contact e-Mail:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(data_capturer_contact_email)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>
+<!-- child records -->
+<div class="panel-body">
+	<div id="purchase_orders-children"></div>
+</div>
+
+<script>
+	$j(function() {
+		/* prevent loading child records in multiple DVP */
+		if($j('[id=purchase_orders-children]').length > 1) return;
+
+		post(
+			'parent-children.php', {
+				ParentTable: 'purchase_orders',
+				SelectedID: '<%%VALUE(purchase_order_id)%%>',
+				Operation: 'show-children-printable'
+			},
+			'purchase_orders-children',
+			'disable-element',
+			'loading-element',
+			apply_persisting_children
+		);
+
+		$j('form').on('click', '#children-tabs button[data-target]', function() {
+			$j(this).toggleClass('active');
+			persist_expanded_child($j(this).attr('id'));
+		});
+	})
+</script>
+

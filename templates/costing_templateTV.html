@@ -1,0 +1,42 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the costing_init() hook (in hooks/costing.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="costing-costing_id-<%%VALUE(costing_id)%%>" class="costing-costing_id text-right"><%%SELECT%%><%%VALUE(costing_id)%%><%%ENDSELECT%%></td>
+		<td id="costing-government_garage_name-<%%VALUE(costing_id)%%>" class="costing-government_garage_name"><%%SELECT%%><%%VALUE(government_garage_name)%%><%%ENDSELECT%%></td>
+		<td id="costing-supervisor_name_and_surname-<%%VALUE(costing_id)%%>" class="costing-supervisor_name_and_surname"><%%SELECT%%><%%VALUE(supervisor_name_and_surname)%%><%%ENDSELECT%%></td>
+		<td id="costing-supervisor_contact_details-<%%VALUE(costing_id)%%>" class="costing-supervisor_contact_details"><%%SELECT%%><%%VALUE(supervisor_contact_details)%%><%%ENDSELECT%%></td>
+		<td id="costing-supervisor_email_address-<%%VALUE(costing_id)%%>" class="costing-supervisor_email_address"><a href="mailto:<%%VALUE(supervisor_email_address)%%>"><%%VALUE(supervisor_email_address)%%></a></td>
+		<td id="costing-supervisor_signature-<%%VALUE(costing_id)%%>" class="costing-supervisor_signature"><%%SELECT%%><img src="thumbnail.php?i=<%%VALUE(supervisor_signature)%%>&t=costing&f=supervisor_signature&v=tv" class="img-thumbnail"><%%ENDSELECT%%></td>
+		<td id="costing-job_card_number-<%%VALUE(costing_id)%%>" class="costing-job_card_number"><%%SELECT%%><%%VALUE(job_card_number)%%><%%ENDSELECT%%></td>
+		<td id="costing-vehicle_registration_number-<%%VALUE(costing_id)%%>" class="costing-vehicle_registration_number"><%%SELECT%%><%%VALUE(vehicle_registration_number)%%><%%ENDSELECT%%></td>
+		<td id="costing-engine_number-<%%VALUE(costing_id)%%>" class="costing-engine_number"><%%SELECT%%><%%VALUE(engine_number)%%><%%ENDSELECT%%></td>
+		<td id="costing-make_of_vehicle-<%%VALUE(costing_id)%%>" class="costing-make_of_vehicle"><%%SELECT%%><%%VALUE(make_of_vehicle)%%><%%ENDSELECT%%></td>
+		<td id="costing-reconciliation_of_total_costs_by_costing_officer-<%%VALUE(costing_id)%%>" class="costing-reconciliation_of_total_costs_by_costing_officer"><%%SELECT%%><%%VALUE(reconciliation_of_total_costs_by_costing_officer)%%><%%ENDSELECT%%></td>
+		<td id="costing-costing_officer_name_and_surname-<%%VALUE(costing_id)%%>" class="costing-costing_officer_name_and_surname"><%%SELECT%%><%%VALUE(costing_officer_name_and_surname)%%><%%ENDSELECT%%></td>
+		<td id="costing-costing_officer_contact_details-<%%VALUE(costing_id)%%>" class="costing-costing_officer_contact_details"><%%SELECT%%><%%VALUE(costing_officer_contact_details)%%><%%ENDSELECT%%></td>
+		<td id="costing-costing_officer_email_address-<%%VALUE(costing_id)%%>" class="costing-costing_officer_email_address"><a href="mailto:<%%VALUE(costing_officer_email_address)%%>"><%%VALUE(costing_officer_email_address)%%></a></td>
+		<td id="costing-costing_officer_signature-<%%VALUE(costing_id)%%>" class="costing-costing_officer_signature"><%%SELECT%%><img src="thumbnail.php?i=<%%VALUE(costing_officer_signature)%%>&t=costing&f=costing_officer_signature&v=tv" class="img-thumbnail"><%%ENDSELECT%%></td>
+		<td id="costing-material_cost-<%%VALUE(costing_id)%%>" class="costing-material_cost text-right"><%%SELECT%%><%%VALUE(material_cost)%%><%%ENDSELECT%%></td>
+		<td id="costing-spares_orders_quotation-<%%VALUE(costing_id)%%>" class="costing-spares_orders_quotation text-right"><%%SELECT%%><%%VALUE(spares_orders_quotation)%%><%%ENDSELECT%%></td>
+		<td id="costing-spares_orders_quotation_upload-<%%VALUE(costing_id)%%>" class="costing-spares_orders_quotation_upload"><a href="link.php?t=costing&f=spares_orders_quotation_upload&i=<%%VALUE(costing_id)%%>" target="_blank" title="<%%VALUE(spares_orders_quotation_upload)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="costing-standard_labour_cost_per_hour-<%%VALUE(costing_id)%%>" class="costing-standard_labour_cost_per_hour text-right"><%%SELECT%%><%%VALUE(standard_labour_cost_per_hour)%%><%%ENDSELECT%%></td>
+		<td id="costing-labour_quotation-<%%VALUE(costing_id)%%>" class="costing-labour_quotation text-right"><%%SELECT%%><%%VALUE(labour_quotation)%%><%%ENDSELECT%%></td>
+		<td id="costing-labour_quotation_upload-<%%VALUE(costing_id)%%>" class="costing-labour_quotation_upload"><a href="link.php?t=costing&f=labour_quotation_upload&i=<%%VALUE(costing_id)%%>" target="_blank" title="<%%VALUE(labour_quotation_upload)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="costing-vat-<%%VALUE(costing_id)%%>" class="costing-vat text-right"><%%SELECT%%><%%VALUE(vat)%%><%%ENDSELECT%%></td>
+		<td id="costing-total_amount-<%%VALUE(costing_id)%%>" class="costing-total_amount text-right"><%%SELECT%%><%%VALUE(total_amount)%%><%%ENDSELECT%%></td>
+		<td id="costing-workshop_manager_name_and_surname-<%%VALUE(costing_id)%%>" class="costing-workshop_manager_name_and_surname"><%%SELECT%%><%%VALUE(workshop_manager_name_and_surname)%%><%%ENDSELECT%%></td>
+		<td id="costing-workshop_manager_contact_details-<%%VALUE(costing_id)%%>" class="costing-workshop_manager_contact_details"><%%SELECT%%><%%VALUE(workshop_manager_contact_details)%%><%%ENDSELECT%%></td>
+		<td id="costing-workshop_manager_email_address-<%%VALUE(costing_id)%%>" class="costing-workshop_manager_email_address"><a href="mailto:<%%VALUE(workshop_manager_email_address)%%>"><%%VALUE(workshop_manager_email_address)%%></a></td>
+		<td id="costing-workshop_manager_signature-<%%VALUE(costing_id)%%>" class="costing-workshop_manager_signature"><%%SELECT%%><img src="thumbnail.php?i=<%%VALUE(workshop_manager_signature)%%>&t=costing&f=workshop_manager_signature&v=tv" class="img-thumbnail"><%%ENDSELECT%%></td>
+		<td id="costing-invoice_approved-<%%VALUE(costing_id)%%>" class="costing-invoice_approved"><%%SELECT%%><%%VALUE(invoice_approved)%%><%%ENDSELECT%%></td>
+		<td id="costing-invoice_date-<%%VALUE(costing_id)%%>" class="costing-invoice_date"><%%SELECT%%><%%VALUE(invoice_date)%%><%%ENDSELECT%%></td>
+		<td id="costing-upload_invoice-<%%VALUE(costing_id)%%>" class="costing-upload_invoice"><a href="link.php?t=costing&f=upload_invoice&i=<%%VALUE(costing_id)%%>" target="_blank" title="<%%VALUE(upload_invoice)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<script>$j(function() {
+			var e_spares_orders_quotation_upload = '<%%VALUE(spares_orders_quotation_upload)%%>'; if(e_spares_orders_quotation_upload == '' || e_spares_orders_quotation_upload == '&nbsp;') $j(/*<*/ '#costing-spares_orders_quotation_upload-<%%VALUE(costing_id)%%>' /*>*/).html('');
+			var e_labour_quotation_upload = '<%%VALUE(labour_quotation_upload)%%>'; if(e_labour_quotation_upload == '' || e_labour_quotation_upload == '&nbsp;') $j(/*<*/ '#costing-labour_quotation_upload-<%%VALUE(costing_id)%%>' /*>*/).html('');
+			var e_upload_invoice = '<%%VALUE(upload_invoice)%%>'; if(e_upload_invoice == '' || e_upload_invoice == '&nbsp;') $j(/*<*/ '#costing-upload_invoice-<%%VALUE(costing_id)%%>' /*>*/).html('');
+		});</script>

@@ -1,0 +1,37 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the reception_init() hook (in hooks/reception.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="reception-reception_user_id-<%%VALUE(reception_user_id)%%>" class="reception-reception_user_id text-right"><%%VALUE(reception_user_id)%%></td>
+		<td id="reception-reception_name_and_surname-<%%VALUE(reception_user_id)%%>" class="reception-reception_name_and_surname"><%%VALUE(reception_name_and_surname)%%></td>
+		<td id="reception-reception_persal_number-<%%VALUE(reception_user_id)%%>" class="reception-reception_persal_number"><%%VALUE(reception_persal_number)%%></td>
+		<td id="reception-reception_contact_details-<%%VALUE(reception_user_id)%%>" class="reception-reception_contact_details"><%%VALUE(reception_contact_details)%%></td>
+		<td id="reception-reception_email_address-<%%VALUE(reception_user_id)%%>" class="reception-reception_email_address"><a href="mailto:<%%VALUE(reception_email_address)%%>" title="<%%VALUE(reception_email_address)%%>" class="btn btn-default"><i class="glyphicon glyphicon-envelope text-info"></i></a></td>
+		<td id="reception-reception_signature-<%%VALUE(reception_user_id)%%>" class="reception-reception_signature"><img src="thumbnail.php?i=<%%VALUE(reception_signature)%%>&t=reception&f=reception_signature&v=tv" class="img-thumbnail"></td>
+		<td id="reception-date_of_vehicle_entrance-<%%VALUE(reception_user_id)%%>" class="reception-date_of_vehicle_entrance"><%%VALUE(date_of_vehicle_entrance)%%></td>
+		<td id="reception-service_status-<%%VALUE(reception_user_id)%%>" class="reception-service_status"><%%VALUE(service_status)%%></td>
+		<td id="reception-district-<%%VALUE(reception_user_id)%%>" class="reception-district"><%%VALUE(district)%%></td>
+		<td id="reception-location-<%%VALUE(reception_user_id)%%>" class="reception-location"><%%VALUE(location)%%></td>
+		<td id="reception-workshop_address-<%%VALUE(reception_user_id)%%>" class="reception-workshop_address"><%%VALUE(workshop_address)%%></td>
+		<td id="reception-vehicle_registration_number-<%%VALUE(reception_user_id)%%>" class="reception-vehicle_registration_number"><%%VALUE(vehicle_registration_number)%%></td>
+		<td id="reception-engine_number-<%%VALUE(reception_user_id)%%>" class="reception-engine_number"><%%VALUE(engine_number)%%></td>
+		<td id="reception-make_of_vehicle-<%%VALUE(reception_user_id)%%>" class="reception-make_of_vehicle"><%%VALUE(make_of_vehicle)%%></td>
+		<td id="reception-breakdown_of_vehicle-<%%VALUE(reception_user_id)%%>" class="reception-breakdown_of_vehicle"><%%VALUE(breakdown_of_vehicle)%%></td>
+		<td id="reception-description_of_vehicle_breakdown_notes-<%%VALUE(reception_user_id)%%>" class="reception-description_of_vehicle_breakdown_notes"><%%VALUE(description_of_vehicle_breakdown_notes)%%></td>
+		<td id="reception-description_of_vehicle_report-<%%VALUE(reception_user_id)%%>" class="reception-description_of_vehicle_report"><a href="link.php?t=reception&f=description_of_vehicle_report&i=<%%VALUE(reception_user_id)%%>" target="_blank" title="<%%VALUE(description_of_vehicle_report)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="reception-upload_of_vehicle_report-<%%VALUE(reception_user_id)%%>" class="reception-upload_of_vehicle_report"><a href="link.php?t=reception&f=upload_of_vehicle_report&i=<%%VALUE(reception_user_id)%%>" target="_blank" title="<%%VALUE(upload_of_vehicle_report)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="reception-description_of_vehicle_breakdown-<%%VALUE(reception_user_id)%%>" class="reception-description_of_vehicle_breakdown"><%%VALUE(description_of_vehicle_breakdown)%%></td>
+		<td id="reception-job_card_number-<%%VALUE(reception_user_id)%%>" class="reception-job_card_number"><%%VALUE(job_card_number)%%></td>
+		<td id="reception-visual_inspection_form-<%%VALUE(reception_user_id)%%>" class="reception-visual_inspection_form"><a href="link.php?t=reception&f=visual_inspection_form&i=<%%VALUE(reception_user_id)%%>" target="_blank" title="<%%VALUE(visual_inspection_form)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="reception-damage_report-<%%VALUE(reception_user_id)%%>" class="reception-damage_report"><a href="link.php?t=reception&f=damage_report&i=<%%VALUE(reception_user_id)%%>" target="_blank" title="<%%VALUE(damage_report)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="reception-date_of_vehicle_exit-<%%VALUE(reception_user_id)%%>" class="reception-date_of_vehicle_exit"><%%VALUE(date_of_vehicle_exit)%%></td>
+		<td id="reception-payment-<%%VALUE(reception_user_id)%%>" class="reception-payment"><%%VALUE(payment)%%></td>
+		<script>$j(function() {
+			var e_description_of_vehicle_report = '<%%VALUE(description_of_vehicle_report)%%>'; if(e_description_of_vehicle_report == '' || e_description_of_vehicle_report == '&nbsp;') $j(/*<*/ '#reception-description_of_vehicle_report-<%%VALUE(reception_user_id)%%>' /*>*/).html('');
+			var e_upload_of_vehicle_report = '<%%VALUE(upload_of_vehicle_report)%%>'; if(e_upload_of_vehicle_report == '' || e_upload_of_vehicle_report == '&nbsp;') $j(/*<*/ '#reception-upload_of_vehicle_report-<%%VALUE(reception_user_id)%%>' /*>*/).html('');
+			var e_visual_inspection_form = '<%%VALUE(visual_inspection_form)%%>'; if(e_visual_inspection_form == '' || e_visual_inspection_form == '&nbsp;') $j(/*<*/ '#reception-visual_inspection_form-<%%VALUE(reception_user_id)%%>' /*>*/).html('');
+			var e_damage_report = '<%%VALUE(damage_report)%%>'; if(e_damage_report == '' || e_damage_report == '&nbsp;') $j(/*<*/ '#reception-damage_report-<%%VALUE(reception_user_id)%%>' /*>*/).html('');
+		});</script>

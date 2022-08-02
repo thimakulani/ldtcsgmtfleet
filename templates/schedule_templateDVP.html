@@ -1,0 +1,170 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Schedule ID: -->
+		<div class="form-group schedule-schedule_id" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Schedule ID:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(schedule_id)%%></div>
+			</div>
+		</div>
+		<!-- Field: Appointment Type: -->
+		<div class="form-group schedule-title" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Appointment Type:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(title)%%></div>
+			</div>
+		</div>
+		<!-- Field: Owner of Vehicle Name & Surname: -->
+		<div class="form-group schedule-user_name_and_surname" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Owner of Vehicle Name & Surname:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="user_name_and_surname<%%RND1%%>"><%%COMBOTEXT(user_name_and_surname)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: User contact email -->
+		<div class="form-group schedule-user_contact_email" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">User contact email</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="user_contact_email<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Service Item Type: -->
+		<div class="form-group schedule-service_item_type" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Service Item Type:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="service_item_type<%%RND1%%>"><%%COMBOTEXT(service_item_type)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Service Item Type Code: -->
+		<div class="form-group schedule-service_item_type_code" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Service Item Type Code:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="service_item_type_code<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Application Status: -->
+		<div class="form-group schedule-application_status" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Application Status:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(application_status)%%></div>
+			</div>
+		</div>
+		<!-- Field: Vehicle Registration Number: -->
+		<div class="form-group schedule-vehicle_registration_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Vehicle Registration Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="vehicle_registration_number<%%RND1%%>"><%%COMBOTEXT(vehicle_registration_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Engine Number: -->
+		<div class="form-group schedule-engine_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Engine Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="engine_number<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Odometer Reading (km): -->
+		<div class="form-group schedule-closing_km" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Odometer Reading (km):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="closing_km<%%RND1%%>"><%%COMBOTEXT(closing_km)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Date: -->
+		<div class="form-group schedule-date" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Date:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(date)%%></div>
+			</div>
+		</div>
+		<!-- Field: Time: -->
+		<div class="form-group schedule-time" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Time:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(time)%%></div>
+			</div>
+		</div>
+		<!-- Field: Workshop Name: -->
+		<div class="form-group schedule-workshop_name" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Workshop Name:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="workshop_name<%%RND1%%>"><%%COMBOTEXT(workshop_name)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Diagnosis: -->
+		<div class="form-group schedule-diagnosis" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Diagnosis:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(diagnosis)%%></div>
+			</div>
+		</div>
+		<!-- Field: Solution: -->
+		<div class="form-group schedule-prescription" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Solution:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(prescription)%%></div>
+			</div>
+		</div>
+		<!-- Field: Comments: -->
+		<div class="form-group schedule-comments" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Comments:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(comments)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>
+<!-- child records -->
+<div class="panel-body">
+	<div id="schedule-children"></div>
+</div>
+
+<script>
+	$j(function() {
+		/* prevent loading child records in multiple DVP */
+		if($j('[id=schedule-children]').length > 1) return;
+
+		post(
+			'parent-children.php', {
+				ParentTable: 'schedule',
+				SelectedID: '<%%VALUE(schedule_id)%%>',
+				Operation: 'show-children-printable'
+			},
+			'schedule-children',
+			'disable-element',
+			'loading-element',
+			apply_persisting_children
+		);
+
+		$j('form').on('click', '#children-tabs button[data-target]', function() {
+			$j(this).toggleClass('active');
+			persist_expanded_child($j(this).attr('id'));
+		});
+	})
+</script>
+

@@ -1,0 +1,30 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the vehicle_history_init() hook (in hooks/vehicle_history.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="vehicle_history-history_id-<%%VALUE(history_id)%%>" class="vehicle_history-history_id text-right"><%%SELECT%%><%%VALUE(history_id)%%><%%ENDSELECT%%></td>
+		<td id="vehicle_history-vehicle_registration_number-<%%VALUE(history_id)%%>" class="vehicle_history-vehicle_registration_number"><%%SELECT%%><%%VALUE(vehicle_registration_number)%%><%%ENDSELECT%%></td>
+		<td id="vehicle_history-engine_number-<%%VALUE(history_id)%%>" class="vehicle_history-engine_number"><%%SELECT%%><%%VALUE(engine_number)%%><%%ENDSELECT%%></td>
+		<td id="vehicle_history-purchased_price-<%%VALUE(history_id)%%>" class="vehicle_history-purchased_price"><%%SELECT%%><%%VALUE(purchased_price)%%><%%ENDSELECT%%></td>
+		<td id="vehicle_history-old_registration_number-<%%VALUE(history_id)%%>" class="vehicle_history-old_registration_number"><%%SELECT%%><%%VALUE(old_registration_number)%%><%%ENDSELECT%%></td>
+		<td id="vehicle_history-new_vehicle_registration_number-<%%VALUE(history_id)%%>" class="vehicle_history-new_vehicle_registration_number"><%%SELECT%%><%%VALUE(new_vehicle_registration_number)%%><%%ENDSELECT%%></td>
+		<td id="vehicle_history-date_of_vehicle_transfer-<%%VALUE(history_id)%%>" class="vehicle_history-date_of_vehicle_transfer"><%%SELECT%%><%%VALUE(date_of_vehicle_transfer)%%><%%ENDSELECT%%></td>
+		<td id="vehicle_history-comments-<%%VALUE(history_id)%%>" class="vehicle_history-comments"><%%SELECT%%><%%VALUE(comments)%%><%%ENDSELECT%%></td>
+		<td id="vehicle_history-renewal_of_license-<%%VALUE(history_id)%%>" class="vehicle_history-renewal_of_license"><%%SELECT%%><%%VALUE(renewal_of_license)%%><%%ENDSELECT%%></td>
+		<td id="vehicle_history-date_of_service-<%%VALUE(history_id)%%>" class="vehicle_history-date_of_service"><%%SELECT%%><%%VALUE(date_of_service)%%><%%ENDSELECT%%></td>
+		<td id="vehicle_history-date_of_next_service-<%%VALUE(history_id)%%>" class="vehicle_history-date_of_next_service"><%%SELECT%%><%%VALUE(date_of_next_service)%%><%%ENDSELECT%%></td>
+		<td id="vehicle_history-purchased_order_number-<%%VALUE(history_id)%%>" class="vehicle_history-purchased_order_number"><%%SELECT%%><%%VALUE(purchased_order_number)%%><%%ENDSELECT%%></td>
+		<td id="vehicle_history-claim_code-<%%VALUE(history_id)%%>" class="vehicle_history-claim_code"><%%SELECT%%><%%VALUE(claim_code)%%><%%ENDSELECT%%></td>
+		<td id="vehicle_history-tyre_inspection_report-<%%VALUE(history_id)%%>" class="vehicle_history-tyre_inspection_report"><a href="link.php?t=vehicle_history&f=tyre_inspection_report&i=<%%VALUE(history_id)%%>" target="_blank" title="<%%VALUE(tyre_inspection_report)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-globe text-info"></i></a></td>
+		<td id="vehicle_history-inspection_certification_number-<%%VALUE(history_id)%%>" class="vehicle_history-inspection_certification_number"><%%SELECT%%><%%VALUE(inspection_certification_number)%%><%%ENDSELECT%%></td>
+		<td id="vehicle_history-document_checklist_report-<%%VALUE(history_id)%%>" class="vehicle_history-document_checklist_report"><a href="link.php?t=vehicle_history&f=document_checklist_report&i=<%%VALUE(history_id)%%>" target="_blank" title="<%%VALUE(document_checklist_report)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-globe text-info"></i></a></td>
+		<td id="vehicle_history-next_inspection_date-<%%VALUE(history_id)%%>" class="vehicle_history-next_inspection_date"><%%SELECT%%><%%VALUE(next_inspection_date)%%><%%ENDSELECT%%></td>
+		<td id="vehicle_history-breakdown_of_vehicle-<%%VALUE(history_id)%%>" class="vehicle_history-breakdown_of_vehicle"><%%SELECT%%><%%VALUE(breakdown_of_vehicle)%%><%%ENDSELECT%%></td>
+		<td id="vehicle_history-date_of_vehicle_breakdown-<%%VALUE(history_id)%%>" class="vehicle_history-date_of_vehicle_breakdown"><%%SELECT%%><%%VALUE(date_of_vehicle_breakdown)%%><%%ENDSELECT%%></td>
+		<td id="vehicle_history-description_of_vehicle_breakdown-<%%VALUE(history_id)%%>" class="vehicle_history-description_of_vehicle_breakdown"><%%SELECT%%><%%VALUE(description_of_vehicle_breakdown)%%><%%ENDSELECT%%></td>
+		<td id="vehicle_history-closing_km-<%%VALUE(history_id)%%>" class="vehicle_history-closing_km"><%%SELECT%%><%%VALUE(closing_km)%%><%%ENDSELECT%%></td>
+		<td id="vehicle_history-date_of_vehicle_reactivation-<%%VALUE(history_id)%%>" class="vehicle_history-date_of_vehicle_reactivation"><%%SELECT%%><%%VALUE(date_of_vehicle_reactivation)%%><%%ENDSELECT%%></td>
+		<td id="vehicle_history-total_cost-<%%VALUE(history_id)%%>" class="vehicle_history-total_cost text-right"><%%SELECT%%><%%VALUE(total_cost)%%><%%ENDSELECT%%></td>

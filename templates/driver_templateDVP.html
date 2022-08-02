@@ -1,0 +1,184 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Driver ID: -->
+		<div class="form-group driver-driver_id" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver ID:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(driver_id)%%></div>
+			</div>
+		</div>
+		<!-- Field: Driver's  Name & Surname: -->
+		<div class="form-group driver-drivers_name_and_surname" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver's  Name & Surname:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(drivers_name_and_surname)%%></div>
+			</div>
+		</div>
+		<!-- Field: Driver's Persal Number: -->
+		<div class="form-group driver-drivers_persal_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver's Persal Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(drivers_persal_number)%%></div>
+			</div>
+		</div>
+		<!-- Field: Driver's Contact Details: -->
+		<div class="form-group driver-drivers_contact_details" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver's Contact Details:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(drivers_contact_details)%%></div>
+			</div>
+		</div>
+		<!-- Field: Drivers Email Address: -->
+		<div class="form-group driver-drivers_email_address" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Drivers Email Address:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(drivers_email_address)%%></div>
+			</div>
+		</div>
+		<!-- Field: Driver's License: -->
+		<div class="form-group driver-drivers_license" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver's License:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(drivers_license)%%></div>
+			</div>
+		</div>
+		<!-- Field: Driver's License Code: -->
+		<div class="form-group driver-drivers_license_code" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver's License Code:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(drivers_license_code)%%></div>
+			</div>
+		</div>
+		<!-- Field: Driver's License Number: -->
+		<div class="form-group driver-drivers_license_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver's License Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(drivers_license_number)%%></div>
+			</div>
+		</div>
+		<!-- Field: Driver's License Upload: -->
+		<div class="form-group driver-drivers_license_upload" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver's License Upload:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="drivers_license_upload-link" href="link.php?t=driver&f=drivers_license_upload&i=<%%VALUE(driver_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(drivers_license_upload)%%>"></i></a><script>jQuery(function() { var e_drivers_license_upload = '<%%VALUE(drivers_license_upload)%%>'; if(e_drivers_license_upload == '' || e_drivers_license_upload == '&nbsp;' || e_drivers_license_upload == 'blank.gif') jQuery('#drivers_license_upload-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Drivers License Expire Date: -->
+		<div class="form-group driver-drivers_license_expire_date" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Drivers License Expire Date:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(drivers_license_expire_date)%%></div>
+			</div>
+		</div>
+		<!-- Field: Drivers License Renewal Date: -->
+		<div class="form-group driver-drivers_license_renewal_date" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Drivers License Renewal Date:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(drivers_license_renewal_date)%%></div>
+			</div>
+		</div>
+		<!-- Field: Drivers Log History: -->
+		<div class="form-group driver-drivers_log_history" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Drivers Log History:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(drivers_log_history)%%></div>
+			</div>
+		</div>
+		<!-- Field: Driver's License Penalties: -->
+		<div class="form-group driver-drivers_license_penalties" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver's License Penalties:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(drivers_license_penalties)%%></div>
+			</div>
+		</div>
+		<!-- Field: Driver's License Penalty Date: -->
+		<div class="form-group driver-drivers_license_penalties_date" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver's License Penalty Date:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(drivers_license_penalties_date)%%></div>
+			</div>
+		</div>
+		<!-- Field: Driver's License Penalty Details: -->
+		<div class="form-group driver-drivers_license_penalty_details" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver's License Penalty Details:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(drivers_license_penalty_details)%%></div>
+			</div>
+		</div>
+		<!-- Field: Driver's License Penalty Detail Uploads: -->
+		<div class="form-group driver-drivers_license_penalty_details_uploads" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver's License Penalty Detail Uploads:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="drivers_license_penalty_details_uploads-link" href="link.php?t=driver&f=drivers_license_penalty_details_uploads&i=<%%VALUE(driver_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(drivers_license_penalty_details_uploads)%%>"></i></a><script>jQuery(function() { var e_drivers_license_penalty_details_uploads = '<%%VALUE(drivers_license_penalty_details_uploads)%%>'; if(e_drivers_license_penalty_details_uploads == '' || e_drivers_license_penalty_details_uploads == '&nbsp;' || e_drivers_license_penalty_details_uploads == 'blank.gif') jQuery('#drivers_license_penalty_details_uploads-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Involved in Accident?: -->
+		<div class="form-group driver-involved_in_accident" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Involved in Accident?:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(involved_in_accident)%%></div>
+			</div>
+		</div>
+		<!-- Field: Accident Report: -->
+		<div class="form-group driver-accident_report" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Accident Report:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="accident_report-link" href="link.php?t=driver&f=accident_report&i=<%%VALUE(driver_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(accident_report)%%>"></i></a><script>jQuery(function() { var e_accident_report = '<%%VALUE(accident_report)%%>'; if(e_accident_report == '' || e_accident_report == '&nbsp;' || e_accident_report == 'blank.gif') jQuery('#accident_report-link').hide(); });</script></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>
+<!-- child records -->
+<div class="panel-body">
+	<div id="driver-children"></div>
+</div>
+
+<script>
+	$j(function() {
+		/* prevent loading child records in multiple DVP */
+		if($j('[id=driver-children]').length > 1) return;
+
+		post(
+			'parent-children.php', {
+				ParentTable: 'driver',
+				SelectedID: '<%%VALUE(driver_id)%%>',
+				Operation: 'show-children-printable'
+			},
+			'driver-children',
+			'disable-element',
+			'loading-element',
+			apply_persisting_children
+		);
+
+		$j('form').on('click', '#children-tabs button[data-target]', function() {
+			$j(this).toggleClass('active');
+			persist_expanded_child($j(this).attr('id'));
+		});
+	})
+</script>
+

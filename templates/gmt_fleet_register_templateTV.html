@@ -1,0 +1,48 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the gmt_fleet_register_init() hook (in hooks/gmt_fleet_register.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="gmt_fleet_register-fleet_asset_id-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-fleet_asset_id text-right"><%%SELECT%%><%%VALUE(fleet_asset_id)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-vehicle_registration_number-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-vehicle_registration_number"><%%SELECT%%><%%VALUE(vehicle_registration_number)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-register_number-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-register_number"><%%SELECT%%><%%VALUE(register_number)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-engine_number-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-engine_number"><%%SELECT%%><%%VALUE(engine_number)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-chassis_number-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-chassis_number"><%%SELECT%%><%%VALUE(chassis_number)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-dealer_name-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-dealer_name"><%%SELECT%%><%%VALUE(dealer_name)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-make_of_vehicle-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-make_of_vehicle"><%%SELECT%%><%%VALUE(make_of_vehicle)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-model_of_vehicle-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-model_of_vehicle"><%%SELECT%%><%%VALUE(model_of_vehicle)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-year_model_specification-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-year_model_specification"><%%SELECT%%><%%VALUE(year_model_specification)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-engine_capacity-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-engine_capacity"><%%SELECT%%><%%VALUE(engine_capacity)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-tyre_size-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-tyre_size"><%%SELECT%%><%%VALUE(tyre_size)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-transmission-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-transmission"><%%SELECT%%><%%VALUE(transmission)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-fuel_type-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-fuel_type"><%%SELECT%%><%%VALUE(fuel_type)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-type_of_vehicle-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-type_of_vehicle"><%%SELECT%%><%%VALUE(type_of_vehicle)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-colour_of_vehicle-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-colour_of_vehicle"><%%SELECT%%><%%VALUE(colour_of_vehicle)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-application_status-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-application_status"><%%SELECT%%><%%VALUE(application_status)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-case_number-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-case_number"><%%SELECT%%><%%VALUE(case_number)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-barcode_number-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-barcode_number"><%%SELECT%%><%%VALUE(barcode_number)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-purchase_price-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-purchase_price text-right"><%%SELECT%%><%%VALUE(purchase_price)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-depreciation_value-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-depreciation_value"><%%SELECT%%><%%VALUE(depreciation_value)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-photo_of_vehicle-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-photo_of_vehicle"><a href="<%%BASE_UPLOAD_PATH%%><%%VALUE(photo_of_vehicle)%%>" data-lightbox="gmt_fleet_register-photo_of_vehicle"><img src="thumbnail.php?i=<%%VALUE(photo_of_vehicle)%%>&t=gmt_fleet_register&f=photo_of_vehicle&v=tv" class="img-thumbnail"></a></td>
+		<td id="gmt_fleet_register-user_name_and_surname-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-user_name_and_surname"><%%SELECT%%><%%VALUE(user_name_and_surname)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-user_contact_email-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-user_contact_email"><a href="mailto:<%%VALUE(user_contact_email)%%>" title="<%%VALUE(user_contact_email)%%>" class="btn btn-default"><i class="glyphicon glyphicon-envelope text-info"></i></a></td>
+		<td id="gmt_fleet_register-contact_number-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-contact_number"><%%SELECT%%><%%VALUE(contact_number)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-department_name-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-department_name"><%%SELECT%%><%%VALUE(department_name)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-department_address-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-department_address"><%%SELECT%%><%%VALUE(department_address)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-province-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-province"><%%SELECT%%><%%VALUE(province)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-district-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-district"><%%SELECT%%><%%VALUE(district)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-drivers_name_and_surname-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-drivers_name_and_surname"><%%SELECT%%><%%VALUE(drivers_name_and_surname)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-drivers_persal_number-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-drivers_persal_number"><%%SELECT%%><%%VALUE(drivers_persal_number)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-department_name_of_driver-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-department_name_of_driver"><%%SELECT%%><%%VALUE(department_name_of_driver)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-drivers_contact_details-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-drivers_contact_details"><%%SELECT%%><%%VALUE(drivers_contact_details)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-documents-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-documents"><a href="link.php?t=gmt_fleet_register&f=documents&i=<%%VALUE(fleet_asset_id)%%>" target="_blank" title="<%%VALUE(documents)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="gmt_fleet_register-date_auctioned-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-date_auctioned"><%%SELECT%%><%%VALUE(date_auctioned)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-venue-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-venue"><%%SELECT%%><%%VALUE(venue)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-comments-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-comments"><%%SELECT%%><%%VALUE(comments)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-renewal_of_license-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-renewal_of_license"><%%SELECT%%><%%VALUE(renewal_of_license)%%><%%ENDSELECT%%></td>
+		<td id="gmt_fleet_register-mm_code-<%%VALUE(fleet_asset_id)%%>" class="gmt_fleet_register-mm_code"><%%SELECT%%><%%VALUE(mm_code)%%><%%ENDSELECT%%></td>
+		<script>$j(function() {
+			var e_documents = '<%%VALUE(documents)%%>'; if(e_documents == '' || e_documents == '&nbsp;') $j(/*<*/ '#gmt_fleet_register-documents-<%%VALUE(fleet_asset_id)%%>' /*>*/).html('');
+		});</script>

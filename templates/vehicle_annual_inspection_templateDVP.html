@@ -1,0 +1,299 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Asset ID: -->
+		<div class="form-group vehicle_annual_inspection-fleet_asset_id" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Asset ID:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(fleet_asset_id)%%></div>
+			</div>
+		</div>
+		<!-- Field: Registration Number: -->
+		<div class="form-group vehicle_annual_inspection-vehicle_registration_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Registration Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="vehicle_registration_number<%%RND1%%>"><%%COMBOTEXT(vehicle_registration_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Register Number: -->
+		<div class="form-group vehicle_annual_inspection-register_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Register Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="register_number<%%RND1%%>"><%%COMBOTEXT(register_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Engine Number: -->
+		<div class="form-group vehicle_annual_inspection-engine_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Engine Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="engine_number<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Chassis/Vin Number: -->
+		<div class="form-group vehicle_annual_inspection-chassis_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Chassis/Vin Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="chassis_number<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Make of Vehicle: -->
+		<div class="form-group vehicle_annual_inspection-make_of_vehicle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Make of Vehicle:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="make_of_vehicle<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Model of Vehicle: -->
+		<div class="form-group vehicle_annual_inspection-model_of_vehicle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Model of Vehicle:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="model_of_vehicle<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Year Model Specification: -->
+		<div class="form-group vehicle_annual_inspection-year_model_specification" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Year Model Specification:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="year_model_specification<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Engine Capacity (cc): -->
+		<div class="form-group vehicle_annual_inspection-engine_capacity" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Engine Capacity (cc):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="engine_capacity<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Tyre Size (Radial): -->
+		<div class="form-group vehicle_annual_inspection-tyre_size" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tyre Size (Radial):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="tyre_size<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Transmission: -->
+		<div class="form-group vehicle_annual_inspection-transmission" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Transmission:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="transmission<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Fuel Type: -->
+		<div class="form-group vehicle_annual_inspection-fuel_type" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Fuel Type:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="fuel_type<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Type of Vehicle: -->
+		<div class="form-group vehicle_annual_inspection-type_of_vehicle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Type of Vehicle:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="type_of_vehicle<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Colour of Vehicle: -->
+		<div class="form-group vehicle_annual_inspection-colour_of_vehicle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Colour of Vehicle:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="colour_of_vehicle<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Application Status: -->
+		<div class="form-group vehicle_annual_inspection-application_status" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Application Status:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="application_status<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: License Expiry Date: -->
+		<div class="form-group vehicle_annual_inspection-renewal_of_license" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">License Expiry Date:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="renewal_of_license<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Barcode Number: -->
+		<div class="form-group vehicle_annual_inspection-barcode_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Barcode Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="barcode_number<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Last Entry of Figure in Log Book: -->
+		<div class="form-group vehicle_annual_inspection-last_entry_logbook" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Last Entry of Figure in Log Book:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(last_entry_logbook)%%></div>
+			</div>
+		</div>
+		<!-- Field: Photo of Vehicle: -->
+		<div class="form-group vehicle_annual_inspection-photo_of_vehicle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Photo of Vehicle:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><script>
+				var photo_of_vehicleSrc1<%%RND1%%>='<%%BASE_UPLOAD_PATH%%><%%VALUE(photo_of_vehicle)%%>';
+				var photo_of_vehicleSrc2<%%RND1%%>='thumbnail.php?t=vehicle_annual_inspection&f=photo_of_vehicle&i=<%%VALUE(photo_of_vehicle)%%>&v=dv'
+			</script>
+			<a href="#" onclick="$j('#photo_of_vehicleImg<%%RND1%%>').attr('src', ($j('#photo_of_vehicleImg<%%RND1%%>').attr('src').search(/thumbnail\.php/) != -1 && photo_of_vehicleSrc1<%%RND1%%> != '<%%BASE_UPLOAD_PATH%%>' ? photo_of_vehicleSrc1<%%RND1%%> : photo_of_vehicleSrc2<%%RND1%%>)); return false;"><img id="photo_of_vehicleImg<%%RND1%%>" src="thumbnail.php?t=vehicle_annual_inspection&f=photo_of_vehicle&i=<%%VALUE(photo_of_vehicle)%%>&v=dv" class="img-thumbnail"></a></div>
+			</div>
+		</div>
+		<!-- Field: Department Name: -->
+		<div class="form-group vehicle_annual_inspection-department_name" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Department Name:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="department_name<%%RND1%%>"><%%COMBOTEXT(department_name)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Province: -->
+		<div class="form-group vehicle_annual_inspection-province" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Province:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="province<%%RND1%%>"><%%COMBOTEXT(province)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: District and Station: -->
+		<div class="form-group vehicle_annual_inspection-district" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">District and Station:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="district<%%RND1%%>"><%%COMBOTEXT(district)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Mechanical Inspection: -->
+		<div class="form-group vehicle_annual_inspection-mechanical_inspection" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Mechanical Inspection:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(mechanical_inspection)%%></div>
+			</div>
+		</div>
+		<!-- Field: Upholstery: -->
+		<div class="form-group vehicle_annual_inspection-upholstery" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Upholstery:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(upholstery)%%></div>
+			</div>
+		</div>
+		<!-- Field: Electrical Inspection: -->
+		<div class="form-group vehicle_annual_inspection-electrical_inspection" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Electrical Inspection:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(electrical_inspection)%%></div>
+			</div>
+		</div>
+		<!-- Field: Wheel Spanner: -->
+		<div class="form-group vehicle_annual_inspection-wheel_spanner" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Wheel Spanner:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(wheel_spanner)%%></div>
+			</div>
+		</div>
+		<!-- Field: Spare Wheel: -->
+		<div class="form-group vehicle_annual_inspection-spare_wheel" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Spare Wheel:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(spare_wheel)%%></div>
+			</div>
+		</div>
+		<!-- Field: Jack: -->
+		<div class="form-group vehicle_annual_inspection-jack" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Jack:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(jack)%%></div>
+			</div>
+		</div>
+		<!-- Field: Radio: -->
+		<div class="form-group vehicle_annual_inspection-radio" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Radio:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(radio)%%></div>
+			</div>
+		</div>
+		<!-- Field: Tri-Angle: -->
+		<div class="form-group vehicle_annual_inspection-triangle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tri-Angle:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(triangle)%%></div>
+			</div>
+		</div>
+		<!-- Field: Log Book: -->
+		<div class="form-group vehicle_annual_inspection-log_book" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Log Book:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(log_book)%%></div>
+			</div>
+		</div>
+		<!-- Field: Iternary: -->
+		<div class="form-group vehicle_annual_inspection-iternary" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Iternary:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(iternary)%%></div>
+			</div>
+		</div>
+		<!-- Field: Fuel Card: -->
+		<div class="form-group vehicle_annual_inspection-fuel_card" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Fuel Card:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(fuel_card)%%></div>
+			</div>
+		</div>
+		<!-- Field: Remarks / Recommendation: -->
+		<div class="form-group vehicle_annual_inspection-recommendation" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Remarks / Recommendation:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(recommendation)%%></div>
+			</div>
+		</div>
+		<!-- Field: Documents: -->
+		<div class="form-group vehicle_annual_inspection-documents" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Documents:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="documents-link" href="link.php?t=vehicle_annual_inspection&f=documents&i=<%%VALUE(fleet_asset_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(documents)%%>"></i></a><script>jQuery(function() { var e_documents = '<%%VALUE(documents)%%>'; if(e_documents == '' || e_documents == '&nbsp;' || e_documents == 'blank.gif') jQuery('#documents-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Checking Officer: -->
+		<div class="form-group vehicle_annual_inspection-checking_officer_name_and_surname" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Checking Officer:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(checking_officer_name_and_surname)%%></div>
+			</div>
+		</div>
+		<!-- Field: Checking Officer Contact  Email: -->
+		<div class="form-group vehicle_annual_inspection-checking_officer_contact_email" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Checking Officer Contact  Email:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(checking_officer_contact_email)%%></div>
+			</div>
+		</div>
+		<!-- Field: Date of Inspection: -->
+		<div class="form-group vehicle_annual_inspection-date_of_inspection" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Date of Inspection:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(date_of_inspection)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>

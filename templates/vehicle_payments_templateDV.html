@@ -1,0 +1,513 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/vehicle_payments-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="vehicle_payments_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="vehicle_payments_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="vehicle_payments_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Vehicle Payment ID: -->
+				<div class="form-group vehicle_payments-vehicle_payment_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_payment_id">Vehicle Payment ID:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="vehicle_payment_id"><%%VALUE(vehicle_payment_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Registration Number: -->
+				<div class="form-group vehicle_payments-vehicle_registration_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_registration_number" data-parent_link="view_parent_modal">Registration Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(vehicle_registration_number)%%><%%PLINK(vehicle_registration_number)%%><%%ADDNEW(gmt_fleet_register)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Engine Number: -->
+				<div class="form-group vehicle_payments-engine_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Engine Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="engine_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Chassis Number: -->
+				<div class="form-group vehicle_payments-chassis_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Chassis Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="chassis_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Make of Vehicle: -->
+				<div class="form-group vehicle_payments-make_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Make of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="make_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Model of Vehicle: -->
+				<div class="form-group vehicle_payments-model_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Model of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="model_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Year Model of Vehicle: -->
+				<div class="form-group vehicle_payments-year_model_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Year Model of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="year_model_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Type of Vehicle: -->
+				<div class="form-group vehicle_payments-type_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Type of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="type_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Application Status: -->
+				<div class="form-group vehicle_payments-application_status">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Application Status:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="application_status"></div>
+					</div>
+				</div>
+
+				<!-- Field: Barcode Number: -->
+				<div class="form-group vehicle_payments-barcode_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Barcode Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="barcode_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Purchase Price: -->
+				<div class="form-group vehicle_payments-purchase_price">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="purchase_price">Purchase Price:</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="purchase_price" id="purchase_price" value="<%%VALUE(purchase_price)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Depreciation Value: -->
+				<div class="form-group vehicle_payments-depreciation_value">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="depreciation_value">Depreciation Value:</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="depreciation_value" id="depreciation_value" value="<%%VALUE(depreciation_value)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Closing KM: -->
+				<div class="form-group vehicle_payments-closing_km">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="closing_km" data-parent_link="view_parent_modal">Closing KM:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(closing_km)%%><%%PLINK(closing_km)%%><%%ADDNEW(log_sheet)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Department: -->
+				<div class="form-group vehicle_payments-department">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Department:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="department"></div>
+					</div>
+				</div>
+
+				<!-- Field: Acquisition Reference: -->
+				<div class="form-group vehicle_payments-acquisition_reference">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="acquisition_reference">Acquisition Reference:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="acquisition_reference" id="acquisition_reference" value="<%%VALUE(acquisition_reference)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Date Of Acquisition: -->
+				<div class="form-group vehicle_payments-date_of_acquisition">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_of_acquisition-dd">Date Of Acquisition:</label>
+					<div class="col-lg-9">
+						<%%COMBO(date_of_acquisition)%%>
+					</div>
+				</div>
+
+				<!-- Field: Odometer At Acquisition (km): -->
+				<div class="form-group vehicle_payments-odometer_at_acquisition">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="odometer_at_acquisition">Odometer At Acquisition (km):</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="odometer_at_acquisition" id="odometer_at_acquisition" value="<%%VALUE(odometer_at_acquisition)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Merchant Name: -->
+				<div class="form-group vehicle_payments-merchant_name">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="merchant_name" data-parent_link="view_parent_modal">Merchant Name:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(merchant_name)%%><%%PLINK(merchant_name)%%><%%ADDNEW(merchant)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Value At Acquisition (R): -->
+				<div class="form-group vehicle_payments-value_at_acquisition">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="value_at_acquisition">Value At Acquisition (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="value_at_acquisition" id="value_at_acquisition" value="<%%VALUE(value_at_acquisition)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Term (Months): -->
+				<div class="form-group vehicle_payments-term">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="term">Term (Months):</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="term" id="term" value="<%%VALUE(term)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Month End: -->
+				<div class="form-group vehicle_payments-month_end">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="month_end-dd">Month End:</label>
+					<div class="col-lg-9">
+						<%%COMBO(month_end)%%>
+					</div>
+				</div>
+
+				<!-- Field: Installment Per Month (R): -->
+				<div class="form-group vehicle_payments-installment_per_month">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="installment_per_month">Installment Per Month (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="installment_per_month" id="installment_per_month" value="<%%VALUE(installment_per_month)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Payment Amount (R): -->
+				<div class="form-group vehicle_payments-payment_amount">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="payment_amount">Payment Amount (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="payment_amount" id="payment_amount" value="<%%VALUE(payment_amount)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Payment Frequency:  -->
+				<div class="form-group vehicle_payments-payment_frequency">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="payment_frequency">Payment Frequency: </label>
+					<div class="col-lg-9">
+						<%%COMBO(payment_frequency)%%>
+					</div>
+				</div>
+
+				<!-- Field: Interest Rate: -->
+				<div class="form-group vehicle_payments-interest_rate">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="interest_rate">Interest Rate:</label>
+					<div class="col-lg-9">
+						<%%COMBO(interest_rate)%%>
+					</div>
+				</div>
+
+				<!-- Field: Payment Reference: -->
+				<div class="form-group vehicle_payments-payment_reference">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="payment_reference">Payment Reference:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="payment_reference" id="payment_reference" value="<%%VALUE(payment_reference)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Paid So Far (R): -->
+				<div class="form-group vehicle_payments-paid_so_far">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="paid_so_far">Paid So Far (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="paid_so_far" id="paid_so_far" value="<%%VALUE(paid_so_far)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Remaining Balance (R): -->
+				<div class="form-group vehicle_payments-remaining_balance">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="remaining_balance">Remaining Balance (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="remaining_balance" id="remaining_balance" value="<%%VALUE(remaining_balance)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Depreciation Since Purchase (R) : -->
+				<div class="form-group vehicle_payments-depreciation_since_purchase">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="depreciation_since_purchase">Depreciation Since Purchase (R) :</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="depreciation_since_purchase" id="depreciation_since_purchase" value="<%%VALUE(depreciation_since_purchase)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Actual Resale Value (R): -->
+				<div class="form-group vehicle_payments-actual_resale_value">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="actual_resale_value">Actual Resale Value (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="actual_resale_value" id="actual_resale_value" value="<%%VALUE(actual_resale_value)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Warranty Expires On: -->
+				<div class="form-group vehicle_payments-warranty_expires_on">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="warranty_expires_on-dd">Warranty Expires On:</label>
+					<div class="col-lg-9">
+						<%%COMBO(warranty_expires_on)%%>
+					</div>
+				</div>
+
+				<!-- Field: Comments: -->
+				<div class="form-group vehicle_payments-comments">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="comments">Comments:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(comments)%%>
+					</div>
+				</div>
+
+				<!-- Field: Documents: -->
+				<div class="form-group vehicle_payments-documents">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Documents: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#documents-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="documents-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5120 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="documents-link" href="link.php?t=vehicle_payments&f=documents&i=<%%VALUE(vehicle_payment_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(documents)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(documents)%%>
+								<%%REMOVEFILE(documents)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_documents = '<%%VALUE(documents)%%>'; if(e_documents == '' || e_documents == '&nbsp;' || e_documents == 'blank.gif') jQuery('#documents-link').hide(); });</script>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="vehicle_payments_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			AppGini.once({
+				condition: function() { return bkLib != undefined; },
+				action: function() {
+					if($j('textarea#comments').length) new nicEditor({ fullPanel : true }).panelInstance('comments');
+				}
+			});
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) {
+				AppGini.once({
+					condition: function() {
+						return $j('.form-group.vehicle_payments-vehicle_registration_number')
+									.find('.nicEdit-main, .select2-container, input[type=radio]')
+									.length > 0
+								// or read-only DV
+								|| (!$j('#update').length && !$j('#insert').length);
+					},
+					action: function() {
+						$j('#vehicle_payments_dv_container-loading').addClass('hidden');
+						$j('#vehicle_payments_dv_container').removeClass('hidden');
+						AppGini.focusFormElement('vehicle_payments', 'vehicle_registration_number');
+					},
+					timeout:  5000,
+					doActionOnTimeout:  true
+				});
+			} else {
+				$j('#vehicle_payments_dv_container-loading').addClass('hidden');
+				$j('#vehicle_payments_dv_container').removeClass('hidden');
+			}
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			// try to detect rich text changes by adding 'input' handler after nicedit is loaded ...
+			AppGini.detectContentEditableChanges();
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'vehicle_payments',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=vehicle_payments&id=<%%URLVALUE(vehicle_payment_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=vehicle_payments&id=<%%URLVALUE(vehicle_payment_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

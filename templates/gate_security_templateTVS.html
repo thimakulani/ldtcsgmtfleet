@@ -1,0 +1,33 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the gate_security_init() hook (in hooks/gate_security.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="gate_security-gate_security_user_id-<%%VALUE(gate_security_user_id)%%>" class="gate_security-gate_security_user_id text-right"><%%VALUE(gate_security_user_id)%%></td>
+		<td id="gate_security-gate_security_name_and_surname-<%%VALUE(gate_security_user_id)%%>" class="gate_security-gate_security_name_and_surname"><%%VALUE(gate_security_name_and_surname)%%></td>
+		<td id="gate_security-gate_security_contact_details-<%%VALUE(gate_security_user_id)%%>" class="gate_security-gate_security_contact_details"><%%VALUE(gate_security_contact_details)%%></td>
+		<td id="gate_security-gate_security_signature-<%%VALUE(gate_security_user_id)%%>" class="gate_security-gate_security_signature"><%%VALUE(gate_security_signature)%%></td>
+		<td id="gate_security-date_of_vehicle_entrance-<%%VALUE(gate_security_user_id)%%>" class="gate_security-date_of_vehicle_entrance"><%%VALUE(date_of_vehicle_entrance)%%></td>
+		<td id="gate_security-vehicle_registration_number-<%%VALUE(gate_security_user_id)%%>" class="gate_security-vehicle_registration_number"><%%VALUE(vehicle_registration_number)%%></td>
+		<td id="gate_security-engine_number-<%%VALUE(gate_security_user_id)%%>" class="gate_security-engine_number"><%%VALUE(engine_number)%%></td>
+		<td id="gate_security-make_of_vehicle-<%%VALUE(gate_security_user_id)%%>" class="gate_security-make_of_vehicle"><%%VALUE(make_of_vehicle)%%></td>
+		<td id="gate_security-vehicle_colour-<%%VALUE(gate_security_user_id)%%>" class="gate_security-vehicle_colour"><%%VALUE(vehicle_colour)%%></td>
+		<td id="gate_security-vehicle_inspection-<%%VALUE(gate_security_user_id)%%>" class="gate_security-vehicle_inspection"><%%VALUE(vehicle_inspection)%%></td>
+		<td id="gate_security-vehicle_tires_size-<%%VALUE(gate_security_user_id)%%>" class="gate_security-vehicle_tires_size"><%%VALUE(vehicle_tires_size)%%></td>
+		<td id="gate_security-vehicle_tires_check-<%%VALUE(gate_security_user_id)%%>" class="gate_security-vehicle_tires_check"><%%VALUE(vehicle_tires_check)%%></td>
+		<td id="gate_security-vehicle_mirrow_check-<%%VALUE(gate_security_user_id)%%>" class="gate_security-vehicle_mirrow_check"><%%VALUE(vehicle_mirrow_check)%%></td>
+		<td id="gate_security-vehicle_interiour_condition-<%%VALUE(gate_security_user_id)%%>" class="gate_security-vehicle_interiour_condition"><%%VALUE(vehicle_interiour_condition)%%></td>
+		<td id="gate_security-vehicle_exteriour_condition-<%%VALUE(gate_security_user_id)%%>" class="gate_security-vehicle_exteriour_condition"><%%VALUE(vehicle_exteriour_condition)%%></td>
+		<td id="gate_security-gate_security_company_name-<%%VALUE(gate_security_user_id)%%>" class="gate_security-gate_security_company_name"><%%VALUE(gate_security_company_name)%%></td>
+		<td id="gate_security-gate_security_company_contact_details-<%%VALUE(gate_security_user_id)%%>" class="gate_security-gate_security_company_contact_details"><%%VALUE(gate_security_company_contact_details)%%></td>
+		<td id="gate_security-gate_security_manager_name_and_surname-<%%VALUE(gate_security_user_id)%%>" class="gate_security-gate_security_manager_name_and_surname"><%%VALUE(gate_security_manager_name_and_surname)%%></td>
+		<td id="gate_security-gate_security_manager_contact_details-<%%VALUE(gate_security_user_id)%%>" class="gate_security-gate_security_manager_contact_details"><%%VALUE(gate_security_manager_contact_details)%%></td>
+		<td id="gate_security-gate_security_company_address-<%%VALUE(gate_security_user_id)%%>" class="gate_security-gate_security_company_address"><%%VALUE(gate_security_company_address)%%></td>
+		<td id="gate_security-inspection_of_vehicle_report-<%%VALUE(gate_security_user_id)%%>" class="gate_security-inspection_of_vehicle_report"><a href="link.php?t=gate_security&f=inspection_of_vehicle_report&i=<%%VALUE(gate_security_user_id)%%>" target="_blank" title="<%%VALUE(inspection_of_vehicle_report)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="gate_security-record_of_vehicle-<%%VALUE(gate_security_user_id)%%>" class="gate_security-record_of_vehicle"><%%VALUE(record_of_vehicle)%%></td>
+		<td id="gate_security-date_of_vehicle_exit-<%%VALUE(gate_security_user_id)%%>" class="gate_security-date_of_vehicle_exit"><%%VALUE(date_of_vehicle_exit)%%></td>
+		<script>$j(function() {
+			var e_inspection_of_vehicle_report = '<%%VALUE(inspection_of_vehicle_report)%%>'; if(e_inspection_of_vehicle_report == '' || e_inspection_of_vehicle_report == '&nbsp;') $j(/*<*/ '#gate_security-inspection_of_vehicle_report-<%%VALUE(gate_security_user_id)%%>' /*>*/).html('');
+		});</script>

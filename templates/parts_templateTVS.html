@@ -1,0 +1,23 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the parts_init() hook (in hooks/parts.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="parts-parts_id-<%%VALUE(parts_id)%%>" class="parts-parts_id text-right"><%%VALUE(parts_id)%%></td>
+		<td id="parts-part_type-<%%VALUE(parts_id)%%>" class="parts-part_type"><%%VALUE(part_type)%%></td>
+		<td id="parts-part_number-<%%VALUE(parts_id)%%>" class="parts-part_number"><%%VALUE(part_number)%%></td>
+		<td id="parts-part_name-<%%VALUE(parts_id)%%>" class="parts-part_name"><%%VALUE(part_name)%%></td>
+		<td id="parts-description-<%%VALUE(parts_id)%%>" class="parts-description"><%%VALUE(description)%%></td>
+		<td id="parts-manufacturer-<%%VALUE(parts_id)%%>" class="parts-manufacturer"><%%VALUE(manufacturer)%%></td>
+		<td id="parts-dealer-<%%VALUE(parts_id)%%>" class="parts-dealer"><%%VALUE(dealer)%%></td>
+		<td id="parts-measure-<%%VALUE(parts_id)%%>" class="parts-measure"><%%VALUE(measure)%%></td>
+		<td id="parts-unit_price-<%%VALUE(parts_id)%%>" class="parts-unit_price text-right"><%%VALUE(unit_price)%%></td>
+		<td id="parts-quantity-<%%VALUE(parts_id)%%>" class="parts-quantity"><%%VALUE(quantity)%%></td>
+		<td id="parts-freight-<%%VALUE(parts_id)%%>" class="parts-freight"><%%VALUE(freight)%%></td>
+		<td id="parts-amount-<%%VALUE(parts_id)%%>" class="parts-amount text-right"><%%VALUE(amount)%%></td>
+		<td id="parts-tax-<%%VALUE(parts_id)%%>" class="parts-tax"><%%VALUE(tax)%%></td>
+		<td id="parts-total_amount-<%%VALUE(parts_id)%%>" class="parts-total_amount text-right"><%%VALUE(total_amount)%%></td>
+		<td id="parts-discount_price-<%%VALUE(parts_id)%%>" class="parts-discount_price text-right"><%%VALUE(discount_price)%%></td>
+		<td id="parts-net_part_price-<%%VALUE(parts_id)%%>" class="parts-net_part_price text-right"><%%VALUE(net_part_price)%%></td>

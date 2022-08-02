@@ -1,0 +1,226 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Reception User ID: -->
+		<div class="form-group reception-reception_user_id" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Reception User ID:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(reception_user_id)%%></div>
+			</div>
+		</div>
+		<!-- Field: Reception Name & Surname: -->
+		<div class="form-group reception-reception_name_and_surname" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Reception Name & Surname:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(reception_name_and_surname)%%></div>
+			</div>
+		</div>
+		<!-- Field: Reception Persal Number: -->
+		<div class="form-group reception-reception_persal_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Reception Persal Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(reception_persal_number)%%></div>
+			</div>
+		</div>
+		<!-- Field: Reception Contact Details: -->
+		<div class="form-group reception-reception_contact_details" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Reception Contact Details:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(reception_contact_details)%%></div>
+			</div>
+		</div>
+		<!-- Field: Reception Email Address: -->
+		<div class="form-group reception-reception_email_address" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Reception Email Address:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(reception_email_address)%%></div>
+			</div>
+		</div>
+		<!-- Field: Reception Signature: -->
+		<div class="form-group reception-reception_signature" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Reception Signature:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img id="reception_signatureImg" src="thumbnail.php?t=reception&f=reception_signature&i=<%%VALUE(reception_signature)%%>&v=dv" class="img-thumbnail"></div>
+			</div>
+		</div>
+		<!-- Field: Date of Vehicle Entrance: -->
+		<div class="form-group reception-date_of_vehicle_entrance" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Date of Vehicle Entrance:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(date_of_vehicle_entrance)%%></div>
+			</div>
+		</div>
+		<!-- Field: Service Status: -->
+		<div class="form-group reception-service_status" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Service Status:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(service_status)%%></div>
+			</div>
+		</div>
+		<!-- Field: District: -->
+		<div class="form-group reception-district" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">District:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="district<%%RND1%%>"><%%COMBOTEXT(district)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Workshop Name/Station: -->
+		<div class="form-group reception-location" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Workshop Name/Station:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="location<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Workshop Address: -->
+		<div class="form-group reception-workshop_address" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Workshop Address:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(workshop_address)%%></div>
+			</div>
+		</div>
+		<!-- Field: Registration Number: -->
+		<div class="form-group reception-vehicle_registration_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Registration Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="vehicle_registration_number<%%RND1%%>"><%%COMBOTEXT(vehicle_registration_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Engine Number: -->
+		<div class="form-group reception-engine_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Engine Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="engine_number<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Make of Vehicle: -->
+		<div class="form-group reception-make_of_vehicle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Make of Vehicle:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="make_of_vehicle<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Breakdown Of Vehicle: -->
+		<div class="form-group reception-breakdown_of_vehicle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Breakdown Of Vehicle:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(breakdown_of_vehicle)%%></div>
+			</div>
+		</div>
+		<!-- Field: Description of Vehicle Breakdown (Notes): -->
+		<div class="form-group reception-description_of_vehicle_breakdown_notes" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Description of Vehicle Breakdown (Notes):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(description_of_vehicle_breakdown_notes)%%></div>
+			</div>
+		</div>
+		<!-- Field: Description Of Vehicle Report: -->
+		<div class="form-group reception-description_of_vehicle_report" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Description Of Vehicle Report:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="description_of_vehicle_report-link" href="link.php?t=reception&f=description_of_vehicle_report&i=<%%VALUE(reception_user_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(description_of_vehicle_report)%%>"></i></a><script>jQuery(function() { var e_description_of_vehicle_report = '<%%VALUE(description_of_vehicle_report)%%>'; if(e_description_of_vehicle_report == '' || e_description_of_vehicle_report == '&nbsp;' || e_description_of_vehicle_report == 'blank.gif') jQuery('#description_of_vehicle_report-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Description Of Vehicle Report: -->
+		<div class="form-group reception-upload_of_vehicle_report" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Description Of Vehicle Report:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="upload_of_vehicle_report-link" href="link.php?t=reception&f=upload_of_vehicle_report&i=<%%VALUE(reception_user_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(upload_of_vehicle_report)%%>"></i></a><script>jQuery(function() { var e_upload_of_vehicle_report = '<%%VALUE(upload_of_vehicle_report)%%>'; if(e_upload_of_vehicle_report == '' || e_upload_of_vehicle_report == '&nbsp;' || e_upload_of_vehicle_report == 'blank.gif') jQuery('#upload_of_vehicle_report-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Description Of Vehicle Breakdown: -->
+		<div class="form-group reception-description_of_vehicle_breakdown" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Description Of Vehicle Breakdown:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(description_of_vehicle_breakdown)%%></div>
+			</div>
+		</div>
+		<!-- Field: Job Card Number: -->
+		<div class="form-group reception-job_card_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Job Card Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(job_card_number)%%></div>
+			</div>
+		</div>
+		<!-- Field: Visual Inspection Form: -->
+		<div class="form-group reception-visual_inspection_form" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Visual Inspection Form:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="visual_inspection_form-link" href="link.php?t=reception&f=visual_inspection_form&i=<%%VALUE(reception_user_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(visual_inspection_form)%%>"></i></a><script>jQuery(function() { var e_visual_inspection_form = '<%%VALUE(visual_inspection_form)%%>'; if(e_visual_inspection_form == '' || e_visual_inspection_form == '&nbsp;' || e_visual_inspection_form == 'blank.gif') jQuery('#visual_inspection_form-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Damage Report: -->
+		<div class="form-group reception-damage_report" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Damage Report:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="damage_report-link" href="link.php?t=reception&f=damage_report&i=<%%VALUE(reception_user_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(damage_report)%%>"></i></a><script>jQuery(function() { var e_damage_report = '<%%VALUE(damage_report)%%>'; if(e_damage_report == '' || e_damage_report == '&nbsp;' || e_damage_report == 'blank.gif') jQuery('#damage_report-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Date of Vehicle Exit: -->
+		<div class="form-group reception-date_of_vehicle_exit" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Date of Vehicle Exit:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(date_of_vehicle_exit)%%></div>
+			</div>
+		</div>
+		<!-- Field: Payment: -->
+		<div class="form-group reception-payment" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Payment:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(payment)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>
+<!-- child records -->
+<div class="panel-body">
+	<div id="reception-children"></div>
+</div>
+
+<script>
+	$j(function() {
+		/* prevent loading child records in multiple DVP */
+		if($j('[id=reception-children]').length > 1) return;
+
+		post(
+			'parent-children.php', {
+				ParentTable: 'reception',
+				SelectedID: '<%%VALUE(reception_user_id)%%>',
+				Operation: 'show-children-printable'
+			},
+			'reception-children',
+			'disable-element',
+			'loading-element',
+			apply_persisting_children
+		);
+
+		$j('form').on('click', '#children-tabs button[data-target]', function() {
+			$j(this).toggleClass('active');
+			persist_expanded_child($j(this).attr('id'));
+		});
+	})
+</script>
+

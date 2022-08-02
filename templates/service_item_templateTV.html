@@ -1,0 +1,9 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the service_item_init() hook (in hooks/service_item.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="service_item-service_item_id-<%%VALUE(service_item_id)%%>" class="service_item-service_item_id text-right"><%%SELECT%%><%%VALUE(service_item_id)%%><%%ENDSELECT%%></td>
+		<td id="service_item-service_item-<%%VALUE(service_item_id)%%>" class="service_item-service_item"><%%SELECT%%><%%VALUE(service_item)%%><%%ENDSELECT%%></td>

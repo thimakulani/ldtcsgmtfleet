@@ -1,0 +1,35 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the authorizations_init() hook (in hooks/authorizations.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="authorizations-authorize_id-<%%VALUE(authorize_id)%%>" class="authorizations-authorize_id text-right"><%%SELECT%%><%%VALUE(authorize_id)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-job_code-<%%VALUE(authorize_id)%%>" class="authorizations-job_code"><%%SELECT%%><%%VALUE(job_code)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-job_status-<%%VALUE(authorize_id)%%>" class="authorizations-job_status"><%%SELECT%%><%%VALUE(job_status)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-job_status_date-<%%VALUE(authorize_id)%%>" class="authorizations-job_status_date"><%%SELECT%%><%%VALUE(job_status_date)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-job_status_age-<%%VALUE(authorize_id)%%>" class="authorizations-job_status_age"><%%SELECT%%><%%VALUE(job_status_age)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-job_age-<%%VALUE(authorize_id)%%>" class="authorizations-job_age"><%%SELECT%%><%%VALUE(job_age)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-job_category-<%%VALUE(authorize_id)%%>" class="authorizations-job_category"><%%SELECT%%><%%VALUE(job_category)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-job_odometer-<%%VALUE(authorize_id)%%>" class="authorizations-job_odometer"><%%SELECT%%><%%VALUE(job_odometer)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-instruction_note-<%%VALUE(authorize_id)%%>" class="authorizations-instruction_note"><%%SELECT%%><%%VALUE(instruction_note)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-pre_authorisation_date-<%%VALUE(authorize_id)%%>" class="authorizations-pre_authorisation_date"><%%SELECT%%><%%VALUE(pre_authorisation_date)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-authorisation_date-<%%VALUE(authorize_id)%%>" class="authorizations-authorisation_date"><%%SELECT%%><%%VALUE(authorisation_date)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-vehicle_registration_number-<%%VALUE(authorize_id)%%>" class="authorizations-vehicle_registration_number"><%%SELECT%%><%%VALUE(vehicle_registration_number)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-make_of_vehicle-<%%VALUE(authorize_id)%%>" class="authorizations-make_of_vehicle"><%%SELECT%%><%%VALUE(make_of_vehicle)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-client-<%%VALUE(authorize_id)%%>" class="authorizations-client"><%%SELECT%%><%%VALUE(client)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-province_name-<%%VALUE(authorize_id)%%>" class="authorizations-province_name"><%%SELECT%%><%%VALUE(province_name)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-merchant_code-<%%VALUE(authorize_id)%%>" class="authorizations-merchant_code"><%%SELECT%%><%%VALUE(merchant_code)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-merchant_name-<%%VALUE(authorize_id)%%>" class="authorizations-merchant_name"><%%SELECT%%><%%VALUE(merchant_name)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-merchant_contact_email-<%%VALUE(authorize_id)%%>" class="authorizations-merchant_contact_email"><%%SELECT%%><%%VALUE(merchant_contact_email)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-merchant_street_address-<%%VALUE(authorize_id)%%>" class="authorizations-merchant_street_address"><%%SELECT%%><%%VALUE(merchant_street_address)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-merchant_suburb-<%%VALUE(authorize_id)%%>" class="authorizations-merchant_suburb"><%%SELECT%%><%%VALUE(merchant_suburb)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-merchant_city-<%%VALUE(authorize_id)%%>" class="authorizations-merchant_city"><%%SELECT%%><%%VALUE(merchant_city)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-merchant_address_code-<%%VALUE(authorize_id)%%>" class="authorizations-merchant_address_code"><%%SELECT%%><%%VALUE(merchant_address_code)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-merchant_contact_details-<%%VALUE(authorize_id)%%>" class="authorizations-merchant_contact_details"><%%SELECT%%><%%VALUE(merchant_contact_details)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-total_claim-<%%VALUE(authorize_id)%%>" class="authorizations-total_claim"><%%SELECT%%><%%VALUE(total_claim)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-total_authorised-<%%VALUE(authorize_id)%%>" class="authorizations-total_authorised"><%%SELECT%%><%%VALUE(total_authorised)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-authorization_number-<%%VALUE(authorize_id)%%>" class="authorizations-authorization_number"><%%SELECT%%><%%VALUE(authorization_number)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-last_fuel_transaction_date-<%%VALUE(authorize_id)%%>" class="authorizations-last_fuel_transaction_date"><%%SELECT%%><%%VALUE(last_fuel_transaction_date)%%><%%ENDSELECT%%></td>
+		<td id="authorizations-external_repairs-<%%VALUE(authorize_id)%%>" class="authorizations-external_repairs"><%%SELECT%%><%%VALUE(external_repairs)%%><%%ENDSELECT%%></td>

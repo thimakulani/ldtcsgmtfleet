@@ -1,0 +1,316 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/dealer-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="dealer_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="dealer_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="gmt_fleet_register_view.php?filterer_dealer_name=<%%URLVALUE(dealer_id)%%>&<%%EMBEDDED%%>" id="gmt_fleet_register_link"><i class="glyphicon glyphicon-list-alt"></i> GMT Fleet Register:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="gmt_fleet_register_view.php?filterer_dealer_name=<%%URLVALUE(dealer_id)%%>&<%%EMBEDDED%%>" id="xs_gmt_fleet_register_link"><i class="glyphicon glyphicon-list-alt"></i> GMT Fleet Register:</a>
+			<input type="hidden" id="gmt_fleet_register_hclink" value="gmt_fleet_register_view.php?filterer_dealer_name=<%%URLVALUE(dealer_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="service_schedule_view.php?filterer_dealer_name=<%%URLVALUE(dealer_id)%%>&<%%EMBEDDED%%>" id="service_schedule_link"><i class="glyphicon glyphicon-calendar"></i> Service Schedule:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="service_schedule_view.php?filterer_dealer_name=<%%URLVALUE(dealer_id)%%>&<%%EMBEDDED%%>" id="xs_service_schedule_link"><i class="glyphicon glyphicon-calendar"></i> Service Schedule:</a>
+			<input type="hidden" id="service_schedule_hclink" value="service_schedule_view.php?filterer_dealer_name=<%%URLVALUE(dealer_id)%%>&<%%EMBEDDED%%>">
+			<input type="hidden" id="accidents_hclink" value="accidents_view.php?filterer_dealer_name=<%%URLVALUE(dealer_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="parts_view.php?filterer_dealer=<%%URLVALUE(dealer_id)%%>&<%%EMBEDDED%%>" id="parts_link"><i class="glyphicon glyphicon-scale"></i> Parts:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="parts_view.php?filterer_dealer=<%%URLVALUE(dealer_id)%%>&<%%EMBEDDED%%>" id="xs_parts_link"><i class="glyphicon glyphicon-scale"></i> Parts:</a>
+			<input type="hidden" id="parts_hclink" value="parts_view.php?filterer_dealer=<%%URLVALUE(dealer_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="internal_repairs_mechanical_view.php?filterer_make_of_vehicle=<%%URLVALUE(dealer_id)%%>&<%%EMBEDDED%%>" id="internal_repairs_mechanical_link"><i class="glyphicon glyphicon-sort-by-alphabet"></i> Internal Repairs Mechanical:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="internal_repairs_mechanical_view.php?filterer_make_of_vehicle=<%%URLVALUE(dealer_id)%%>&<%%EMBEDDED%%>" id="xs_internal_repairs_mechanical_link"><i class="glyphicon glyphicon-sort-by-alphabet"></i> Internal Repairs Mechanical:</a>
+			<input type="hidden" id="internal_repairs_mechanical_hclink" value="internal_repairs_mechanical_view.php?filterer_make_of_vehicle=<%%URLVALUE(dealer_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="movement_of_personnel_in_government_garage_and_workshops_view.php?filterer_make_of_vehicle=<%%URLVALUE(dealer_id)%%>&<%%EMBEDDED%%>" id="movement_of_personnel_in_government_garage_and_workshops_link"><i class="glyphicon glyphicon-user"></i> Movement Of Personnel In Government Garage And Workshops:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="movement_of_personnel_in_government_garage_and_workshops_view.php?filterer_make_of_vehicle=<%%URLVALUE(dealer_id)%%>&<%%EMBEDDED%%>" id="xs_movement_of_personnel_in_government_garage_and_workshops_link"><i class="glyphicon glyphicon-user"></i> Movement Of Personnel In Government Garage And Workshops:</a>
+			<input type="hidden" id="movement_of_personnel_in_government_garage_and_workshops_hclink" value="movement_of_personnel_in_government_garage_and_workshops_view.php?filterer_make_of_vehicle=<%%URLVALUE(dealer_id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="dealer_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Dealer ID: -->
+				<div class="form-group dealer-dealer_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="dealer_id">Dealer ID:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="dealer_id"><%%VALUE(dealer_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Dealer Type: -->
+				<div class="form-group dealer-dealer_type">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="dealer_type" data-parent_link="view_parent_modal">Dealer Type:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(dealer_type)%%><%%PLINK(dealer_type)%%><%%ADDNEW(dealer_type)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Make of Vehicle: -->
+				<div class="form-group dealer-make_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="make_of_vehicle">Make of Vehicle:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="make_of_vehicle" id="make_of_vehicle" value="<%%VALUE(make_of_vehicle)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Dealer Name: -->
+				<div class="form-group dealer-dealer_name">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="dealer_name">Dealer Name:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="dealer_name" id="dealer_name" value="<%%VALUE(dealer_name)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Contact Person: -->
+				<div class="form-group dealer-contact_person">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="contact_person">Contact Person:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="contact_person" id="contact_person" value="<%%VALUE(contact_person)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Contact Details: -->
+				<div class="form-group dealer-contact_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="contact_details">Contact Details:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="contact_details" id="contact_details" value="<%%VALUE(contact_details)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Contact E-Mail: -->
+				<div class="form-group dealer-contact_email">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="contact_email-edit-link">Contact E-Mail:</label>
+					<div class="col-lg-9">
+						<div>
+							<a id="contact_email-link" href="mailto:<%%VALUE(contact_email)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-envelope text-info" title="<%%VALUE(contact_email)%%>"></i></a>
+							<label for="contact_email"><button type="button" id="contact_email-edit-link" class="btn btn-default vspacer-sm" data-toggle="collapse" data-target="#contact_email" title="<%%TRANSLATION(Edit)%%>"><i class="glyphicon glyphicon-pencil"></i></button></label>
+							<input maxlength="40" type="text" class="form-control collapse" name="contact_email" id="contact_email" value="<%%VALUE(contact_email)%%>">
+						</div><script>jQuery(function() { var e_contact_email = '<%%VALUE(contact_email)%%>'; if(e_contact_email == '' || e_contact_email == '&nbsp;' || e_contact_email == 'blank.gif') jQuery('#contact_email-link').hide(); });</script>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="dealer_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="dealer-children" class="children-tabs">
+				<div class="text-center"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+			</div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) {
+				AppGini.once({
+					condition: function() {
+						return $j('.form-group.dealer-dealer_type')
+									.find('.nicEdit-main, .select2-container, input[type=radio]')
+									.length > 0
+								// or read-only DV
+								|| (!$j('#update').length && !$j('#insert').length);
+					},
+					action: function() {
+						$j('#dealer_dv_container-loading').addClass('hidden');
+						$j('#dealer_dv_container').removeClass('hidden');
+						AppGini.focusFormElement('dealer', 'dealer_type');
+					},
+					timeout:  5000,
+					doActionOnTimeout:  true
+				});
+			} else {
+				$j('#dealer_dv_container-loading').addClass('hidden');
+				$j('#dealer_dv_container').removeClass('hidden');
+			}
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+			if(embedded_mode) {
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function() {
+					$j('a[href]:not([href^="#"]):not([href^="javascript"]):not([href$="Embedded=1"]):not([href*="link.php?t="]):not([href^="mailto:"]):not([href$=".jpg"]):not([href$=".png"]):not([href$=".gif"])').each(
+						function() {
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode) {
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			} else {
+				post(
+					'parent-children.php', {
+						ParentTable: 'dealer',
+						SelectedID: '<%%VALUE(dealer_id)%%>',
+						Operation: 'show-children'
+					},
+					'dealer-children'
+				);
+			}
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'dealer',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=dealer&id=<%%URLVALUE(dealer_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=dealer&id=<%%URLVALUE(dealer_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

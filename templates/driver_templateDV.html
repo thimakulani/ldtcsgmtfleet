@@ -1,0 +1,466 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/driver-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="driver_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="driver_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+		<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="gmt_fleet_register_view.php?filterer_drivers_name_and_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>" id="gmt_fleet_register_link"><i class="glyphicon glyphicon-dashboard"></i> GMT Fleet Register:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="gmt_fleet_register_view.php?filterer_drivers_name_and_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>" id="xs_gmt_fleet_register_link"><i class="glyphicon glyphicon-dashboard"></i> GMT Fleet Register:</a>
+			<input type="hidden" id="gmt_fleet_register_hclink" value="gmt_fleet_register_view.php?filterer_drivers_name_and_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="log_sheet_view.php?filterer_drivers_name_and_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>" id="log_sheet_link"><i class="glyphicon glyphicon-sort-by-order"></i> Trip & Fuel Log Sheet:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="log_sheet_view.php?filterer_drivers_name_and_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>" id="xs_log_sheet_link"><i class="glyphicon glyphicon-sort-by-order"></i> Trip & Fuel Log Sheet:</a>
+			<input type="hidden" id="log_sheet_hclink" value="log_sheet_view.php?filterer_drivers_name_and_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="accidents_view.php?filterer_drivers_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>" id="accidents_link"><i class="glyphicon glyphicon-warning-sign"></i> Accident:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="accidents_view.php?filterer_drivers_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>" id="xs_accidents_link"><i class="glyphicon glyphicon-warning-sign"></i> Accident:</a>
+			<input type="hidden" id="accidents_hclink" value="accidents_view.php?filterer_drivers_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="vehicle_daily_check_list_view.php?filterer_drivers_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>" id="vehicle_daily_check_list_link"><i class="glyphicon glyphicon-tasks"></i> Vehicle Daily Check List:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="vehicle_daily_check_list_view.php?filterer_drivers_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>" id="xs_vehicle_daily_check_list_link"><i class="glyphicon glyphicon-tasks"></i> Vehicle Daily Check List:</a>
+			<input type="hidden" id="vehicle_daily_check_list_hclink" value="vehicle_daily_check_list_view.php?filterer_drivers_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="modification_to_vehicle_view.php?filterer_drivers_name_and_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>" id="modification_to_vehicle_link"><i class="glyphicon glyphicon-cog"></i> Modification to Vehicle:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="modification_to_vehicle_view.php?filterer_drivers_name_and_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>" id="xs_modification_to_vehicle_link"><i class="glyphicon glyphicon-cog"></i> Modification to Vehicle:</a>
+			<input type="hidden" id="modification_to_vehicle_hclink" value="modification_to_vehicle_view.php?filterer_drivers_name_and_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="vehicle_handing_over_checklist_view.php?filterer_driver_name_and_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>" id="vehicle_handing_over_checklist_link"><i class="glyphicon glyphicon-signal"></i> Vehicle Handing Over Checklist:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="vehicle_handing_over_checklist_view.php?filterer_driver_name_and_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>" id="xs_vehicle_handing_over_checklist_link"><i class="glyphicon glyphicon-signal"></i> Vehicle Handing Over Checklist:</a>
+			<input type="hidden" id="vehicle_handing_over_checklist_hclink" value="vehicle_handing_over_checklist_view.php?filterer_driver_name_and_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="vehicle_return_check_list_view.php?filterer_driver_name_and_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>" id="vehicle_return_check_list_link"><i class="glyphicon glyphicon-hand-down"></i> Vehicle Return Check List:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="vehicle_return_check_list_view.php?filterer_driver_name_and_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>" id="xs_vehicle_return_check_list_link"><i class="glyphicon glyphicon-hand-down"></i> Vehicle Return Check List:</a>
+			<input type="hidden" id="vehicle_return_check_list_hclink" value="vehicle_return_check_list_view.php?filterer_driver_name_and_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="indicates_repair_damages_found_list_view.php?filterer_driver_name_and_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>" id="indicates_repair_damages_found_list_link"><i class="glyphicon glyphicon-bullhorn"></i> Indicates Repairs & Damages Found List:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="indicates_repair_damages_found_list_view.php?filterer_driver_name_and_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>" id="xs_indicates_repair_damages_found_list_link"><i class="glyphicon glyphicon-bullhorn"></i> Indicates Repairs & Damages Found List:</a>
+			<input type="hidden" id="indicates_repair_damages_found_list_hclink" value="indicates_repair_damages_found_list_view.php?filterer_driver_name_and_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="internal_repairs_body_view.php?filterer_driver_name_and_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>" id="internal_repairs_body_link"><i class="glyphicon glyphicon-sort-by-alphabet"></i> Internal Repairs Body:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="internal_repairs_body_view.php?filterer_driver_name_and_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>" id="xs_internal_repairs_body_link"><i class="glyphicon glyphicon-sort-by-alphabet"></i> Internal Repairs Body:</a>
+			<input type="hidden" id="internal_repairs_body_hclink" value="internal_repairs_body_view.php?filterer_driver_name_and_surname=<%%URLVALUE(driver_id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="driver_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Driver ID: -->
+				<div class="form-group driver-driver_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="driver_id">Driver ID:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="driver_id"><%%VALUE(driver_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Driver's  Name & Surname: -->
+				<div class="form-group driver-drivers_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="drivers_name_and_surname">Driver's  Name & Surname:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="drivers_name_and_surname" id="drivers_name_and_surname" value="<%%VALUE(drivers_name_and_surname)%%>" required>
+					</div>
+				</div>
+
+				<!-- Field: Driver's Persal Number: -->
+				<div class="form-group driver-drivers_persal_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="drivers_persal_number">Driver's Persal Number:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="drivers_persal_number" id="drivers_persal_number" value="<%%VALUE(drivers_persal_number)%%>" required>
+					</div>
+				</div>
+
+				<!-- Field: Driver's Contact Details: -->
+				<div class="form-group driver-drivers_contact_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="drivers_contact_details">Driver's Contact Details:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="drivers_contact_details" id="drivers_contact_details" value="<%%VALUE(drivers_contact_details)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Drivers Email Address: -->
+				<div class="form-group driver-drivers_email_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="drivers_email_address-edit-link">Drivers Email Address:</label>
+					<div class="col-lg-9">
+						<div>
+							<a id="drivers_email_address-link" href="mailto:<%%VALUE(drivers_email_address)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-envelope text-info" title="<%%VALUE(drivers_email_address)%%>"></i></a>
+							<label for="drivers_email_address"><button type="button" id="drivers_email_address-edit-link" class="btn btn-default vspacer-sm" data-toggle="collapse" data-target="#drivers_email_address" title="<%%TRANSLATION(Edit)%%>"><i class="glyphicon glyphicon-pencil"></i></button></label>
+							<input maxlength="40" type="text" class="form-control collapse" name="drivers_email_address" id="drivers_email_address" value="<%%VALUE(drivers_email_address)%%>">
+						</div><script>jQuery(function() { var e_drivers_email_address = '<%%VALUE(drivers_email_address)%%>'; if(e_drivers_email_address == '' || e_drivers_email_address == '&nbsp;' || e_drivers_email_address == 'blank.gif') jQuery('#drivers_email_address-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Driver's License: -->
+				<div class="form-group driver-drivers_license">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver's License:</label>
+					<div class="col-lg-9">
+						<%%COMBO(drivers_license)%%>
+					</div>
+				</div>
+
+				<!-- Field: Driver's License Code: -->
+				<div class="form-group driver-drivers_license_code">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="drivers_license_code">Driver's License Code:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="drivers_license_code" id="drivers_license_code" value="<%%VALUE(drivers_license_code)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Driver's License Number: -->
+				<div class="form-group driver-drivers_license_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="drivers_license_number">Driver's License Number:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="drivers_license_number" id="drivers_license_number" value="<%%VALUE(drivers_license_number)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Driver's License Upload: -->
+				<div class="form-group driver-drivers_license_upload">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver's License Upload: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#drivers_license_upload-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="drivers_license_upload-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5120 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="drivers_license_upload-link" href="link.php?t=driver&f=drivers_license_upload&i=<%%VALUE(driver_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(drivers_license_upload)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(drivers_license_upload)%%>
+								<%%REMOVEFILE(drivers_license_upload)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_drivers_license_upload = '<%%VALUE(drivers_license_upload)%%>'; if(e_drivers_license_upload == '' || e_drivers_license_upload == '&nbsp;' || e_drivers_license_upload == 'blank.gif') jQuery('#drivers_license_upload-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Drivers License Expire Date: -->
+				<div class="form-group driver-drivers_license_expire_date">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="drivers_license_expire_date-dd">Drivers License Expire Date:</label>
+					<div class="col-lg-9">
+						<%%COMBO(drivers_license_expire_date)%%>
+					</div>
+				</div>
+
+				<!-- Field: Drivers License Renewal Date: -->
+				<div class="form-group driver-drivers_license_renewal_date">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="drivers_license_renewal_date-dd">Drivers License Renewal Date:</label>
+					<div class="col-lg-9">
+						<%%COMBO(drivers_license_renewal_date)%%>
+					</div>
+				</div>
+
+				<!-- Field: Drivers Log History: -->
+				<div class="form-group driver-drivers_log_history">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="drivers_log_history">Drivers Log History:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(drivers_log_history)%%>
+					</div>
+				</div>
+
+				<!-- Field: Driver's License Penalties: -->
+				<div class="form-group driver-drivers_license_penalties">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver's License Penalties:</label>
+					<div class="col-lg-9">
+						<%%COMBO(drivers_license_penalties)%%>
+					</div>
+				</div>
+
+				<!-- Field: Driver's License Penalty Date: -->
+				<div class="form-group driver-drivers_license_penalties_date">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="drivers_license_penalties_date-dd">Driver's License Penalty Date:</label>
+					<div class="col-lg-9">
+						<%%COMBO(drivers_license_penalties_date)%%>
+					</div>
+				</div>
+
+				<!-- Field: Driver's License Penalty Details: -->
+				<div class="form-group driver-drivers_license_penalty_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="drivers_license_penalty_details">Driver's License Penalty Details:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(drivers_license_penalty_details)%%>
+					</div>
+				</div>
+
+				<!-- Field: Driver's License Penalty Detail Uploads: -->
+				<div class="form-group driver-drivers_license_penalty_details_uploads">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver's License Penalty Detail Uploads: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#drivers_license_penalty_details_uploads-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="drivers_license_penalty_details_uploads-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5120 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="drivers_license_penalty_details_uploads-link" href="link.php?t=driver&f=drivers_license_penalty_details_uploads&i=<%%VALUE(driver_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(drivers_license_penalty_details_uploads)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(drivers_license_penalty_details_uploads)%%>
+								<%%REMOVEFILE(drivers_license_penalty_details_uploads)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_drivers_license_penalty_details_uploads = '<%%VALUE(drivers_license_penalty_details_uploads)%%>'; if(e_drivers_license_penalty_details_uploads == '' || e_drivers_license_penalty_details_uploads == '&nbsp;' || e_drivers_license_penalty_details_uploads == 'blank.gif') jQuery('#drivers_license_penalty_details_uploads-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Involved in Accident?: -->
+				<div class="form-group driver-involved_in_accident">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Involved in Accident?:</label>
+					<div class="col-lg-9">
+						<%%COMBO(involved_in_accident)%%>
+					</div>
+				</div>
+
+				<!-- Field: Accident Report: -->
+				<div class="form-group driver-accident_report">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Accident Report: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#accident_report-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="accident_report-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5120 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="accident_report-link" href="link.php?t=driver&f=accident_report&i=<%%VALUE(driver_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(accident_report)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(accident_report)%%>
+								<%%REMOVEFILE(accident_report)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_accident_report = '<%%VALUE(accident_report)%%>'; if(e_accident_report == '' || e_accident_report == '&nbsp;' || e_accident_report == 'blank.gif') jQuery('#accident_report-link').hide(); });</script>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="driver_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="driver-children" class="children-tabs">
+				<div class="text-center"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+			</div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			AppGini.once({
+				condition: function() { return bkLib != undefined; },
+				action: function() {
+					if($j('textarea#drivers_log_history').length) new nicEditor({ fullPanel : true }).panelInstance('drivers_log_history');
+					if($j('textarea#drivers_license_penalty_details').length) new nicEditor({ fullPanel : true }).panelInstance('drivers_license_penalty_details');
+				}
+			});
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			$j('#driver_dv_container-loading').addClass('hidden');
+			$j('#driver_dv_container').removeClass('hidden');
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) AppGini.focusFormElement('driver', 'drivers_name_and_surname');
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			// try to detect rich text changes by adding 'input' handler after nicedit is loaded ...
+			AppGini.detectContentEditableChanges();
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+			if(embedded_mode) {
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function() {
+					$j('a[href]:not([href^="#"]):not([href^="javascript"]):not([href$="Embedded=1"]):not([href*="link.php?t="]):not([href^="mailto:"]):not([href$=".jpg"]):not([href$=".png"]):not([href$=".gif"])').each(
+						function() {
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode) {
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			} else {
+				post(
+					'parent-children.php', {
+						ParentTable: 'driver',
+						SelectedID: '<%%VALUE(driver_id)%%>',
+						Operation: 'show-children'
+					},
+					'driver-children'
+				);
+			}
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'driver',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=driver&id=<%%URLVALUE(driver_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=driver&id=<%%URLVALUE(driver_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

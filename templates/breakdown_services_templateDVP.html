@@ -1,0 +1,331 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Breakdown ID: -->
+		<div class="form-group breakdown_services-breakdown_id" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Breakdown ID:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(breakdown_id)%%></div>
+			</div>
+		</div>
+		<!-- Field: Breakdown of Vehicle?: -->
+		<div class="form-group breakdown_services-breakdown_of_vehicle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Breakdown of Vehicle?:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(breakdown_of_vehicle)%%></div>
+			</div>
+		</div>
+		<!-- Field: Breakdown During Office Hours: -->
+		<div class="form-group breakdown_services-breakdown_during_office_hours" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Breakdown During Office Hours:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(breakdown_during_office_hours)%%></div>
+			</div>
+		</div>
+		<!-- Field: Breakdown Within or Outside The Province: -->
+		<div class="form-group breakdown_services-breakdown_within_or_outside_the_province" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Breakdown Within or Outside The Province:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(breakdown_within_or_outside_the_province)%%></div>
+			</div>
+		</div>
+		<!-- Field: Description of Vehicle Breakdown (Notes): -->
+		<div class="form-group breakdown_services-description_of_vehicle_breakdown_notes" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Description of Vehicle Breakdown (Notes):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="description_of_vehicle_breakdown_notes<%%RND1%%>"><%%COMBOTEXT(description_of_vehicle_breakdown_notes)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Description of vehicle breakdown -->
+		<div class="form-group breakdown_services-description_of_vehicle_breakdown" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Description of vehicle breakdown</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="description_of_vehicle_breakdown-link" href="link.php?t=breakdown_services&f=description_of_vehicle_breakdown&i=<%%VALUE(breakdown_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(description_of_vehicle_breakdown)%%>"></i></a><script>jQuery(function() { var e_description_of_vehicle_breakdown = '<%%VALUE(description_of_vehicle_breakdown)%%>'; if(e_description_of_vehicle_breakdown == '' || e_description_of_vehicle_breakdown == '&nbsp;' || e_description_of_vehicle_breakdown == 'blank.gif') jQuery('#description_of_vehicle_breakdown-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Date of Vehicle Breakdown: -->
+		<div class="form-group breakdown_services-date_of_vehicle_breakdown" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Date of Vehicle Breakdown:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(date_of_vehicle_breakdown)%%></div>
+			</div>
+		</div>
+		<!-- Field: Work Allocation Reference Number: -->
+		<div class="form-group breakdown_services-work_allocation_reference_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Work Allocation Reference Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="work_allocation_reference_number<%%RND1%%>"><%%COMBOTEXT(work_allocation_reference_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Job Card Number: -->
+		<div class="form-group breakdown_services-job_card_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Job Card Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="job_card_number<%%RND1%%>"><%%COMBOTEXT(job_card_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Registration Number: -->
+		<div class="form-group breakdown_services-vehicle_registration_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Registration Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="vehicle_registration_number<%%RND1%%>"><%%COMBOTEXT(vehicle_registration_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Engine Number: -->
+		<div class="form-group breakdown_services-engine_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Engine Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="engine_number<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Closing KM: -->
+		<div class="form-group breakdown_services-closing_km" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Closing KM:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="closing_km<%%RND1%%>"><%%COMBOTEXT(closing_km)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Date of Vehicle Re-activation: -->
+		<div class="form-group breakdown_services-date_of_vehicle_reactivation" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Date of Vehicle Re-activation:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(date_of_vehicle_reactivation)%%></div>
+			</div>
+		</div>
+		<!-- Field: Type of Expenditure: -->
+		<div class="form-group breakdown_services-type_of_expenditure" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Type of Expenditure:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(type_of_expenditure)%%></div>
+			</div>
+		</div>
+		<!-- Field: Labour Category (1) : -->
+		<div class="form-group breakdown_services-labour_category" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Labour Category (1) :</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(labour_category)%%></div>
+			</div>
+		</div>
+		<!-- Field: Part Number (1): -->
+		<div class="form-group breakdown_services-part_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Number (1):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_number<%%RND1%%>"><%%COMBOTEXT(part_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Part Name (1): -->
+		<div class="form-group breakdown_services-part_name" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Name (1):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_name<%%RND1%%>"><%%COMBOTEXT(part_name)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Part Manufacturer Name (1): -->
+		<div class="form-group breakdown_services-part_manufacturer_name" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Manufacturer Name (1):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_manufacturer_name<%%RND1%%>"><%%COMBOTEXT(part_manufacturer_name)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Quantity (1): -->
+		<div class="form-group breakdown_services-quantity" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Quantity (1):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(quantity)%%></div>
+			</div>
+		</div>
+		<!-- Field: Expense Of Item 1 (R): -->
+		<div class="form-group breakdown_services-expense_of_item" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Expense Of Item 1 (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(expense_of_item)%%></div>
+			</div>
+		</div>
+		<!-- Field: Labour Category (2): -->
+		<div class="form-group breakdown_services-labour_category_1" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Labour Category (2):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(labour_category_1)%%></div>
+			</div>
+		</div>
+		<!-- Field: Part Number (2): -->
+		<div class="form-group breakdown_services-part_number_1" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Number (2):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_number_1<%%RND1%%>"><%%COMBOTEXT(part_number_1)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Part Name (2): -->
+		<div class="form-group breakdown_services-part_name_1" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Name (2):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_name_1<%%RND1%%>"><%%COMBOTEXT(part_name_1)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Part Manufacturer Name (2): -->
+		<div class="form-group breakdown_services-part_manufacturer_name_1" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Part Manufacturer Name (2):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="part_manufacturer_name_1<%%RND1%%>"><%%COMBOTEXT(part_manufacturer_name_1)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Quantity (2): -->
+		<div class="form-group breakdown_services-quantity_1" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Quantity (2):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(quantity_1)%%></div>
+			</div>
+		</div>
+		<!-- Field: Expense Of Item 2 (R): -->
+		<div class="form-group breakdown_services-expense_of_item_1" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Expense Of Item 2 (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(expense_of_item_1)%%></div>
+			</div>
+		</div>
+		<!-- Field: Material Cost (R): -->
+		<div class="form-group breakdown_services-material_cost" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Material Cost (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(material_cost)%%></div>
+			</div>
+		</div>
+		<!-- Field: Average Worktime Hrs: -->
+		<div class="form-group breakdown_services-average_worktime_hrs" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Average Worktime Hrs:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(average_worktime_hrs)%%></div>
+			</div>
+		</div>
+		<!-- Field: Standard Labour Cost per Hour: -->
+		<div class="form-group breakdown_services-standard_labour_cost_per_hour" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Standard Labour Cost per Hour:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(standard_labour_cost_per_hour)%%></div>
+			</div>
+		</div>
+		<!-- Field: Labour Charges (R): -->
+		<div class="form-group breakdown_services-labour_charges" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Labour Charges (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(labour_charges)%%></div>
+			</div>
+		</div>
+		<!-- Field: Vat 15 % (R): -->
+		<div class="form-group breakdown_services-vat" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Vat 15 % (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(vat)%%></div>
+			</div>
+		</div>
+		<!-- Field: Total Amount (R): -->
+		<div class="form-group breakdown_services-total_amount" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Total Amount (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(total_amount)%%></div>
+			</div>
+		</div>
+		<!-- Field: Workshop Name: -->
+		<div class="form-group breakdown_services-workshop_name" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Workshop Name:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="workshop_name<%%RND1%%>"><%%COMBOTEXT(workshop_name)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Work Order Status: -->
+		<div class="form-group breakdown_services-work_order_status" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Work Order Status:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(work_order_status)%%></div>
+			</div>
+		</div>
+		<!-- Field: Comments: -->
+		<div class="form-group breakdown_services-comments" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Comments:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(comments)%%></div>
+			</div>
+		</div>
+		<!-- Field: Documents (Upload Invoice): -->
+		<div class="form-group breakdown_services-upload_invoice" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Documents (Upload Invoice):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="upload_invoice-link" href="link.php?t=breakdown_services&f=upload_invoice&i=<%%VALUE(breakdown_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(upload_invoice)%%>"></i></a><script>jQuery(function() { var e_upload_invoice = '<%%VALUE(upload_invoice)%%>'; if(e_upload_invoice == '' || e_upload_invoice == '&nbsp;' || e_upload_invoice == 'blank.gif') jQuery('#upload_invoice-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Receptionist Name & Surname: -->
+		<div class="form-group breakdown_services-receptionist" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Receptionist Name & Surname:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="receptionist<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Receptionist Contact e-Mail: -->
+		<div class="form-group breakdown_services-receptionist_contact_email" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Receptionist Contact e-Mail:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="receptionist_contact_email<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Date Captured: -->
+		<div class="form-group breakdown_services-date_captured" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Date Captured:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(date_captured)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>
+<!-- child records -->
+<div class="panel-body">
+	<div id="breakdown_services-children"></div>
+</div>
+
+<script>
+	$j(function() {
+		/* prevent loading child records in multiple DVP */
+		if($j('[id=breakdown_services-children]').length > 1) return;
+
+		post(
+			'parent-children.php', {
+				ParentTable: 'breakdown_services',
+				SelectedID: '<%%VALUE(breakdown_id)%%>',
+				Operation: 'show-children-printable'
+			},
+			'breakdown_services-children',
+			'disable-element',
+			'loading-element',
+			apply_persisting_children
+		);
+
+		$j('form').on('click', '#children-tabs button[data-target]', function() {
+			$j(this).toggleClass('active');
+			persist_expanded_child($j(this).attr('id'));
+		});
+	})
+</script>
+

@@ -1,0 +1,10 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the districts_init() hook (in hooks/districts.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="districts-district_id-<%%VALUE(district_id)%%>" class="districts-district_id text-right"><%%SELECT%%><%%VALUE(district_id)%%><%%ENDSELECT%%></td>
+		<td id="districts-district-<%%VALUE(district_id)%%>" class="districts-district"><%%SELECT%%><%%VALUE(district)%%><%%ENDSELECT%%></td>
+		<td id="districts-station-<%%VALUE(district_id)%%>" class="districts-station"><%%SELECT%%><%%VALUE(station)%%><%%ENDSELECT%%></td>

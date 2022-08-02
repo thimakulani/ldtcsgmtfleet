@@ -1,0 +1,47 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the service_init() hook (in hooks/service.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="service-service_id-<%%VALUE(service_id)%%>" class="service-service_id text-right"><%%SELECT%%><%%VALUE(service_id)%%><%%ENDSELECT%%></td>
+		<td id="service-breakdown_of_vehicle-<%%VALUE(service_id)%%>" class="service-breakdown_of_vehicle"><%%SELECT%%><%%VALUE(breakdown_of_vehicle)%%><%%ENDSELECT%%></td>
+		<td id="service-service_title-<%%VALUE(service_id)%%>" class="service-service_title"><%%SELECT%%><%%VALUE(service_title)%%><%%ENDSELECT%%></td>
+		<td id="service-service_item_type-<%%VALUE(service_id)%%>" class="service-service_item_type"><%%SELECT%%><%%VALUE(service_item_type)%%><%%ENDSELECT%%></td>
+		<td id="service-service_category-<%%VALUE(service_id)%%>" class="service-service_category"><%%SELECT%%><%%VALUE(service_category)%%><%%ENDSELECT%%></td>
+		<td id="service-merchant_name-<%%VALUE(service_id)%%>" class="service-merchant_name"><%%SELECT%%><%%VALUE(merchant_name)%%><%%ENDSELECT%%></td>
+		<td id="service-vehicle_registration_number-<%%VALUE(service_id)%%>" class="service-vehicle_registration_number text-right"><%%SELECT%%><%%VALUE(vehicle_registration_number)%%><%%ENDSELECT%%></td>
+		<td id="service-engine_number-<%%VALUE(service_id)%%>" class="service-engine_number"><%%SELECT%%><%%VALUE(engine_number)%%><%%ENDSELECT%%></td>
+		<td id="service-chassis_number-<%%VALUE(service_id)%%>" class="service-chassis_number"><%%SELECT%%><%%VALUE(chassis_number)%%><%%ENDSELECT%%></td>
+		<td id="service-dealer_name-<%%VALUE(service_id)%%>" class="service-dealer_name"><%%SELECT%%><%%VALUE(dealer_name)%%><%%ENDSELECT%%></td>
+		<td id="service-make_of_vehicle-<%%VALUE(service_id)%%>" class="service-make_of_vehicle"><%%SELECT%%><%%VALUE(make_of_vehicle)%%><%%ENDSELECT%%></td>
+		<td id="service-model_of_vehicle-<%%VALUE(service_id)%%>" class="service-model_of_vehicle"><%%SELECT%%><%%VALUE(model_of_vehicle)%%><%%ENDSELECT%%></td>
+		<td id="service-year_model_of_vehicle-<%%VALUE(service_id)%%>" class="service-year_model_of_vehicle"><%%SELECT%%><%%VALUE(year_model_of_vehicle)%%><%%ENDSELECT%%></td>
+		<td id="service-type_of_vehicle-<%%VALUE(service_id)%%>" class="service-type_of_vehicle"><%%SELECT%%><%%VALUE(type_of_vehicle)%%><%%ENDSELECT%%></td>
+		<td id="service-closing_km-<%%VALUE(service_id)%%>" class="service-closing_km"><%%SELECT%%><%%VALUE(closing_km)%%><%%ENDSELECT%%></td>
+		<td id="service-application_status-<%%VALUE(service_id)%%>" class="service-application_status"><%%SELECT%%><%%VALUE(application_status)%%><%%ENDSELECT%%></td>
+		<td id="service-work_allocation_reference_number-<%%VALUE(service_id)%%>" class="service-work_allocation_reference_number"><%%SELECT%%><%%VALUE(work_allocation_reference_number)%%><%%ENDSELECT%%></td>
+		<td id="service-barcode_number-<%%VALUE(service_id)%%>" class="service-barcode_number"><%%SELECT%%><%%VALUE(barcode_number)%%><%%ENDSELECT%%></td>
+		<td id="service-department-<%%VALUE(service_id)%%>" class="service-department"><%%SELECT%%><%%VALUE(department)%%><%%ENDSELECT%%></td>
+		<td id="service-service_item-<%%VALUE(service_id)%%>" class="service-service_item"><%%SELECT%%><%%VALUE(service_item)%%><%%ENDSELECT%%></td>
+		<td id="service-date_of_service-<%%VALUE(service_id)%%>" class="service-date_of_service text-right"><%%SELECT%%><%%VALUE(date_of_service)%%><%%ENDSELECT%%></td>
+		<td id="service-time-<%%VALUE(service_id)%%>" class="service-time"><%%SELECT%%><%%VALUE(time)%%><%%ENDSELECT%%></td>
+		<td id="service-upload_quotation-<%%VALUE(service_id)%%>" class="service-upload_quotation"><a href="link.php?t=service&f=upload_quotation&i=<%%VALUE(service_id)%%>" target="_blank" title="<%%VALUE(upload_quotation)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="service-date_of_next_service-<%%VALUE(service_id)%%>" class="service-date_of_next_service"><%%SELECT%%><%%VALUE(date_of_next_service)%%><%%ENDSELECT%%></td>
+		<td id="service-repeat_service_schedule_every_km-<%%VALUE(service_id)%%>" class="service-repeat_service_schedule_every_km"><%%SELECT%%><%%VALUE(repeat_service_schedule_every_km)%%><%%ENDSELECT%%></td>
+		<td id="service-comments-<%%VALUE(service_id)%%>" class="service-comments"><%%SELECT%%><%%VALUE(comments)%%><%%ENDSELECT%%></td>
+		<td id="service-upload_invoice-<%%VALUE(service_id)%%>" class="service-upload_invoice"><a href="link.php?t=service&f=upload_invoice&i=<%%VALUE(service_id)%%>" target="_blank" title="<%%VALUE(upload_invoice)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="service-receptionist-<%%VALUE(service_id)%%>" class="service-receptionist"><%%SELECT%%><%%VALUE(receptionist)%%><%%ENDSELECT%%></td>
+		<td id="service-receptionist_contact_email-<%%VALUE(service_id)%%>" class="service-receptionist_contact_email"><%%SELECT%%><%%VALUE(receptionist_contact_email)%%><%%ENDSELECT%%></td>
+		<td id="service-workshop_name-<%%VALUE(service_id)%%>" class="service-workshop_name"><%%SELECT%%><%%VALUE(workshop_name)%%><%%ENDSELECT%%></td>
+		<td id="service-workshop_address-<%%VALUE(service_id)%%>" class="service-workshop_address"><%%SELECT%%><%%VALUE(workshop_address)%%><%%ENDSELECT%%></td>
+		<td id="service-technician-<%%VALUE(service_id)%%>" class="service-technician"><%%SELECT%%><%%VALUE(technician)%%><%%ENDSELECT%%></td>
+		<td id="service-work_order_status-<%%VALUE(service_id)%%>" class="service-work_order_status"><%%SELECT%%><%%VALUE(work_order_status)%%><%%ENDSELECT%%></td>
+		<td id="service-job_card_number-<%%VALUE(service_id)%%>" class="service-job_card_number"><%%SELECT%%><%%VALUE(job_card_number)%%><%%ENDSELECT%%></td>
+		<td id="service-completion_date-<%%VALUE(service_id)%%>" class="service-completion_date"><%%SELECT%%><%%VALUE(completion_date)%%><%%ENDSELECT%%></td>
+		<td id="service-due_date-<%%VALUE(service_id)%%>" class="service-due_date"><%%SELECT%%><%%VALUE(due_date)%%><%%ENDSELECT%%></td>
+		<script>$j(function() {
+			var e_upload_quotation = '<%%VALUE(upload_quotation)%%>'; if(e_upload_quotation == '' || e_upload_quotation == '&nbsp;') $j(/*<*/ '#service-upload_quotation-<%%VALUE(service_id)%%>' /*>*/).html('');
+			var e_upload_invoice = '<%%VALUE(upload_invoice)%%>'; if(e_upload_invoice == '' || e_upload_invoice == '&nbsp;') $j(/*<*/ '#service-upload_invoice-<%%VALUE(service_id)%%>' /*>*/).html('');
+		});</script>

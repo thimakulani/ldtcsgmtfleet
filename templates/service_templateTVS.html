@@ -1,0 +1,47 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the service_init() hook (in hooks/service.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="service-service_id-<%%VALUE(service_id)%%>" class="service-service_id text-right"><%%VALUE(service_id)%%></td>
+		<td id="service-breakdown_of_vehicle-<%%VALUE(service_id)%%>" class="service-breakdown_of_vehicle"><%%VALUE(breakdown_of_vehicle)%%></td>
+		<td id="service-service_title-<%%VALUE(service_id)%%>" class="service-service_title"><%%VALUE(service_title)%%></td>
+		<td id="service-service_item_type-<%%VALUE(service_id)%%>" class="service-service_item_type"><%%VALUE(service_item_type)%%></td>
+		<td id="service-service_category-<%%VALUE(service_id)%%>" class="service-service_category"><%%VALUE(service_category)%%></td>
+		<td id="service-merchant_name-<%%VALUE(service_id)%%>" class="service-merchant_name"><%%VALUE(merchant_name)%%></td>
+		<td id="service-vehicle_registration_number-<%%VALUE(service_id)%%>" class="service-vehicle_registration_number text-right"><%%VALUE(vehicle_registration_number)%%></td>
+		<td id="service-engine_number-<%%VALUE(service_id)%%>" class="service-engine_number"><%%VALUE(engine_number)%%></td>
+		<td id="service-chassis_number-<%%VALUE(service_id)%%>" class="service-chassis_number"><%%VALUE(chassis_number)%%></td>
+		<td id="service-dealer_name-<%%VALUE(service_id)%%>" class="service-dealer_name"><%%VALUE(dealer_name)%%></td>
+		<td id="service-make_of_vehicle-<%%VALUE(service_id)%%>" class="service-make_of_vehicle"><%%VALUE(make_of_vehicle)%%></td>
+		<td id="service-model_of_vehicle-<%%VALUE(service_id)%%>" class="service-model_of_vehicle"><%%VALUE(model_of_vehicle)%%></td>
+		<td id="service-year_model_of_vehicle-<%%VALUE(service_id)%%>" class="service-year_model_of_vehicle"><%%VALUE(year_model_of_vehicle)%%></td>
+		<td id="service-type_of_vehicle-<%%VALUE(service_id)%%>" class="service-type_of_vehicle"><%%VALUE(type_of_vehicle)%%></td>
+		<td id="service-closing_km-<%%VALUE(service_id)%%>" class="service-closing_km"><%%VALUE(closing_km)%%></td>
+		<td id="service-application_status-<%%VALUE(service_id)%%>" class="service-application_status"><%%VALUE(application_status)%%></td>
+		<td id="service-work_allocation_reference_number-<%%VALUE(service_id)%%>" class="service-work_allocation_reference_number"><%%VALUE(work_allocation_reference_number)%%></td>
+		<td id="service-barcode_number-<%%VALUE(service_id)%%>" class="service-barcode_number"><%%VALUE(barcode_number)%%></td>
+		<td id="service-department-<%%VALUE(service_id)%%>" class="service-department"><%%VALUE(department)%%></td>
+		<td id="service-service_item-<%%VALUE(service_id)%%>" class="service-service_item"><%%VALUE(service_item)%%></td>
+		<td id="service-date_of_service-<%%VALUE(service_id)%%>" class="service-date_of_service text-right"><%%VALUE(date_of_service)%%></td>
+		<td id="service-time-<%%VALUE(service_id)%%>" class="service-time"><%%VALUE(time)%%></td>
+		<td id="service-upload_quotation-<%%VALUE(service_id)%%>" class="service-upload_quotation"><a href="link.php?t=service&f=upload_quotation&i=<%%VALUE(service_id)%%>" target="_blank" title="<%%VALUE(upload_quotation)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="service-date_of_next_service-<%%VALUE(service_id)%%>" class="service-date_of_next_service"><%%VALUE(date_of_next_service)%%></td>
+		<td id="service-repeat_service_schedule_every_km-<%%VALUE(service_id)%%>" class="service-repeat_service_schedule_every_km"><%%VALUE(repeat_service_schedule_every_km)%%></td>
+		<td id="service-comments-<%%VALUE(service_id)%%>" class="service-comments"><%%VALUE(comments)%%></td>
+		<td id="service-upload_invoice-<%%VALUE(service_id)%%>" class="service-upload_invoice"><a href="link.php?t=service&f=upload_invoice&i=<%%VALUE(service_id)%%>" target="_blank" title="<%%VALUE(upload_invoice)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="service-receptionist-<%%VALUE(service_id)%%>" class="service-receptionist"><%%VALUE(receptionist)%%></td>
+		<td id="service-receptionist_contact_email-<%%VALUE(service_id)%%>" class="service-receptionist_contact_email"><%%VALUE(receptionist_contact_email)%%></td>
+		<td id="service-workshop_name-<%%VALUE(service_id)%%>" class="service-workshop_name"><%%VALUE(workshop_name)%%></td>
+		<td id="service-workshop_address-<%%VALUE(service_id)%%>" class="service-workshop_address"><%%VALUE(workshop_address)%%></td>
+		<td id="service-technician-<%%VALUE(service_id)%%>" class="service-technician"><%%VALUE(technician)%%></td>
+		<td id="service-work_order_status-<%%VALUE(service_id)%%>" class="service-work_order_status"><%%VALUE(work_order_status)%%></td>
+		<td id="service-job_card_number-<%%VALUE(service_id)%%>" class="service-job_card_number"><%%VALUE(job_card_number)%%></td>
+		<td id="service-completion_date-<%%VALUE(service_id)%%>" class="service-completion_date"><%%VALUE(completion_date)%%></td>
+		<td id="service-due_date-<%%VALUE(service_id)%%>" class="service-due_date"><%%VALUE(due_date)%%></td>
+		<script>$j(function() {
+			var e_upload_quotation = '<%%VALUE(upload_quotation)%%>'; if(e_upload_quotation == '' || e_upload_quotation == '&nbsp;') $j(/*<*/ '#service-upload_quotation-<%%VALUE(service_id)%%>' /*>*/).html('');
+			var e_upload_invoice = '<%%VALUE(upload_invoice)%%>'; if(e_upload_invoice == '' || e_upload_invoice == '&nbsp;') $j(/*<*/ '#service-upload_invoice-<%%VALUE(service_id)%%>' /*>*/).html('');
+		});</script>

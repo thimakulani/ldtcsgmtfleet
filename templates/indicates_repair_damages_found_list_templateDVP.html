@@ -1,0 +1,106 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Repair & Damages List ID: -->
+		<div class="form-group indicates_repair_damages_found_list-repair_damages_list_id" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Repair & Damages List ID:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(repair_damages_list_id)%%></div>
+			</div>
+		</div>
+		<!-- Field: Brought in for Repairs: -->
+		<div class="form-group indicates_repair_damages_found_list-brought_in_for_repairs" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Brought in for Repairs:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(brought_in_for_repairs)%%></div>
+			</div>
+		</div>
+		<!-- Field: After Repairs: -->
+		<div class="form-group indicates_repair_damages_found_list-after_repairs" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">After Repairs:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(after_repairs)%%></div>
+			</div>
+		</div>
+		<!-- Field: Driver Name & Surname: -->
+		<div class="form-group indicates_repair_damages_found_list-driver_name_and_surname" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver Name & Surname:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="driver_name_and_surname<%%RND1%%>"><%%COMBOTEXT(driver_name_and_surname)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Driver Persal Number: -->
+		<div class="form-group indicates_repair_damages_found_list-driver_persal_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver Persal Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="driver_persal_number<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Driver Signature: -->
+		<div class="form-group indicates_repair_damages_found_list-driver_signature" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver Signature:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img id="driver_signatureImg" src="thumbnail.php?t=indicates_repair_damages_found_list&f=driver_signature&i=<%%VALUE(driver_signature)%%>&v=dv" class="img-thumbnail"></div>
+			</div>
+		</div>
+		<!-- Field: Declaration Date & Time: -->
+		<div class="form-group indicates_repair_damages_found_list-vehicle_return_date_signed" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Declaration Date & Time:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(vehicle_return_date_signed)%%></div>
+			</div>
+		</div>
+		<!-- Field: Company Representativer Name & Surname: -->
+		<div class="form-group indicates_repair_damages_found_list-company_name_and_surname" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Company Representativer Name & Surname:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(company_name_and_surname)%%></div>
+			</div>
+		</div>
+		<!-- Field: Company Representative Signature: -->
+		<div class="form-group indicates_repair_damages_found_list-company_repesentative_signature" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Company Representative Signature:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img id="company_repesentative_signatureImg" src="thumbnail.php?t=indicates_repair_damages_found_list&f=company_repesentative_signature&i=<%%VALUE(company_repesentative_signature)%%>&v=dv" class="img-thumbnail"></div>
+			</div>
+		</div>
+		<!-- Field: Declaration Date & Time: -->
+		<div class="form-group indicates_repair_damages_found_list-vehicle_return_date_signed_by_representative" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Declaration Date & Time:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(vehicle_return_date_signed_by_representative)%%></div>
+			</div>
+		</div>
+		<!-- Field: Indicates and list details of damages deficiencies and lost found: -->
+		<div class="form-group indicates_repair_damages_found_list-indicates_and_list_details_of_damages_deficiencies" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Indicates and list details of damages deficiencies and lost found:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="indicates_and_list_details_of_damages_deficiencies-link" href="link.php?t=indicates_repair_damages_found_list&f=indicates_and_list_details_of_damages_deficiencies&i=<%%VALUE(repair_damages_list_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(indicates_and_list_details_of_damages_deficiencies)%%>"></i></a><script>jQuery(function() { var e_indicates_and_list_details_of_damages_deficiencies = '<%%VALUE(indicates_and_list_details_of_damages_deficiencies)%%>'; if(e_indicates_and_list_details_of_damages_deficiencies == '' || e_indicates_and_list_details_of_damages_deficiencies == '&nbsp;' || e_indicates_and_list_details_of_damages_deficiencies == 'blank.gif') jQuery('#indicates_and_list_details_of_damages_deficiencies-link').hide(); });</script></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>

@@ -1,0 +1,387 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Fuel Log Sheet ID: -->
+		<div class="form-group log_sheet-fuel_log_sheet_id" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Fuel Log Sheet ID:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(fuel_log_sheet_id)%%></div>
+			</div>
+		</div>
+		<!-- Field: Registration Number: -->
+		<div class="form-group log_sheet-vehicle_registration_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Registration Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="vehicle_registration_number<%%RND1%%>"><%%COMBOTEXT(vehicle_registration_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Register Number: -->
+		<div class="form-group log_sheet-register_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Register Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="register_number<%%RND1%%>"><%%COMBOTEXT(register_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Make of Vehicle: -->
+		<div class="form-group log_sheet-make_of_vehicle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Make of Vehicle:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="make_of_vehicle<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Model of Vehicle: -->
+		<div class="form-group log_sheet-model_of_vehicle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Model of Vehicle:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="model_of_vehicle<%%RND1%%>"><%%COMBOTEXT(model_of_vehicle)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Year Model Specification: -->
+		<div class="form-group log_sheet-year_model_specification" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Year Model Specification:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="year_model_specification<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Colour of Vehicle: -->
+		<div class="form-group log_sheet-colour_of_vehicle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Colour of Vehicle:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="colour_of_vehicle<%%RND1%%>"><%%COMBOTEXT(colour_of_vehicle)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Engine Capacity (cc): -->
+		<div class="form-group log_sheet-engine_capacity" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Engine Capacity (cc):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="engine_capacity<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: License Expiry Date: -->
+		<div class="form-group log_sheet-renewal_of_license" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">License Expiry Date:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(renewal_of_license)%%></div>
+			</div>
+		</div>
+		<!-- Field: District and Station: -->
+		<div class="form-group log_sheet-district" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">District and Station:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="district<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Log Sheet - Year & Month: -->
+		<div class="form-group log_sheet-month" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Log Sheet - Year & Month:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(month)%%></div>
+			</div>
+		</div>
+		<!-- Field: Driver's Surname: -->
+		<div class="form-group log_sheet-drivers_name_and_surname" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver's Surname:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="drivers_name_and_surname<%%RND1%%>"><%%COMBOTEXT(drivers_name_and_surname)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Driver's Persal Number: -->
+		<div class="form-group log_sheet-drivers_persal_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver's Persal Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="drivers_persal_number<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Odometer Reading/Opening KM: -->
+		<div class="form-group log_sheet-opening_km" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Odometer Reading/Opening KM:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(opening_km)%%></div>
+			</div>
+		</div>
+		<!-- Field: Total Trip Distance KM: -->
+		<div class="form-group log_sheet-total_trip_distance" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Total Trip Distance KM:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(total_trip_distance)%%></div>
+			</div>
+		</div>
+		<!-- Field: Odometer Reading/Closing KM: -->
+		<div class="form-group log_sheet-closing_km" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Odometer Reading/Closing KM:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(closing_km)%%></div>
+			</div>
+		</div>
+		<!-- Field: Fuel Type: -->
+		<div class="form-group log_sheet-fuel_type" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Fuel Type:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="fuel_type<%%RND1%%>"><%%COMBOTEXT(fuel_type)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Fuel Tank Capacity: -->
+		<div class="form-group log_sheet-fuel_tank_capacity" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Fuel Tank Capacity:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(fuel_tank_capacity)%%></div>
+			</div>
+		</div>
+		<!-- Field: Vendor/Fuel Station/Garage: -->
+		<div class="form-group log_sheet-vendor" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Vendor/Fuel Station/Garage:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(vendor)%%></div>
+			</div>
+		</div>
+		<!-- Field: Fuel Cost Litre (R/L): -->
+		<div class="form-group log_sheet-fuel_cost_litre" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Fuel Cost Litre (R/L):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(fuel_cost_litre)%%></div>
+			</div>
+		</div>
+		<!-- Field: Refuel Quantity L [1]: -->
+		<div class="form-group log_sheet-refuel_quantity_1" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Refuel Quantity L [1]:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(refuel_quantity_1)%%></div>
+			</div>
+		</div>
+		<!-- Field: Refuel Date (First Time ): -->
+		<div class="form-group log_sheet-refuel_first_time_date" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Refuel Date (First Time ):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(refuel_first_time_date)%%></div>
+			</div>
+		</div>
+		<!-- Field: Trip Distance After 1st Refuel KM: -->
+		<div class="form-group log_sheet-trip_distance_refuel_1" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Trip Distance After 1st Refuel KM:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(trip_distance_refuel_1)%%></div>
+			</div>
+		</div>
+		<!-- Field: Refuel Quantity  L [2]: -->
+		<div class="form-group log_sheet-refuel_quantity_2" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Refuel Quantity  L [2]:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(refuel_quantity_2)%%></div>
+			</div>
+		</div>
+		<!-- Field: Refuel Date (Second Time ): -->
+		<div class="form-group log_sheet-refuel_second_time_date" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Refuel Date (Second Time ):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(refuel_second_time_date)%%></div>
+			</div>
+		</div>
+		<!-- Field: Trip Distance After 2nd Refuel KM: -->
+		<div class="form-group log_sheet-trip_distance_refuel_2" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Trip Distance After 2nd Refuel KM:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(trip_distance_refuel_2)%%></div>
+			</div>
+		</div>
+		<!-- Field: Refuel Quantity L [3]: -->
+		<div class="form-group log_sheet-refuel_quantity_3" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Refuel Quantity L [3]:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(refuel_quantity_3)%%></div>
+			</div>
+		</div>
+		<!-- Field: Refuel Date (Third Time ): -->
+		<div class="form-group log_sheet-refuel_third_time_date" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Refuel Date (Third Time ):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(refuel_third_time_date)%%></div>
+			</div>
+		</div>
+		<!-- Field: Trip Distance After 3rd Refuel KM: -->
+		<div class="form-group log_sheet-trip_distance_refuel_3" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Trip Distance After 3rd Refuel KM:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(trip_distance_refuel_3)%%></div>
+			</div>
+		</div>
+		<!-- Field: Refuel Quantity L [4]: -->
+		<div class="form-group log_sheet-refuel_quantity_4" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Refuel Quantity L [4]:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(refuel_quantity_4)%%></div>
+			</div>
+		</div>
+		<!-- Field: Refuel Date (Fouth Time ): -->
+		<div class="form-group log_sheet-refuel_fourth_time_date" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Refuel Date (Fouth Time ):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(refuel_fourth_time_date)%%></div>
+			</div>
+		</div>
+		<!-- Field: Trip Distance After 4th Refuel KM: -->
+		<div class="form-group log_sheet-trip_distance_refuel_4" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Trip Distance After 4th Refuel KM:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(trip_distance_refuel_4)%%></div>
+			</div>
+		</div>
+		<!-- Field: Refuel Quantity L [5]: -->
+		<div class="form-group log_sheet-refuel_quantity_5" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Refuel Quantity L [5]:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(refuel_quantity_5)%%></div>
+			</div>
+		</div>
+		<!-- Field: Refuel Date (Fifth Time ): -->
+		<div class="form-group log_sheet-refuel_fifth_time_date" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Refuel Date (Fifth Time ):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(refuel_fifth_time_date)%%></div>
+			</div>
+		</div>
+		<!-- Field: Trip Distance After 5th Refuel KM: -->
+		<div class="form-group log_sheet-trip_distance_refuel_5" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Trip Distance After 5th Refuel KM:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(trip_distance_refuel_5)%%></div>
+			</div>
+		</div>
+		<!-- Field: Refuel Quantity L [6]: -->
+		<div class="form-group log_sheet-refuel_quantity_6" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Refuel Quantity L [6]:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(refuel_quantity_6)%%></div>
+			</div>
+		</div>
+		<!-- Field: Trip Distance After 6th Refuel KM: -->
+		<div class="form-group log_sheet-trip_distance_refuel_6" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Trip Distance After 6th Refuel KM:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(trip_distance_refuel_6)%%></div>
+			</div>
+		</div>
+		<!-- Field: Refuel Date (Sixth Time ): -->
+		<div class="form-group log_sheet-refuel_sixth_time_date" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Refuel Date (Sixth Time ):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(refuel_sixth_time_date)%%></div>
+			</div>
+		</div>
+		<!-- Field: Times Refuel Current Month: -->
+		<div class="form-group log_sheet-times_refuel_current_month" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Times Refuel Current Month:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(times_refuel_current_month)%%></div>
+			</div>
+		</div>
+		<!-- Field: Total Fuel Quantity (L): -->
+		<div class="form-group log_sheet-total_fuel_quantity" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Total Fuel Quantity (L):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(total_fuel_quantity)%%></div>
+			</div>
+		</div>
+		<!-- Field: Fuel Consumption (Km/L): -->
+		<div class="form-group log_sheet-fuel_consumption" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Fuel Consumption (Km/L):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(fuel_consumption)%%></div>
+			</div>
+		</div>
+		<!-- Field: Fuel Total Cost (R): -->
+		<div class="form-group log_sheet-fuel_total_cost" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Fuel Total Cost (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(fuel_total_cost)%%></div>
+			</div>
+		</div>
+		<!-- Field: Payment with e-Fuel Card? -->
+		<div class="form-group log_sheet-payment_e_fuel_card" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Payment with e-Fuel Card?</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(payment_e_fuel_card)%%></div>
+			</div>
+		</div>
+		<!-- Field: Captured By: -->
+		<div class="form-group log_sheet-captured_by" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Captured By:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(captured_by)%%></div>
+			</div>
+		</div>
+		<!-- Field: Comments: -->
+		<div class="form-group log_sheet-comments" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Comments:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(comments)%%></div>
+			</div>
+		</div>
+		<!-- Field: Date Captured: -->
+		<div class="form-group log_sheet-date_captured" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Date Captured:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(date_captured)%%></div>
+			</div>
+		</div>
+		<!-- Field: Complete Fill Up: -->
+		<div class="form-group log_sheet-complete_fill_up" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Complete Fill Up:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(complete_fill_up)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>
+<!-- child records -->
+<div class="panel-body">
+	<div id="log_sheet-children"></div>
+</div>
+
+<script>
+	$j(function() {
+		/* prevent loading child records in multiple DVP */
+		if($j('[id=log_sheet-children]').length > 1) return;
+
+		post(
+			'parent-children.php', {
+				ParentTable: 'log_sheet',
+				SelectedID: '<%%VALUE(fuel_log_sheet_id)%%>',
+				Operation: 'show-children-printable'
+			},
+			'log_sheet-children',
+			'disable-element',
+			'loading-element',
+			apply_persisting_children
+		);
+
+		$j('form').on('click', '#children-tabs button[data-target]', function() {
+			$j(this).toggleClass('active');
+			persist_expanded_child($j(this).attr('id'));
+		});
+	})
+</script>
+

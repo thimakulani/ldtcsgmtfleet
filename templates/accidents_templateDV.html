@@ -1,0 +1,638 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/accidents-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="accidents_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="accidents_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="accidents_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Accident ID: -->
+				<div class="form-group accidents-accident_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="accident_id">Accident ID:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="accident_id"><%%VALUE(accident_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Registration Number: -->
+				<div class="form-group accidents-vehicle_registration_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_registration_number" data-parent_link="view_parent_modal">Registration Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(vehicle_registration_number)%%><%%PLINK(vehicle_registration_number)%%><%%ADDNEW(gmt_fleet_register)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Closing KM: -->
+				<div class="form-group accidents-closing_km">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="closing_km" data-parent_link="view_parent_modal">Closing KM:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(closing_km)%%><%%PLINK(closing_km)%%><%%ADDNEW(log_sheet)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Driver's Surname: -->
+				<div class="form-group accidents-drivers_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="drivers_surname" data-parent_link="view_parent_modal">Driver's Surname:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(drivers_surname)%%><%%PLINK(drivers_surname)%%><%%ADDNEW(driver)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Driver's Contact Details: -->
+				<div class="form-group accidents-drivers_contact_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver's Contact Details:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="drivers_contact_details"></div>
+					</div>
+				</div>
+
+				<!-- Field: Make of Vehicle/Dealer Name: -->
+				<div class="form-group accidents-dealer_name">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Make of Vehicle/Dealer Name:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="dealer_name"></div>
+					</div>
+				</div>
+
+				<!-- Field: Model of Vehicle: -->
+				<div class="form-group accidents-model_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Model of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="model_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Date of Accident: -->
+				<div class="form-group accidents-date_of_accident">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_of_accident-dd">Date of Accident:</label>
+					<div class="col-lg-9">
+						<%%COMBO(date_of_accident)%%>
+					</div>
+				</div>
+
+				<!-- Field: Z181 Accident Form: -->
+				<div class="form-group accidents-z181_accident_form">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Z181 Accident Form:</label>
+					<div class="col-lg-9">
+						<%%COMBO(z181_accident_form)%%>
+					</div>
+				</div>
+
+				<!-- Field: Z181 Accident Form Uploaded: -->
+				<div class="form-group accidents-z181_accident_form_uploaded">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Z181 Accident Form Uploaded: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#z181_accident_form_uploaded-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="z181_accident_form_uploaded-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5240 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="z181_accident_form_uploaded-link" href="link.php?t=accidents&f=z181_accident_form_uploaded&i=<%%VALUE(accident_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(z181_accident_form_uploaded)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(z181_accident_form_uploaded)%%>
+								<%%REMOVEFILE(z181_accident_form_uploaded)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_z181_accident_form_uploaded = '<%%VALUE(z181_accident_form_uploaded)%%>'; if(e_z181_accident_form_uploaded == '' || e_z181_accident_form_uploaded == '&nbsp;' || e_z181_accident_form_uploaded == 'blank.gif') jQuery('#z181_accident_form_uploaded-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Copy of Trip Authority: -->
+				<div class="form-group accidents-copy_of_trip_authority">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Copy of Trip Authority: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#copy_of_trip_authority-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="copy_of_trip_authority-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5240 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="copy_of_trip_authority-link" href="link.php?t=accidents&f=copy_of_trip_authority&i=<%%VALUE(accident_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(copy_of_trip_authority)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(copy_of_trip_authority)%%>
+								<%%REMOVEFILE(copy_of_trip_authority)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_copy_of_trip_authority = '<%%VALUE(copy_of_trip_authority)%%>'; if(e_copy_of_trip_authority == '' || e_copy_of_trip_authority == '&nbsp;' || e_copy_of_trip_authority == 'blank.gif') jQuery('#copy_of_trip_authority-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: District: -->
+				<div class="form-group accidents-district">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="district" data-parent_link="view_parent_modal">District: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#district-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="district-description"><div class="alert alert-info bspacer-xs">Capture the district and stations detail</div></span>
+						<div class="lookup-flex"><%%COMBO(district)%%><%%PLINK(district)%%><%%ADDNEW(districts)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Station: -->
+				<div class="form-group accidents-location">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Station:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="location"></div>
+					</div>
+				</div>
+
+				<!-- Field: Road or Street Name: -->
+				<div class="form-group accidents-road_or_street">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="road_or_street">Road or Street Name:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="road_or_street" id="road_or_street" value="<%%VALUE(road_or_street)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Coordinates: -->
+				<div class="form-group accidents-coordinates">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="coordinates">Coordinates:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="coordinates" id="coordinates" value="<%%VALUE(coordinates)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Deaths: -->
+				<div class="form-group accidents-deaths">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Deaths:</label>
+					<div class="col-lg-9">
+						<%%COMBO(deaths)%%>
+					</div>
+				</div>
+
+				<!-- Field: Fatal Amount: -->
+				<div class="form-group accidents-fatal_amount">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="fatal_amount">Fatal Amount:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="fatal_amount" id="fatal_amount" value="<%%VALUE(fatal_amount)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Injured: -->
+				<div class="form-group accidents-injured">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="injured">Injured:</label>
+					<div class="col-lg-9">
+						<%%COMBO(injured)%%>
+					</div>
+				</div>
+
+				<!-- Field: Injured Amount: -->
+				<div class="form-group accidents-injured_amount">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="injured_amount">Injured Amount:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="injured_amount" id="injured_amount" value="<%%VALUE(injured_amount)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Description of Accident: -->
+				<div class="form-group accidents-description_of_accident">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="description_of_accident">Description of Accident:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(description_of_accident)%%>
+					</div>
+				</div>
+
+				<!-- Field: Insured ?: -->
+				<div class="form-group accidents-insured">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="insured">Insured ?:</label>
+					<div class="col-lg-9">
+						<%%COMBO(insured)%%>
+					</div>
+				</div>
+
+				<!-- Field: Upload Photos of Damaged Vehicle: -->
+				<div class="form-group accidents-upload_photos_damaged_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Upload Photos of Damaged Vehicle: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#upload_photos_damaged_vehicle-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="upload_photos_damaged_vehicle-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 7868 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="<%%BASE_UPLOAD_PATH%%><%%VALUE(upload_photos_damaged_vehicle)%%>" class="img-responsive img-thumbnail" id="upload_photos_damaged_vehicle-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(upload_photos_damaged_vehicle)%%>
+								<%%REMOVEFILE(upload_photos_damaged_vehicle)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Copy of Sketch Plan: -->
+				<div class="form-group accidents-copy_of_sketch_plan">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Copy of Sketch Plan: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#copy_of_sketch_plan-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="copy_of_sketch_plan-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 7868 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="copy_of_sketch_plan-link" href="link.php?t=accidents&f=copy_of_sketch_plan&i=<%%VALUE(accident_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-picture" title="<%%VALUE(copy_of_sketch_plan)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(copy_of_sketch_plan)%%>
+								<%%REMOVEFILE(copy_of_sketch_plan)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_copy_of_sketch_plan = '<%%VALUE(copy_of_sketch_plan)%%>'; if(e_copy_of_sketch_plan == '' || e_copy_of_sketch_plan == '&nbsp;' || e_copy_of_sketch_plan == 'blank.gif') jQuery('#copy_of_sketch_plan-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Driver Accident Report/Statement: -->
+				<div class="form-group accidents-accident_report_driver">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver Accident Report/Statement: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#accident_report_driver-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="accident_report_driver-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 7868 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="accident_report_driver-link" href="link.php?t=accidents&f=accident_report_driver&i=<%%VALUE(accident_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(accident_report_driver)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(accident_report_driver)%%>
+								<%%REMOVEFILE(accident_report_driver)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_accident_report_driver = '<%%VALUE(accident_report_driver)%%>'; if(e_accident_report_driver == '' || e_accident_report_driver == '&nbsp;' || e_accident_report_driver == 'blank.gif') jQuery('#accident_report_driver-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Supervisor Accident Report/Statement: -->
+				<div class="form-group accidents-accident_report_supervisior">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Supervisor Accident Report/Statement: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#accident_report_supervisior-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="accident_report_supervisior-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 7868 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="accident_report_supervisior-link" href="link.php?t=accidents&f=accident_report_supervisior&i=<%%VALUE(accident_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(accident_report_supervisior)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(accident_report_supervisior)%%>
+								<%%REMOVEFILE(accident_report_supervisior)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_accident_report_supervisior = '<%%VALUE(accident_report_supervisior)%%>'; if(e_accident_report_supervisior == '' || e_accident_report_supervisior == '&nbsp;' || e_accident_report_supervisior == 'blank.gif') jQuery('#accident_report_supervisior-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Claims Report by Accident Committee: -->
+				<div class="form-group accidents-claims_report_accident_committee">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Claims Report by Accident Committee: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#claims_report_accident_committee-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="claims_report_accident_committee-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 7868 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="claims_report_accident_committee-link" href="link.php?t=accidents&f=claims_report_accident_committee&i=<%%VALUE(accident_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(claims_report_accident_committee)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(claims_report_accident_committee)%%>
+								<%%REMOVEFILE(claims_report_accident_committee)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_claims_report_accident_committee = '<%%VALUE(claims_report_accident_committee)%%>'; if(e_claims_report_accident_committee == '' || e_claims_report_accident_committee == '&nbsp;' || e_claims_report_accident_committee == 'blank.gif') jQuery('#claims_report_accident_committee-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Insurance Claims Report: -->
+				<div class="form-group accidents-insurance_claims_report">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Insurance Claims Report: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#insurance_claims_report-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="insurance_claims_report-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 7868 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="insurance_claims_report-link" href="link.php?t=accidents&f=insurance_claims_report&i=<%%VALUE(accident_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(insurance_claims_report)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(insurance_claims_report)%%>
+								<%%REMOVEFILE(insurance_claims_report)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_insurance_claims_report = '<%%VALUE(insurance_claims_report)%%>'; if(e_insurance_claims_report == '' || e_insurance_claims_report == '&nbsp;' || e_insurance_claims_report == 'blank.gif') jQuery('#insurance_claims_report-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Amount Paid: -->
+				<div class="form-group accidents-amount_paid">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="amount_paid">Amount Paid:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="amount_paid" id="amount_paid" value="<%%VALUE(amount_paid)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Police Officer: -->
+				<div class="form-group accidents-police_officer">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="police_officer">Police Officer:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="police_officer" id="police_officer" value="<%%VALUE(police_officer)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Contact Details: -->
+				<div class="form-group accidents-contact_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="contact_details">Contact Details:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="contact_details" id="contact_details" value="<%%VALUE(contact_details)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Case Number: -->
+				<div class="form-group accidents-case_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="case_number">Case Number:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="case_number" id="case_number" value="<%%VALUE(case_number)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Police Report: -->
+				<div class="form-group accidents-police_report">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Police Report: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#police_report-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="police_report-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 7868 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="police_report-link" href="link.php?t=accidents&f=police_report&i=<%%VALUE(accident_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(police_report)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(police_report)%%>
+								<%%REMOVEFILE(police_report)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_police_report = '<%%VALUE(police_report)%%>'; if(e_police_report == '' || e_police_report == '&nbsp;' || e_police_report == 'blank.gif') jQuery('#police_report-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Accident Report Number: -->
+				<div class="form-group accidents-accident_report_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="accident_report_number">Accident Report Number:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="accident_report_number" id="accident_report_number" value="<%%VALUE(accident_report_number)%%>">
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="accidents_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			AppGini.once({
+				condition: function() { return bkLib != undefined; },
+				action: function() {
+					if($j('textarea#description_of_accident').length) new nicEditor({ fullPanel : true }).panelInstance('description_of_accident');
+				}
+			});
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) {
+				AppGini.once({
+					condition: function() {
+						return $j('.form-group.accidents-vehicle_registration_number')
+									.find('.nicEdit-main, .select2-container, input[type=radio]')
+									.length > 0
+								// or read-only DV
+								|| (!$j('#update').length && !$j('#insert').length);
+					},
+					action: function() {
+						$j('#accidents_dv_container-loading').addClass('hidden');
+						$j('#accidents_dv_container').removeClass('hidden');
+						AppGini.focusFormElement('accidents', 'vehicle_registration_number');
+					},
+					timeout:  5000,
+					doActionOnTimeout:  true
+				});
+			} else {
+				$j('#accidents_dv_container-loading').addClass('hidden');
+				$j('#accidents_dv_container').removeClass('hidden');
+			}
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			// try to detect rich text changes by adding 'input' handler after nicedit is loaded ...
+			AppGini.detectContentEditableChanges();
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'accidents',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=accidents&id=<%%URLVALUE(accident_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=accidents&id=<%%URLVALUE(accident_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

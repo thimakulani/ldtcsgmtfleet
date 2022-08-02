@@ -1,0 +1,23 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the schedule_init() hook (in hooks/schedule.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="schedule-schedule_id-<%%VALUE(schedule_id)%%>" class="schedule-schedule_id text-right"><%%VALUE(schedule_id)%%></td>
+		<td id="schedule-title-<%%VALUE(schedule_id)%%>" class="schedule-title"><%%VALUE(title)%%></td>
+		<td id="schedule-user_name_and_surname-<%%VALUE(schedule_id)%%>" class="schedule-user_name_and_surname"><%%VALUE(user_name_and_surname)%%></td>
+		<td id="schedule-user_contact_email-<%%VALUE(schedule_id)%%>" class="schedule-user_contact_email"><%%VALUE(user_contact_email)%%></td>
+		<td id="schedule-service_item_type-<%%VALUE(schedule_id)%%>" class="schedule-service_item_type"><%%VALUE(service_item_type)%%></td>
+		<td id="schedule-service_item_type_code-<%%VALUE(schedule_id)%%>" class="schedule-service_item_type_code"><%%VALUE(service_item_type_code)%%></td>
+		<td id="schedule-application_status-<%%VALUE(schedule_id)%%>" class="schedule-application_status"><%%VALUE(application_status)%%></td>
+		<td id="schedule-vehicle_registration_number-<%%VALUE(schedule_id)%%>" class="schedule-vehicle_registration_number"><%%VALUE(vehicle_registration_number)%%></td>
+		<td id="schedule-engine_number-<%%VALUE(schedule_id)%%>" class="schedule-engine_number"><%%VALUE(engine_number)%%></td>
+		<td id="schedule-closing_km-<%%VALUE(schedule_id)%%>" class="schedule-closing_km"><%%VALUE(closing_km)%%></td>
+		<td id="schedule-date-<%%VALUE(schedule_id)%%>" class="schedule-date"><%%VALUE(date)%%></td>
+		<td id="schedule-time-<%%VALUE(schedule_id)%%>" class="schedule-time"><%%VALUE(time)%%></td>
+		<td id="schedule-workshop_name-<%%VALUE(schedule_id)%%>" class="schedule-workshop_name"><%%VALUE(workshop_name)%%></td>
+		<td id="schedule-diagnosis-<%%VALUE(schedule_id)%%>" class="schedule-diagnosis"><%%VALUE(diagnosis)%%></td>
+		<td id="schedule-prescription-<%%VALUE(schedule_id)%%>" class="schedule-prescription"><%%VALUE(prescription)%%></td>
+		<td id="schedule-comments-<%%VALUE(schedule_id)%%>" class="schedule-comments"><%%VALUE(comments)%%></td>

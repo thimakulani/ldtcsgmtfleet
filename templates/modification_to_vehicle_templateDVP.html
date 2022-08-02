@@ -1,0 +1,400 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Modification ID: -->
+		<div class="form-group modification_to_vehicle-modification_id" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Modification ID:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(modification_id)%%></div>
+			</div>
+		</div>
+		<!-- Field: Type of Vehicle: -->
+		<div class="form-group modification_to_vehicle-type_of_vehicle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Type of Vehicle:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="type_of_vehicle<%%RND1%%>"><%%COMBOTEXT(type_of_vehicle)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Directorate: -->
+		<div class="form-group modification_to_vehicle-directorate" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Directorate:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(directorate)%%></div>
+			</div>
+		</div>
+		<!-- Field: Head Office: -->
+		<div class="form-group modification_to_vehicle-head_office" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Head Office:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(head_office)%%></div>
+			</div>
+		</div>
+		<!-- Field: District: -->
+		<div class="form-group modification_to_vehicle-district" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">District:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="district<%%RND1%%>"><%%COMBOTEXT(district)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Station: -->
+		<div class="form-group modification_to_vehicle-location" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Station:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="location<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Driver's Name & Surname: -->
+		<div class="form-group modification_to_vehicle-drivers_name_and_surname" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver's Name & Surname:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="drivers_name_and_surname<%%RND1%%>"><%%COMBOTEXT(drivers_name_and_surname)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Driver's Persal Number: -->
+		<div class="form-group modification_to_vehicle-drivers_persal_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver's Persal Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="drivers_persal_number<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Driver's Contact Details: -->
+		<div class="form-group modification_to_vehicle-drivers_contact_details" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver's Contact Details:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="drivers_contact_details<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Driver Rank/Designation: -->
+		<div class="form-group modification_to_vehicle-driver_rank" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver Rank/Designation:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(driver_rank)%%></div>
+			</div>
+		</div>
+		<!-- Field: Driver Signature: -->
+		<div class="form-group modification_to_vehicle-driver_signature" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver Signature:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img id="driver_signatureImg" src="thumbnail.php?t=modification_to_vehicle&f=driver_signature&i=<%%VALUE(driver_signature)%%>&v=dv" class="img-thumbnail"></div>
+			</div>
+		</div>
+		<!-- Field: Registration Number: -->
+		<div class="form-group modification_to_vehicle-vehicle_registration_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Registration Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="vehicle_registration_number<%%RND1%%>"><%%COMBOTEXT(vehicle_registration_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Make of Vehicle: -->
+		<div class="form-group modification_to_vehicle-make_of_vehicle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Make of Vehicle:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="make_of_vehicle<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Model of Vehicle: -->
+		<div class="form-group modification_to_vehicle-model_of_vehicle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Model of Vehicle:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="model_of_vehicle<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Closing KM: -->
+		<div class="form-group modification_to_vehicle-closing_km" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Closing KM:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="closing_km<%%RND1%%>"><%%COMBOTEXT(closing_km)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Job Card Number: -->
+		<div class="form-group modification_to_vehicle-job_card_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Job Card Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="job_card_number<%%RND1%%>"><%%COMBOTEXT(job_card_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Objective: -->
+		<div class="form-group modification_to_vehicle-objective" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Objective:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(objective)%%></div>
+			</div>
+		</div>
+		<!-- Field: Fuel Gauge Amount: -->
+		<div class="form-group modification_to_vehicle-fuel_gauge_amount" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Fuel Gauge Amount:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(fuel_gauge_amount)%%></div>
+			</div>
+		</div>
+		<!-- Field: Keys/Ignition: -->
+		<div class="form-group modification_to_vehicle-keys_ignition" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Keys/Ignition:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(keys_ignition)%%></div>
+			</div>
+		</div>
+		<!-- Field: Petrol Cap with Keys: -->
+		<div class="form-group modification_to_vehicle-petrol_cap_with_keys" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Petrol Cap with Keys:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(petrol_cap_with_keys)%%></div>
+			</div>
+		</div>
+		<!-- Field: Padlock with Keys: -->
+		<div class="form-group modification_to_vehicle-padlock_with_keys" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Padlock with Keys:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(padlock_with_keys)%%></div>
+			</div>
+		</div>
+		<!-- Field: Tyre R/F (Available): -->
+		<div class="form-group modification_to_vehicle-tyre_r_f" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tyre R/F (Available):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(tyre_r_f)%%></div>
+			</div>
+		</div>
+		<!-- Field: Tyre R/F (Thread Condition): -->
+		<div class="form-group modification_to_vehicle-tyre_r_f_1" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tyre R/F (Thread Condition):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(tyre_r_f_1)%%></div>
+			</div>
+		</div>
+		<!-- Field: Tyre R/R (Available): -->
+		<div class="form-group modification_to_vehicle-tyre_r_r" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tyre R/R (Available):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(tyre_r_r)%%></div>
+			</div>
+		</div>
+		<!-- Field: Tyre R/R (Thread Condition): -->
+		<div class="form-group modification_to_vehicle-tyre_r_r_1" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tyre R/R (Thread Condition):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(tyre_r_r_1)%%></div>
+			</div>
+		</div>
+		<!-- Field: Tyre L/F (Available): -->
+		<div class="form-group modification_to_vehicle-tyre_l_f" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tyre L/F (Available):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(tyre_l_f)%%></div>
+			</div>
+		</div>
+		<!-- Field: Tyre L/F (Thread Condition): -->
+		<div class="form-group modification_to_vehicle-tyre_l_f_1" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tyre L/F (Thread Condition):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(tyre_l_f_1)%%></div>
+			</div>
+		</div>
+		<!-- Field: Tyre L/R (Available): -->
+		<div class="form-group modification_to_vehicle-tyer_l_r" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tyre L/R (Available):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(tyer_l_r)%%></div>
+			</div>
+		</div>
+		<!-- Field: Tyre L/R (Thread Condition): -->
+		<div class="form-group modification_to_vehicle-tyer_l_r_1" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tyre L/R (Thread Condition):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(tyer_l_r_1)%%></div>
+			</div>
+		</div>
+		<!-- Field: Tyre Spare (Available): -->
+		<div class="form-group modification_to_vehicle-tyre_spare" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tyre Spare (Available):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(tyre_spare)%%></div>
+			</div>
+		</div>
+		<!-- Field: Tyre Spare (Thread Condition): -->
+		<div class="form-group modification_to_vehicle-tyre_spare_1" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tyre Spare (Thread Condition):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(tyre_spare_1)%%></div>
+			</div>
+		</div>
+		<!-- Field: Wheel Hub Cups (Available): -->
+		<div class="form-group modification_to_vehicle-wheel_cups" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Wheel Hub Cups (Available):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(wheel_cups)%%></div>
+			</div>
+		</div>
+		<!-- Field: Other (specify): -->
+		<div class="form-group modification_to_vehicle-other" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Other (specify):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(other)%%></div>
+			</div>
+		</div>
+		<!-- Field: Battery (Make): -->
+		<div class="form-group modification_to_vehicle-battery" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Battery (Make):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(battery)%%></div>
+			</div>
+		</div>
+		<!-- Field: Battery (Voltage): -->
+		<div class="form-group modification_to_vehicle-battery_voltage" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Battery (Voltage):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(battery_voltage)%%></div>
+			</div>
+		</div>
+		<!-- Field: Wheel Spanner: -->
+		<div class="form-group modification_to_vehicle-wheel_spanner" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Wheel Spanner:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(wheel_spanner)%%></div>
+			</div>
+		</div>
+		<!-- Field: Jack with Handle: -->
+		<div class="form-group modification_to_vehicle-jack_with_handle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Jack with Handle:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(jack_with_handle)%%></div>
+			</div>
+		</div>
+		<!-- Field: Radio/DVD Combination: -->
+		<div class="form-group modification_to_vehicle-radio_dvd_combination" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Radio/DVD Combination:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(radio_dvd_combination)%%></div>
+			</div>
+		</div>
+		<!-- Field: Petrol Card: -->
+		<div class="form-group modification_to_vehicle-petrol_card" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Petrol Card:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(petrol_card)%%></div>
+			</div>
+		</div>
+		<!-- Field: Valid License Disc: -->
+		<div class="form-group modification_to_vehicle-valid_license_disc" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Valid License Disc:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(valid_license_disc)%%></div>
+			</div>
+		</div>
+		<!-- Field: Valid License Disc (Expire date): -->
+		<div class="form-group modification_to_vehicle-valid_license_disc_date" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Valid License Disc (Expire date):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(valid_license_disc_date)%%></div>
+			</div>
+		</div>
+		<!-- Field: Fire Extinguisher: -->
+		<div class="form-group modification_to_vehicle-fire_extinguisher" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Fire Extinguisher:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(fire_extinguisher)%%></div>
+			</div>
+		</div>
+		<!-- Field: Warning Signs & Traingle: -->
+		<div class="form-group modification_to_vehicle-warning_signs_traingle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Warning Signs & Traingle:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(warning_signs_traingle)%%></div>
+			</div>
+		</div>
+		<!-- Field: Declaration Date & Time: -->
+		<div class="form-group modification_to_vehicle-date_checked_in" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Declaration Date & Time:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(date_checked_in)%%></div>
+			</div>
+		</div>
+		<!-- Field: Testing Officer/Tradesman Aid Details: -->
+		<div class="form-group modification_to_vehicle-testing_officer_name_and_surname" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Testing Officer/Tradesman Aid Details:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(testing_officer_name_and_surname)%%></div>
+			</div>
+		</div>
+		<!-- Field: Testing Officer/Tradesman Aid Persal Number: -->
+		<div class="form-group modification_to_vehicle-testing_officer_persal_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Testing Officer/Tradesman Aid Persal Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(testing_officer_persal_number)%%></div>
+			</div>
+		</div>
+		<!-- Field: Testing Officer/Tradesman Aid Rank/Designation: -->
+		<div class="form-group modification_to_vehicle-testing_officer_rank" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Testing Officer/Tradesman Aid Rank/Designation:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(testing_officer_rank)%%></div>
+			</div>
+		</div>
+		<!-- Field: Testing Officer/Tradesman Aid Signature: -->
+		<div class="form-group modification_to_vehicle-testing_officer_signature" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Testing Officer/Tradesman Aid Signature:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img id="testing_officer_signatureImg" src="thumbnail.php?t=modification_to_vehicle&f=testing_officer_signature&i=<%%VALUE(testing_officer_signature)%%>&v=dv" class="img-thumbnail"></div>
+			</div>
+		</div>
+		<!-- Field: Declaration Date & Time (Vehicle Received): -->
+		<div class="form-group modification_to_vehicle-date_received" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Declaration Date & Time (Vehicle Received):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(date_received)%%></div>
+			</div>
+		</div>
+		<!-- Field: Supervisor for Allocation Details: -->
+		<div class="form-group modification_to_vehicle-supervisor_for_allocation_name_and_surname" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Supervisor for Allocation Details:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(supervisor_for_allocation_name_and_surname)%%></div>
+			</div>
+		</div>
+		<!-- Field: Supervisor for Allocation Persal Number: -->
+		<div class="form-group modification_to_vehicle-supervisor_for_allocation_persal_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Supervisor for Allocation Persal Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(supervisor_for_allocation_persal_number)%%></div>
+			</div>
+		</div>
+		<!-- Field: Supervisor for Allocation Rank/Designation: -->
+		<div class="form-group modification_to_vehicle-supervisor_for_allocation_rank" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Supervisor for Allocation Rank/Designation:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(supervisor_for_allocation_rank)%%></div>
+			</div>
+		</div>
+		<!-- Field: Supervisor for Allocation Signature: -->
+		<div class="form-group modification_to_vehicle-supervisor_for_allocation_signature" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Supervisor for Allocation Signature:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img id="supervisor_for_allocation_signatureImg" src="thumbnail.php?t=modification_to_vehicle&f=supervisor_for_allocation_signature&i=<%%VALUE(supervisor_for_allocation_signature)%%>&v=dv" class="img-thumbnail"></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>

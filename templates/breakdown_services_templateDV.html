@@ -1,0 +1,614 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/breakdown_services-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="breakdown_services_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="breakdown_services_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="vehicle_history_view.php?filterer_total_cost=<%%URLVALUE(breakdown_id)%%>&<%%EMBEDDED%%>" id="vehicle_history_link"><i class="glyphicon glyphicon-dashboard"></i> Vehicle General History:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="vehicle_history_view.php?filterer_total_cost=<%%URLVALUE(breakdown_id)%%>&<%%EMBEDDED%%>" id="xs_vehicle_history_link"><i class="glyphicon glyphicon-dashboard"></i> Vehicle General History:</a>
+			<input type="hidden" id="vehicle_history_hclink" value="vehicle_history_view.php?filterer_total_cost=<%%URLVALUE(breakdown_id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="breakdown_services_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Breakdown ID: -->
+				<div class="form-group breakdown_services-breakdown_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="breakdown_id">Breakdown ID:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="breakdown_id"><%%VALUE(breakdown_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Breakdown of Vehicle?: -->
+				<div class="form-group breakdown_services-breakdown_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Breakdown of Vehicle?:</label>
+					<div class="col-lg-9">
+						<%%COMBO(breakdown_of_vehicle)%%>
+					</div>
+				</div>
+
+				<!-- Field: Breakdown During Office Hours: -->
+				<div class="form-group breakdown_services-breakdown_during_office_hours">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Breakdown During Office Hours: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#breakdown_during_office_hours-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="breakdown_during_office_hours-description"><div class="alert alert-info bspacer-xs">The user report to their Transport Officer/Controller.
+<br>The Transport Officer report to the nearest Government garage.
+<br>Government garage arrange the suitable means for recovery based on the short description of defect given by the user.</div></span>
+						<%%COMBO(breakdown_during_office_hours)%%>
+					</div>
+				</div>
+
+				<!-- Field: Breakdown Within or Outside The Province: -->
+				<div class="form-group breakdown_services-breakdown_within_or_outside_the_province">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Breakdown Within or Outside The Province: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#breakdown_within_or_outside_the_province-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="breakdown_within_or_outside_the_province-description"><div class="alert alert-info bspacer-xs">The user report to the nearest government garage.<br>The government garage arrange the most suitable means for recovery.<br>The vehicle is recovered to the nearest government garage.</div></span>
+						<%%COMBO(breakdown_within_or_outside_the_province)%%>
+					</div>
+				</div>
+
+				<!-- Field: Description of Vehicle Breakdown (Notes): -->
+				<div class="form-group breakdown_services-description_of_vehicle_breakdown_notes">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="description_of_vehicle_breakdown_notes" data-parent_link="view_parent_modal">Description of Vehicle Breakdown (Notes): <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#description_of_vehicle_breakdown_notes-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="description_of_vehicle_breakdown_notes-description"><div class="alert alert-info bspacer-xs">Note a short description as per Reporting Officer.</div></span>
+						<div class="lookup-flex"><%%COMBO(description_of_vehicle_breakdown_notes)%%><%%PLINK(description_of_vehicle_breakdown_notes)%%><%%ADDNEW(reception)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Description of vehicle breakdown -->
+				<div class="form-group breakdown_services-description_of_vehicle_breakdown">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Description of vehicle breakdown <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#description_of_vehicle_breakdown-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="description_of_vehicle_breakdown-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5250 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="description_of_vehicle_breakdown-link" href="link.php?t=breakdown_services&f=description_of_vehicle_breakdown&i=<%%VALUE(breakdown_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(description_of_vehicle_breakdown)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(description_of_vehicle_breakdown)%%>
+								<%%REMOVEFILE(description_of_vehicle_breakdown)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_description_of_vehicle_breakdown = '<%%VALUE(description_of_vehicle_breakdown)%%>'; if(e_description_of_vehicle_breakdown == '' || e_description_of_vehicle_breakdown == '&nbsp;' || e_description_of_vehicle_breakdown == 'blank.gif') jQuery('#description_of_vehicle_breakdown-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Date of Vehicle Breakdown: -->
+				<div class="form-group breakdown_services-date_of_vehicle_breakdown">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_of_vehicle_breakdown-dd">Date of Vehicle Breakdown:</label>
+					<div class="col-lg-9">
+						<%%COMBO(date_of_vehicle_breakdown)%%>
+					</div>
+				</div>
+
+				<!-- Field: Work Allocation Reference Number: -->
+				<div class="form-group breakdown_services-work_allocation_reference_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="work_allocation_reference_number" data-parent_link="view_parent_modal">Work Allocation Reference Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(work_allocation_reference_number)%%><%%PLINK(work_allocation_reference_number)%%><%%ADDNEW(work_allocation)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Job Card Number: -->
+				<div class="form-group breakdown_services-job_card_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="job_card_number" data-parent_link="view_parent_modal">Job Card Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(job_card_number)%%><%%PLINK(job_card_number)%%><%%ADDNEW(reception)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Registration Number: -->
+				<div class="form-group breakdown_services-vehicle_registration_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_registration_number" data-parent_link="view_parent_modal">Registration Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(vehicle_registration_number)%%><%%PLINK(vehicle_registration_number)%%><%%ADDNEW(gmt_fleet_register)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Engine Number: -->
+				<div class="form-group breakdown_services-engine_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Engine Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="engine_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Closing KM: -->
+				<div class="form-group breakdown_services-closing_km">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="closing_km" data-parent_link="view_parent_modal">Closing KM:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(closing_km)%%><%%PLINK(closing_km)%%><%%ADDNEW(log_sheet)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Date of Vehicle Re-activation: -->
+				<div class="form-group breakdown_services-date_of_vehicle_reactivation">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_of_vehicle_reactivation-dd">Date of Vehicle Re-activation:</label>
+					<div class="col-lg-9">
+						<%%COMBO(date_of_vehicle_reactivation)%%>
+					</div>
+				</div>
+
+				<!-- Field: Type of Expenditure: -->
+				<div class="form-group breakdown_services-type_of_expenditure">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="type_of_expenditure">Type of Expenditure:</label>
+					<div class="col-lg-9">
+						<%%COMBO(type_of_expenditure)%%>
+					</div>
+				</div>
+
+				<!-- Field: Labour Category (1) : -->
+				<div class="form-group breakdown_services-labour_category">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="labour_category">Labour Category (1) :</label>
+					<div class="col-lg-9">
+						<%%COMBO(labour_category)%%>
+					</div>
+				</div>
+
+				<!-- Field: Part Number (1): -->
+				<div class="form-group breakdown_services-part_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_number" data-parent_link="view_parent_modal">Part Number (1):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_number)%%><%%PLINK(part_number)%%><%%ADDNEW(parts)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Part Name (1): -->
+				<div class="form-group breakdown_services-part_name">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_name" data-parent_link="view_parent_modal">Part Name (1):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_name)%%><%%PLINK(part_name)%%><%%ADDNEW(parts)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Part Manufacturer Name (1): -->
+				<div class="form-group breakdown_services-part_manufacturer_name">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_manufacturer_name" data-parent_link="view_parent_modal">Part Manufacturer Name (1):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_manufacturer_name)%%><%%PLINK(part_manufacturer_name)%%><%%ADDNEW(manufacturer)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Quantity (1): -->
+				<div class="form-group breakdown_services-quantity">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="quantity">Quantity (1):</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="quantity" id="quantity" value="<%%VALUE(quantity)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Expense Of Item 1 (R): -->
+				<div class="form-group breakdown_services-expense_of_item">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="expense_of_item">Expense Of Item 1 (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="expense_of_item" id="expense_of_item" value="<%%VALUE(expense_of_item)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Labour Category (2): -->
+				<div class="form-group breakdown_services-labour_category_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="labour_category_1">Labour Category (2):</label>
+					<div class="col-lg-9">
+						<%%COMBO(labour_category_1)%%>
+					</div>
+				</div>
+
+				<!-- Field: Part Number (2): -->
+				<div class="form-group breakdown_services-part_number_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_number_1" data-parent_link="view_parent_modal">Part Number (2):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_number_1)%%><%%PLINK(part_number_1)%%><%%ADDNEW(parts)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Part Name (2): -->
+				<div class="form-group breakdown_services-part_name_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_name_1" data-parent_link="view_parent_modal">Part Name (2):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_name_1)%%><%%PLINK(part_name_1)%%><%%ADDNEW(parts)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Part Manufacturer Name (2): -->
+				<div class="form-group breakdown_services-part_manufacturer_name_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_manufacturer_name_1" data-parent_link="view_parent_modal">Part Manufacturer Name (2):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_manufacturer_name_1)%%><%%PLINK(part_manufacturer_name_1)%%><%%ADDNEW(manufacturer)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Quantity (2): -->
+				<div class="form-group breakdown_services-quantity_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="quantity_1">Quantity (2):</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="quantity_1" id="quantity_1" value="<%%VALUE(quantity_1)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Expense Of Item 2 (R): -->
+				<div class="form-group breakdown_services-expense_of_item_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="expense_of_item_1">Expense Of Item 2 (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="expense_of_item_1" id="expense_of_item_1" value="<%%VALUE(expense_of_item_1)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Material Cost (R): -->
+				<div class="form-group breakdown_services-material_cost">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="material_cost">Material Cost (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="material_cost" id="material_cost" value="<%%VALUE(material_cost)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Average Worktime Hrs: -->
+				<div class="form-group breakdown_services-average_worktime_hrs">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="average_worktime_hrs">Average Worktime Hrs:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="average_worktime_hrs" id="average_worktime_hrs" value="<%%VALUE(average_worktime_hrs)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Standard Labour Cost per Hour: -->
+				<div class="form-group breakdown_services-standard_labour_cost_per_hour">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="standard_labour_cost_per_hour">Standard Labour Cost per Hour:</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="standard_labour_cost_per_hour" id="standard_labour_cost_per_hour" value="<%%VALUE(standard_labour_cost_per_hour)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Labour Charges (R): -->
+				<div class="form-group breakdown_services-labour_charges">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="labour_charges">Labour Charges (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="labour_charges" id="labour_charges" value="<%%VALUE(labour_charges)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Vat 15 % (R): -->
+				<div class="form-group breakdown_services-vat">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vat">Vat 15 % (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="vat" id="vat" value="<%%VALUE(vat)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Total Amount (R): -->
+				<div class="form-group breakdown_services-total_amount">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="total_amount">Total Amount (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="total_amount" id="total_amount" value="<%%VALUE(total_amount)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Workshop Name: -->
+				<div class="form-group breakdown_services-workshop_name">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="workshop_name" data-parent_link="view_parent_modal">Workshop Name:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(workshop_name)%%><%%PLINK(workshop_name)%%><%%ADDNEW(service)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Work Order Status: -->
+				<div class="form-group breakdown_services-work_order_status">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Work Order Status:</label>
+					<div class="col-lg-9">
+						<%%COMBO(work_order_status)%%>
+					</div>
+				</div>
+
+				<!-- Field: Comments: -->
+				<div class="form-group breakdown_services-comments">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="comments">Comments:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(comments)%%>
+					</div>
+				</div>
+
+				<!-- Field: Documents (Upload Invoice): -->
+				<div class="form-group breakdown_services-upload_invoice">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Documents (Upload Invoice): <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#upload_invoice-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="upload_invoice-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5120 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="upload_invoice-link" href="link.php?t=breakdown_services&f=upload_invoice&i=<%%VALUE(breakdown_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(upload_invoice)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(upload_invoice)%%>
+								<%%REMOVEFILE(upload_invoice)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_upload_invoice = '<%%VALUE(upload_invoice)%%>'; if(e_upload_invoice == '' || e_upload_invoice == '&nbsp;' || e_upload_invoice == 'blank.gif') jQuery('#upload_invoice-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Receptionist Name & Surname: -->
+				<div class="form-group breakdown_services-receptionist">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Receptionist Name & Surname:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="receptionist"></div>
+					</div>
+				</div>
+
+				<!-- Field: Receptionist Contact e-Mail: -->
+				<div class="form-group breakdown_services-receptionist_contact_email">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Receptionist Contact e-Mail:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="receptionist_contact_email"></div>
+					</div>
+				</div>
+
+				<!-- Field: Date Captured: -->
+				<div class="form-group breakdown_services-date_captured">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_captured">Date Captured:</label>
+					<div class="col-lg-9">
+						<div class="input-group date datetimepicker"><input type="text" class="form-control" name="date_captured" id="date_captured" value="<%%VALUE(date_captured)%%>"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="breakdown_services_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="breakdown_services-children" class="children-tabs">
+				<div class="text-center"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+			</div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			AppGini.once({
+				condition: function() { return bkLib != undefined; },
+				action: function() {
+					if($j('textarea#comments').length) new nicEditor({ fullPanel : true }).panelInstance('comments');
+				}
+			});
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			$j('#breakdown_services_dv_container-loading').addClass('hidden');
+			$j('#breakdown_services_dv_container').removeClass('hidden');
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) AppGini.focusFormElement('breakdown_services', 'breakdown_of_vehicle');
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			// try to detect rich text changes by adding 'input' handler after nicedit is loaded ...
+			AppGini.detectContentEditableChanges();
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+			if(embedded_mode) {
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function() {
+					$j('a[href]:not([href^="#"]):not([href^="javascript"]):not([href$="Embedded=1"]):not([href*="link.php?t="]):not([href^="mailto:"]):not([href$=".jpg"]):not([href$=".png"]):not([href$=".gif"])').each(
+						function() {
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode) {
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			} else {
+				post(
+					'parent-children.php', {
+						ParentTable: 'breakdown_services',
+						SelectedID: '<%%VALUE(breakdown_id)%%>',
+						Operation: 'show-children'
+					},
+					'breakdown_services-children'
+				);
+			}
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'breakdown_services',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=breakdown_services&id=<%%URLVALUE(breakdown_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=breakdown_services&id=<%%URLVALUE(breakdown_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

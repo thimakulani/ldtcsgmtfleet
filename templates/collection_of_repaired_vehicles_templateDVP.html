@@ -1,0 +1,211 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Repaired ID: -->
+		<div class="form-group collection_of_repaired_vehicles-collection_id" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Repaired ID:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(collection_id)%%></div>
+			</div>
+		</div>
+		<!-- Field: Reception Name & Surname: -->
+		<div class="form-group collection_of_repaired_vehicles-reception_name_and_surname" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Reception Name & Surname:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="reception_name_and_surname<%%RND1%%>"><%%COMBOTEXT(reception_name_and_surname)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Reception Persal Number: -->
+		<div class="form-group collection_of_repaired_vehicles-reception_persal_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Reception Persal Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="reception_persal_number<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Reception Contact Details: -->
+		<div class="form-group collection_of_repaired_vehicles-reception_contact_details" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Reception Contact Details:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="reception_contact_details<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Reception Email Address: -->
+		<div class="form-group collection_of_repaired_vehicles-reception_email_address" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Reception Email Address:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="reception_email_address<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Reception Signature: -->
+		<div class="form-group collection_of_repaired_vehicles-reception_signature" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Reception Signature:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img id="reception_signatureImg" src="thumbnail.php?t=collection_of_repaired_vehicles&f=reception_signature&i=<%%VALUE(reception_signature)%%>&v=dv" class="img-thumbnail"></div>
+			</div>
+		</div>
+		<!-- Field: Driver Name And Surname: -->
+		<div class="form-group collection_of_repaired_vehicles-driver_name_and_surname" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver Name And Surname:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="driver_name_and_surname<%%RND1%%>"><%%COMBOTEXT(driver_name_and_surname)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Driver Persal Number: -->
+		<div class="form-group collection_of_repaired_vehicles-driver_persal_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver Persal Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="driver_persal_number<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Driver Contacts Details: -->
+		<div class="form-group collection_of_repaired_vehicles-driver_contacts_details" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver Contacts Details:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="driver_contacts_details<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Driver Email Address: -->
+		<div class="form-group collection_of_repaired_vehicles-driver_email_address" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver Email Address:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="driver_email_address<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Driver License Upload: -->
+		<div class="form-group collection_of_repaired_vehicles-driver_license_upload" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver License Upload:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="driver_license_upload-link" href="link.php?t=collection_of_repaired_vehicles&f=driver_license_upload&i=<%%VALUE(collection_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-picture" title="<%%VALUE(driver_license_upload)%%>"></i></a><script>jQuery(function() { var e_driver_license_upload = '<%%VALUE(driver_license_upload)%%>'; if(e_driver_license_upload == '' || e_driver_license_upload == '&nbsp;' || e_driver_license_upload == 'blank.gif') jQuery('#driver_license_upload-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Driver Signature: -->
+		<div class="form-group collection_of_repaired_vehicles-driver_signature" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver Signature:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img id="driver_signatureImg" src="thumbnail.php?t=collection_of_repaired_vehicles&f=driver_signature&i=<%%VALUE(driver_signature)%%>&v=dv" class="img-thumbnail"></div>
+			</div>
+		</div>
+		<!-- Field: Government Garage Name: -->
+		<div class="form-group collection_of_repaired_vehicles-government_garage_name" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Government Garage Name:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="government_garage_name<%%RND1%%>"><%%COMBOTEXT(government_garage_name)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Government Garage Contact Details: -->
+		<div class="form-group collection_of_repaired_vehicles-government_garage_contact_details" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Government Garage Contact Details:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(government_garage_contact_details)%%></div>
+			</div>
+		</div>
+		<!-- Field: Government Garage Address: -->
+		<div class="form-group collection_of_repaired_vehicles-government_garage_address" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Government Garage Address:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(government_garage_address)%%></div>
+			</div>
+		</div>
+		<!-- Field: Government Garage Email Address: -->
+		<div class="form-group collection_of_repaired_vehicles-government_garage_email_address" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Government Garage Email Address:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(government_garage_email_address)%%></div>
+			</div>
+		</div>
+		<!-- Field: Registration Number: -->
+		<div class="form-group collection_of_repaired_vehicles-vehicle_registration_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Registration Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="vehicle_registration_number<%%RND1%%>"><%%COMBOTEXT(vehicle_registration_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Engine Number: -->
+		<div class="form-group collection_of_repaired_vehicles-engine_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Engine Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="engine_number<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Make of Vehicle: -->
+		<div class="form-group collection_of_repaired_vehicles-make_of_vehicle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Make of Vehicle:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="make_of_vehicle<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Vehicle Inspection Done: -->
+		<div class="form-group collection_of_repaired_vehicles-vehicle_inspection" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Vehicle Inspection Done:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(vehicle_inspection)%%></div>
+			</div>
+		</div>
+		<!-- Field: Vehicle Inspection Form Uploaded: -->
+		<div class="form-group collection_of_repaired_vehicles-vehicle_inspection_form" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Vehicle Inspection Form Uploaded:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="vehicle_inspection_form-link" href="link.php?t=collection_of_repaired_vehicles&f=vehicle_inspection_form&i=<%%VALUE(collection_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(vehicle_inspection_form)%%>"></i></a><script>jQuery(function() { var e_vehicle_inspection_form = '<%%VALUE(vehicle_inspection_form)%%>'; if(e_vehicle_inspection_form == '' || e_vehicle_inspection_form == '&nbsp;' || e_vehicle_inspection_form == 'blank.gif') jQuery('#vehicle_inspection_form-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Vehicle Interiour Condition: -->
+		<div class="form-group collection_of_repaired_vehicles-vehicle_interiour_condition" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Vehicle Interiour Condition:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(vehicle_interiour_condition)%%></div>
+			</div>
+		</div>
+		<!-- Field: Vehicle Exteriour Condition: -->
+		<div class="form-group collection_of_repaired_vehicles-vehicle_exteriour_condition" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Vehicle Exteriour Condition:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(vehicle_exteriour_condition)%%></div>
+			</div>
+		</div>
+		<!-- Field: Vehicle Tyre Check: -->
+		<div class="form-group collection_of_repaired_vehicles-vehicle_tyre_check" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Vehicle Tyre Check:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(vehicle_tyre_check)%%></div>
+			</div>
+		</div>
+		<!-- Field: Sign Off Time: -->
+		<div class="form-group collection_of_repaired_vehicles-sign_off_time" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Sign Off Time:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(sign_off_time)%%></div>
+			</div>
+		</div>
+		<!-- Field: Date of Vehicle Collection: -->
+		<div class="form-group collection_of_repaired_vehicles-date_of_repaired_vehicle_collection" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Date of Vehicle Collection:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(date_of_repaired_vehicle_collection)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>

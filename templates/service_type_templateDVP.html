@@ -1,0 +1,99 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Service Type ID: -->
+		<div class="form-group service_type-service_type_id" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Service Type ID:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(service_type_id)%%></div>
+			</div>
+		</div>
+		<!-- Field: Service: -->
+		<div class="form-group service_type-service" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Service:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(service)%%></div>
+			</div>
+		</div>
+		<!-- Field: Type of Service: -->
+		<div class="form-group service_type-type_of_service" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Type of Service:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(type_of_service)%%></div>
+			</div>
+		</div>
+		<!-- Field: Reference: -->
+		<div class="form-group service_type-reference" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Reference:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(reference)%%></div>
+			</div>
+		</div>
+		<!-- Field: Service Item Type: -->
+		<div class="form-group service_type-service_item_type" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Service Item Type:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="service_item_type<%%RND1%%>"><%%COMBOTEXT(service_item_type)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Service Category: -->
+		<div class="form-group service_type-service_category" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Service Category:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="service_category<%%RND1%%>"><%%COMBOTEXT(service_category)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Service Item: -->
+		<div class="form-group service_type-service_item" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Service Item:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(service_item)%%></div>
+			</div>
+		</div>
+		<!-- Field: Frequency Time Number: -->
+		<div class="form-group service_type-frequency_time_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Frequency Time Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(frequency_time_number)%%></div>
+			</div>
+		</div>
+		<!-- Field: Frequency Time Cycle: -->
+		<div class="form-group service_type-frequency_time" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Frequency Time Cycle:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(frequency_time)%%></div>
+			</div>
+		</div>
+		<!-- Field: Frequency Odometer (km): -->
+		<div class="form-group service_type-frequency_odometer" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Frequency Odometer (km):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(frequency_odometer)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>

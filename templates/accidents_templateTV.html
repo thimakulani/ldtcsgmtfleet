@@ -1,0 +1,50 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the accidents_init() hook (in hooks/accidents.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="accidents-accident_id-<%%VALUE(accident_id)%%>" class="accidents-accident_id text-right"><%%SELECT%%><%%VALUE(accident_id)%%><%%ENDSELECT%%></td>
+		<td id="accidents-vehicle_registration_number-<%%VALUE(accident_id)%%>" class="accidents-vehicle_registration_number"><%%SELECT%%><%%VALUE(vehicle_registration_number)%%><%%ENDSELECT%%></td>
+		<td id="accidents-closing_km-<%%VALUE(accident_id)%%>" class="accidents-closing_km"><%%SELECT%%><%%VALUE(closing_km)%%><%%ENDSELECT%%></td>
+		<td id="accidents-drivers_surname-<%%VALUE(accident_id)%%>" class="accidents-drivers_surname"><%%SELECT%%><%%VALUE(drivers_surname)%%><%%ENDSELECT%%></td>
+		<td id="accidents-drivers_contact_details-<%%VALUE(accident_id)%%>" class="accidents-drivers_contact_details"><%%SELECT%%><%%VALUE(drivers_contact_details)%%><%%ENDSELECT%%></td>
+		<td id="accidents-dealer_name-<%%VALUE(accident_id)%%>" class="accidents-dealer_name"><%%SELECT%%><%%VALUE(dealer_name)%%><%%ENDSELECT%%></td>
+		<td id="accidents-model_of_vehicle-<%%VALUE(accident_id)%%>" class="accidents-model_of_vehicle"><%%SELECT%%><%%VALUE(model_of_vehicle)%%><%%ENDSELECT%%></td>
+		<td id="accidents-date_of_accident-<%%VALUE(accident_id)%%>" class="accidents-date_of_accident"><%%SELECT%%><%%VALUE(date_of_accident)%%><%%ENDSELECT%%></td>
+		<td id="accidents-z181_accident_form-<%%VALUE(accident_id)%%>" class="accidents-z181_accident_form"><%%SELECT%%><%%VALUE(z181_accident_form)%%><%%ENDSELECT%%></td>
+		<td id="accidents-z181_accident_form_uploaded-<%%VALUE(accident_id)%%>" class="accidents-z181_accident_form_uploaded"><a href="link.php?t=accidents&f=z181_accident_form_uploaded&i=<%%VALUE(accident_id)%%>" target="_blank" title="<%%VALUE(z181_accident_form_uploaded)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="accidents-copy_of_trip_authority-<%%VALUE(accident_id)%%>" class="accidents-copy_of_trip_authority"><a href="link.php?t=accidents&f=copy_of_trip_authority&i=<%%VALUE(accident_id)%%>" target="_blank" title="<%%VALUE(copy_of_trip_authority)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="accidents-district-<%%VALUE(accident_id)%%>" class="accidents-district"><%%SELECT%%><%%VALUE(district)%%><%%ENDSELECT%%></td>
+		<td id="accidents-location-<%%VALUE(accident_id)%%>" class="accidents-location"><%%SELECT%%><%%VALUE(location)%%><%%ENDSELECT%%></td>
+		<td id="accidents-road_or_street-<%%VALUE(accident_id)%%>" class="accidents-road_or_street"><%%SELECT%%><%%VALUE(road_or_street)%%><%%ENDSELECT%%></td>
+		<td id="accidents-coordinates-<%%VALUE(accident_id)%%>" class="accidents-coordinates"><%%SELECT%%><%%VALUE(coordinates)%%><%%ENDSELECT%%></td>
+		<td id="accidents-deaths-<%%VALUE(accident_id)%%>" class="accidents-deaths"><%%SELECT%%><%%VALUE(deaths)%%><%%ENDSELECT%%></td>
+		<td id="accidents-fatal_amount-<%%VALUE(accident_id)%%>" class="accidents-fatal_amount"><%%SELECT%%><%%VALUE(fatal_amount)%%><%%ENDSELECT%%></td>
+		<td id="accidents-injured-<%%VALUE(accident_id)%%>" class="accidents-injured"><%%SELECT%%><%%VALUE(injured)%%><%%ENDSELECT%%></td>
+		<td id="accidents-injured_amount-<%%VALUE(accident_id)%%>" class="accidents-injured_amount"><%%SELECT%%><%%VALUE(injured_amount)%%><%%ENDSELECT%%></td>
+		<td id="accidents-description_of_accident-<%%VALUE(accident_id)%%>" class="accidents-description_of_accident"><%%SELECT%%><%%VALUE(description_of_accident)%%><%%ENDSELECT%%></td>
+		<td id="accidents-insured-<%%VALUE(accident_id)%%>" class="accidents-insured"><%%SELECT%%><%%VALUE(insured)%%><%%ENDSELECT%%></td>
+		<td id="accidents-upload_photos_damaged_vehicle-<%%VALUE(accident_id)%%>" class="accidents-upload_photos_damaged_vehicle"><a href="<%%BASE_UPLOAD_PATH%%><%%VALUE(upload_photos_damaged_vehicle)%%>" data-lightbox="accidents-upload_photos_damaged_vehicle"><img src="thumbnail.php?i=<%%VALUE(upload_photos_damaged_vehicle)%%>&t=accidents&f=upload_photos_damaged_vehicle&v=tv" class="img-thumbnail"></a></td>
+		<td id="accidents-copy_of_sketch_plan-<%%VALUE(accident_id)%%>" class="accidents-copy_of_sketch_plan"><a href="link.php?t=accidents&f=copy_of_sketch_plan&i=<%%VALUE(accident_id)%%>" target="_blank" title="<%%VALUE(copy_of_sketch_plan)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-picture text-info"></i></a></td>
+		<td id="accidents-accident_report_driver-<%%VALUE(accident_id)%%>" class="accidents-accident_report_driver"><a href="link.php?t=accidents&f=accident_report_driver&i=<%%VALUE(accident_id)%%>" target="_blank" title="<%%VALUE(accident_report_driver)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="accidents-accident_report_supervisior-<%%VALUE(accident_id)%%>" class="accidents-accident_report_supervisior"><a href="link.php?t=accidents&f=accident_report_supervisior&i=<%%VALUE(accident_id)%%>" target="_blank" title="<%%VALUE(accident_report_supervisior)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="accidents-claims_report_accident_committee-<%%VALUE(accident_id)%%>" class="accidents-claims_report_accident_committee"><a href="link.php?t=accidents&f=claims_report_accident_committee&i=<%%VALUE(accident_id)%%>" target="_blank" title="<%%VALUE(claims_report_accident_committee)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="accidents-insurance_claims_report-<%%VALUE(accident_id)%%>" class="accidents-insurance_claims_report"><a href="link.php?t=accidents&f=insurance_claims_report&i=<%%VALUE(accident_id)%%>" target="_blank" title="<%%VALUE(insurance_claims_report)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="accidents-amount_paid-<%%VALUE(accident_id)%%>" class="accidents-amount_paid"><%%SELECT%%><%%VALUE(amount_paid)%%><%%ENDSELECT%%></td>
+		<td id="accidents-police_officer-<%%VALUE(accident_id)%%>" class="accidents-police_officer"><%%SELECT%%><%%VALUE(police_officer)%%><%%ENDSELECT%%></td>
+		<td id="accidents-contact_details-<%%VALUE(accident_id)%%>" class="accidents-contact_details"><%%SELECT%%><%%VALUE(contact_details)%%><%%ENDSELECT%%></td>
+		<td id="accidents-case_number-<%%VALUE(accident_id)%%>" class="accidents-case_number"><%%SELECT%%><%%VALUE(case_number)%%><%%ENDSELECT%%></td>
+		<td id="accidents-police_report-<%%VALUE(accident_id)%%>" class="accidents-police_report"><a href="link.php?t=accidents&f=police_report&i=<%%VALUE(accident_id)%%>" target="_blank" title="<%%VALUE(police_report)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="accidents-accident_report_number-<%%VALUE(accident_id)%%>" class="accidents-accident_report_number"><%%SELECT%%><%%VALUE(accident_report_number)%%><%%ENDSELECT%%></td>
+		<script>$j(function() {
+			var e_z181_accident_form_uploaded = '<%%VALUE(z181_accident_form_uploaded)%%>'; if(e_z181_accident_form_uploaded == '' || e_z181_accident_form_uploaded == '&nbsp;') $j(/*<*/ '#accidents-z181_accident_form_uploaded-<%%VALUE(accident_id)%%>' /*>*/).html('');
+			var e_copy_of_trip_authority = '<%%VALUE(copy_of_trip_authority)%%>'; if(e_copy_of_trip_authority == '' || e_copy_of_trip_authority == '&nbsp;') $j(/*<*/ '#accidents-copy_of_trip_authority-<%%VALUE(accident_id)%%>' /*>*/).html('');
+			var e_copy_of_sketch_plan = '<%%VALUE(copy_of_sketch_plan)%%>'; if(e_copy_of_sketch_plan == '' || e_copy_of_sketch_plan == '&nbsp;') $j(/*<*/ '#accidents-copy_of_sketch_plan-<%%VALUE(accident_id)%%>' /*>*/).html('');
+			var e_accident_report_driver = '<%%VALUE(accident_report_driver)%%>'; if(e_accident_report_driver == '' || e_accident_report_driver == '&nbsp;') $j(/*<*/ '#accidents-accident_report_driver-<%%VALUE(accident_id)%%>' /*>*/).html('');
+			var e_accident_report_supervisior = '<%%VALUE(accident_report_supervisior)%%>'; if(e_accident_report_supervisior == '' || e_accident_report_supervisior == '&nbsp;') $j(/*<*/ '#accidents-accident_report_supervisior-<%%VALUE(accident_id)%%>' /*>*/).html('');
+			var e_claims_report_accident_committee = '<%%VALUE(claims_report_accident_committee)%%>'; if(e_claims_report_accident_committee == '' || e_claims_report_accident_committee == '&nbsp;') $j(/*<*/ '#accidents-claims_report_accident_committee-<%%VALUE(accident_id)%%>' /*>*/).html('');
+			var e_insurance_claims_report = '<%%VALUE(insurance_claims_report)%%>'; if(e_insurance_claims_report == '' || e_insurance_claims_report == '&nbsp;') $j(/*<*/ '#accidents-insurance_claims_report-<%%VALUE(accident_id)%%>' /*>*/).html('');
+			var e_police_report = '<%%VALUE(police_report)%%>'; if(e_police_report == '' || e_police_report == '&nbsp;') $j(/*<*/ '#accidents-police_report-<%%VALUE(accident_id)%%>' /*>*/).html('');
+		});</script>

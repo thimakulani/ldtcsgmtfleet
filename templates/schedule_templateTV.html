@@ -1,0 +1,23 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the schedule_init() hook (in hooks/schedule.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="schedule-schedule_id-<%%VALUE(schedule_id)%%>" class="schedule-schedule_id text-right"><%%SELECT%%><%%VALUE(schedule_id)%%><%%ENDSELECT%%></td>
+		<td id="schedule-title-<%%VALUE(schedule_id)%%>" class="schedule-title"><%%SELECT%%><%%VALUE(title)%%><%%ENDSELECT%%></td>
+		<td id="schedule-user_name_and_surname-<%%VALUE(schedule_id)%%>" class="schedule-user_name_and_surname"><%%SELECT%%><%%VALUE(user_name_and_surname)%%><%%ENDSELECT%%></td>
+		<td id="schedule-user_contact_email-<%%VALUE(schedule_id)%%>" class="schedule-user_contact_email"><%%SELECT%%><%%VALUE(user_contact_email)%%><%%ENDSELECT%%></td>
+		<td id="schedule-service_item_type-<%%VALUE(schedule_id)%%>" class="schedule-service_item_type"><%%SELECT%%><%%VALUE(service_item_type)%%><%%ENDSELECT%%></td>
+		<td id="schedule-service_item_type_code-<%%VALUE(schedule_id)%%>" class="schedule-service_item_type_code"><%%SELECT%%><%%VALUE(service_item_type_code)%%><%%ENDSELECT%%></td>
+		<td id="schedule-application_status-<%%VALUE(schedule_id)%%>" class="schedule-application_status"><%%SELECT%%><%%VALUE(application_status)%%><%%ENDSELECT%%></td>
+		<td id="schedule-vehicle_registration_number-<%%VALUE(schedule_id)%%>" class="schedule-vehicle_registration_number"><%%SELECT%%><%%VALUE(vehicle_registration_number)%%><%%ENDSELECT%%></td>
+		<td id="schedule-engine_number-<%%VALUE(schedule_id)%%>" class="schedule-engine_number"><%%SELECT%%><%%VALUE(engine_number)%%><%%ENDSELECT%%></td>
+		<td id="schedule-closing_km-<%%VALUE(schedule_id)%%>" class="schedule-closing_km"><%%SELECT%%><%%VALUE(closing_km)%%><%%ENDSELECT%%></td>
+		<td id="schedule-date-<%%VALUE(schedule_id)%%>" class="schedule-date"><%%SELECT%%><%%VALUE(date)%%><%%ENDSELECT%%></td>
+		<td id="schedule-time-<%%VALUE(schedule_id)%%>" class="schedule-time"><%%SELECT%%><%%VALUE(time)%%><%%ENDSELECT%%></td>
+		<td id="schedule-workshop_name-<%%VALUE(schedule_id)%%>" class="schedule-workshop_name"><%%SELECT%%><%%VALUE(workshop_name)%%><%%ENDSELECT%%></td>
+		<td id="schedule-diagnosis-<%%VALUE(schedule_id)%%>" class="schedule-diagnosis"><%%SELECT%%><%%VALUE(diagnosis)%%><%%ENDSELECT%%></td>
+		<td id="schedule-prescription-<%%VALUE(schedule_id)%%>" class="schedule-prescription"><%%SELECT%%><%%VALUE(prescription)%%><%%ENDSELECT%%></td>
+		<td id="schedule-comments-<%%VALUE(schedule_id)%%>" class="schedule-comments"><%%SELECT%%><%%VALUE(comments)%%><%%ENDSELECT%%></td>

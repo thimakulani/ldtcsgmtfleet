@@ -1,0 +1,411 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/vehicle_history-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="vehicle_history_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="vehicle_history_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="vehicle_history_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: History ID: -->
+				<div class="form-group vehicle_history-history_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="history_id">History ID:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="history_id"><%%VALUE(history_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Registration Number: -->
+				<div class="form-group vehicle_history-vehicle_registration_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_registration_number" data-parent_link="view_parent_modal">Registration Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(vehicle_registration_number)%%><%%PLINK(vehicle_registration_number)%%><%%ADDNEW(gmt_fleet_register)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Engine Number: -->
+				<div class="form-group vehicle_history-engine_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Engine Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="engine_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Purchase Price (R): -->
+				<div class="form-group vehicle_history-purchased_price">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Purchase Price (R):</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="purchased_price"></div>
+					</div>
+				</div>
+
+				<!-- Field: Old Registration Number: -->
+				<div class="form-group vehicle_history-old_registration_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Old Registration Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="old_registration_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: New Vehicle Registration Number: -->
+				<div class="form-group vehicle_history-new_vehicle_registration_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="new_vehicle_registration_number">New Vehicle Registration Number:</label>
+					<div class="col-lg-9">
+						<input maxlength="25" type="text" class="form-control" name="new_vehicle_registration_number" id="new_vehicle_registration_number" value="<%%VALUE(new_vehicle_registration_number)%%>"><div class="text-danger vspacer-md" id="new_vehicle_registration_number-uniqueness-note" style="display: none;"><%%TRANSLATION(unique field error)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Date of  Vehicle Transfer: -->
+				<div class="form-group vehicle_history-date_of_vehicle_transfer">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_of_vehicle_transfer-dd">Date of  Vehicle Transfer:</label>
+					<div class="col-lg-9">
+						<%%COMBO(date_of_vehicle_transfer)%%>
+					</div>
+				</div>
+
+				<!-- Field: Comments: -->
+				<div class="form-group vehicle_history-comments">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="comments">Comments:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(comments)%%>
+					</div>
+				</div>
+
+				<!-- Field: Renewal Of License: -->
+				<div class="form-group vehicle_history-renewal_of_license">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Renewal Of License:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="renewal_of_license"></div>
+					</div>
+				</div>
+
+				<!-- Field: Date of Service: -->
+				<div class="form-group vehicle_history-date_of_service">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_of_service" data-parent_link="view_parent_modal">Date of Service:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(date_of_service)%%><%%PLINK(date_of_service)%%><%%ADDNEW(service)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Date of Next Service: -->
+				<div class="form-group vehicle_history-date_of_next_service">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Date of Next Service:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="date_of_next_service"></div>
+					</div>
+				</div>
+
+				<!-- Field: Purchased Order Number: -->
+				<div class="form-group vehicle_history-purchased_order_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="purchased_order_number" data-parent_link="view_parent_modal">Purchased Order Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(purchased_order_number)%%><%%PLINK(purchased_order_number)%%><%%ADDNEW(purchase_orders)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Claims Code: -->
+				<div class="form-group vehicle_history-claim_code">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="claim_code" data-parent_link="view_parent_modal">Claims Code:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(claim_code)%%><%%PLINK(claim_code)%%><%%ADDNEW(claim)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Tyre Inspection Report: -->
+				<div class="form-group vehicle_history-tyre_inspection_report">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="tyre_inspection_report-edit-link" data-parent_link="view_parent_modal">Tyre Inspection Report: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#tyre_inspection_report-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="tyre_inspection_report-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5120 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="lookup-flex"><%%COMBO(tyre_inspection_report)%%><%%PLINK(tyre_inspection_report)%%><%%ADDNEW(tyre_log_sheet)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Inspection Certification No: -->
+				<div class="form-group vehicle_history-inspection_certification_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="inspection_certification_number" data-parent_link="view_parent_modal">Inspection Certification No:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(inspection_certification_number)%%><%%PLINK(inspection_certification_number)%%><%%ADDNEW(vehicle_daily_check_list)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Document Check List Report: -->
+				<div class="form-group vehicle_history-document_checklist_report">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="document_checklist_report-edit-link" data-parent_link="view_parent_modal">Document Check List Report: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#document_checklist_report-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="document_checklist_report-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5120 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="lookup-flex"><%%COMBO(document_checklist_report)%%><%%PLINK(document_checklist_report)%%><%%ADDNEW(vehicle_daily_check_list)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Next Inspection Date: -->
+				<div class="form-group vehicle_history-next_inspection_date">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="next_inspection_date" data-parent_link="view_parent_modal">Next Inspection Date:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(next_inspection_date)%%><%%PLINK(next_inspection_date)%%><%%ADDNEW(vehicle_daily_check_list)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Breakdown of Vehicle?: -->
+				<div class="form-group vehicle_history-breakdown_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Breakdown of Vehicle?:</label>
+					<div class="col-lg-9">
+						<%%COMBO(breakdown_of_vehicle)%%>
+					</div>
+				</div>
+
+				<!-- Field: Date of Vehicle Breakdown: -->
+				<div class="form-group vehicle_history-date_of_vehicle_breakdown">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_of_vehicle_breakdown-dd">Date of Vehicle Breakdown:</label>
+					<div class="col-lg-9">
+						<%%COMBO(date_of_vehicle_breakdown)%%>
+					</div>
+				</div>
+
+				<!-- Field: Description of Vehicle Breakdown: -->
+				<div class="form-group vehicle_history-description_of_vehicle_breakdown">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="description_of_vehicle_breakdown">Description of Vehicle Breakdown:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(description_of_vehicle_breakdown)%%>
+					</div>
+				</div>
+
+				<!-- Field: Closing KM: -->
+				<div class="form-group vehicle_history-closing_km">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="closing_km" data-parent_link="view_parent_modal">Closing KM:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(closing_km)%%><%%PLINK(closing_km)%%><%%ADDNEW(log_sheet)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Date of Vehicle Re-activation: -->
+				<div class="form-group vehicle_history-date_of_vehicle_reactivation">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_of_vehicle_reactivation">Date of Vehicle Re-activation:</label>
+					<div class="col-lg-9">
+						<div class="input-group date datetimepicker"><input type="text" class="form-control" name="date_of_vehicle_reactivation" id="date_of_vehicle_reactivation" value="<%%VALUE(date_of_vehicle_reactivation)%%>"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div>
+					</div>
+				</div>
+
+				<!-- Field: Total Repairing Cost (R): -->
+				<div class="form-group vehicle_history-total_cost">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="total_cost" data-parent_link="view_parent_modal">Total Repairing Cost (R):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(total_cost)%%><%%PLINK(total_cost)%%><%%ADDNEW(breakdown_services)%%></div>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="vehicle_history_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			AppGini.once({
+				condition: function() { return bkLib != undefined; },
+				action: function() {
+					if($j('textarea#comments').length) new nicEditor({ fullPanel : true }).panelInstance('comments');
+					if($j('textarea#description_of_vehicle_breakdown').length) new nicEditor({ fullPanel : true }).panelInstance('description_of_vehicle_breakdown');
+				}
+			});
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) {
+				AppGini.once({
+					condition: function() {
+						return $j('.form-group.vehicle_history-vehicle_registration_number')
+									.find('.nicEdit-main, .select2-container, input[type=radio]')
+									.length > 0
+								// or read-only DV
+								|| (!$j('#update').length && !$j('#insert').length);
+					},
+					action: function() {
+						$j('#vehicle_history_dv_container-loading').addClass('hidden');
+						$j('#vehicle_history_dv_container').removeClass('hidden');
+						AppGini.focusFormElement('vehicle_history', 'vehicle_registration_number');
+					},
+					timeout:  5000,
+					doActionOnTimeout:  true
+				});
+			} else {
+				$j('#vehicle_history_dv_container-loading').addClass('hidden');
+				$j('#vehicle_history_dv_container').removeClass('hidden');
+			}
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			// try to detect rich text changes by adding 'input' handler after nicedit is loaded ...
+			AppGini.detectContentEditableChanges();
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'vehicle_history',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+			enforce_uniqueness('vehicle_history', 'new_vehicle_registration_number');
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=vehicle_history&id=<%%URLVALUE(history_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=vehicle_history&id=<%%URLVALUE(history_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

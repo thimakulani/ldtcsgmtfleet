@@ -1,0 +1,17 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the merchant_init() hook (in hooks/merchant.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="merchant-merchant_id-<%%VALUE(merchant_id)%%>" class="merchant-merchant_id text-right"><%%SELECT%%><%%VALUE(merchant_id)%%><%%ENDSELECT%%></td>
+		<td id="merchant-merchant_type-<%%VALUE(merchant_id)%%>" class="merchant-merchant_type"><%%SELECT%%><%%VALUE(merchant_type)%%><%%ENDSELECT%%></td>
+		<td id="merchant-merchant_code-<%%VALUE(merchant_id)%%>" class="merchant-merchant_code"><%%SELECT%%><%%VALUE(merchant_code)%%><%%ENDSELECT%%></td>
+		<td id="merchant-merchant_name-<%%VALUE(merchant_id)%%>" class="merchant-merchant_name"><%%SELECT%%><%%VALUE(merchant_name)%%><%%ENDSELECT%%></td>
+		<td id="merchant-merchant_contact_email-<%%VALUE(merchant_id)%%>" class="merchant-merchant_contact_email"><a href="mailto:<%%VALUE(merchant_contact_email)%%>" title="<%%VALUE(merchant_contact_email)%%>" class="btn btn-default"><i class="glyphicon glyphicon-envelope text-info"></i></a></td>
+		<td id="merchant-merchant_street_address-<%%VALUE(merchant_id)%%>" class="merchant-merchant_street_address"><%%SELECT%%><%%VALUE(merchant_street_address)%%><%%ENDSELECT%%></td>
+		<td id="merchant-merchant_suburb-<%%VALUE(merchant_id)%%>" class="merchant-merchant_suburb"><%%SELECT%%><%%VALUE(merchant_suburb)%%><%%ENDSELECT%%></td>
+		<td id="merchant-merchant_city-<%%VALUE(merchant_id)%%>" class="merchant-merchant_city"><%%SELECT%%><%%VALUE(merchant_city)%%><%%ENDSELECT%%></td>
+		<td id="merchant-merchant_address_code-<%%VALUE(merchant_id)%%>" class="merchant-merchant_address_code"><%%SELECT%%><%%VALUE(merchant_address_code)%%><%%ENDSELECT%%></td>
+		<td id="merchant-merchant_contact_details-<%%VALUE(merchant_id)%%>" class="merchant-merchant_contact_details"><%%SELECT%%><%%VALUE(merchant_contact_details)%%><%%ENDSELECT%%></td>

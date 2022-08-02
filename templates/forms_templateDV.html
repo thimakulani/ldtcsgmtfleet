@@ -1,0 +1,358 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/forms-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="forms_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="forms_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="forms_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Forms ID: -->
+				<div class="form-group forms-forms_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="forms_id">Forms ID: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#forms_id-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="forms_id-description"><div class="alert alert-info bspacer-xs">Download forms for GMT Fleet.</div></span>
+						<div class="form-control-static" id="forms_id"><%%VALUE(forms_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Government Motor Transport Handbook: -->
+				<div class="form-group forms-government_motor_transport_handbook">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Government Motor Transport Handbook: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#government_motor_transport_handbook-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="government_motor_transport_handbook-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 2048 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="government_motor_transport_handbook-link" href="link.php?t=forms&f=government_motor_transport_handbook&i=<%%VALUE(forms_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(government_motor_transport_handbook)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(government_motor_transport_handbook)%%>
+								<%%REMOVEFILE(government_motor_transport_handbook)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_government_motor_transport_handbook = '<%%VALUE(government_motor_transport_handbook)%%>'; if(e_government_motor_transport_handbook == '' || e_government_motor_transport_handbook == '&nbsp;' || e_government_motor_transport_handbook == 'blank.gif') jQuery('#government_motor_transport_handbook-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Approved Workshop Procedure Manual: -->
+				<div class="form-group forms-approved_workshop_procedure_manual">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Approved Workshop Procedure Manual: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#approved_workshop_procedure_manual-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="approved_workshop_procedure_manual-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 2048 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="approved_workshop_procedure_manual-link" href="link.php?t=forms&f=approved_workshop_procedure_manual&i=<%%VALUE(forms_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(approved_workshop_procedure_manual)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(approved_workshop_procedure_manual)%%>
+								<%%REMOVEFILE(approved_workshop_procedure_manual)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_approved_workshop_procedure_manual = '<%%VALUE(approved_workshop_procedure_manual)%%>'; if(e_approved_workshop_procedure_manual == '' || e_approved_workshop_procedure_manual == '&nbsp;' || e_approved_workshop_procedure_manual == 'blank.gif') jQuery('#approved_workshop_procedure_manual-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Check List And Appraisal Report: -->
+				<div class="form-group forms-vehicle_daily_check_list_and_appraisal_report">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Vehicle Check List And Appraisal Report: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#vehicle_daily_check_list_and_appraisal_report-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="vehicle_daily_check_list_and_appraisal_report-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 2048 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="vehicle_daily_check_list_and_appraisal_report-link" href="link.php?t=forms&f=vehicle_daily_check_list_and_appraisal_report&i=<%%VALUE(forms_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(vehicle_daily_check_list_and_appraisal_report)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(vehicle_daily_check_list_and_appraisal_report)%%>
+								<%%REMOVEFILE(vehicle_daily_check_list_and_appraisal_report)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_vehicle_daily_check_list_and_appraisal_report = '<%%VALUE(vehicle_daily_check_list_and_appraisal_report)%%>'; if(e_vehicle_daily_check_list_and_appraisal_report == '' || e_vehicle_daily_check_list_and_appraisal_report == '&nbsp;' || e_vehicle_daily_check_list_and_appraisal_report == 'blank.gif') jQuery('#vehicle_daily_check_list_and_appraisal_report-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Z181_Report on Accidentl: -->
+				<div class="form-group forms-z181_report_on_accident">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Z181_Report on Accidentl: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#z181_report_on_accident-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="z181_report_on_accident-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 2048 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="z181_report_on_accident-link" href="link.php?t=forms&f=z181_report_on_accident&i=<%%VALUE(forms_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(z181_report_on_accident)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(z181_report_on_accident)%%>
+								<%%REMOVEFILE(z181_report_on_accident)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_z181_report_on_accident = '<%%VALUE(z181_report_on_accident)%%>'; if(e_z181_report_on_accident == '' || e_z181_report_on_accident == '&nbsp;' || e_z181_report_on_accident == 'blank.gif') jQuery('#z181_report_on_accident-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Handing Over Ckecklist: -->
+				<div class="form-group forms-vehicle_handing_over_ckecklist">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Vehicle Handing Over Ckecklist: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#vehicle_handing_over_ckecklist-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="vehicle_handing_over_ckecklist-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 2048 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="vehicle_handing_over_ckecklist-link" href="link.php?t=forms&f=vehicle_handing_over_ckecklist&i=<%%VALUE(forms_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(vehicle_handing_over_ckecklist)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(vehicle_handing_over_ckecklist)%%>
+								<%%REMOVEFILE(vehicle_handing_over_ckecklist)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_vehicle_handing_over_ckecklist = '<%%VALUE(vehicle_handing_over_ckecklist)%%>'; if(e_vehicle_handing_over_ckecklist == '' || e_vehicle_handing_over_ckecklist == '&nbsp;' || e_vehicle_handing_over_ckecklist == 'blank.gif') jQuery('#vehicle_handing_over_ckecklist-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle  Return List: -->
+				<div class="form-group forms-vehicle_return_list">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Vehicle  Return List: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#vehicle_return_list-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="vehicle_return_list-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 2048 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="vehicle_return_list-link" href="link.php?t=forms&f=vehicle_return_list&i=<%%VALUE(forms_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(vehicle_return_list)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(vehicle_return_list)%%>
+								<%%REMOVEFILE(vehicle_return_list)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_vehicle_return_list = '<%%VALUE(vehicle_return_list)%%>'; if(e_vehicle_return_list == '' || e_vehicle_return_list == '&nbsp;' || e_vehicle_return_list == 'blank.gif') jQuery('#vehicle_return_list-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Indicates and list details of damages deficiencies and lost found: -->
+				<div class="form-group forms-indicates_and_list_details_of_damages_deficiencies">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Indicates and list details of damages deficiencies and lost found: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#indicates_and_list_details_of_damages_deficiencies-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="indicates_and_list_details_of_damages_deficiencies-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 2048 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="indicates_and_list_details_of_damages_deficiencies-link" href="link.php?t=forms&f=indicates_and_list_details_of_damages_deficiencies&i=<%%VALUE(forms_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(indicates_and_list_details_of_damages_deficiencies)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(indicates_and_list_details_of_damages_deficiencies)%%>
+								<%%REMOVEFILE(indicates_and_list_details_of_damages_deficiencies)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_indicates_and_list_details_of_damages_deficiencies = '<%%VALUE(indicates_and_list_details_of_damages_deficiencies)%%>'; if(e_indicates_and_list_details_of_damages_deficiencies == '' || e_indicates_and_list_details_of_damages_deficiencies == '&nbsp;' || e_indicates_and_list_details_of_damages_deficiencies == 'blank.gif') jQuery('#indicates_and_list_details_of_damages_deficiencies-link').hide(); });</script>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="forms_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			$j('#forms_dv_container-loading').addClass('hidden');
+			$j('#forms_dv_container').removeClass('hidden');
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) AppGini.focusFormElement('forms', 'government_motor_transport_handbook');
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'forms',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=forms&id=<%%URLVALUE(forms_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=forms&id=<%%URLVALUE(forms_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

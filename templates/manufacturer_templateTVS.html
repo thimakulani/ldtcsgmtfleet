@@ -1,0 +1,13 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the manufacturer_init() hook (in hooks/manufacturer.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="manufacturer-manufacturer_id-<%%VALUE(manufacturer_id)%%>" class="manufacturer-manufacturer_id text-right"><%%VALUE(manufacturer_id)%%></td>
+		<td id="manufacturer-manufacturer_type-<%%VALUE(manufacturer_id)%%>" class="manufacturer-manufacturer_type"><%%VALUE(manufacturer_type)%%></td>
+		<td id="manufacturer-manufacturer_name-<%%VALUE(manufacturer_id)%%>" class="manufacturer-manufacturer_name"><%%VALUE(manufacturer_name)%%></td>
+		<td id="manufacturer-contact_person-<%%VALUE(manufacturer_id)%%>" class="manufacturer-contact_person"><%%VALUE(contact_person)%%></td>
+		<td id="manufacturer-contact_details-<%%VALUE(manufacturer_id)%%>" class="manufacturer-contact_details"><%%VALUE(contact_details)%%></td>
+		<td id="manufacturer-contact_email-<%%VALUE(manufacturer_id)%%>" class="manufacturer-contact_email"><a href="mailto:<%%VALUE(contact_email)%%>" title="<%%VALUE(contact_email)%%>" class="btn btn-default"><i class="glyphicon glyphicon-envelope text-info"></i></a></td>

@@ -1,0 +1,176 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: General Control Measures ID: -->
+		<div class="form-group general_control_measures-general_control_measures_id" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">General Control Measures ID:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(general_control_measures_id)%%></div>
+			</div>
+		</div>
+		<!-- Field: District: -->
+		<div class="form-group general_control_measures-district" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">District:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="district<%%RND1%%>"><%%COMBOTEXT(district)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Cost Centre: -->
+		<div class="form-group general_control_measures-cost_centre" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Cost Centre:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="cost_centre<%%RND1%%>"><%%COMBOTEXT(cost_centre)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Station: -->
+		<div class="form-group general_control_measures-location" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Station:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="location<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Government Garage Name: -->
+		<div class="form-group general_control_measures-government_garage_name" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Government Garage Name:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(government_garage_name)%%></div>
+			</div>
+		</div>
+		<!-- Field: Government Garage Section: -->
+		<div class="form-group general_control_measures-government_garage_section" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Government Garage Section:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(government_garage_section)%%></div>
+			</div>
+		</div>
+		<!-- Field: Manager Name & Surname: -->
+		<div class="form-group general_control_measures-government_garage_manager_name_and_surname" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Manager Name & Surname:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(government_garage_manager_name_and_surname)%%></div>
+			</div>
+		</div>
+		<!-- Field: Government Garage Manager Contact Details: -->
+		<div class="form-group general_control_measures-government_garage_manager_contact_details" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Government Garage Manager Contact Details:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(government_garage_manager_contact_details)%%></div>
+			</div>
+		</div>
+		<!-- Field: Government Garage Manager Email Address: -->
+		<div class="form-group general_control_measures-government_garage_manager_email_address" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Government Garage Manager Email Address:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(government_garage_manager_email_address)%%></div>
+			</div>
+		</div>
+		<!-- Field: Government Garage Manager Signature: -->
+		<div class="form-group general_control_measures-government_garage_manager_signature" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Government Garage Manager Signature:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(government_garage_manager_signature)%%></div>
+			</div>
+		</div>
+		<!-- Field: Government Garage Address: -->
+		<div class="form-group general_control_measures-government_garage_address" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Government Garage Address:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(government_garage_address)%%></div>
+			</div>
+		</div>
+		<!-- Field: Government Garage Condition: -->
+		<div class="form-group general_control_measures-government_garage_condition" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Government Garage Condition:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(government_garage_condition)%%></div>
+			</div>
+		</div>
+		<!-- Field: Four Post Lift Condition: -->
+		<div class="form-group general_control_measures-four_post_lift_condition" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Four Post Lift Condition:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(four_post_lift_condition)%%></div>
+			</div>
+		</div>
+		<!-- Field: Low Level Lift Condition: -->
+		<div class="form-group general_control_measures-low_level_lift_condition" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Low Level Lift Condition:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(low_level_lift_condition)%%></div>
+			</div>
+		</div>
+		<!-- Field: Test Machines Conditions: -->
+		<div class="form-group general_control_measures-test_machines_conditions" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Test Machines Conditions:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(test_machines_conditions)%%></div>
+			</div>
+		</div>
+		<!-- Field: Battery Testers Conditions: -->
+		<div class="form-group general_control_measures-battery_testers_conditions" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Battery Testers Conditions:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(battery_testers_conditions)%%></div>
+			</div>
+		</div>
+		<!-- Field: Chargers Conditions: -->
+		<div class="form-group general_control_measures-chargers_conditions" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Chargers Conditions:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(chargers_conditions)%%></div>
+			</div>
+		</div>
+		<!-- Field: Tools Conditions: -->
+		<div class="form-group general_control_measures-tools_conditions" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tools Conditions:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(tools_conditions)%%></div>
+			</div>
+		</div>
+		<!-- Field: Hand Tools Conditions: -->
+		<div class="form-group general_control_measures-hand_tools_conditions" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Hand Tools Conditions:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(hand_tools_conditions)%%></div>
+			</div>
+		</div>
+		<!-- Field: Equipment Conditions: -->
+		<div class="form-group general_control_measures-equipment_conditions" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Equipment Conditions:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(equipment_conditions)%%></div>
+			</div>
+		</div>
+		<!-- Field: Sectional Inspection: -->
+		<div class="form-group general_control_measures-sectional_inspection" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Sectional Inspection:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(sectional_inspection)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>

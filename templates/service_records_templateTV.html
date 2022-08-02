@@ -1,0 +1,27 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the service_records_init() hook (in hooks/service_records.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="service_records-records_id-<%%VALUE(records_id)%%>" class="service_records-records_id text-right"><%%SELECT%%><%%VALUE(records_id)%%><%%ENDSELECT%%></td>
+		<td id="service_records-vehicle-<%%VALUE(records_id)%%>" class="service_records-vehicle"><%%SELECT%%><%%VALUE(vehicle)%%><%%ENDSELECT%%></td>
+		<td id="service_records-image_1-<%%VALUE(records_id)%%>" class="service_records-image_1"><%%SELECT%%><img src="thumbnail.php?i=<%%VALUE(image_1)%%>&t=service_records&f=image_1&v=tv" class="img-thumbnail"><%%ENDSELECT%%></td>
+		<td id="service_records-image_2-<%%VALUE(records_id)%%>" class="service_records-image_2"><%%SELECT%%><img src="thumbnail.php?i=<%%VALUE(image_2)%%>&t=service_records&f=image_2&v=tv" class="img-thumbnail"><%%ENDSELECT%%></td>
+		<td id="service_records-image_3-<%%VALUE(records_id)%%>" class="service_records-image_3"><%%SELECT%%><img src="thumbnail.php?i=<%%VALUE(image_3)%%>&t=service_records&f=image_3&v=tv" class="img-thumbnail"><%%ENDSELECT%%></td>
+		<td id="service_records-image_4-<%%VALUE(records_id)%%>" class="service_records-image_4"><%%SELECT%%><img src="thumbnail.php?i=<%%VALUE(image_4)%%>&t=service_records&f=image_4&v=tv" class="img-thumbnail"><%%ENDSELECT%%></td>
+		<td id="service_records-image_5-<%%VALUE(records_id)%%>" class="service_records-image_5"><%%SELECT%%><img src="thumbnail.php?i=<%%VALUE(image_5)%%>&t=service_records&f=image_5&v=tv" class="img-thumbnail"><%%ENDSELECT%%></td>
+		<td id="service_records-document_1-<%%VALUE(records_id)%%>" class="service_records-document_1"><a href="link.php?t=service_records&f=document_1&i=<%%VALUE(records_id)%%>" target="_blank" title="<%%VALUE(document_1)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="service_records-document_2-<%%VALUE(records_id)%%>" class="service_records-document_2"><a href="link.php?t=service_records&f=document_2&i=<%%VALUE(records_id)%%>" target="_blank" title="<%%VALUE(document_2)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="service_records-document_3-<%%VALUE(records_id)%%>" class="service_records-document_3"><a href="link.php?t=service_records&f=document_3&i=<%%VALUE(records_id)%%>" target="_blank" title="<%%VALUE(document_3)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="service_records-document_4-<%%VALUE(records_id)%%>" class="service_records-document_4"><a href="link.php?t=service_records&f=document_4&i=<%%VALUE(records_id)%%>" target="_blank" title="<%%VALUE(document_4)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="service_records-document_5-<%%VALUE(records_id)%%>" class="service_records-document_5"><a href="link.php?t=service_records&f=document_5&i=<%%VALUE(records_id)%%>" target="_blank" title="<%%VALUE(document_5)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="service_records-description-<%%VALUE(records_id)%%>" class="service_records-description"><%%SELECT%%><%%VALUE(description)%%><%%ENDSELECT%%></td>
+		<script>$j(function() {
+			var e_document_1 = '<%%VALUE(document_1)%%>'; if(e_document_1 == '' || e_document_1 == '&nbsp;') $j(/*<*/ '#service_records-document_1-<%%VALUE(records_id)%%>' /*>*/).html('');
+			var e_document_2 = '<%%VALUE(document_2)%%>'; if(e_document_2 == '' || e_document_2 == '&nbsp;') $j(/*<*/ '#service_records-document_2-<%%VALUE(records_id)%%>' /*>*/).html('');
+			var e_document_3 = '<%%VALUE(document_3)%%>'; if(e_document_3 == '' || e_document_3 == '&nbsp;') $j(/*<*/ '#service_records-document_3-<%%VALUE(records_id)%%>' /*>*/).html('');
+			var e_document_4 = '<%%VALUE(document_4)%%>'; if(e_document_4 == '' || e_document_4 == '&nbsp;') $j(/*<*/ '#service_records-document_4-<%%VALUE(records_id)%%>' /*>*/).html('');
+			var e_document_5 = '<%%VALUE(document_5)%%>'; if(e_document_5 == '' || e_document_5 == '&nbsp;') $j(/*<*/ '#service_records-document_5-<%%VALUE(records_id)%%>' /*>*/).html('');
+		});</script>

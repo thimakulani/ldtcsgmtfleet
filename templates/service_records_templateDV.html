@@ -1,0 +1,457 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/service_records-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="service_records_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="service_records_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="service_records_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Records ID: -->
+				<div class="form-group service_records-records_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="records_id">Records ID:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="records_id"><%%VALUE(records_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle & Engine Number: -->
+				<div class="form-group service_records-vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle" data-parent_link="view_parent_modal">Vehicle & Engine Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(vehicle)%%><%%PLINK(vehicle)%%><%%ADDNEW(service)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Image 1 -->
+				<div class="form-group service_records-image_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Image 1 <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#image_1-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="image_1-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 1000 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="thumbnail.php?i=<%%VALUE(image_1)%%>&t=service_records&f=image_1&v=dv" class="img-thumbnail" id="image_1-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(image_1)%%>
+								<%%REMOVEFILE(image_1)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Image 2 -->
+				<div class="form-group service_records-image_2">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Image 2 <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#image_2-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="image_2-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 1000 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="thumbnail.php?i=<%%VALUE(image_2)%%>&t=service_records&f=image_2&v=dv" class="img-thumbnail" id="image_2-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(image_2)%%>
+								<%%REMOVEFILE(image_2)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Image 3 -->
+				<div class="form-group service_records-image_3">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Image 3 <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#image_3-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="image_3-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 1000 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="thumbnail.php?i=<%%VALUE(image_3)%%>&t=service_records&f=image_3&v=dv" class="img-thumbnail" id="image_3-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(image_3)%%>
+								<%%REMOVEFILE(image_3)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Image 4 -->
+				<div class="form-group service_records-image_4">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Image 4 <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#image_4-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="image_4-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 1000 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="thumbnail.php?i=<%%VALUE(image_4)%%>&t=service_records&f=image_4&v=dv" class="img-thumbnail" id="image_4-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(image_4)%%>
+								<%%REMOVEFILE(image_4)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Image 5 -->
+				<div class="form-group service_records-image_5">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Image 5 <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#image_5-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="image_5-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 1000 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="thumbnail.php?i=<%%VALUE(image_5)%%>&t=service_records&f=image_5&v=dv" class="img-thumbnail" id="image_5-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(image_5)%%>
+								<%%REMOVEFILE(image_5)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Document 1: -->
+				<div class="form-group service_records-document_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Document 1: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#document_1-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="document_1-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5000 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="document_1-link" href="link.php?t=service_records&f=document_1&i=<%%VALUE(records_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(document_1)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(document_1)%%>
+								<%%REMOVEFILE(document_1)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_document_1 = '<%%VALUE(document_1)%%>'; if(e_document_1 == '' || e_document_1 == '&nbsp;' || e_document_1 == 'blank.gif') jQuery('#document_1-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Document 2: -->
+				<div class="form-group service_records-document_2">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Document 2: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#document_2-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="document_2-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5000 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="document_2-link" href="link.php?t=service_records&f=document_2&i=<%%VALUE(records_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(document_2)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(document_2)%%>
+								<%%REMOVEFILE(document_2)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_document_2 = '<%%VALUE(document_2)%%>'; if(e_document_2 == '' || e_document_2 == '&nbsp;' || e_document_2 == 'blank.gif') jQuery('#document_2-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Document 3: -->
+				<div class="form-group service_records-document_3">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Document 3: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#document_3-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="document_3-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5000 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="document_3-link" href="link.php?t=service_records&f=document_3&i=<%%VALUE(records_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(document_3)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(document_3)%%>
+								<%%REMOVEFILE(document_3)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_document_3 = '<%%VALUE(document_3)%%>'; if(e_document_3 == '' || e_document_3 == '&nbsp;' || e_document_3 == 'blank.gif') jQuery('#document_3-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Document 4: -->
+				<div class="form-group service_records-document_4">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Document 4: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#document_4-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="document_4-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5000 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="document_4-link" href="link.php?t=service_records&f=document_4&i=<%%VALUE(records_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(document_4)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(document_4)%%>
+								<%%REMOVEFILE(document_4)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_document_4 = '<%%VALUE(document_4)%%>'; if(e_document_4 == '' || e_document_4 == '&nbsp;' || e_document_4 == 'blank.gif') jQuery('#document_4-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Document 5: -->
+				<div class="form-group service_records-document_5">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Document 5: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#document_5-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="document_5-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5000 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="document_5-link" href="link.php?t=service_records&f=document_5&i=<%%VALUE(records_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(document_5)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(document_5)%%>
+								<%%REMOVEFILE(document_5)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_document_5 = '<%%VALUE(document_5)%%>'; if(e_document_5 == '' || e_document_5 == '&nbsp;' || e_document_5 == 'blank.gif') jQuery('#document_5-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Description: -->
+				<div class="form-group service_records-description">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="description">Description:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(description)%%>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="service_records_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			AppGini.once({
+				condition: function() { return bkLib != undefined; },
+				action: function() {
+					if($j('textarea#description').length) new nicEditor({ fullPanel : true }).panelInstance('description');
+				}
+			});
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) {
+				AppGini.once({
+					condition: function() {
+						return $j('.form-group.service_records-vehicle')
+									.find('.nicEdit-main, .select2-container, input[type=radio]')
+									.length > 0
+								// or read-only DV
+								|| (!$j('#update').length && !$j('#insert').length);
+					},
+					action: function() {
+						$j('#service_records_dv_container-loading').addClass('hidden');
+						$j('#service_records_dv_container').removeClass('hidden');
+						AppGini.focusFormElement('service_records', 'vehicle');
+					},
+					timeout:  5000,
+					doActionOnTimeout:  true
+				});
+			} else {
+				$j('#service_records_dv_container-loading').addClass('hidden');
+				$j('#service_records_dv_container').removeClass('hidden');
+			}
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			// try to detect rich text changes by adding 'input' handler after nicedit is loaded ...
+			AppGini.detectContentEditableChanges();
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'service_records',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=service_records&id=<%%URLVALUE(records_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=service_records&id=<%%URLVALUE(records_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

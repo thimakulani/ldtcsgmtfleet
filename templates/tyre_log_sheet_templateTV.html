@@ -1,0 +1,40 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the tyre_log_sheet_init() hook (in hooks/tyre_log_sheet.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="tyre_log_sheet-tyre_log_id-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-tyre_log_id text-right"><%%SELECT%%><%%VALUE(tyre_log_id)%%><%%ENDSELECT%%></td>
+		<td id="tyre_log_sheet-vehicle_registration_number-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-vehicle_registration_number"><%%SELECT%%><%%VALUE(vehicle_registration_number)%%><%%ENDSELECT%%></td>
+		<td id="tyre_log_sheet-tyre_position-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-tyre_position"><%%SELECT%%><%%VALUE(tyre_position)%%><%%ENDSELECT%%></td>
+		<td id="tyre_log_sheet-tyre_tread_condition-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-tyre_tread_condition"><%%SELECT%%><%%VALUE(tyre_tread_condition)%%><%%ENDSELECT%%></td>
+		<td id="tyre_log_sheet-tyre_brand-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-tyre_brand"><%%SELECT%%><%%VALUE(tyre_brand)%%><%%ENDSELECT%%></td>
+		<td id="tyre_log_sheet-tyre_model-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-tyre_model"><%%SELECT%%><%%VALUE(tyre_model)%%><%%ENDSELECT%%></td>
+		<td id="tyre_log_sheet-tyre_size-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-tyre_size"><%%SELECT%%><%%VALUE(tyre_size)%%><%%ENDSELECT%%></td>
+		<td id="tyre_log_sheet-tyre_pressure-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-tyre_pressure"><%%SELECT%%><%%VALUE(tyre_pressure)%%><%%ENDSELECT%%></td>
+		<td id="tyre_log_sheet-action-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-action"><%%SELECT%%><%%VALUE(action)%%><%%ENDSELECT%%></td>
+		<td id="tyre_log_sheet-warranty-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-warranty"><%%SELECT%%><%%VALUE(warranty)%%><%%ENDSELECT%%></td>
+		<td id="tyre_log_sheet-documents-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-documents"><a href="link.php?t=tyre_log_sheet&f=documents&i=<%%VALUE(tyre_log_id)%%>" target="_blank" title="<%%VALUE(documents)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="tyre_log_sheet-tyre_tread-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-tyre_tread"><%%SELECT%%><%%VALUE(tyre_tread)%%><%%ENDSELECT%%></td>
+		<td id="tyre_log_sheet-tyre_maximum_wear-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-tyre_maximum_wear"><%%SELECT%%><%%VALUE(tyre_maximum_wear)%%><%%ENDSELECT%%></td>
+		<td id="tyre_log_sheet-inspection_date-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-inspection_date"><%%SELECT%%><%%VALUE(inspection_date)%%><%%ENDSELECT%%></td>
+		<td id="tyre_log_sheet-tyre_inspection_done_by-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-tyre_inspection_done_by"><%%SELECT%%><%%VALUE(tyre_inspection_done_by)%%><%%ENDSELECT%%></td>
+		<td id="tyre_log_sheet-tyre_inspection_report-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-tyre_inspection_report"><a href="link.php?t=tyre_log_sheet&f=tyre_inspection_report&i=<%%VALUE(tyre_log_id)%%>" target="_blank" title="<%%VALUE(tyre_inspection_report)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="tyre_log_sheet-status-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-status"><%%SELECT%%><%%VALUE(status)%%><%%ENDSELECT%%></td>
+		<td id="tyre_log_sheet-opening_km-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-opening_km"><%%SELECT%%><%%VALUE(opening_km)%%><%%ENDSELECT%%></td>
+		<td id="tyre_log_sheet-closing_km-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-closing_km"><%%SELECT%%><%%VALUE(closing_km)%%><%%ENDSELECT%%></td>
+		<td id="tyre_log_sheet-total_km-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-total_km"><%%SELECT%%><%%VALUE(total_km)%%><%%ENDSELECT%%></td>
+		<td id="tyre_log_sheet-comments-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-comments"><%%SELECT%%><%%VALUE(comments)%%><%%ENDSELECT%%></td>
+		<td id="tyre_log_sheet-tyres_cause_of_accident-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-tyres_cause_of_accident"><%%SELECT%%><%%VALUE(tyres_cause_of_accident)%%><%%ENDSELECT%%></td>
+		<td id="tyre_log_sheet-accident_report-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-accident_report"><a href="link.php?t=tyre_log_sheet&f=accident_report&i=<%%VALUE(tyre_log_id)%%>" target="_blank" title="<%%VALUE(accident_report)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="tyre_log_sheet-claims_report-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-claims_report"><a href="link.php?t=tyre_log_sheet&f=claims_report&i=<%%VALUE(tyre_log_id)%%>" target="_blank" title="<%%VALUE(claims_report)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="tyre_log_sheet-insurance_claims_report-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-insurance_claims_report"><a href="link.php?t=tyre_log_sheet&f=insurance_claims_report&i=<%%VALUE(tyre_log_id)%%>" target="_blank" title="<%%VALUE(insurance_claims_report)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="tyre_log_sheet-reminder_maximum_wear-<%%VALUE(tyre_log_id)%%>" class="tyre_log_sheet-reminder_maximum_wear"><%%SELECT%%><%%VALUE(reminder_maximum_wear)%%><%%ENDSELECT%%></td>
+		<script>$j(function() {
+			var e_documents = '<%%VALUE(documents)%%>'; if(e_documents == '' || e_documents == '&nbsp;') $j(/*<*/ '#tyre_log_sheet-documents-<%%VALUE(tyre_log_id)%%>' /*>*/).html('');
+			var e_tyre_inspection_report = '<%%VALUE(tyre_inspection_report)%%>'; if(e_tyre_inspection_report == '' || e_tyre_inspection_report == '&nbsp;') $j(/*<*/ '#tyre_log_sheet-tyre_inspection_report-<%%VALUE(tyre_log_id)%%>' /*>*/).html('');
+			var e_accident_report = '<%%VALUE(accident_report)%%>'; if(e_accident_report == '' || e_accident_report == '&nbsp;') $j(/*<*/ '#tyre_log_sheet-accident_report-<%%VALUE(tyre_log_id)%%>' /*>*/).html('');
+			var e_claims_report = '<%%VALUE(claims_report)%%>'; if(e_claims_report == '' || e_claims_report == '&nbsp;') $j(/*<*/ '#tyre_log_sheet-claims_report-<%%VALUE(tyre_log_id)%%>' /*>*/).html('');
+			var e_insurance_claims_report = '<%%VALUE(insurance_claims_report)%%>'; if(e_insurance_claims_report == '' || e_insurance_claims_report == '&nbsp;') $j(/*<*/ '#tyre_log_sheet-insurance_claims_report-<%%VALUE(tyre_log_id)%%>' /*>*/).html('');
+		});</script>

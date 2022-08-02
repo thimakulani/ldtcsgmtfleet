@@ -1,0 +1,34 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the withdrawal_vehicle_from_operation_init() hook (in hooks/withdrawal_vehicle_from_operation.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="withdrawal_vehicle_from_operation-withdrawal_id-<%%VALUE(withdrawal_id)%%>" class="withdrawal_vehicle_from_operation-withdrawal_id text-right"><%%VALUE(withdrawal_id)%%></td>
+		<td id="withdrawal_vehicle_from_operation-supervisor_name_and_surname-<%%VALUE(withdrawal_id)%%>" class="withdrawal_vehicle_from_operation-supervisor_name_and_surname"><%%VALUE(supervisor_name_and_surname)%%></td>
+		<td id="withdrawal_vehicle_from_operation-supervisor_contact_details-<%%VALUE(withdrawal_id)%%>" class="withdrawal_vehicle_from_operation-supervisor_contact_details"><%%VALUE(supervisor_contact_details)%%></td>
+		<td id="withdrawal_vehicle_from_operation-supervisor_email_address-<%%VALUE(withdrawal_id)%%>" class="withdrawal_vehicle_from_operation-supervisor_email_address"><a href="mailto:<%%VALUE(supervisor_email_address)%%>"><%%VALUE(supervisor_email_address)%%></a></td>
+		<td id="withdrawal_vehicle_from_operation-supervisor_signature-<%%VALUE(withdrawal_id)%%>" class="withdrawal_vehicle_from_operation-supervisor_signature"><%%VALUE(supervisor_signature)%%></td>
+		<td id="withdrawal_vehicle_from_operation-vehicle_registration_number-<%%VALUE(withdrawal_id)%%>" class="withdrawal_vehicle_from_operation-vehicle_registration_number"><%%VALUE(vehicle_registration_number)%%></td>
+		<td id="withdrawal_vehicle_from_operation-engine_number-<%%VALUE(withdrawal_id)%%>" class="withdrawal_vehicle_from_operation-engine_number"><%%VALUE(engine_number)%%></td>
+		<td id="withdrawal_vehicle_from_operation-make_of_vehicle-<%%VALUE(withdrawal_id)%%>" class="withdrawal_vehicle_from_operation-make_of_vehicle"><%%VALUE(make_of_vehicle)%%></td>
+		<td id="withdrawal_vehicle_from_operation-purchased_price-<%%VALUE(withdrawal_id)%%>" class="withdrawal_vehicle_from_operation-purchased_price text-right"><%%VALUE(purchased_price)%%></td>
+		<td id="withdrawal_vehicle_from_operation-date_of_service-<%%VALUE(withdrawal_id)%%>" class="withdrawal_vehicle_from_operation-date_of_service"><%%VALUE(date_of_service)%%></td>
+		<td id="withdrawal_vehicle_from_operation-date_of_next_service-<%%VALUE(withdrawal_id)%%>" class="withdrawal_vehicle_from_operation-date_of_next_service"><%%VALUE(date_of_next_service)%%></td>
+		<td id="withdrawal_vehicle_from_operation-renewal_of_license-<%%VALUE(withdrawal_id)%%>" class="withdrawal_vehicle_from_operation-renewal_of_license"><%%VALUE(renewal_of_license)%%></td>
+		<td id="withdrawal_vehicle_from_operation-date_of_vehicle-<%%VALUE(withdrawal_id)%%>" class="withdrawal_vehicle_from_operation-date_of_vehicle"><%%VALUE(date_of_vehicle)%%></td>
+		<td id="withdrawal_vehicle_from_operation-description_of_vehicle_breakdown-<%%VALUE(withdrawal_id)%%>" class="withdrawal_vehicle_from_operation-description_of_vehicle_breakdown"><%%VALUE(description_of_vehicle_breakdown)%%></td>
+		<td id="withdrawal_vehicle_from_operation-tyre_inspection_report-<%%VALUE(withdrawal_id)%%>" class="withdrawal_vehicle_from_operation-tyre_inspection_report"><a href="link.php?t=withdrawal_vehicle_from_operation&f=tyre_inspection_report&i=<%%VALUE(withdrawal_id)%%>" target="_blank" title="<%%VALUE(tyre_inspection_report)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="withdrawal_vehicle_from_operation-document_checklist_report-<%%VALUE(withdrawal_id)%%>" class="withdrawal_vehicle_from_operation-document_checklist_report"><a href="link.php?t=withdrawal_vehicle_from_operation&f=document_checklist_report&i=<%%VALUE(withdrawal_id)%%>" target="_blank" title="<%%VALUE(document_checklist_report)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-picture text-info"></i></a></td>
+		<td id="withdrawal_vehicle_from_operation-compiled_technical_report-<%%VALUE(withdrawal_id)%%>" class="withdrawal_vehicle_from_operation-compiled_technical_report"><a href="link.php?t=withdrawal_vehicle_from_operation&f=compiled_technical_report&i=<%%VALUE(withdrawal_id)%%>" target="_blank" title="<%%VALUE(compiled_technical_report)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-picture text-info"></i></a></td>
+		<td id="withdrawal_vehicle_from_operation-district_officer_name_and_surname-<%%VALUE(withdrawal_id)%%>" class="withdrawal_vehicle_from_operation-district_officer_name_and_surname"><%%VALUE(district_officer_name_and_surname)%%></td>
+		<td id="withdrawal_vehicle_from_operation-district_officer_persal_number-<%%VALUE(withdrawal_id)%%>" class="withdrawal_vehicle_from_operation-district_officer_persal_number"><%%VALUE(district_officer_persal_number)%%></td>
+		<td id="withdrawal_vehicle_from_operation-district_officer_contacts-<%%VALUE(withdrawal_id)%%>" class="withdrawal_vehicle_from_operation-district_officer_contacts"><%%VALUE(district_officer_contacts)%%></td>
+		<td id="withdrawal_vehicle_from_operation-district_officer_signature-<%%VALUE(withdrawal_id)%%>" class="withdrawal_vehicle_from_operation-district_officer_signature"><%%VALUE(district_officer_signature)%%></td>
+		<td id="withdrawal_vehicle_from_operation-district_officer_email_address-<%%VALUE(withdrawal_id)%%>" class="withdrawal_vehicle_from_operation-district_officer_email_address"><a href="mailto:<%%VALUE(district_officer_email_address)%%>"><%%VALUE(district_officer_email_address)%%></a></td>
+		<script>$j(function() {
+			var e_tyre_inspection_report = '<%%VALUE(tyre_inspection_report)%%>'; if(e_tyre_inspection_report == '' || e_tyre_inspection_report == '&nbsp;') $j(/*<*/ '#withdrawal_vehicle_from_operation-tyre_inspection_report-<%%VALUE(withdrawal_id)%%>' /*>*/).html('');
+			var e_document_checklist_report = '<%%VALUE(document_checklist_report)%%>'; if(e_document_checklist_report == '' || e_document_checklist_report == '&nbsp;') $j(/*<*/ '#withdrawal_vehicle_from_operation-document_checklist_report-<%%VALUE(withdrawal_id)%%>' /*>*/).html('');
+			var e_compiled_technical_report = '<%%VALUE(compiled_technical_report)%%>'; if(e_compiled_technical_report == '' || e_compiled_technical_report == '&nbsp;') $j(/*<*/ '#withdrawal_vehicle_from_operation-compiled_technical_report-<%%VALUE(withdrawal_id)%%>' /*>*/).html('');
+		});</script>

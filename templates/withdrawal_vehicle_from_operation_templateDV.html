@@ -1,0 +1,468 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/withdrawal_vehicle_from_operation-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="withdrawal_vehicle_from_operation_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="withdrawal_vehicle_from_operation_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="withdrawal_vehicle_from_operation_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Withdrawal ID: -->
+				<div class="form-group withdrawal_vehicle_from_operation-withdrawal_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="withdrawal_id">Withdrawal ID:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="withdrawal_id"><%%VALUE(withdrawal_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Supervisor Name & Surname: -->
+				<div class="form-group withdrawal_vehicle_from_operation-supervisor_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="supervisor_name_and_surname">Supervisor Name & Surname:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="supervisor_name_and_surname" id="supervisor_name_and_surname" value="<%%VALUE(supervisor_name_and_surname)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Supervisor Contact Details: -->
+				<div class="form-group withdrawal_vehicle_from_operation-supervisor_contact_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="supervisor_contact_details">Supervisor Contact Details:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="supervisor_contact_details" id="supervisor_contact_details" value="<%%VALUE(supervisor_contact_details)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Supervisor Email Address: -->
+				<div class="form-group withdrawal_vehicle_from_operation-supervisor_email_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="supervisor_email_address-edit-link">Supervisor Email Address:</label>
+					<div class="col-lg-9">
+						<div>
+							<a id="supervisor_email_address-link" href="mailto:<%%VALUE(supervisor_email_address)%%>" target="_blank" class="rspacer-lg"><%%VALUE(supervisor_email_address)%%></a>
+							<label for="supervisor_email_address"><button type="button" id="supervisor_email_address-edit-link" class="btn btn-default vspacer-sm" data-toggle="collapse" data-target="#supervisor_email_address" title="<%%TRANSLATION(Edit)%%>"><i class="glyphicon glyphicon-pencil"></i></button></label>
+							<input maxlength="40" type="text" class="form-control collapse" name="supervisor_email_address" id="supervisor_email_address" value="<%%VALUE(supervisor_email_address)%%>">
+						</div><script>jQuery(function() { var e_supervisor_email_address = '<%%VALUE(supervisor_email_address)%%>'; if(e_supervisor_email_address == '' || e_supervisor_email_address == '&nbsp;' || e_supervisor_email_address == 'blank.gif') jQuery('#supervisor_email_address-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Supervisor Signature: -->
+				<div class="form-group withdrawal_vehicle_from_operation-supervisor_signature">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Supervisor Signature: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#supervisor_signature-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="supervisor_signature-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 500 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(supervisor_signature)%%>
+								<%%REMOVEFILE(supervisor_signature)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_supervisor_signature = '<%%VALUE(supervisor_signature)%%>'; if(e_supervisor_signature == '' || e_supervisor_signature == '&nbsp;' || e_supervisor_signature == 'blank.gif') jQuery('#supervisor_signature-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Registration Number: -->
+				<div class="form-group withdrawal_vehicle_from_operation-vehicle_registration_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_registration_number" data-parent_link="view_parent_modal">Vehicle Registration Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(vehicle_registration_number)%%><%%PLINK(vehicle_registration_number)%%><%%ADDNEW(gmt_fleet_register)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Engine Number: -->
+				<div class="form-group withdrawal_vehicle_from_operation-engine_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Engine Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="engine_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Make of Vehicle: -->
+				<div class="form-group withdrawal_vehicle_from_operation-make_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Make of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="make_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Purchased Price: -->
+				<div class="form-group withdrawal_vehicle_from_operation-purchased_price">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Purchased Price:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="purchased_price"></div>
+					</div>
+				</div>
+
+				<!-- Field: Date Of Service: -->
+				<div class="form-group withdrawal_vehicle_from_operation-date_of_service">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_of_service" data-parent_link="view_parent_modal">Date Of Service:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(date_of_service)%%><%%PLINK(date_of_service)%%><%%ADDNEW(service)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Date Of Next Service: -->
+				<div class="form-group withdrawal_vehicle_from_operation-date_of_next_service">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Date Of Next Service:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="date_of_next_service"></div>
+					</div>
+				</div>
+
+				<!-- Field: Renewal Of License: -->
+				<div class="form-group withdrawal_vehicle_from_operation-renewal_of_license">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Renewal Of License:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="renewal_of_license"></div>
+					</div>
+				</div>
+
+				<!-- Field: Date Of Vehicle Withdrawal: -->
+				<div class="form-group withdrawal_vehicle_from_operation-date_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_of_vehicle">Date Of Vehicle Withdrawal:</label>
+					<div class="col-lg-9">
+						<div class="input-group date datetimepicker"><input type="text" class="form-control" name="date_of_vehicle" id="date_of_vehicle" value="<%%VALUE(date_of_vehicle)%%>"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div>
+					</div>
+				</div>
+
+				<!-- Field: Description Of Vehicle Breakdown: -->
+				<div class="form-group withdrawal_vehicle_from_operation-description_of_vehicle_breakdown">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="description_of_vehicle_breakdown">Description Of Vehicle Breakdown:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(description_of_vehicle_breakdown)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tyre Inspection Report: -->
+				<div class="form-group withdrawal_vehicle_from_operation-tyre_inspection_report">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Tyre Inspection Report: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#tyre_inspection_report-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="tyre_inspection_report-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5240 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="tyre_inspection_report-link" href="link.php?t=withdrawal_vehicle_from_operation&f=tyre_inspection_report&i=<%%VALUE(withdrawal_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(tyre_inspection_report)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(tyre_inspection_report)%%>
+								<%%REMOVEFILE(tyre_inspection_report)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_tyre_inspection_report = '<%%VALUE(tyre_inspection_report)%%>'; if(e_tyre_inspection_report == '' || e_tyre_inspection_report == '&nbsp;' || e_tyre_inspection_report == 'blank.gif') jQuery('#tyre_inspection_report-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Document Checklist Report: -->
+				<div class="form-group withdrawal_vehicle_from_operation-document_checklist_report">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Document Checklist Report: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#document_checklist_report-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="document_checklist_report-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5240 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="document_checklist_report-link" href="link.php?t=withdrawal_vehicle_from_operation&f=document_checklist_report&i=<%%VALUE(withdrawal_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-picture" title="<%%VALUE(document_checklist_report)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(document_checklist_report)%%>
+								<%%REMOVEFILE(document_checklist_report)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_document_checklist_report = '<%%VALUE(document_checklist_report)%%>'; if(e_document_checklist_report == '' || e_document_checklist_report == '&nbsp;' || e_document_checklist_report == 'blank.gif') jQuery('#document_checklist_report-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Compiled Technical Report: -->
+				<div class="form-group withdrawal_vehicle_from_operation-compiled_technical_report">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Compiled Technical Report: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#compiled_technical_report-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="compiled_technical_report-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5240 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="compiled_technical_report-link" href="link.php?t=withdrawal_vehicle_from_operation&f=compiled_technical_report&i=<%%VALUE(withdrawal_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-picture" title="<%%VALUE(compiled_technical_report)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(compiled_technical_report)%%>
+								<%%REMOVEFILE(compiled_technical_report)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_compiled_technical_report = '<%%VALUE(compiled_technical_report)%%>'; if(e_compiled_technical_report == '' || e_compiled_technical_report == '&nbsp;' || e_compiled_technical_report == 'blank.gif') jQuery('#compiled_technical_report-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: District Officer Name & Surname: -->
+				<div class="form-group withdrawal_vehicle_from_operation-district_officer_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="district_officer_name_and_surname">District Officer Name & Surname:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="district_officer_name_and_surname" id="district_officer_name_and_surname" value="<%%VALUE(district_officer_name_and_surname)%%>">
+					</div>
+				</div>
+
+				<!-- Field: District Officer Persal Number: -->
+				<div class="form-group withdrawal_vehicle_from_operation-district_officer_persal_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="district_officer_persal_number">District Officer Persal Number:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="district_officer_persal_number" id="district_officer_persal_number" value="<%%VALUE(district_officer_persal_number)%%>">
+					</div>
+				</div>
+
+				<!-- Field: District Officer Contacts: -->
+				<div class="form-group withdrawal_vehicle_from_operation-district_officer_contacts">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="district_officer_contacts">District Officer Contacts:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="district_officer_contacts" id="district_officer_contacts" value="<%%VALUE(district_officer_contacts)%%>">
+					</div>
+				</div>
+
+				<!-- Field: District Officer Signature: -->
+				<div class="form-group withdrawal_vehicle_from_operation-district_officer_signature">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">District Officer Signature: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#district_officer_signature-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="district_officer_signature-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 500 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(district_officer_signature)%%>
+								<%%REMOVEFILE(district_officer_signature)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_district_officer_signature = '<%%VALUE(district_officer_signature)%%>'; if(e_district_officer_signature == '' || e_district_officer_signature == '&nbsp;' || e_district_officer_signature == 'blank.gif') jQuery('#district_officer_signature-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: District Officer Email Address: -->
+				<div class="form-group withdrawal_vehicle_from_operation-district_officer_email_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="district_officer_email_address-edit-link">District Officer Email Address:</label>
+					<div class="col-lg-9">
+						<div>
+							<a id="district_officer_email_address-link" href="mailto:<%%VALUE(district_officer_email_address)%%>" target="_blank" class="rspacer-lg"><%%VALUE(district_officer_email_address)%%></a>
+							<label for="district_officer_email_address"><button type="button" id="district_officer_email_address-edit-link" class="btn btn-default vspacer-sm" data-toggle="collapse" data-target="#district_officer_email_address" title="<%%TRANSLATION(Edit)%%>"><i class="glyphicon glyphicon-pencil"></i></button></label>
+							<input maxlength="40" type="text" class="form-control collapse" name="district_officer_email_address" id="district_officer_email_address" value="<%%VALUE(district_officer_email_address)%%>">
+						</div><script>jQuery(function() { var e_district_officer_email_address = '<%%VALUE(district_officer_email_address)%%>'; if(e_district_officer_email_address == '' || e_district_officer_email_address == '&nbsp;' || e_district_officer_email_address == 'blank.gif') jQuery('#district_officer_email_address-link').hide(); });</script>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="withdrawal_vehicle_from_operation_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			AppGini.once({
+				condition: function() { return bkLib != undefined; },
+				action: function() {
+					if($j('textarea#description_of_vehicle_breakdown').length) new nicEditor({ fullPanel : true }).panelInstance('description_of_vehicle_breakdown');
+				}
+			});
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			$j('#withdrawal_vehicle_from_operation_dv_container-loading').addClass('hidden');
+			$j('#withdrawal_vehicle_from_operation_dv_container').removeClass('hidden');
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) AppGini.focusFormElement('withdrawal_vehicle_from_operation', 'supervisor_name_and_surname');
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			// try to detect rich text changes by adding 'input' handler after nicedit is loaded ...
+			AppGini.detectContentEditableChanges();
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'withdrawal_vehicle_from_operation',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=withdrawal_vehicle_from_operation&id=<%%URLVALUE(withdrawal_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=withdrawal_vehicle_from_operation&id=<%%URLVALUE(withdrawal_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

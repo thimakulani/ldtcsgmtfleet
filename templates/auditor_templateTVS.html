@@ -1,0 +1,17 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the auditor_init() hook (in hooks/auditor.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="auditor-auditor_id-<%%VALUE(auditor_id)%%>" class="auditor-auditor_id text-right"><%%VALUE(auditor_id)%%></td>
+		<td id="auditor-res_id-<%%VALUE(auditor_id)%%>" class="auditor-res_id text-right"><%%VALUE(res_id)%%></td>
+		<td id="auditor-username-<%%VALUE(auditor_id)%%>" class="auditor-username"><%%VALUE(username)%%></td>
+		<td id="auditor-ipaddr-<%%VALUE(auditor_id)%%>" class="auditor-ipaddr"><%%VALUE(ipaddr)%%></td>
+		<td id="auditor-time_stmp-<%%VALUE(auditor_id)%%>" class="auditor-time_stmp"><%%VALUE(time_stmp)%%></td>
+		<td id="auditor-change_type-<%%VALUE(auditor_id)%%>" class="auditor-change_type"><%%VALUE(change_type)%%></td>
+		<td id="auditor-table_name-<%%VALUE(auditor_id)%%>" class="auditor-table_name"><%%VALUE(table_name)%%></td>
+		<td id="auditor-fieldName-<%%VALUE(auditor_id)%%>" class="auditor-fieldName"><%%VALUE(fieldName)%%></td>
+		<td id="auditor-OldValue-<%%VALUE(auditor_id)%%>" class="auditor-OldValue"><%%VALUE(OldValue)%%></td>
+		<td id="auditor-NewValue-<%%VALUE(auditor_id)%%>" class="auditor-NewValue"><%%VALUE(NewValue)%%></td>

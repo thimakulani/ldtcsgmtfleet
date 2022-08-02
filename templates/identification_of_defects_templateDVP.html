@@ -1,0 +1,176 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Defects ID: -->
+		<div class="form-group identification_of_defects-defects_id" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Defects ID:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(defects_id)%%></div>
+			</div>
+		</div>
+		<!-- Field: Registration Number: -->
+		<div class="form-group identification_of_defects-vehicle_registration_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Registration Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="vehicle_registration_number<%%RND1%%>"><%%COMBOTEXT(vehicle_registration_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Engine Number: -->
+		<div class="form-group identification_of_defects-engine_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Engine Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="engine_number<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Make of Vehicle: -->
+		<div class="form-group identification_of_defects-make_of_vehicle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Make of Vehicle:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="make_of_vehicle<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: End User Name & Surname: -->
+		<div class="form-group identification_of_defects-end_user_name_and_surname" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">End User Name & Surname:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(end_user_name_and_surname)%%></div>
+			</div>
+		</div>
+		<!-- Field: End User Contact Details: -->
+		<div class="form-group identification_of_defects-end_user_contact_details" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">End User Contact Details:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(end_user_contact_details)%%></div>
+			</div>
+		</div>
+		<!-- Field: End User Persal Number: -->
+		<div class="form-group identification_of_defects-end_user_persal_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">End User Persal Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(end_user_persal_number)%%></div>
+			</div>
+		</div>
+		<!-- Field: End User Email Address: -->
+		<div class="form-group identification_of_defects-end_user_email_address" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">End User Email Address:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(end_user_email_address)%%></div>
+			</div>
+		</div>
+		<!-- Field: End User Signature: -->
+		<div class="form-group identification_of_defects-end_user_signature" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">End User Signature:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img id="end_user_signatureImg" src="thumbnail.php?t=identification_of_defects&f=end_user_signature&i=<%%VALUE(end_user_signature)%%>&v=dv" class="img-thumbnail"></div>
+			</div>
+		</div>
+		<!-- Field: Types Of Defects: -->
+		<div class="form-group identification_of_defects-types_of_defects" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Types Of Defects:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(types_of_defects)%%></div>
+			</div>
+		</div>
+		<!-- Field: Courses Of Defects: -->
+		<div class="form-group identification_of_defects-courses_of_defects" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Courses Of Defects:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(courses_of_defects)%%></div>
+			</div>
+		</div>
+		<!-- Field: Condition Of Defects: -->
+		<div class="form-group identification_of_defects-condition_of_defects" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Condition Of Defects:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(condition_of_defects)%%></div>
+			</div>
+		</div>
+		<!-- Field: Transport Officer Name & Surname: -->
+		<div class="form-group identification_of_defects-transport_officer_name_and_surname" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Transport Officer Name & Surname:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(transport_officer_name_and_surname)%%></div>
+			</div>
+		</div>
+		<!-- Field: Transport Officer Persal Number: -->
+		<div class="form-group identification_of_defects-transport_officer_persal_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Transport Officer Persal Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(transport_officer_persal_number)%%></div>
+			</div>
+		</div>
+		<!-- Field: Transport Officer Contact Details: -->
+		<div class="form-group identification_of_defects-transport_officer_contact_details" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Transport Officer Contact Details:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(transport_officer_contact_details)%%></div>
+			</div>
+		</div>
+		<!-- Field: Transport Officer Email Address: -->
+		<div class="form-group identification_of_defects-transport_officer_email_address" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Transport Officer Email Address:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img id="transport_officer_email_addressImg" src="thumbnail.php?t=identification_of_defects&f=transport_officer_email_address&i=<%%VALUE(transport_officer_email_address)%%>&v=dv" class="img-thumbnail"></div>
+			</div>
+		</div>
+		<!-- Field: Garage Manager Name & Surname: -->
+		<div class="form-group identification_of_defects-government_garage_manager_name_and_surname" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Garage Manager Name & Surname:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(government_garage_manager_name_and_surname)%%></div>
+			</div>
+		</div>
+		<!-- Field: Government Garage Manager Contact Details: -->
+		<div class="form-group identification_of_defects-government_garage_manager_contact_details" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Government Garage Manager Contact Details:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(government_garage_manager_contact_details)%%></div>
+			</div>
+		</div>
+		<!-- Field: Government Garage Manager Address: -->
+		<div class="form-group identification_of_defects-government_garage_manager_address" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Government Garage Manager Address:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(government_garage_manager_address)%%></div>
+			</div>
+		</div>
+		<!-- Field: Government Garage Manager Email Address: -->
+		<div class="form-group identification_of_defects-government_garage_manager_email_address" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Government Garage Manager Email Address:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(government_garage_manager_email_address)%%></div>
+			</div>
+		</div>
+		<!-- Field: Government Garage Manager Signature: -->
+		<div class="form-group identification_of_defects-government_garage_manager_signature" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Government Garage Manager Signature:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img id="government_garage_manager_signatureImg" src="thumbnail.php?t=identification_of_defects&f=government_garage_manager_signature&i=<%%VALUE(government_garage_manager_signature)%%>&v=dv" class="img-thumbnail"></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>

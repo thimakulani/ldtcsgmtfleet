@@ -1,0 +1,20 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the billing_init() hook (in hooks/billing.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="billing-billing_id-<%%VALUE(billing_id)%%>" class="billing-billing_id text-right"><%%SELECT%%><%%VALUE(billing_id)%%><%%ENDSELECT%%></td>
+		<td id="billing-district-<%%VALUE(billing_id)%%>" class="billing-district"><%%SELECT%%><%%VALUE(district)%%><%%ENDSELECT%%></td>
+		<td id="billing-location-<%%VALUE(billing_id)%%>" class="billing-location"><%%SELECT%%><%%VALUE(location)%%><%%ENDSELECT%%></td>
+		<td id="billing-upload_invoice-<%%VALUE(billing_id)%%>" class="billing-upload_invoice"><a href="link.php?t=billing&f=upload_invoice&i=<%%VALUE(billing_id)%%>" target="_blank" title="<%%VALUE(upload_invoice)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="billing-job_card_number-<%%VALUE(billing_id)%%>" class="billing-job_card_number"><%%SELECT%%><%%VALUE(job_card_number)%%><%%ENDSELECT%%></td>
+		<td id="billing-invoice_date-<%%VALUE(billing_id)%%>" class="billing-invoice_date"><%%SELECT%%><%%VALUE(invoice_date)%%><%%ENDSELECT%%></td>
+		<td id="billing-maintenance_file-<%%VALUE(billing_id)%%>" class="billing-maintenance_file"><%%SELECT%%><%%VALUE(maintenance_file)%%><%%ENDSELECT%%></td>
+		<td id="billing-vehicle_registration_number-<%%VALUE(billing_id)%%>" class="billing-vehicle_registration_number"><%%SELECT%%><%%VALUE(vehicle_registration_number)%%><%%ENDSELECT%%></td>
+		<td id="billing-engine_number-<%%VALUE(billing_id)%%>" class="billing-engine_number"><%%SELECT%%><%%VALUE(engine_number)%%><%%ENDSELECT%%></td>
+		<td id="billing-make_of_vehicle-<%%VALUE(billing_id)%%>" class="billing-make_of_vehicle"><%%SELECT%%><%%VALUE(make_of_vehicle)%%><%%ENDSELECT%%></td>
+		<script>$j(function() {
+			var e_upload_invoice = '<%%VALUE(upload_invoice)%%>'; if(e_upload_invoice == '' || e_upload_invoice == '&nbsp;') $j(/*<*/ '#billing-upload_invoice-<%%VALUE(billing_id)%%>' /*>*/).html('');
+		});</script>

@@ -1,0 +1,619 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/service-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="service_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="service_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+		<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="vehicle_history_view.php?filterer_date_of_service=<%%URLVALUE(service_schedule_id)%%>&<%%EMBEDDED%%>" id="vehicle_history_link"><i class="glyphicon glyphicon-dashboard"></i> Vehicle General History:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="vehicle_history_view.php?filterer_date_of_service=<%%URLVALUE(service_schedule_id)%%>&<%%EMBEDDED%%>" id="xs_vehicle_history_link"><i class="glyphicon glyphicon-dashboard"></i> Vehicle General History:</a>
+			<input type="hidden" id="vehicle_history_hclink" value="vehicle_history_view.php?filterer_date_of_service=<%%URLVALUE(service_schedule_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="service_records_view.php?filterer_vehicle=<%%URLVALUE(service_schedule_id)%%>&<%%EMBEDDED%%>" id="service_records_link"><i class="glyphicon glyphicon-book"></i> Service Records:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="service_records_view.php?filterer_vehicle=<%%URLVALUE(service_schedule_id)%%>&<%%EMBEDDED%%>" id="xs_service_records_link"><i class="glyphicon glyphicon-book"></i> Service Records:</a>
+			<input type="hidden" id="service_records_hclink" value="service_records_view.php?filterer_vehicle=<%%URLVALUE(service_schedule_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="purchase_orders_view.php?filterer_workshop_name=<%%URLVALUE(service_schedule_id)%%>&<%%EMBEDDED%%>" id="purchase_orders_link"><i class="glyphicon glyphicon-leaf"></i> Purchase Orders:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="purchase_orders_view.php?filterer_workshop_name=<%%URLVALUE(service_schedule_id)%%>&<%%EMBEDDED%%>" id="xs_purchase_orders_link"><i class="glyphicon glyphicon-leaf"></i> Purchase Orders:</a>
+			<input type="hidden" id="purchase_orders_hclink" value="purchase_orders_view.php?filterer_workshop_name=<%%URLVALUE(service_schedule_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="breakdown_services_view.php?filterer_workshop_name=<%%URLVALUE(service_schedule_id)%%>&<%%EMBEDDED%%>" id="breakdown_services_link"><i class="glyphicon glyphicon-wrench"></i> Breakdown Services:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="breakdown_services_view.php?filterer_workshop_name=<%%URLVALUE(service_schedule_id)%%>&<%%EMBEDDED%%>" id="xs_breakdown_services_link"><i class="glyphicon glyphicon-wrench"></i> Breakdown Services:</a>
+			<input type="hidden" id="breakdown_services_hclink" value="breakdown_services_view.php?filterer_workshop_name=<%%URLVALUE(service_schedule_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="modification_to_vehicle_view.php?filterer_job_card_number=<%%URLVALUE(service_schedule_id)%%>&<%%EMBEDDED%%>" id="modification_to_vehicle_link"><i class="glyphicon glyphicon-scissors"></i> Modification to Vehicle:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="modification_to_vehicle_view.php?filterer_job_card_number=<%%URLVALUE(service_schedule_id)%%>&<%%EMBEDDED%%>" id="xs_modification_to_vehicle_link"><i class="glyphicon glyphicon-scissors"></i> Modification to Vehicle:</a>
+			<input type="hidden" id="modification_to_vehicle_hclink" value="modification_to_vehicle_view.php?filterer_job_card_number=<%%URLVALUE(service_schedule_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="withdrawal_vehicle_from_operation_view.php?filterer_date_of_service=<%%URLVALUE(service_schedule_id)%%>&<%%EMBEDDED%%>" id="withdrawal_vehicle_from_operation_link"><i class="glyphicon glyphicon-magnet"></i> Withdrawal Of Vehicle:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="withdrawal_vehicle_from_operation_view.php?filterer_date_of_service=<%%URLVALUE(service_schedule_id)%%>&<%%EMBEDDED%%>" id="xs_withdrawal_vehicle_from_operation_link"><i class="glyphicon glyphicon-magnet"></i> Withdrawal Of Vehicle:</a>
+			<input type="hidden" id="withdrawal_vehicle_from_operation_hclink" value="withdrawal_vehicle_from_operation_view.php?filterer_date_of_service=<%%URLVALUE(service_schedule_id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="service_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Service ID: -->
+				<div class="form-group service-service_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="service_id">Service ID:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="service_id"><%%VALUE(service_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Breakdown of Vehicle?: -->
+				<div class="form-group service-breakdown_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Breakdown of Vehicle?:</label>
+					<div class="col-lg-9">
+						<%%COMBO(breakdown_of_vehicle)%%>
+					</div>
+				</div>
+
+				<!-- Field: Service Title: -->
+				<div class="form-group service-service_title">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="service_title">Service Title:</label>
+					<div class="col-lg-9">
+						<input maxlength="75" type="text" class="form-control" name="service_title" id="service_title" value="<%%VALUE(service_title)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Service Item Type: -->
+				<div class="form-group service-service_item_type">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="service_item_type" data-parent_link="view_parent_modal">Service Item Type:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(service_item_type)%%><%%PLINK(service_item_type)%%><%%ADDNEW(service_item_type)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Service Category: -->
+				<div class="form-group service-service_category">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="service_category" data-parent_link="view_parent_modal">Service Category:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(service_category)%%><%%PLINK(service_category)%%><%%ADDNEW(service_categories)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Merchant Name: -->
+				<div class="form-group service-merchant_name">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="merchant_name" data-parent_link="view_parent_modal">Merchant Name:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(merchant_name)%%><%%PLINK(merchant_name)%%><%%ADDNEW(merchant)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Registration Number: -->
+				<div class="form-group service-vehicle_registration_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_registration_number" data-parent_link="view_parent_modal">Registration Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(vehicle_registration_number)%%><%%PLINK(vehicle_registration_number)%%><%%ADDNEW(gmt_fleet_register)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Engine Number: -->
+				<div class="form-group service-engine_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Engine Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="engine_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Chassis Number: -->
+				<div class="form-group service-chassis_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Chassis Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="chassis_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Make of Vehicle/Dealer Name: -->
+				<div class="form-group service-dealer_name">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="dealer_name" data-parent_link="view_parent_modal">Make of Vehicle/Dealer Name:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(dealer_name)%%><%%PLINK(dealer_name)%%><%%ADDNEW(dealer)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Make of Vehicle: -->
+				<div class="form-group service-make_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Make of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="make_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Model of Vehicle: -->
+				<div class="form-group service-model_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Model of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="model_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Year Model of Vehicle: -->
+				<div class="form-group service-year_model_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Year Model of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="year_model_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Type of Vehicle: -->
+				<div class="form-group service-type_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Type of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="type_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Odometer Reading (km): -->
+				<div class="form-group service-closing_km">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="closing_km" data-parent_link="view_parent_modal">Odometer Reading (km):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(closing_km)%%><%%PLINK(closing_km)%%><%%ADDNEW(log_sheet)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Application Status: -->
+				<div class="form-group service-application_status">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Application Status:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="application_status"></div>
+					</div>
+				</div>
+
+				<!-- Field: Work Allocation Reference Number: -->
+				<div class="form-group service-work_allocation_reference_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="work_allocation_reference_number" data-parent_link="view_parent_modal">Work Allocation Reference Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(work_allocation_reference_number)%%><%%PLINK(work_allocation_reference_number)%%><%%ADDNEW(work_allocation)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Barcode Number: -->
+				<div class="form-group service-barcode_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Barcode Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="barcode_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Department: -->
+				<div class="form-group service-department">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Department:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="department"></div>
+					</div>
+				</div>
+
+				<!-- Field: Service Item: -->
+				<div class="form-group service-service_item">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="service_item">Service Item:</label>
+					<div class="col-lg-9">
+						<%%COMBO(service_item)%%>
+					</div>
+				</div>
+
+				<!-- Field: Date of Service: -->
+				<div class="form-group service-date_of_service">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_of_service" data-parent_link="view_parent_modal">Date of Service:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(date_of_service)%%><%%PLINK(date_of_service)%%><%%ADDNEW(schedule)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Time: -->
+				<div class="form-group service-time">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Time:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="time"></div>
+					</div>
+				</div>
+
+				<!-- Field: Documents (Upload Quotation): -->
+				<div class="form-group service-upload_quotation">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Documents (Upload Quotation): <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#upload_quotation-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="upload_quotation-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5120 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="upload_quotation-link" href="link.php?t=service&f=upload_quotation&i=<%%VALUE(service_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(upload_quotation)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(upload_quotation)%%>
+								<%%REMOVEFILE(upload_quotation)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_upload_quotation = '<%%VALUE(upload_quotation)%%>'; if(e_upload_quotation == '' || e_upload_quotation == '&nbsp;' || e_upload_quotation == 'blank.gif') jQuery('#upload_quotation-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Date of Next Service: -->
+				<div class="form-group service-date_of_next_service">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_of_next_service-dd">Date of Next Service:</label>
+					<div class="col-lg-9">
+						<%%COMBO(date_of_next_service)%%>
+					</div>
+				</div>
+
+				<!-- Field: Repeat Service Schedule Every (km): -->
+				<div class="form-group service-repeat_service_schedule_every_km">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="repeat_service_schedule_every_km">Repeat Service Schedule Every (km):</label>
+					<div class="col-lg-9">
+						<%%COMBO(repeat_service_schedule_every_km)%%>
+					</div>
+				</div>
+
+				<!-- Field: Comments: -->
+				<div class="form-group service-comments">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="comments">Comments:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(comments)%%>
+					</div>
+				</div>
+
+				<!-- Field: Documents (Upload Invoice): -->
+				<div class="form-group service-upload_invoice">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Documents (Upload Invoice): <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#upload_invoice-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="upload_invoice-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5120 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="upload_invoice-link" href="link.php?t=service&f=upload_invoice&i=<%%VALUE(service_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(upload_invoice)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(upload_invoice)%%>
+								<%%REMOVEFILE(upload_invoice)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_upload_invoice = '<%%VALUE(upload_invoice)%%>'; if(e_upload_invoice == '' || e_upload_invoice == '&nbsp;' || e_upload_invoice == 'blank.gif') jQuery('#upload_invoice-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Information Capture By Receptionist (Name & Surname): -->
+				<div class="form-group service-receptionist">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="receptionist" data-parent_link="view_parent_modal">Information Capture By Receptionist (Name & Surname):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(receptionist)%%><%%PLINK(receptionist)%%><%%ADDNEW(reception)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Receptionist Contact e-Mail: -->
+				<div class="form-group service-receptionist_contact_email">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Receptionist Contact e-Mail:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="receptionist_contact_email"></div>
+					</div>
+				</div>
+
+				<!-- Field: Workshop Name: -->
+				<div class="form-group service-workshop_name">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Workshop Name:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="workshop_name"></div>
+					</div>
+				</div>
+
+				<!-- Field: Workshop Address: -->
+				<div class="form-group service-workshop_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="workshop_address">Workshop Address:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(workshop_address)%%>
+					</div>
+				</div>
+
+				<!-- Field: Technician: -->
+				<div class="form-group service-technician">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="technician">Technician:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="technician" id="technician" value="<%%VALUE(technician)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Work Order Status: -->
+				<div class="form-group service-work_order_status">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Work Order Status:</label>
+					<div class="col-lg-9">
+						<%%COMBO(work_order_status)%%>
+					</div>
+				</div>
+
+				<!-- Field: Job Card Number: -->
+				<div class="form-group service-job_card_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Job Card Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="job_card_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Actual Completion Date: -->
+				<div class="form-group service-completion_date">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="completion_date-dd">Actual Completion Date:</label>
+					<div class="col-lg-9">
+						<%%COMBO(completion_date)%%>
+					</div>
+				</div>
+
+				<!-- Field: Due Date: -->
+				<div class="form-group service-due_date">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="due_date-dd">Due Date:</label>
+					<div class="col-lg-9">
+						<%%COMBO(due_date)%%>
+					</div>
+				</div>
+
+				<!-- Field: Filed -->
+				<div class="form-group service-filed">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Filed <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#filed-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="filed-description"><div class="alert alert-info bspacer-xs">This field is automatically populated with the date and time when this record was created.</div></span>
+						<div class="form-control-static" id="filed"><%%VALUE(filed)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Last modified -->
+				<div class="form-group service-last_modified">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Last modified <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#last_modified-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="last_modified-description"><div class="alert alert-info bspacer-xs">This field is automatically populated with the date and time when this record was last modified.</div></span>
+						<div class="form-control-static" id="last_modified"><%%VALUE(last_modified)%%></div>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="service_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="service-children" class="children-tabs">
+				<div class="text-center"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+			</div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			AppGini.once({
+				condition: function() { return bkLib != undefined; },
+				action: function() {
+					if($j('textarea#comments').length) new nicEditor({ fullPanel : true }).panelInstance('comments');
+					if($j('textarea#workshop_address').length) new nicEditor({ fullPanel : true }).panelInstance('workshop_address');
+				}
+			});
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			$j('#service_dv_container-loading').addClass('hidden');
+			$j('#service_dv_container').removeClass('hidden');
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) AppGini.focusFormElement('service', 'breakdown_of_vehicle');
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			// try to detect rich text changes by adding 'input' handler after nicedit is loaded ...
+			AppGini.detectContentEditableChanges();
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+			if(embedded_mode) {
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function() {
+					$j('a[href]:not([href^="#"]):not([href^="javascript"]):not([href$="Embedded=1"]):not([href*="link.php?t="]):not([href^="mailto:"]):not([href$=".jpg"]):not([href$=".png"]):not([href$=".gif"])').each(
+						function() {
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode) {
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			} else {
+				post(
+					'parent-children.php', {
+						ParentTable: 'service',
+						SelectedID: '<%%VALUE(service_id)%%>',
+						Operation: 'show-children'
+					},
+					'service-children'
+				);
+			}
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'service',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=service&id=<%%URLVALUE(service_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=service&id=<%%URLVALUE(service_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

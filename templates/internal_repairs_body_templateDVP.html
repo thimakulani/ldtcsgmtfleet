@@ -1,0 +1,302 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Internal Repair Body ID: -->
+		<div class="form-group internal_repairs_body-internal_repairs_body_id" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Internal Repair Body ID:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(internal_repairs_body_id)%%></div>
+			</div>
+		</div>
+		<!-- Field: Driver Name & Surname: -->
+		<div class="form-group internal_repairs_body-driver_name_and_surname" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver Name & Surname:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="driver_name_and_surname<%%RND1%%>"><%%COMBOTEXT(driver_name_and_surname)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Driver Persal Number: -->
+		<div class="form-group internal_repairs_body-driver_persal_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver Persal Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="driver_persal_number<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Driver Contacts Details: -->
+		<div class="form-group internal_repairs_body-driver_contacts_details" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver Contacts Details:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="driver_contacts_details<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Driver Email Address: -->
+		<div class="form-group internal_repairs_body-driver_email_address" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver Email Address:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="driver_email_address<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Driver License Code: -->
+		<div class="form-group internal_repairs_body-driver_license_code" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver License Code:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="driver_license_code<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Driver License Number: -->
+		<div class="form-group internal_repairs_body-driver_license_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver License Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="driver_license_number<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Driver license Upload: -->
+		<div class="form-group internal_repairs_body-driver_license_upload" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver license Upload:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="driver_license_upload-link" href="link.php?t=internal_repairs_body&f=driver_license_upload&i=<%%VALUE(internal_repairs_body_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(driver_license_upload)%%>"></i></a><script>jQuery(function() { var e_driver_license_upload = '<%%VALUE(driver_license_upload)%%>'; if(e_driver_license_upload == '' || e_driver_license_upload == '&nbsp;' || e_driver_license_upload == 'blank.gif') jQuery('#driver_license_upload-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Driver Signature: -->
+		<div class="form-group internal_repairs_body-driver_signature" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver Signature:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img id="driver_signatureImg" src="thumbnail.php?t=internal_repairs_body&f=driver_signature&i=<%%VALUE(driver_signature)%%>&v=dv" class="img-thumbnail"></div>
+			</div>
+		</div>
+		<!-- Field: Registration Number: -->
+		<div class="form-group internal_repairs_body-vehicle_registration_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Registration Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="vehicle_registration_number<%%RND1%%>"><%%COMBOTEXT(vehicle_registration_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Engine Number: -->
+		<div class="form-group internal_repairs_body-engine_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Engine Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="engine_number<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Make of Vehicle: -->
+		<div class="form-group internal_repairs_body-make_of_vehicle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Make of Vehicle:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="make_of_vehicle<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Z181 Accident Form Attached: -->
+		<div class="form-group internal_repairs_body-z181_accident_form" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Z181 Accident Form Attached:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(z181_accident_form)%%></div>
+			</div>
+		</div>
+		<!-- Field: Z181 Accident Form Uploaded: -->
+		<div class="form-group internal_repairs_body-z181_accident_form_uploaded" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Z181 Accident Form Uploaded:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="z181_accident_form_uploaded-link" href="link.php?t=internal_repairs_body&f=z181_accident_form_uploaded&i=<%%VALUE(internal_repairs_body_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(z181_accident_form_uploaded)%%>"></i></a><script>jQuery(function() { var e_z181_accident_form_uploaded = '<%%VALUE(z181_accident_form_uploaded)%%>'; if(e_z181_accident_form_uploaded == '' || e_z181_accident_form_uploaded == '&nbsp;' || e_z181_accident_form_uploaded == 'blank.gif') jQuery('#z181_accident_form_uploaded-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Job Card Number: -->
+		<div class="form-group internal_repairs_body-job_card_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Job Card Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="job_card_number<%%RND1%%>"><%%COMBOTEXT(job_card_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Work Allocation Reference Number: -->
+		<div class="form-group internal_repairs_body-work_allocation_reference_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Work Allocation Reference Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="work_allocation_reference_number<%%RND1%%>"><%%COMBOTEXT(work_allocation_reference_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Artisan Note Of Starting Time: -->
+		<div class="form-group internal_repairs_body-artisan_note_of_starting_time" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Artisan Note Of Starting Time:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(artisan_note_of_starting_time)%%></div>
+			</div>
+		</div>
+		<!-- Field: Government Garage/Workshop Name: -->
+		<div class="form-group internal_repairs_body-government_garage_name" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Government Garage/Workshop Name:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="government_garage_name<%%RND1%%>"><%%COMBOTEXT(government_garage_name)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Government Garage/Workshop Contact Details: -->
+		<div class="form-group internal_repairs_body-government_garage_contact_details" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Government Garage/Workshop Contact Details:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(government_garage_contact_details)%%></div>
+			</div>
+		</div>
+		<!-- Field: Government Garage/Workshop Address: -->
+		<div class="form-group internal_repairs_body-government_garage_address" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Government Garage/Workshop Address:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(government_garage_address)%%></div>
+			</div>
+		</div>
+		<!-- Field: Government Garage/Workshop Email Address: -->
+		<div class="form-group internal_repairs_body-government_garage_email_address" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Government Garage/Workshop Email Address:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(government_garage_email_address)%%></div>
+			</div>
+		</div>
+		<!-- Field: Damages Occured: -->
+		<div class="form-group internal_repairs_body-damages_occured" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Damages Occured:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(damages_occured)%%></div>
+			</div>
+		</div>
+		<!-- Field: Upload of Internal Damages 1: -->
+		<div class="form-group internal_repairs_body-upload_of_internal_damages_1" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Upload of Internal Damages 1:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="upload_of_internal_damages_1-link" href="link.php?t=internal_repairs_body&f=upload_of_internal_damages_1&i=<%%VALUE(internal_repairs_body_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-picture" title="<%%VALUE(upload_of_internal_damages_1)%%>"></i></a><script>jQuery(function() { var e_upload_of_internal_damages_1 = '<%%VALUE(upload_of_internal_damages_1)%%>'; if(e_upload_of_internal_damages_1 == '' || e_upload_of_internal_damages_1 == '&nbsp;' || e_upload_of_internal_damages_1 == 'blank.gif') jQuery('#upload_of_internal_damages_1-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Upload of Internal Damages 2: -->
+		<div class="form-group internal_repairs_body-upload_of_internal_damages_2" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Upload of Internal Damages 2:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="upload_of_internal_damages_2-link" href="link.php?t=internal_repairs_body&f=upload_of_internal_damages_2&i=<%%VALUE(internal_repairs_body_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-picture" title="<%%VALUE(upload_of_internal_damages_2)%%>"></i></a><script>jQuery(function() { var e_upload_of_internal_damages_2 = '<%%VALUE(upload_of_internal_damages_2)%%>'; if(e_upload_of_internal_damages_2 == '' || e_upload_of_internal_damages_2 == '&nbsp;' || e_upload_of_internal_damages_2 == 'blank.gif') jQuery('#upload_of_internal_damages_2-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Upload of Internal Damages 3: -->
+		<div class="form-group internal_repairs_body-upload_of_internal_damages_3" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Upload of Internal Damages 3:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="upload_of_internal_damages_3-link" href="link.php?t=internal_repairs_body&f=upload_of_internal_damages_3&i=<%%VALUE(internal_repairs_body_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-picture" title="<%%VALUE(upload_of_internal_damages_3)%%>"></i></a><script>jQuery(function() { var e_upload_of_internal_damages_3 = '<%%VALUE(upload_of_internal_damages_3)%%>'; if(e_upload_of_internal_damages_3 == '' || e_upload_of_internal_damages_3 == '&nbsp;' || e_upload_of_internal_damages_3 == 'blank.gif') jQuery('#upload_of_internal_damages_3-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Upload of Internal Damages 4: -->
+		<div class="form-group internal_repairs_body-upload_of_internal_damages_4" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Upload of Internal Damages 4:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="upload_of_internal_damages_4-link" href="link.php?t=internal_repairs_body&f=upload_of_internal_damages_4&i=<%%VALUE(internal_repairs_body_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-picture" title="<%%VALUE(upload_of_internal_damages_4)%%>"></i></a><script>jQuery(function() { var e_upload_of_internal_damages_4 = '<%%VALUE(upload_of_internal_damages_4)%%>'; if(e_upload_of_internal_damages_4 == '' || e_upload_of_internal_damages_4 == '&nbsp;' || e_upload_of_internal_damages_4 == 'blank.gif') jQuery('#upload_of_internal_damages_4-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Head Panel Beating Quotation (R): -->
+		<div class="form-group internal_repairs_body-head_panel_beating_quotation" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Head Panel Beating Quotation (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(head_panel_beating_quotation)%%></div>
+			</div>
+		</div>
+		<!-- Field: Head Panel Beating Quotation: -->
+		<div class="form-group internal_repairs_body-head_panel_beating_quotation_1" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Head Panel Beating Quotation:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="head_panel_beating_quotation_1-link" href="link.php?t=internal_repairs_body&f=head_panel_beating_quotation_1&i=<%%VALUE(internal_repairs_body_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(head_panel_beating_quotation_1)%%>"></i></a><script>jQuery(function() { var e_head_panel_beating_quotation_1 = '<%%VALUE(head_panel_beating_quotation_1)%%>'; if(e_head_panel_beating_quotation_1 == '' || e_head_panel_beating_quotation_1 == '&nbsp;' || e_head_panel_beating_quotation_1 == 'blank.gif') jQuery('#head_panel_beating_quotation_1-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Head Panel Beating Name: -->
+		<div class="form-group internal_repairs_body-head_panel_beating_name" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Head Panel Beating Name:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(head_panel_beating_name)%%></div>
+			</div>
+		</div>
+		<!-- Field: Head Panel Beating Contact Details:  -->
+		<div class="form-group internal_repairs_body-head_panel_beating_contact_details" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Head Panel Beating Contact Details: </label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(head_panel_beating_contact_details)%%></div>
+			</div>
+		</div>
+		<!-- Field: Head Panel Beating Address: -->
+		<div class="form-group internal_repairs_body-head_panel_beating_address" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Head Panel Beating Address:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(head_panel_beating_address)%%></div>
+			</div>
+		</div>
+		<!-- Field: Head Panel Beating Signature: -->
+		<div class="form-group internal_repairs_body-head_panel_beating_signature" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Head Panel Beating Signature:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img id="head_panel_beating_signatureImg" src="thumbnail.php?t=internal_repairs_body&f=head_panel_beating_signature&i=<%%VALUE(head_panel_beating_signature)%%>&v=dv" class="img-thumbnail"></div>
+			</div>
+		</div>
+		<!-- Field: Private Panel Beating Name: -->
+		<div class="form-group internal_repairs_body-private_panel_beating_name" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Private Panel Beating Name:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(private_panel_beating_name)%%></div>
+			</div>
+		</div>
+		<!-- Field: Private Panel Beating Contact Deatils: -->
+		<div class="form-group internal_repairs_body-private_panel_beating_contact_details" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Private Panel Beating Contact Deatils:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(private_panel_beating_contact_details)%%></div>
+			</div>
+		</div>
+		<!-- Field: Private Panel Beating Address: -->
+		<div class="form-group internal_repairs_body-private_panel_beating_address" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Private Panel Beating Address:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(private_panel_beating_address)%%></div>
+			</div>
+		</div>
+		<!-- Field: Private Panel Beating Quotation (R): -->
+		<div class="form-group internal_repairs_body-private_panel_beating_quotation" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Private Panel Beating Quotation (R):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(private_panel_beating_quotation)%%></div>
+			</div>
+		</div>
+		<!-- Field: Private Panel Beating Quotation: -->
+		<div class="form-group internal_repairs_body-private_panel_beating_quotation_2" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Private Panel Beating Quotation:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="private_panel_beating_quotation_2-link" href="link.php?t=internal_repairs_body&f=private_panel_beating_quotation_2&i=<%%VALUE(internal_repairs_body_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(private_panel_beating_quotation_2)%%>"></i></a><script>jQuery(function() { var e_private_panel_beating_quotation_2 = '<%%VALUE(private_panel_beating_quotation_2)%%>'; if(e_private_panel_beating_quotation_2 == '' || e_private_panel_beating_quotation_2 == '&nbsp;' || e_private_panel_beating_quotation_2 == 'blank.gif') jQuery('#private_panel_beating_quotation_2-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Artisan Completion Time: -->
+		<div class="form-group internal_repairs_body-artisan_note_of_completion_time" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Artisan Completion Time:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(artisan_note_of_completion_time)%%></div>
+			</div>
+		</div>
+		<!-- Field: Total Labour Hours Spend: -->
+		<div class="form-group internal_repairs_body-total_labour_time" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Total Labour Hours Spend:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(total_labour_time)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>

@@ -1,0 +1,558 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/vehicle_daily_check_list-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="vehicle_daily_check_list_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="vehicle_daily_check_list_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="vehicle_history_view.php?filterer_inspection_certification_number=<%%URLVALUE(vehicle_daily_check_list_id)%%>&<%%EMBEDDED%%>" id="vehicle_history_link"><i class="glyphicon glyphicon-dashboard"></i> Vehicle General History:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="vehicle_history_view.php?filterer_inspection_certification_number=<%%URLVALUE(vehicle_daily_check_list_id)%%>&<%%EMBEDDED%%>" id="xs_vehicle_history_link"><i class="glyphicon glyphicon-dashboard"></i> Vehicle General History:</a>
+			<input type="hidden" id="vehicle_history_hclink" value="vehicle_history_view.php?filterer_inspection_certification_number=<%%URLVALUE(vehicle_daily_check_list_id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="vehicle_daily_check_list_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Daily Checked ID: -->
+				<div class="form-group vehicle_daily_check_list-vehicle_daily_check_list_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_daily_check_list_id">Daily Checked ID:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="vehicle_daily_check_list_id"><%%VALUE(vehicle_daily_check_list_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Inspection Certification No: -->
+				<div class="form-group vehicle_daily_check_list-inspection_certification_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="inspection_certification_number">Inspection Certification No:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="inspection_certification_number" id="inspection_certification_number" value="<%%VALUE(inspection_certification_number)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Registration Number: -->
+				<div class="form-group vehicle_daily_check_list-vehicle_registration_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_registration_number" data-parent_link="view_parent_modal">Registration Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(vehicle_registration_number)%%><%%PLINK(vehicle_registration_number)%%><%%ADDNEW(gmt_fleet_register)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Make of Vehicle: -->
+				<div class="form-group vehicle_daily_check_list-make_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Make of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="make_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Odometer Reading KM: -->
+				<div class="form-group vehicle_daily_check_list-closing_km">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="closing_km" data-parent_link="view_parent_modal">Odometer Reading KM:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(closing_km)%%><%%PLINK(closing_km)%%><%%ADDNEW(log_sheet)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Dashboard: -->
+				<div class="form-group vehicle_daily_check_list-dashboard">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Dashboard:</label>
+					<div class="col-lg-9">
+						<%%COMBO(dashboard)%%>
+					</div>
+				</div>
+
+				<!-- Field: Seats: -->
+				<div class="form-group vehicle_daily_check_list-seats">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Seats:</label>
+					<div class="col-lg-9">
+						<%%COMBO(seats)%%>
+					</div>
+				</div>
+
+				<!-- Field: Carpets: -->
+				<div class="form-group vehicle_daily_check_list-carpets">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Carpets:</label>
+					<div class="col-lg-9">
+						<%%COMBO(carpets)%%>
+					</div>
+				</div>
+
+				<!-- Field: Wipers: -->
+				<div class="form-group vehicle_daily_check_list-wipers">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Wipers:</label>
+					<div class="col-lg-9">
+						<%%COMBO(wipers)%%>
+					</div>
+				</div>
+
+				<!-- Field: Head Lights: -->
+				<div class="form-group vehicle_daily_check_list-head_lights">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Head Lights:</label>
+					<div class="col-lg-9">
+						<%%COMBO(head_lights)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tail lights: -->
+				<div class="form-group vehicle_daily_check_list-tail_lights">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Tail lights:</label>
+					<div class="col-lg-9">
+						<%%COMBO(tail_lights)%%>
+					</div>
+				</div>
+
+				<!-- Field: Brake Lights: -->
+				<div class="form-group vehicle_daily_check_list-brake_lights">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Brake Lights:</label>
+					<div class="col-lg-9">
+						<%%COMBO(brake_lights)%%>
+					</div>
+				</div>
+
+				<!-- Field: Indicators: -->
+				<div class="form-group vehicle_daily_check_list-indicators">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Indicators:</label>
+					<div class="col-lg-9">
+						<%%COMBO(indicators)%%>
+					</div>
+				</div>
+
+				<!-- Field: Windscreen: -->
+				<div class="form-group vehicle_daily_check_list-windscreen">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Windscreen:</label>
+					<div class="col-lg-9">
+						<%%COMBO(windscreen)%%>
+					</div>
+				</div>
+
+				<!-- Field: Windows: -->
+				<div class="form-group vehicle_daily_check_list-windows">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Windows:</label>
+					<div class="col-lg-9">
+						<%%COMBO(windows)%%>
+					</div>
+				</div>
+
+				<!-- Field: Mirrors: -->
+				<div class="form-group vehicle_daily_check_list-mirrors">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Mirrors:</label>
+					<div class="col-lg-9">
+						<%%COMBO(mirrors)%%>
+					</div>
+				</div>
+
+				<!-- Field: Wheels: -->
+				<div class="form-group vehicle_daily_check_list-wheels">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Wheels:</label>
+					<div class="col-lg-9">
+						<%%COMBO(wheels)%%>
+					</div>
+				</div>
+
+				<!-- Field: Hubcaps: -->
+				<div class="form-group vehicle_daily_check_list-hubcaps">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Hubcaps:</label>
+					<div class="col-lg-9">
+						<%%COMBO(hubcaps)%%>
+					</div>
+				</div>
+
+				<!-- Field: Sparewheel: -->
+				<div class="form-group vehicle_daily_check_list-sparewheel">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Sparewheel:</label>
+					<div class="col-lg-9">
+						<%%COMBO(sparewheel)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tools: -->
+				<div class="form-group vehicle_daily_check_list-tools">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Tools:</label>
+					<div class="col-lg-9">
+						<%%COMBO(tools)%%>
+					</div>
+				</div>
+
+				<!-- Field: Engine Oil: -->
+				<div class="form-group vehicle_daily_check_list-engine_oil">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Engine Oil:</label>
+					<div class="col-lg-9">
+						<%%COMBO(engine_oil)%%>
+					</div>
+				</div>
+
+				<!-- Field: Power Wheel Steering Oil: -->
+				<div class="form-group vehicle_daily_check_list-power_steering_oil">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Power Wheel Steering Oil:</label>
+					<div class="col-lg-9">
+						<%%COMBO(power_steering_oil)%%>
+					</div>
+				</div>
+
+				<!-- Field: Gearbox Oil: -->
+				<div class="form-group vehicle_daily_check_list-gearbox_oil">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Gearbox Oil:</label>
+					<div class="col-lg-9">
+						<%%COMBO(gearbox_oil)%%>
+					</div>
+				</div>
+
+				<!-- Field: Coolant Level: -->
+				<div class="form-group vehicle_daily_check_list-coolant">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Coolant Level:</label>
+					<div class="col-lg-9">
+						<%%COMBO(coolant)%%>
+					</div>
+				</div>
+
+				<!-- Field: Brake oil -->
+				<div class="form-group vehicle_daily_check_list-brake_oil">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Brake oil</label>
+					<div class="col-lg-9">
+						<%%COMBO(brake_oil)%%>
+					</div>
+				</div>
+
+				<!-- Field: Battery: -->
+				<div class="form-group vehicle_daily_check_list-battery">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Battery:</label>
+					<div class="col-lg-9">
+						<%%COMBO(battery)%%>
+					</div>
+				</div>
+
+				<!-- Field: Brakes Front: -->
+				<div class="form-group vehicle_daily_check_list-brakes_front">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Brakes Front:</label>
+					<div class="col-lg-9">
+						<%%COMBO(brakes_front)%%>
+					</div>
+				</div>
+
+				<!-- Field: Brakes Rear: -->
+				<div class="form-group vehicle_daily_check_list-brakes_rear">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Brakes Rear:</label>
+					<div class="col-lg-9">
+						<%%COMBO(brakes_rear)%%>
+					</div>
+				</div>
+
+				<!-- Field: Fuel Level: -->
+				<div class="form-group vehicle_daily_check_list-fuel_level">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Fuel Level:</label>
+					<div class="col-lg-9">
+						<%%COMBO(fuel_level)%%>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Fluid Leaks -->
+				<div class="form-group vehicle_daily_check_list-vehicle_fluid_leaks">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Vehicle Fluid Leaks</label>
+					<div class="col-lg-9">
+						<%%COMBO(vehicle_fluid_leaks)%%>
+					</div>
+				</div>
+
+				<!-- Field: Note: -->
+				<div class="form-group vehicle_daily_check_list-note">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="note">Note:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(note)%%>
+					</div>
+				</div>
+
+				<!-- Field: Document Check List Report: -->
+				<div class="form-group vehicle_daily_check_list-document_checklist_report">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Document Check List Report: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#document_checklist_report-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="document_checklist_report-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5120 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="document_checklist_report-link" href="link.php?t=vehicle_daily_check_list&f=document_checklist_report&i=<%%VALUE(vehicle_daily_check_list_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(document_checklist_report)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(document_checklist_report)%%>
+								<%%REMOVEFILE(document_checklist_report)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_document_checklist_report = '<%%VALUE(document_checklist_report)%%>'; if(e_document_checklist_report == '' || e_document_checklist_report == '&nbsp;' || e_document_checklist_report == 'blank.gif') jQuery('#document_checklist_report-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Next Inspection Date: -->
+				<div class="form-group vehicle_daily_check_list-next_inspection_date">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="next_inspection_date-dd">Next Inspection Date:</label>
+					<div class="col-lg-9">
+						<%%COMBO(next_inspection_date)%%>
+					</div>
+				</div>
+
+				<!-- Field: Driver's Surname: -->
+				<div class="form-group vehicle_daily_check_list-drivers_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="drivers_surname" data-parent_link="view_parent_modal">Driver's Surname:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(drivers_surname)%%><%%PLINK(drivers_surname)%%><%%ADDNEW(driver)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Driver's Persal Number: -->
+				<div class="form-group vehicle_daily_check_list-drivers_persal_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver's Persal Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="drivers_persal_number"></div>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="vehicle_daily_check_list_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="vehicle_daily_check_list-children" class="children-tabs">
+				<div class="text-center"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+			</div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			AppGini.once({
+				condition: function() { return bkLib != undefined; },
+				action: function() {
+					if($j('textarea#note').length) new nicEditor({ fullPanel : true }).panelInstance('note');
+				}
+			});
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			$j('#vehicle_daily_check_list_dv_container-loading').addClass('hidden');
+			$j('#vehicle_daily_check_list_dv_container').removeClass('hidden');
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) AppGini.focusFormElement('vehicle_daily_check_list', 'inspection_certification_number');
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			// try to detect rich text changes by adding 'input' handler after nicedit is loaded ...
+			AppGini.detectContentEditableChanges();
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+			if(embedded_mode) {
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function() {
+					$j('a[href]:not([href^="#"]):not([href^="javascript"]):not([href$="Embedded=1"]):not([href*="link.php?t="]):not([href^="mailto:"]):not([href$=".jpg"]):not([href$=".png"]):not([href$=".gif"])').each(
+						function() {
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode) {
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			} else {
+				post(
+					'parent-children.php', {
+						ParentTable: 'vehicle_daily_check_list',
+						SelectedID: '<%%VALUE(vehicle_daily_check_list_id)%%>',
+						Operation: 'show-children'
+					},
+					'vehicle_daily_check_list-children'
+				);
+			}
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'vehicle_daily_check_list',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=vehicle_daily_check_list&id=<%%URLVALUE(vehicle_daily_check_list_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=vehicle_daily_check_list&id=<%%URLVALUE(vehicle_daily_check_list_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

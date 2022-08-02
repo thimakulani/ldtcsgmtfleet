@@ -1,0 +1,9 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the month_init() hook (in hooks/month.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="month-month_id-<%%VALUE(month_id)%%>" class="month-month_id text-right"><%%VALUE(month_id)%%></td>
+		<td id="month-month-<%%VALUE(month_id)%%>" class="month-month"><%%VALUE(month)%%></td>

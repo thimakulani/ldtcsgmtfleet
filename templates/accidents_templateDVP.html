@@ -1,0 +1,262 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Accident ID: -->
+		<div class="form-group accidents-accident_id" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Accident ID:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(accident_id)%%></div>
+			</div>
+		</div>
+		<!-- Field: Registration Number: -->
+		<div class="form-group accidents-vehicle_registration_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Registration Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="vehicle_registration_number<%%RND1%%>"><%%COMBOTEXT(vehicle_registration_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Closing KM: -->
+		<div class="form-group accidents-closing_km" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Closing KM:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="closing_km<%%RND1%%>"><%%COMBOTEXT(closing_km)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Driver's Surname: -->
+		<div class="form-group accidents-drivers_surname" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver's Surname:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="drivers_surname<%%RND1%%>"><%%COMBOTEXT(drivers_surname)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Driver's Contact Details: -->
+		<div class="form-group accidents-drivers_contact_details" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver's Contact Details:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="drivers_contact_details<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Make of Vehicle/Dealer Name: -->
+		<div class="form-group accidents-dealer_name" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Make of Vehicle/Dealer Name:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="dealer_name<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Model of Vehicle: -->
+		<div class="form-group accidents-model_of_vehicle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Model of Vehicle:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="model_of_vehicle<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Date of Accident: -->
+		<div class="form-group accidents-date_of_accident" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Date of Accident:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(date_of_accident)%%></div>
+			</div>
+		</div>
+		<!-- Field: Z181 Accident Form: -->
+		<div class="form-group accidents-z181_accident_form" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Z181 Accident Form:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(z181_accident_form)%%></div>
+			</div>
+		</div>
+		<!-- Field: Z181 Accident Form Uploaded: -->
+		<div class="form-group accidents-z181_accident_form_uploaded" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Z181 Accident Form Uploaded:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="z181_accident_form_uploaded-link" href="link.php?t=accidents&f=z181_accident_form_uploaded&i=<%%VALUE(accident_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(z181_accident_form_uploaded)%%>"></i></a><script>jQuery(function() { var e_z181_accident_form_uploaded = '<%%VALUE(z181_accident_form_uploaded)%%>'; if(e_z181_accident_form_uploaded == '' || e_z181_accident_form_uploaded == '&nbsp;' || e_z181_accident_form_uploaded == 'blank.gif') jQuery('#z181_accident_form_uploaded-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Copy of Trip Authority: -->
+		<div class="form-group accidents-copy_of_trip_authority" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Copy of Trip Authority:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="copy_of_trip_authority-link" href="link.php?t=accidents&f=copy_of_trip_authority&i=<%%VALUE(accident_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(copy_of_trip_authority)%%>"></i></a><script>jQuery(function() { var e_copy_of_trip_authority = '<%%VALUE(copy_of_trip_authority)%%>'; if(e_copy_of_trip_authority == '' || e_copy_of_trip_authority == '&nbsp;' || e_copy_of_trip_authority == 'blank.gif') jQuery('#copy_of_trip_authority-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: District: -->
+		<div class="form-group accidents-district" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">District:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="district<%%RND1%%>"><%%COMBOTEXT(district)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Station: -->
+		<div class="form-group accidents-location" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Station:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="location<%%RND1%%>"></span></div>
+			</div>
+		</div>
+		<!-- Field: Road or Street Name: -->
+		<div class="form-group accidents-road_or_street" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Road or Street Name:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(road_or_street)%%></div>
+			</div>
+		</div>
+		<!-- Field: Coordinates: -->
+		<div class="form-group accidents-coordinates" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Coordinates:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(coordinates)%%></div>
+			</div>
+		</div>
+		<!-- Field: Deaths: -->
+		<div class="form-group accidents-deaths" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Deaths:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(deaths)%%></div>
+			</div>
+		</div>
+		<!-- Field: Fatal Amount: -->
+		<div class="form-group accidents-fatal_amount" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Fatal Amount:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(fatal_amount)%%></div>
+			</div>
+		</div>
+		<!-- Field: Injured: -->
+		<div class="form-group accidents-injured" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Injured:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(injured)%%></div>
+			</div>
+		</div>
+		<!-- Field: Injured Amount: -->
+		<div class="form-group accidents-injured_amount" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Injured Amount:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(injured_amount)%%></div>
+			</div>
+		</div>
+		<!-- Field: Description of Accident: -->
+		<div class="form-group accidents-description_of_accident" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Description of Accident:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(description_of_accident)%%></div>
+			</div>
+		</div>
+		<!-- Field: Insured ?: -->
+		<div class="form-group accidents-insured" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Insured ?:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(insured)%%></div>
+			</div>
+		</div>
+		<!-- Field: Upload Photos of Damaged Vehicle: -->
+		<div class="form-group accidents-upload_photos_damaged_vehicle" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Upload Photos of Damaged Vehicle:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static">
+<img src="<%%BASE_UPLOAD_PATH%%><%%VALUE(upload_photos_damaged_vehicle)%%>" class="img-responsive img-thumbnail">
+</div>
+			</div>
+		</div>
+		<!-- Field: Copy of Sketch Plan: -->
+		<div class="form-group accidents-copy_of_sketch_plan" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Copy of Sketch Plan:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="copy_of_sketch_plan-link" href="link.php?t=accidents&f=copy_of_sketch_plan&i=<%%VALUE(accident_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-picture" title="<%%VALUE(copy_of_sketch_plan)%%>"></i></a><script>jQuery(function() { var e_copy_of_sketch_plan = '<%%VALUE(copy_of_sketch_plan)%%>'; if(e_copy_of_sketch_plan == '' || e_copy_of_sketch_plan == '&nbsp;' || e_copy_of_sketch_plan == 'blank.gif') jQuery('#copy_of_sketch_plan-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Driver Accident Report/Statement: -->
+		<div class="form-group accidents-accident_report_driver" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Driver Accident Report/Statement:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="accident_report_driver-link" href="link.php?t=accidents&f=accident_report_driver&i=<%%VALUE(accident_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(accident_report_driver)%%>"></i></a><script>jQuery(function() { var e_accident_report_driver = '<%%VALUE(accident_report_driver)%%>'; if(e_accident_report_driver == '' || e_accident_report_driver == '&nbsp;' || e_accident_report_driver == 'blank.gif') jQuery('#accident_report_driver-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Supervisor Accident Report/Statement: -->
+		<div class="form-group accidents-accident_report_supervisior" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Supervisor Accident Report/Statement:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="accident_report_supervisior-link" href="link.php?t=accidents&f=accident_report_supervisior&i=<%%VALUE(accident_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(accident_report_supervisior)%%>"></i></a><script>jQuery(function() { var e_accident_report_supervisior = '<%%VALUE(accident_report_supervisior)%%>'; if(e_accident_report_supervisior == '' || e_accident_report_supervisior == '&nbsp;' || e_accident_report_supervisior == 'blank.gif') jQuery('#accident_report_supervisior-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Claims Report by Accident Committee: -->
+		<div class="form-group accidents-claims_report_accident_committee" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Claims Report by Accident Committee:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="claims_report_accident_committee-link" href="link.php?t=accidents&f=claims_report_accident_committee&i=<%%VALUE(accident_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(claims_report_accident_committee)%%>"></i></a><script>jQuery(function() { var e_claims_report_accident_committee = '<%%VALUE(claims_report_accident_committee)%%>'; if(e_claims_report_accident_committee == '' || e_claims_report_accident_committee == '&nbsp;' || e_claims_report_accident_committee == 'blank.gif') jQuery('#claims_report_accident_committee-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Insurance Claims Report: -->
+		<div class="form-group accidents-insurance_claims_report" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Insurance Claims Report:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="insurance_claims_report-link" href="link.php?t=accidents&f=insurance_claims_report&i=<%%VALUE(accident_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(insurance_claims_report)%%>"></i></a><script>jQuery(function() { var e_insurance_claims_report = '<%%VALUE(insurance_claims_report)%%>'; if(e_insurance_claims_report == '' || e_insurance_claims_report == '&nbsp;' || e_insurance_claims_report == 'blank.gif') jQuery('#insurance_claims_report-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Amount Paid: -->
+		<div class="form-group accidents-amount_paid" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Amount Paid:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(amount_paid)%%></div>
+			</div>
+		</div>
+		<!-- Field: Police Officer: -->
+		<div class="form-group accidents-police_officer" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Police Officer:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(police_officer)%%></div>
+			</div>
+		</div>
+		<!-- Field: Contact Details: -->
+		<div class="form-group accidents-contact_details" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Contact Details:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(contact_details)%%></div>
+			</div>
+		</div>
+		<!-- Field: Case Number: -->
+		<div class="form-group accidents-case_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Case Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(case_number)%%></div>
+			</div>
+		</div>
+		<!-- Field: Police Report: -->
+		<div class="form-group accidents-police_report" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Police Report:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="police_report-link" href="link.php?t=accidents&f=police_report&i=<%%VALUE(accident_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(police_report)%%>"></i></a><script>jQuery(function() { var e_police_report = '<%%VALUE(police_report)%%>'; if(e_police_report == '' || e_police_report == '&nbsp;' || e_police_report == 'blank.gif') jQuery('#police_report-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Accident Report Number: -->
+		<div class="form-group accidents-accident_report_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Accident Report Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(accident_report_number)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>

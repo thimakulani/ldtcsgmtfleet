@@ -1,0 +1,745 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/vehicle_return_check_list-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="vehicle_return_check_list_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="vehicle_return_check_list_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="vehicle_return_check_list_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Vehicle Return  Check List ID: -->
+				<div class="form-group vehicle_return_check_list-vehicle_return_check_list_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_return_check_list_id">Vehicle Return  Check List ID:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="vehicle_return_check_list_id"><%%VALUE(vehicle_return_check_list_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Return Date: -->
+				<div class="form-group vehicle_return_check_list-vehicle_return_date">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_return_date-dd">Vehicle Return Date:</label>
+					<div class="col-lg-9">
+						<%%COMBO(vehicle_return_date)%%>
+					</div>
+				</div>
+
+				<!-- Field: Job Card Number: -->
+				<div class="form-group vehicle_return_check_list-job_card_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="job_card_number">Job Card Number:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="job_card_number" id="job_card_number" value="<%%VALUE(job_card_number)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Registration Number: -->
+				<div class="form-group vehicle_return_check_list-vehicle_registration_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_registration_number" data-parent_link="view_parent_modal">Vehicle Registration Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(vehicle_registration_number)%%><%%PLINK(vehicle_registration_number)%%><%%ADDNEW(gmt_fleet_register)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Make of Vehicle: -->
+				<div class="form-group vehicle_return_check_list-make_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Make of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="make_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Model of Vehicle: -->
+				<div class="form-group vehicle_return_check_list-model_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Model of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="model_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Odometer Reading/Closing KM: -->
+				<div class="form-group vehicle_return_check_list-closing_km">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="closing_km" data-parent_link="view_parent_modal">Odometer Reading/Closing KM:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(closing_km)%%><%%PLINK(closing_km)%%><%%ADDNEW(log_sheet)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Radio/DVD Combination: -->
+				<div class="form-group vehicle_return_check_list-radio_dvd_combination">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Radio/DVD Combination:</label>
+					<div class="col-lg-9">
+						<%%COMBO(radio_dvd_combination)%%>
+					</div>
+				</div>
+
+				<!-- Field: Number of Keys Handling Over: -->
+				<div class="form-group vehicle_return_check_list-number_of_keys_handling_over">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="number_of_keys_handling_over">Number of Keys Handling Over:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="number_of_keys_handling_over" id="number_of_keys_handling_over" value="<%%VALUE(number_of_keys_handling_over)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Jack with Handle: -->
+				<div class="form-group vehicle_return_check_list-jack_with_handle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="jack_with_handle">Jack with Handle:</label>
+					<div class="col-lg-9">
+						<%%COMBO(jack_with_handle)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tyre Spare (Available): -->
+				<div class="form-group vehicle_return_check_list-tyre_spare">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Tyre Spare (Available):</label>
+					<div class="col-lg-9">
+						<%%COMBO(tyre_spare)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tyre Spare (Thread Condition): -->
+				<div class="form-group vehicle_return_check_list-tyre_spare_condition">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="tyre_spare_condition">Tyre Spare (Thread Condition):</label>
+					<div class="col-lg-9">
+						<%%COMBO(tyre_spare_condition)%%>
+					</div>
+				</div>
+
+				<!-- Field: Wheel Spanner: -->
+				<div class="form-group vehicle_return_check_list-wheel_spanner">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Wheel Spanner:</label>
+					<div class="col-lg-9">
+						<%%COMBO(wheel_spanner)%%>
+					</div>
+				</div>
+
+				<!-- Field: Wheel Hub Cups (Available): -->
+				<div class="form-group vehicle_return_check_list-wheel_cups">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="wheel_cups">Wheel Hub Cups (Available):</label>
+					<div class="col-lg-9">
+						<%%COMBO(wheel_cups)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tri Angles Available: -->
+				<div class="form-group vehicle_return_check_list-tri_angles">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Tri Angles Available:</label>
+					<div class="col-lg-9">
+						<%%COMBO(tri_angles)%%>
+					</div>
+				</div>
+
+				<!-- Field: Other (specify): -->
+				<div class="form-group vehicle_return_check_list-other">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="other">Other (specify):</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(other)%%>
+					</div>
+				</div>
+
+				<!-- Field: Number of Keys Handed Over: -->
+				<div class="form-group vehicle_return_check_list-number_of_keys">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="number_of_keys">Number of Keys Handed Over:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="number_of_keys" id="number_of_keys" value="<%%VALUE(number_of_keys)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Washed: -->
+				<div class="form-group vehicle_return_check_list-vehicle_washed">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Vehicle Washed:</label>
+					<div class="col-lg-9">
+						<%%COMBO(vehicle_washed)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tyre R/F (Available): -->
+				<div class="form-group vehicle_return_check_list-tyre_r_f">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Tyre R/F (Available):</label>
+					<div class="col-lg-9">
+						<%%COMBO(tyre_r_f)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tyre R/F (Thread Condition): -->
+				<div class="form-group vehicle_return_check_list-tyre_r_f_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="tyre_r_f_1">Tyre R/F (Thread Condition):</label>
+					<div class="col-lg-9">
+						<%%COMBO(tyre_r_f_1)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tyre R/F Brand: -->
+				<div class="form-group vehicle_return_check_list-tyre_r_f_1_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="tyre_r_f_1_1">Tyre R/F Brand:</label>
+					<div class="col-lg-9">
+						<textarea class="form-control" name="tyre_r_f_1_1" id="tyre_r_f_1_1" rows=" 2"><%%VALUE(tyre_r_f_1_1)%%></textarea>
+					</div>
+				</div>
+
+				<!-- Field: Tyre R/R (Available): -->
+				<div class="form-group vehicle_return_check_list-tyre_r_r">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Tyre R/R (Available):</label>
+					<div class="col-lg-9">
+						<%%COMBO(tyre_r_r)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tyre R/R (Available): -->
+				<div class="form-group vehicle_return_check_list-tyre_r_r_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Tyre R/R (Available):</label>
+					<div class="col-lg-9">
+						<%%COMBO(tyre_r_r_1)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tyre R/F Brand: -->
+				<div class="form-group vehicle_return_check_list-tyre_r_r_1_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="tyre_r_r_1_1">Tyre R/F Brand:</label>
+					<div class="col-lg-9">
+						<textarea class="form-control" name="tyre_r_r_1_1" id="tyre_r_r_1_1" rows=" 2"><%%VALUE(tyre_r_r_1_1)%%></textarea>
+					</div>
+				</div>
+
+				<!-- Field: Tyre L/F (Available): -->
+				<div class="form-group vehicle_return_check_list-tyre_l_f">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Tyre L/F (Available):</label>
+					<div class="col-lg-9">
+						<%%COMBO(tyre_l_f)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tyre L/F (Thread Condition): -->
+				<div class="form-group vehicle_return_check_list-tyre_l_f_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="tyre_l_f_1">Tyre L/F (Thread Condition):</label>
+					<div class="col-lg-9">
+						<%%COMBO(tyre_l_f_1)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tyre R/F Brand: -->
+				<div class="form-group vehicle_return_check_list-tyre_l_f_1_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="tyre_l_f_1_1">Tyre R/F Brand:</label>
+					<div class="col-lg-9">
+						<textarea class="form-control" name="tyre_l_f_1_1" id="tyre_l_f_1_1" rows=" 2"><%%VALUE(tyre_l_f_1_1)%%></textarea>
+					</div>
+				</div>
+
+				<!-- Field: Tyre L/R (Available): -->
+				<div class="form-group vehicle_return_check_list-tyer_l_r">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Tyre L/R (Available):</label>
+					<div class="col-lg-9">
+						<%%COMBO(tyer_l_r)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tyre L/R (Thread Condition): -->
+				<div class="form-group vehicle_return_check_list-tyer_l_r_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="tyer_l_r_1">Tyre L/R (Thread Condition):</label>
+					<div class="col-lg-9">
+						<%%COMBO(tyer_l_r_1)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tyre R/F Brand: -->
+				<div class="form-group vehicle_return_check_list-tyre_l_r_1_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="tyre_l_r_1_1">Tyre R/F Brand:</label>
+					<div class="col-lg-9">
+						<textarea class="form-control" name="tyre_l_r_1_1" id="tyre_l_r_1_1" rows=" 2"><%%VALUE(tyre_l_r_1_1)%%></textarea>
+					</div>
+				</div>
+
+				<!-- Field: Fuel Gauge Amount: -->
+				<div class="form-group vehicle_return_check_list-fuel_gauge_amount">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Fuel Gauge Amount:</label>
+					<div class="col-lg-9">
+						<%%COMBO(fuel_gauge_amount)%%>
+					</div>
+				</div>
+
+				<!-- Field: Driver Name & Surname: -->
+				<div class="form-group vehicle_return_check_list-driver_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="driver_name_and_surname" data-parent_link="view_parent_modal">Driver Name & Surname: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#driver_name_and_surname-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="driver_name_and_surname-description"><div class="alert alert-info bspacer-xs">Driver declaration that all of above is correct.</div></span>
+						<div class="lookup-flex"><%%COMBO(driver_name_and_surname)%%><%%PLINK(driver_name_and_surname)%%><%%ADDNEW(driver)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Driver Persal Number: -->
+				<div class="form-group vehicle_return_check_list-driver_persal_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver Persal Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="driver_persal_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Driver Signature: -->
+				<div class="form-group vehicle_return_check_list-driver_signature">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver Signature: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#driver_signature-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="driver_signature-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 500 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="thumbnail.php?i=<%%VALUE(driver_signature)%%>&t=vehicle_return_check_list&f=driver_signature&v=dv" class="img-thumbnail" id="driver_signature-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(driver_signature)%%>
+								<%%REMOVEFILE(driver_signature)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Declaration Date & Time: -->
+				<div class="form-group vehicle_return_check_list-vehicle_return_date_signed">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_return_date_signed">Declaration Date & Time: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#vehicle_return_date_signed-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="vehicle_return_date_signed-description"><div class="alert alert-info bspacer-xs">Time when driver checked in at the Government Garage with vehicle for modification, repairs or service.</div></span>
+						<div class="input-group date datetimepicker"><input type="text" class="form-control" name="vehicle_return_date_signed" id="vehicle_return_date_signed" value="<%%VALUE(vehicle_return_date_signed)%%>"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div>
+					</div>
+				</div>
+
+				<!-- Field: Testing Officer/Tradesman Aid Name & Surname: -->
+				<div class="form-group vehicle_return_check_list-testing_officer_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="testing_officer_name_and_surname">Testing Officer/Tradesman Aid Name & Surname: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#testing_officer_name_and_surname-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="testing_officer_name_and_surname-description"><div class="alert alert-info bspacer-xs">Testing Officer/Tradesman Aid declaration that all of above is correctly received when checking in.</div></span>
+						<input maxlength="40" type="text" class="form-control" name="testing_officer_name_and_surname" id="testing_officer_name_and_surname" value="<%%VALUE(testing_officer_name_and_surname)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Testing Officer/Tradesman Aid Signature: -->
+				<div class="form-group vehicle_return_check_list-testing_officer_signature">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Testing Officer/Tradesman Aid Signature: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#testing_officer_signature-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="testing_officer_signature-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 500 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="thumbnail.php?i=<%%VALUE(testing_officer_signature)%%>&t=vehicle_return_check_list&f=testing_officer_signature&v=dv" class="img-thumbnail" id="testing_officer_signature-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(testing_officer_signature)%%>
+								<%%REMOVEFILE(testing_officer_signature)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Marks (1): -->
+				<div class="form-group vehicle_return_check_list-vehicle_marks_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Vehicle Marks (1): <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#vehicle_marks_1-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="vehicle_marks_1-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5096 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a href="<%%BASE_UPLOAD_PATH%%><%%VALUE(vehicle_marks_1)%%>" data-lightbox="vehicle_return_check_list_dv"><img src="thumbnail.php?i=<%%VALUE(vehicle_marks_1)%%>&t=vehicle_return_check_list&f=vehicle_marks_1&v=dv" class="img-thumbnail" id="vehicle_marks_1-image"></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(vehicle_marks_1)%%>
+								<%%REMOVEFILE(vehicle_marks_1)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>/* disable links to empty images */ $j(function() { var e_vehicle_marks_1 = '<%%VALUE(vehicle_marks_1)%%>'; if(e_vehicle_marks_1 == '' || e_vehicle_marks_1 == '&nbsp;' || e_vehicle_marks_1 == 'blank.gif') { $j('#vehicle_marks_1-link').hide(); $j('#vehicle_marks_1-image').parents('a').attr('href', '').on('click', function(e) { e.preventDefault(); }); } });</script>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Marks(2): -->
+				<div class="form-group vehicle_return_check_list-vehicle_marks_2">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Vehicle Marks(2): <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#vehicle_marks_2-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="vehicle_marks_2-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5096 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a href="<%%BASE_UPLOAD_PATH%%><%%VALUE(vehicle_marks_2)%%>" data-lightbox="vehicle_return_check_list_dv"><img src="thumbnail.php?i=<%%VALUE(vehicle_marks_2)%%>&t=vehicle_return_check_list&f=vehicle_marks_2&v=dv" class="img-thumbnail" id="vehicle_marks_2-image"></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(vehicle_marks_2)%%>
+								<%%REMOVEFILE(vehicle_marks_2)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>/* disable links to empty images */ $j(function() { var e_vehicle_marks_2 = '<%%VALUE(vehicle_marks_2)%%>'; if(e_vehicle_marks_2 == '' || e_vehicle_marks_2 == '&nbsp;' || e_vehicle_marks_2 == 'blank.gif') { $j('#vehicle_marks_2-link').hide(); $j('#vehicle_marks_2-image').parents('a').attr('href', '').on('click', function(e) { e.preventDefault(); }); } });</script>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Marks(3): -->
+				<div class="form-group vehicle_return_check_list-vehicle_marks_3">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Vehicle Marks(3): <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#vehicle_marks_3-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="vehicle_marks_3-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5096 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a href="<%%BASE_UPLOAD_PATH%%><%%VALUE(vehicle_marks_3)%%>" data-lightbox="vehicle_return_check_list_dv"><img src="thumbnail.php?i=<%%VALUE(vehicle_marks_3)%%>&t=vehicle_return_check_list&f=vehicle_marks_3&v=dv" class="img-thumbnail" id="vehicle_marks_3-image"></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(vehicle_marks_3)%%>
+								<%%REMOVEFILE(vehicle_marks_3)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>/* disable links to empty images */ $j(function() { var e_vehicle_marks_3 = '<%%VALUE(vehicle_marks_3)%%>'; if(e_vehicle_marks_3 == '' || e_vehicle_marks_3 == '&nbsp;' || e_vehicle_marks_3 == 'blank.gif') { $j('#vehicle_marks_3-link').hide(); $j('#vehicle_marks_3-image').parents('a').attr('href', '').on('click', function(e) { e.preventDefault(); }); } });</script>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Marks(4): -->
+				<div class="form-group vehicle_return_check_list-vehicle_marks_4">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Vehicle Marks(4): <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#vehicle_marks_4-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="vehicle_marks_4-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5096 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a href="<%%BASE_UPLOAD_PATH%%><%%VALUE(vehicle_marks_4)%%>" data-lightbox="vehicle_return_check_list_dv"><img src="thumbnail.php?i=<%%VALUE(vehicle_marks_4)%%>&t=vehicle_return_check_list&f=vehicle_marks_4&v=dv" class="img-thumbnail" id="vehicle_marks_4-image"></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(vehicle_marks_4)%%>
+								<%%REMOVEFILE(vehicle_marks_4)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>/* disable links to empty images */ $j(function() { var e_vehicle_marks_4 = '<%%VALUE(vehicle_marks_4)%%>'; if(e_vehicle_marks_4 == '' || e_vehicle_marks_4 == '&nbsp;' || e_vehicle_marks_4 == 'blank.gif') { $j('#vehicle_marks_4-link').hide(); $j('#vehicle_marks_4-image').parents('a').attr('href', '').on('click', function(e) { e.preventDefault(); }); } });</script>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Marks(5): -->
+				<div class="form-group vehicle_return_check_list-vehicle_marks_5">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Vehicle Marks(5): <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#vehicle_marks_5-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="vehicle_marks_5-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5096 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a href="<%%BASE_UPLOAD_PATH%%><%%VALUE(vehicle_marks_5)%%>" data-lightbox="vehicle_return_check_list_dv"><img src="thumbnail.php?i=<%%VALUE(vehicle_marks_5)%%>&t=vehicle_return_check_list&f=vehicle_marks_5&v=dv" class="img-thumbnail" id="vehicle_marks_5-image"></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(vehicle_marks_5)%%>
+								<%%REMOVEFILE(vehicle_marks_5)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>/* disable links to empty images */ $j(function() { var e_vehicle_marks_5 = '<%%VALUE(vehicle_marks_5)%%>'; if(e_vehicle_marks_5 == '' || e_vehicle_marks_5 == '&nbsp;' || e_vehicle_marks_5 == 'blank.gif') { $j('#vehicle_marks_5-link').hide(); $j('#vehicle_marks_5-image').parents('a').attr('href', '').on('click', function(e) { e.preventDefault(); }); } });</script>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Marks(6): -->
+				<div class="form-group vehicle_return_check_list-vehicle_marks_6">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Vehicle Marks(6): <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#vehicle_marks_6-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="vehicle_marks_6-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5096 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a href="<%%BASE_UPLOAD_PATH%%><%%VALUE(vehicle_marks_6)%%>" data-lightbox="vehicle_return_check_list_dv"><img src="thumbnail.php?i=<%%VALUE(vehicle_marks_6)%%>&t=vehicle_return_check_list&f=vehicle_marks_6&v=dv" class="img-thumbnail" id="vehicle_marks_6-image"></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(vehicle_marks_6)%%>
+								<%%REMOVEFILE(vehicle_marks_6)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>/* disable links to empty images */ $j(function() { var e_vehicle_marks_6 = '<%%VALUE(vehicle_marks_6)%%>'; if(e_vehicle_marks_6 == '' || e_vehicle_marks_6 == '&nbsp;' || e_vehicle_marks_6 == 'blank.gif') { $j('#vehicle_marks_6-link').hide(); $j('#vehicle_marks_6-image').parents('a').attr('href', '').on('click', function(e) { e.preventDefault(); }); } });</script>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Marks(7): -->
+				<div class="form-group vehicle_return_check_list-vehicle_marks_7">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Vehicle Marks(7): <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#vehicle_marks_7-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="vehicle_marks_7-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5096 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a href="<%%BASE_UPLOAD_PATH%%><%%VALUE(vehicle_marks_7)%%>" data-lightbox="vehicle_return_check_list_dv"><img src="thumbnail.php?i=<%%VALUE(vehicle_marks_7)%%>&t=vehicle_return_check_list&f=vehicle_marks_7&v=dv" class="img-thumbnail" id="vehicle_marks_7-image"></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(vehicle_marks_7)%%>
+								<%%REMOVEFILE(vehicle_marks_7)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>/* disable links to empty images */ $j(function() { var e_vehicle_marks_7 = '<%%VALUE(vehicle_marks_7)%%>'; if(e_vehicle_marks_7 == '' || e_vehicle_marks_7 == '&nbsp;' || e_vehicle_marks_7 == 'blank.gif') { $j('#vehicle_marks_7-link').hide(); $j('#vehicle_marks_7-image').parents('a').attr('href', '').on('click', function(e) { e.preventDefault(); }); } });</script>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Marks (8): -->
+				<div class="form-group vehicle_return_check_list-vehicle_marks_8">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Vehicle Marks (8): <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#vehicle_marks_8-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="vehicle_marks_8-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5096 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a href="<%%BASE_UPLOAD_PATH%%><%%VALUE(vehicle_marks_8)%%>" data-lightbox="vehicle_return_check_list_dv"><img src="thumbnail.php?i=<%%VALUE(vehicle_marks_8)%%>&t=vehicle_return_check_list&f=vehicle_marks_8&v=dv" class="img-thumbnail" id="vehicle_marks_8-image"></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(vehicle_marks_8)%%>
+								<%%REMOVEFILE(vehicle_marks_8)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>/* disable links to empty images */ $j(function() { var e_vehicle_marks_8 = '<%%VALUE(vehicle_marks_8)%%>'; if(e_vehicle_marks_8 == '' || e_vehicle_marks_8 == '&nbsp;' || e_vehicle_marks_8 == 'blank.gif') { $j('#vehicle_marks_8-link').hide(); $j('#vehicle_marks_8-image').parents('a').attr('href', '').on('click', function(e) { e.preventDefault(); }); } });</script>
+					</div>
+				</div>
+
+				<!-- Field: Remarks about Vehicle: -->
+				<div class="form-group vehicle_return_check_list-remarks">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="remarks">Remarks about Vehicle:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(remarks)%%>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle  Return List: -->
+				<div class="form-group vehicle_return_check_list-vehicle_return_list">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Vehicle  Return List: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#vehicle_return_list-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="vehicle_return_list-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 2048 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="vehicle_return_list-link" href="link.php?t=vehicle_return_check_list&f=vehicle_return_list&i=<%%VALUE(vehicle_return_check_list_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(vehicle_return_list)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(vehicle_return_list)%%>
+								<%%REMOVEFILE(vehicle_return_list)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_vehicle_return_list = '<%%VALUE(vehicle_return_list)%%>'; if(e_vehicle_return_list == '' || e_vehicle_return_list == '&nbsp;' || e_vehicle_return_list == 'blank.gif') jQuery('#vehicle_return_list-link').hide(); });</script>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="vehicle_return_check_list_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			AppGini.once({
+				condition: function() { return bkLib != undefined; },
+				action: function() {
+					if($j('textarea#other').length) new nicEditor({ fullPanel : true }).panelInstance('other');
+					if($j('textarea#remarks').length) new nicEditor({ fullPanel : true }).panelInstance('remarks');
+				}
+			});
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			$j('#vehicle_return_check_list_dv_container-loading').addClass('hidden');
+			$j('#vehicle_return_check_list_dv_container').removeClass('hidden');
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) AppGini.focusFormElement('vehicle_return_check_list', 'vehicle_return_date');
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			// try to detect rich text changes by adding 'input' handler after nicedit is loaded ...
+			AppGini.detectContentEditableChanges();
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'vehicle_return_check_list',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=vehicle_return_check_list&id=<%%URLVALUE(vehicle_return_check_list_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=vehicle_return_check_list&id=<%%URLVALUE(vehicle_return_check_list_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

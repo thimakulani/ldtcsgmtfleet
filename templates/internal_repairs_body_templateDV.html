@@ -1,0 +1,694 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/internal_repairs_body-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="internal_repairs_body_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="internal_repairs_body_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="internal_repairs_body_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Internal Repair Body ID: -->
+				<div class="form-group internal_repairs_body-internal_repairs_body_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="internal_repairs_body_id">Internal Repair Body ID:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="internal_repairs_body_id"><%%VALUE(internal_repairs_body_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Driver Name & Surname: -->
+				<div class="form-group internal_repairs_body-driver_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="driver_name_and_surname" data-parent_link="view_parent_modal">Driver Name & Surname:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(driver_name_and_surname)%%><%%PLINK(driver_name_and_surname)%%><%%ADDNEW(driver)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Driver Persal Number: -->
+				<div class="form-group internal_repairs_body-driver_persal_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver Persal Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="driver_persal_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Driver Contacts Details: -->
+				<div class="form-group internal_repairs_body-driver_contacts_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver Contacts Details:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="driver_contacts_details"></div>
+					</div>
+				</div>
+
+				<!-- Field: Driver Email Address: -->
+				<div class="form-group internal_repairs_body-driver_email_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver Email Address:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="driver_email_address"></div>
+					</div>
+				</div>
+
+				<!-- Field: Driver License Code: -->
+				<div class="form-group internal_repairs_body-driver_license_code">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver License Code:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="driver_license_code"></div>
+					</div>
+				</div>
+
+				<!-- Field: Driver License Number: -->
+				<div class="form-group internal_repairs_body-driver_license_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver License Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="driver_license_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Driver license Upload: -->
+				<div class="form-group internal_repairs_body-driver_license_upload">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver license Upload: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#driver_license_upload-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="driver_license_upload-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 2048 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="driver_license_upload-link" href="link.php?t=internal_repairs_body&f=driver_license_upload&i=<%%VALUE(internal_repairs_body_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(driver_license_upload)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(driver_license_upload)%%>
+								<%%REMOVEFILE(driver_license_upload)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_driver_license_upload = '<%%VALUE(driver_license_upload)%%>'; if(e_driver_license_upload == '' || e_driver_license_upload == '&nbsp;' || e_driver_license_upload == 'blank.gif') jQuery('#driver_license_upload-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Driver Signature: -->
+				<div class="form-group internal_repairs_body-driver_signature">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver Signature: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#driver_signature-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="driver_signature-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 500 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="thumbnail.php?i=<%%VALUE(driver_signature)%%>&t=internal_repairs_body&f=driver_signature&v=dv" class="img-thumbnail" id="driver_signature-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(driver_signature)%%>
+								<%%REMOVEFILE(driver_signature)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Registration Number: -->
+				<div class="form-group internal_repairs_body-vehicle_registration_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_registration_number" data-parent_link="view_parent_modal">Registration Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(vehicle_registration_number)%%><%%PLINK(vehicle_registration_number)%%><%%ADDNEW(gmt_fleet_register)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Engine Number: -->
+				<div class="form-group internal_repairs_body-engine_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Engine Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="engine_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Make of Vehicle: -->
+				<div class="form-group internal_repairs_body-make_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Make of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="make_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Z181 Accident Form Attached: -->
+				<div class="form-group internal_repairs_body-z181_accident_form">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="z181_accident_form">Z181 Accident Form Attached:</label>
+					<div class="col-lg-9">
+						<%%COMBO(z181_accident_form)%%>
+					</div>
+				</div>
+
+				<!-- Field: Z181 Accident Form Uploaded: -->
+				<div class="form-group internal_repairs_body-z181_accident_form_uploaded">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Z181 Accident Form Uploaded: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#z181_accident_form_uploaded-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="z181_accident_form_uploaded-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5240 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="z181_accident_form_uploaded-link" href="link.php?t=internal_repairs_body&f=z181_accident_form_uploaded&i=<%%VALUE(internal_repairs_body_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(z181_accident_form_uploaded)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(z181_accident_form_uploaded)%%>
+								<%%REMOVEFILE(z181_accident_form_uploaded)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_z181_accident_form_uploaded = '<%%VALUE(z181_accident_form_uploaded)%%>'; if(e_z181_accident_form_uploaded == '' || e_z181_accident_form_uploaded == '&nbsp;' || e_z181_accident_form_uploaded == 'blank.gif') jQuery('#z181_accident_form_uploaded-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Job Card Number: -->
+				<div class="form-group internal_repairs_body-job_card_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="job_card_number" data-parent_link="view_parent_modal">Job Card Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(job_card_number)%%><%%PLINK(job_card_number)%%><%%ADDNEW(reception)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Work Allocation Reference Number: -->
+				<div class="form-group internal_repairs_body-work_allocation_reference_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="work_allocation_reference_number" data-parent_link="view_parent_modal">Work Allocation Reference Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(work_allocation_reference_number)%%><%%PLINK(work_allocation_reference_number)%%><%%ADDNEW(work_allocation)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Artisan Note Of Starting Time: -->
+				<div class="form-group internal_repairs_body-artisan_note_of_starting_time">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="artisan_note_of_starting_time">Artisan Note Of Starting Time:</label>
+					<div class="col-lg-9">
+						<div class="input-group date datetimepicker"><input type="text" class="form-control" name="artisan_note_of_starting_time" id="artisan_note_of_starting_time" value="<%%VALUE(artisan_note_of_starting_time)%%>"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div>
+					</div>
+				</div>
+
+				<!-- Field: Government Garage/Workshop Name: -->
+				<div class="form-group internal_repairs_body-government_garage_name">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="government_garage_name" data-parent_link="view_parent_modal">Government Garage/Workshop Name:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(government_garage_name)%%><%%PLINK(government_garage_name)%%><%%ADDNEW(districts)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Government Garage/Workshop Contact Details: -->
+				<div class="form-group internal_repairs_body-government_garage_contact_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="government_garage_contact_details">Government Garage/Workshop Contact Details:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="government_garage_contact_details" id="government_garage_contact_details" value="<%%VALUE(government_garage_contact_details)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Government Garage/Workshop Address: -->
+				<div class="form-group internal_repairs_body-government_garage_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="government_garage_address">Government Garage/Workshop Address:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(government_garage_address)%%>
+					</div>
+				</div>
+
+				<!-- Field: Government Garage/Workshop Email Address: -->
+				<div class="form-group internal_repairs_body-government_garage_email_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="government_garage_email_address-edit-link">Government Garage/Workshop Email Address:</label>
+					<div class="col-lg-9">
+						<div>
+							<a id="government_garage_email_address-link" href="mailto:<%%VALUE(government_garage_email_address)%%>" target="_blank" class="rspacer-lg"><%%VALUE(government_garage_email_address)%%></a>
+							<label for="government_garage_email_address"><button type="button" id="government_garage_email_address-edit-link" class="btn btn-default vspacer-sm" data-toggle="collapse" data-target="#government_garage_email_address" title="<%%TRANSLATION(Edit)%%>"><i class="glyphicon glyphicon-pencil"></i></button></label>
+							<input maxlength="40" type="text" class="form-control collapse" name="government_garage_email_address" id="government_garage_email_address" value="<%%VALUE(government_garage_email_address)%%>">
+						</div><script>jQuery(function() { var e_government_garage_email_address = '<%%VALUE(government_garage_email_address)%%>'; if(e_government_garage_email_address == '' || e_government_garage_email_address == '&nbsp;' || e_government_garage_email_address == 'blank.gif') jQuery('#government_garage_email_address-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Damages Occured: -->
+				<div class="form-group internal_repairs_body-damages_occured">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="damages_occured">Damages Occured:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(damages_occured)%%>
+					</div>
+				</div>
+
+				<!-- Field: Upload of Internal Damages 1: -->
+				<div class="form-group internal_repairs_body-upload_of_internal_damages_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Upload of Internal Damages 1: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#upload_of_internal_damages_1-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="upload_of_internal_damages_1-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 2048 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="<%%BASE_UPLOAD_PATH%%><%%VALUE(upload_of_internal_damages_1)%%>" class="img-responsive img-thumbnail" id="upload_of_internal_damages_1-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(upload_of_internal_damages_1)%%>
+								<%%REMOVEFILE(upload_of_internal_damages_1)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Upload of Internal Damages 2: -->
+				<div class="form-group internal_repairs_body-upload_of_internal_damages_2">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Upload of Internal Damages 2: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#upload_of_internal_damages_2-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="upload_of_internal_damages_2-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 2048 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="<%%BASE_UPLOAD_PATH%%><%%VALUE(upload_of_internal_damages_2)%%>" class="img-responsive img-thumbnail" id="upload_of_internal_damages_2-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(upload_of_internal_damages_2)%%>
+								<%%REMOVEFILE(upload_of_internal_damages_2)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Upload of Internal Damages 3: -->
+				<div class="form-group internal_repairs_body-upload_of_internal_damages_3">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Upload of Internal Damages 3: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#upload_of_internal_damages_3-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="upload_of_internal_damages_3-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 2048 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="<%%BASE_UPLOAD_PATH%%><%%VALUE(upload_of_internal_damages_3)%%>" class="img-responsive img-thumbnail" id="upload_of_internal_damages_3-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(upload_of_internal_damages_3)%%>
+								<%%REMOVEFILE(upload_of_internal_damages_3)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Upload of Internal Damages 4: -->
+				<div class="form-group internal_repairs_body-upload_of_internal_damages_4">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Upload of Internal Damages 4: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#upload_of_internal_damages_4-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="upload_of_internal_damages_4-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 2048 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="<%%BASE_UPLOAD_PATH%%><%%VALUE(upload_of_internal_damages_4)%%>" class="img-responsive img-thumbnail" id="upload_of_internal_damages_4-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(upload_of_internal_damages_4)%%>
+								<%%REMOVEFILE(upload_of_internal_damages_4)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Head Panel Beating Quotation (R): -->
+				<div class="form-group internal_repairs_body-head_panel_beating_quotation">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="head_panel_beating_quotation">Head Panel Beating Quotation (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="head_panel_beating_quotation" id="head_panel_beating_quotation" value="<%%VALUE(head_panel_beating_quotation)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Head Panel Beating Quotation: -->
+				<div class="form-group internal_repairs_body-head_panel_beating_quotation_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Head Panel Beating Quotation: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#head_panel_beating_quotation_1-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="head_panel_beating_quotation_1-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5120 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="head_panel_beating_quotation_1-link" href="link.php?t=internal_repairs_body&f=head_panel_beating_quotation_1&i=<%%VALUE(internal_repairs_body_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(head_panel_beating_quotation_1)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(head_panel_beating_quotation_1)%%>
+								<%%REMOVEFILE(head_panel_beating_quotation_1)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_head_panel_beating_quotation_1 = '<%%VALUE(head_panel_beating_quotation_1)%%>'; if(e_head_panel_beating_quotation_1 == '' || e_head_panel_beating_quotation_1 == '&nbsp;' || e_head_panel_beating_quotation_1 == 'blank.gif') jQuery('#head_panel_beating_quotation_1-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Head Panel Beating Name: -->
+				<div class="form-group internal_repairs_body-head_panel_beating_name">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="head_panel_beating_name">Head Panel Beating Name:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="head_panel_beating_name" id="head_panel_beating_name" value="<%%VALUE(head_panel_beating_name)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Head Panel Beating Contact Details:  -->
+				<div class="form-group internal_repairs_body-head_panel_beating_contact_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="head_panel_beating_contact_details">Head Panel Beating Contact Details: </label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="head_panel_beating_contact_details" id="head_panel_beating_contact_details" value="<%%VALUE(head_panel_beating_contact_details)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Head Panel Beating Address: -->
+				<div class="form-group internal_repairs_body-head_panel_beating_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="head_panel_beating_address">Head Panel Beating Address:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(head_panel_beating_address)%%>
+					</div>
+				</div>
+
+				<!-- Field: Head Panel Beating Signature: -->
+				<div class="form-group internal_repairs_body-head_panel_beating_signature">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Head Panel Beating Signature: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#head_panel_beating_signature-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="head_panel_beating_signature-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 500 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="thumbnail.php?i=<%%VALUE(head_panel_beating_signature)%%>&t=internal_repairs_body&f=head_panel_beating_signature&v=dv" class="img-thumbnail" id="head_panel_beating_signature-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(head_panel_beating_signature)%%>
+								<%%REMOVEFILE(head_panel_beating_signature)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Private Panel Beating Name: -->
+				<div class="form-group internal_repairs_body-private_panel_beating_name">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="private_panel_beating_name">Private Panel Beating Name:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="private_panel_beating_name" id="private_panel_beating_name" value="<%%VALUE(private_panel_beating_name)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Private Panel Beating Contact Deatils: -->
+				<div class="form-group internal_repairs_body-private_panel_beating_contact_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="private_panel_beating_contact_details">Private Panel Beating Contact Deatils:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="private_panel_beating_contact_details" id="private_panel_beating_contact_details" value="<%%VALUE(private_panel_beating_contact_details)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Private Panel Beating Address: -->
+				<div class="form-group internal_repairs_body-private_panel_beating_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="private_panel_beating_address">Private Panel Beating Address:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(private_panel_beating_address)%%>
+					</div>
+				</div>
+
+				<!-- Field: Private Panel Beating Quotation (R): -->
+				<div class="form-group internal_repairs_body-private_panel_beating_quotation">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="private_panel_beating_quotation">Private Panel Beating Quotation (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="private_panel_beating_quotation" id="private_panel_beating_quotation" value="<%%VALUE(private_panel_beating_quotation)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Private Panel Beating Quotation: -->
+				<div class="form-group internal_repairs_body-private_panel_beating_quotation_2">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Private Panel Beating Quotation: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#private_panel_beating_quotation_2-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="private_panel_beating_quotation_2-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5120 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="private_panel_beating_quotation_2-link" href="link.php?t=internal_repairs_body&f=private_panel_beating_quotation_2&i=<%%VALUE(internal_repairs_body_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(private_panel_beating_quotation_2)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(private_panel_beating_quotation_2)%%>
+								<%%REMOVEFILE(private_panel_beating_quotation_2)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_private_panel_beating_quotation_2 = '<%%VALUE(private_panel_beating_quotation_2)%%>'; if(e_private_panel_beating_quotation_2 == '' || e_private_panel_beating_quotation_2 == '&nbsp;' || e_private_panel_beating_quotation_2 == 'blank.gif') jQuery('#private_panel_beating_quotation_2-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Artisan Completion Time: -->
+				<div class="form-group internal_repairs_body-artisan_note_of_completion_time">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="artisan_note_of_completion_time">Artisan Completion Time:</label>
+					<div class="col-lg-9">
+						<div class="input-group date datetimepicker"><input type="text" class="form-control" name="artisan_note_of_completion_time" id="artisan_note_of_completion_time" value="<%%VALUE(artisan_note_of_completion_time)%%>"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div>
+					</div>
+				</div>
+
+				<!-- Field: Total Labour Hours Spend: -->
+				<div class="form-group internal_repairs_body-total_labour_time">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="total_labour_time">Total Labour Hours Spend:</label>
+					<div class="col-lg-9">
+						<input type="text" class="form-control" name="total_labour_time" id="total_labour_time" value="<%%VALUE(total_labour_time)%%>">
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="internal_repairs_body_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			AppGini.once({
+				condition: function() { return bkLib != undefined; },
+				action: function() {
+					if($j('textarea#government_garage_address').length) new nicEditor({ fullPanel : true }).panelInstance('government_garage_address');
+					if($j('textarea#damages_occured').length) new nicEditor({ fullPanel : true }).panelInstance('damages_occured');
+					if($j('textarea#head_panel_beating_address').length) new nicEditor({ fullPanel : true }).panelInstance('head_panel_beating_address');
+					if($j('textarea#private_panel_beating_address').length) new nicEditor({ fullPanel : true }).panelInstance('private_panel_beating_address');
+				}
+			});
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) {
+				AppGini.once({
+					condition: function() {
+						return $j('.form-group.internal_repairs_body-driver_name_and_surname')
+									.find('.nicEdit-main, .select2-container, input[type=radio]')
+									.length > 0
+								// or read-only DV
+								|| (!$j('#update').length && !$j('#insert').length);
+					},
+					action: function() {
+						$j('#internal_repairs_body_dv_container-loading').addClass('hidden');
+						$j('#internal_repairs_body_dv_container').removeClass('hidden');
+						AppGini.focusFormElement('internal_repairs_body', 'driver_name_and_surname');
+					},
+					timeout:  5000,
+					doActionOnTimeout:  true
+				});
+			} else {
+				$j('#internal_repairs_body_dv_container-loading').addClass('hidden');
+				$j('#internal_repairs_body_dv_container').removeClass('hidden');
+			}
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			// try to detect rich text changes by adding 'input' handler after nicedit is loaded ...
+			AppGini.detectContentEditableChanges();
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'internal_repairs_body',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=internal_repairs_body&id=<%%URLVALUE(internal_repairs_body_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=internal_repairs_body&id=<%%URLVALUE(internal_repairs_body_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

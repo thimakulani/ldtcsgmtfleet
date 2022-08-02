@@ -1,0 +1,9 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the cost_centre_init() hook (in hooks/cost_centre.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="cost_centre-cost_centre_id-<%%VALUE(cost_centre_id)%%>" class="cost_centre-cost_centre_id text-right"><%%SELECT%%><%%VALUE(cost_centre_id)%%><%%ENDSELECT%%></td>
+		<td id="cost_centre-cost_centre-<%%VALUE(cost_centre_id)%%>" class="cost_centre-cost_centre"><%%SELECT%%><%%VALUE(cost_centre)%%><%%ENDSELECT%%></td>

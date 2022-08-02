@@ -1,0 +1,240 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Tyre Log ID: -->
+		<div class="form-group tyre_log_sheet-tyre_log_id" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tyre Log ID:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(tyre_log_id)%%></div>
+			</div>
+		</div>
+		<!-- Field: Registration Number: -->
+		<div class="form-group tyre_log_sheet-vehicle_registration_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Registration Number:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="vehicle_registration_number<%%RND1%%>"><%%COMBOTEXT(vehicle_registration_number)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Tyre Position: -->
+		<div class="form-group tyre_log_sheet-tyre_position" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tyre Position:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(tyre_position)%%></div>
+			</div>
+		</div>
+		<!-- Field: Tyre Tread Condition: -->
+		<div class="form-group tyre_log_sheet-tyre_tread_condition" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tyre Tread Condition:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(tyre_tread_condition)%%></div>
+			</div>
+		</div>
+		<!-- Field: Tyre Brand: -->
+		<div class="form-group tyre_log_sheet-tyre_brand" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tyre Brand:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(tyre_brand)%%></div>
+			</div>
+		</div>
+		<!-- Field: Tyre Model: -->
+		<div class="form-group tyre_log_sheet-tyre_model" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tyre Model:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(tyre_model)%%></div>
+			</div>
+		</div>
+		<!-- Field: Tyre Size (Radial): -->
+		<div class="form-group tyre_log_sheet-tyre_size" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tyre Size (Radial):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(tyre_size)%%></div>
+			</div>
+		</div>
+		<!-- Field: Tyre Pressure (Kpa): -->
+		<div class="form-group tyre_log_sheet-tyre_pressure" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tyre Pressure (Kpa):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(tyre_pressure)%%></div>
+			</div>
+		</div>
+		<!-- Field: Action: -->
+		<div class="form-group tyre_log_sheet-action" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Action:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(action)%%></div>
+			</div>
+		</div>
+		<!-- Field: Warranty: -->
+		<div class="form-group tyre_log_sheet-warranty" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Warranty:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(warranty)%%></div>
+			</div>
+		</div>
+		<!-- Field: Document: -->
+		<div class="form-group tyre_log_sheet-documents" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Document:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="documents-link" href="link.php?t=tyre_log_sheet&f=documents&i=<%%VALUE(tyre_log_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(documents)%%>"></i></a><script>jQuery(function() { var e_documents = '<%%VALUE(documents)%%>'; if(e_documents == '' || e_documents == '&nbsp;' || e_documents == 'blank.gif') jQuery('#documents-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Tyre Tread (mm): -->
+		<div class="form-group tyre_log_sheet-tyre_tread" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tyre Tread (mm):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(tyre_tread)%%></div>
+			</div>
+		</div>
+		<!-- Field: Tyre Maximum Wear: -->
+		<div class="form-group tyre_log_sheet-tyre_maximum_wear" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tyre Maximum Wear:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(tyre_maximum_wear)%%></div>
+			</div>
+		</div>
+		<!-- Field: Inspection Date: -->
+		<div class="form-group tyre_log_sheet-inspection_date" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Inspection Date:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(inspection_date)%%></div>
+			</div>
+		</div>
+		<!-- Field: Tyre Inspection Done By: -->
+		<div class="form-group tyre_log_sheet-tyre_inspection_done_by" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tyre Inspection Done By:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(tyre_inspection_done_by)%%></div>
+			</div>
+		</div>
+		<!-- Field: Tyre Inspection Report: -->
+		<div class="form-group tyre_log_sheet-tyre_inspection_report" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tyre Inspection Report:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="tyre_inspection_report-link" href="link.php?t=tyre_log_sheet&f=tyre_inspection_report&i=<%%VALUE(tyre_log_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(tyre_inspection_report)%%>"></i></a><script>jQuery(function() { var e_tyre_inspection_report = '<%%VALUE(tyre_inspection_report)%%>'; if(e_tyre_inspection_report == '' || e_tyre_inspection_report == '&nbsp;' || e_tyre_inspection_report == 'blank.gif') jQuery('#tyre_inspection_report-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Status -->
+		<div class="form-group tyre_log_sheet-status" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Status</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(status)%%></div>
+			</div>
+		</div>
+		<!-- Field: Opening KM: -->
+		<div class="form-group tyre_log_sheet-opening_km" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Opening KM:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(opening_km)%%></div>
+			</div>
+		</div>
+		<!-- Field: Closing KM: -->
+		<div class="form-group tyre_log_sheet-closing_km" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Closing KM:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(closing_km)%%></div>
+			</div>
+		</div>
+		<!-- Field: Trip Distance (Total KM Covered with Tyre): -->
+		<div class="form-group tyre_log_sheet-total_km" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Trip Distance (Total KM Covered with Tyre):</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(total_km)%%></div>
+			</div>
+		</div>
+		<!-- Field: Comments: -->
+		<div class="form-group tyre_log_sheet-comments" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Comments:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(comments)%%></div>
+			</div>
+		</div>
+		<!-- Field: Tyres Cause Of Accident: -->
+		<div class="form-group tyre_log_sheet-tyres_cause_of_accident" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tyres Cause Of Accident:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(tyres_cause_of_accident)%%></div>
+			</div>
+		</div>
+		<!-- Field: Accident Report: -->
+		<div class="form-group tyre_log_sheet-accident_report" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Accident Report:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="accident_report-link" href="link.php?t=tyre_log_sheet&f=accident_report&i=<%%VALUE(tyre_log_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(accident_report)%%>"></i></a><script>jQuery(function() { var e_accident_report = '<%%VALUE(accident_report)%%>'; if(e_accident_report == '' || e_accident_report == '&nbsp;' || e_accident_report == 'blank.gif') jQuery('#accident_report-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Claims Report: -->
+		<div class="form-group tyre_log_sheet-claims_report" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Claims Report:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="claims_report-link" href="link.php?t=tyre_log_sheet&f=claims_report&i=<%%VALUE(tyre_log_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(claims_report)%%>"></i></a><script>jQuery(function() { var e_claims_report = '<%%VALUE(claims_report)%%>'; if(e_claims_report == '' || e_claims_report == '&nbsp;' || e_claims_report == 'blank.gif') jQuery('#claims_report-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Insurance Claims Report: -->
+		<div class="form-group tyre_log_sheet-insurance_claims_report" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Insurance Claims Report:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="insurance_claims_report-link" href="link.php?t=tyre_log_sheet&f=insurance_claims_report&i=<%%VALUE(tyre_log_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(insurance_claims_report)%%>"></i></a><script>jQuery(function() { var e_insurance_claims_report = '<%%VALUE(insurance_claims_report)%%>'; if(e_insurance_claims_report == '' || e_insurance_claims_report == '&nbsp;' || e_insurance_claims_report == 'blank.gif') jQuery('#insurance_claims_report-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Reminder if Maximum Wear is reached?: -->
+		<div class="form-group tyre_log_sheet-reminder_maximum_wear" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Reminder if Maximum Wear is reached?:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(reminder_maximum_wear)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>
+<!-- child records -->
+<div class="panel-body">
+	<div id="tyre_log_sheet-children"></div>
+</div>
+
+<script>
+	$j(function() {
+		/* prevent loading child records in multiple DVP */
+		if($j('[id=tyre_log_sheet-children]').length > 1) return;
+
+		post(
+			'parent-children.php', {
+				ParentTable: 'tyre_log_sheet',
+				SelectedID: '<%%VALUE(tyre_log_id)%%>',
+				Operation: 'show-children-printable'
+			},
+			'tyre_log_sheet-children',
+			'disable-element',
+			'loading-element',
+			apply_persisting_children
+		);
+
+		$j('form').on('click', '#children-tabs button[data-target]', function() {
+			$j(this).toggleClass('active');
+			persist_expanded_child($j(this).attr('id'));
+		});
+	})
+</script>
+

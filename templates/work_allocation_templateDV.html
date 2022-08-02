@@ -1,0 +1,406 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/work_allocation-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="work_allocation_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="work_allocation_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+				<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="service_schedule_view.php?filterer_work_allocation_reference_number=<%%URLVALUE(work_allocation_id)%%>&<%%EMBEDDED%%>" id="service_schedule_link"><i class="glyphicon glyphicon-calendar"></i> Service Schedule:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="service_schedule_view.php?filterer_work_allocation_reference_number=<%%URLVALUE(work_allocation_id)%%>&<%%EMBEDDED%%>" id="xs_service_schedule_link"><i class="glyphicon glyphicon-calendar"></i> Service Schedule:</a>
+			<input type="hidden" id="service_schedule_hclink" value="service_schedule_view.php?filterer_work_allocation_reference_number=<%%URLVALUE(work_allocation_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="breakdown_services_view.php?filterer_work_allocation_reference_number=<%%URLVALUE(work_allocation_id)%%>&<%%EMBEDDED%%>" id="breakdown_services_link"><i class="glyphicon glyphicon-wrench"></i> Breakdown Services:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="breakdown_services_view.php?filterer_work_allocation_reference_number=<%%URLVALUE(work_allocation_id)%%>&<%%EMBEDDED%%>" id="xs_breakdown_services_link"><i class="glyphicon glyphicon-wrench"></i> Breakdown Services:</a>
+			<input type="hidden" id="breakdown_services_hclink" value="breakdown_services_view.php?filterer_work_allocation_reference_number=<%%URLVALUE(work_allocation_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="inspection_bay_view.php?filterer_work_allocation_reference_number=<%%URLVALUE(work_allocation_id)%%>&<%%EMBEDDED%%>" id="inspection_bay_link"><i class="glyphicon glyphicon-thumbs-up"></i> Inspection Bay:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="inspection_bay_view.php?filterer_work_allocation_reference_number=<%%URLVALUE(work_allocation_id)%%>&<%%EMBEDDED%%>" id="xs_inspection_bay_link"><i class="glyphicon glyphicon-thumbs-up"></i> Inspection Bay:</a>
+			<input type="hidden" id="inspection_bay_hclink" value="inspection_bay_view.php?filterer_work_allocation_reference_number=<%%URLVALUE(work_allocation_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="internal_repairs_mechanical_view.php?filterer_work_allocation_reference_number=<%%URLVALUE(work_allocation_id)%%>&<%%EMBEDDED%%>" id="internal_repairs_mechanical_link"><i class="glyphicon glyphicon-sort-by-order-alt"></i> Internal Repairs Mechanical:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="internal_repairs_mechanical_view.php?filterer_work_allocation_reference_number=<%%URLVALUE(work_allocation_id)%%>&<%%EMBEDDED%%>" id="xs_internal_repairs_mechanical_link"><i class="glyphicon glyphicon-sort-by-order-alt"></i> Internal Repairs Mechanical:</a>
+			<input type="hidden" id="internal_repairs_mechanical_hclink" value="internal_repairs_mechanical_view.php?filterer_work_allocation_reference_number=<%%URLVALUE(work_allocation_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="internal_repairs_body_view.php?filterer_work_allocation_reference_number=<%%URLVALUE(work_allocation_id)%%>&<%%EMBEDDED%%>" id="internal_repairs_body_link"><i class="glyphicon glyphicon-sort-by-alphabet"></i> Internal Repairs Body:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="internal_repairs_body_view.php?filterer_work_allocation_reference_number=<%%URLVALUE(work_allocation_id)%%>&<%%EMBEDDED%%>" id="xs_internal_repairs_body_link"><i class="glyphicon glyphicon-sort-by-alphabet"></i> Internal Repairs Body:</a>
+			<input type="hidden" id="internal_repairs_body_hclink" value="internal_repairs_body_view.php?filterer_work_allocation_reference_number=<%%URLVALUE(work_allocation_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="ordering_of_spares_for_internal_repairs_view.php?filterer_work_allocation_reference_number=<%%URLVALUE(work_allocation_id)%%>&<%%EMBEDDED%%>" id="ordering_of_spares_for_internal_repairs_link"><i class="glyphicon glyphicon-pushpin"></i> Ordering Of Spares For Internal Repairs:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="ordering_of_spares_for_internal_repairs_view.php?filterer_work_allocation_reference_number=<%%URLVALUE(work_allocation_id)%%>&<%%EMBEDDED%%>" id="xs_ordering_of_spares_for_internal_repairs_link"><i class="glyphicon glyphicon-pushpin"></i> Ordering Of Spares For Internal Repairs:</a>
+			<input type="hidden" id="ordering_of_spares_for_internal_repairs_hclink" value="ordering_of_spares_for_internal_repairs_view.php?filterer_work_allocation_reference_number=<%%URLVALUE(work_allocation_id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="work_allocation_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Work Allocation ID: -->
+				<div class="form-group work_allocation-work_allocation_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="work_allocation_id">Work Allocation ID:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="work_allocation_id"><%%VALUE(work_allocation_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: District: -->
+				<div class="form-group work_allocation-district">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="district" data-parent_link="view_parent_modal">District: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#district-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="district-description"><div class="alert alert-info bspacer-xs">Capture the district and stations detail</div></span>
+						<div class="lookup-flex"><%%COMBO(district)%%><%%PLINK(district)%%><%%ADDNEW(districts)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Workshop Name/Station: -->
+				<div class="form-group work_allocation-location">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Workshop Name/Station:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="location"></div>
+					</div>
+				</div>
+
+				<!-- Field: Cost centre -->
+				<div class="form-group work_allocation-cost_centre">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="cost_centre" data-parent_link="view_parent_modal">Cost centre</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(cost_centre)%%><%%PLINK(cost_centre)%%><%%ADDNEW(cost_centre)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Supervisor Name & Surname: -->
+				<div class="form-group work_allocation-supervisor_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="supervisor_name_and_surname">Supervisor Name & Surname:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="supervisor_name_and_surname" id="supervisor_name_and_surname" value="<%%VALUE(supervisor_name_and_surname)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Supervisor Contact Details: -->
+				<div class="form-group work_allocation-supervisor_contact_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="supervisor_contact_details">Supervisor Contact Details:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="supervisor_contact_details" id="supervisor_contact_details" value="<%%VALUE(supervisor_contact_details)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Supervisor Email Address: -->
+				<div class="form-group work_allocation-supervisor_email_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="supervisor_email_address-edit-link">Supervisor Email Address:</label>
+					<div class="col-lg-9">
+						<div>
+							<a id="supervisor_email_address-link" href="mailto:<%%VALUE(supervisor_email_address)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-envelope text-info" title="<%%VALUE(supervisor_email_address)%%>"></i></a>
+							<label for="supervisor_email_address"><button type="button" id="supervisor_email_address-edit-link" class="btn btn-default vspacer-sm" data-toggle="collapse" data-target="#supervisor_email_address" title="<%%TRANSLATION(Edit)%%>"><i class="glyphicon glyphicon-pencil"></i></button></label>
+							<input maxlength="40" type="text" class="form-control collapse" name="supervisor_email_address" id="supervisor_email_address" value="<%%VALUE(supervisor_email_address)%%>">
+						</div><script>jQuery(function() { var e_supervisor_email_address = '<%%VALUE(supervisor_email_address)%%>'; if(e_supervisor_email_address == '' || e_supervisor_email_address == '&nbsp;' || e_supervisor_email_address == 'blank.gif') jQuery('#supervisor_email_address-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Supervisor Signature: -->
+				<div class="form-group work_allocation-supervisor_signature">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Supervisor Signature: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#supervisor_signature-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="supervisor_signature-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 500 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="thumbnail.php?i=<%%VALUE(supervisor_signature)%%>&t=work_allocation&f=supervisor_signature&v=dv" class="img-thumbnail" id="supervisor_signature-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(supervisor_signature)%%>
+								<%%REMOVEFILE(supervisor_signature)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Economical Repair: -->
+				<div class="form-group work_allocation-economical_repair">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="economical_repair">Economical Repair: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#economical_repair-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="economical_repair-description"><div class="alert alert-info bspacer-xs">Inspection supervisor identifies whether the repairs can be done internally or outsource based on nature of work.<br>Supervisor allocate the vehicle to the relevant section and the sectional supervisor allocate the vehicle to Artisan/Breakdown driver.</div></span>
+						<%%COMBO(economical_repair)%%>
+					</div>
+				</div>
+
+				<!-- Field: Uneconomical Repair: -->
+				<div class="form-group work_allocation-uneconomical_repair">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="uneconomical_repair">Uneconomical Repair: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#uneconomical_repair-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="uneconomical_repair-description"><div class="alert alert-info bspacer-xs">The vehicle is recommended to be withdrawn from service/operations..<br>The vehicle is then reffered to the withdrawal supervisor for futher processing.<br></div></span>
+						<%%COMBO(uneconomical_repair)%%><div class="text-danger vspacer-md" id="uneconomical_repair-uniqueness-note" style="display: none;"><%%TRANSLATION(unique field error)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Work Allocation Reference Number: -->
+				<div class="form-group work_allocation-work_allocation_reference_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="work_allocation_reference_number">Work Allocation Reference Number:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="work_allocation_reference_number" id="work_allocation_reference_number" value="<%%VALUE(work_allocation_reference_number)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Registration Number: -->
+				<div class="form-group work_allocation-vehicle_registration_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_registration_number" data-parent_link="view_parent_modal">Registration Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(vehicle_registration_number)%%><%%PLINK(vehicle_registration_number)%%><%%ADDNEW(gmt_fleet_register)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Engine Number: -->
+				<div class="form-group work_allocation-engine_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Engine Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="engine_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Make of Vehicle: -->
+				<div class="form-group work_allocation-make_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Make of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="make_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Date Captured: -->
+				<div class="form-group work_allocation-date_captured">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_captured">Date Captured:</label>
+					<div class="col-lg-9">
+						<div class="input-group date datetimepicker"><input type="text" class="form-control" name="date_captured" id="date_captured" value="<%%VALUE(date_captured)%%>"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="work_allocation_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="work_allocation-children" class="children-tabs">
+				<div class="text-center"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+			</div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) {
+				AppGini.once({
+					condition: function() {
+						return $j('.form-group.work_allocation-district')
+									.find('.nicEdit-main, .select2-container, input[type=radio]')
+									.length > 0
+								// or read-only DV
+								|| (!$j('#update').length && !$j('#insert').length);
+					},
+					action: function() {
+						$j('#work_allocation_dv_container-loading').addClass('hidden');
+						$j('#work_allocation_dv_container').removeClass('hidden');
+						AppGini.focusFormElement('work_allocation', 'district');
+					},
+					timeout:  5000,
+					doActionOnTimeout:  true
+				});
+			} else {
+				$j('#work_allocation_dv_container-loading').addClass('hidden');
+				$j('#work_allocation_dv_container').removeClass('hidden');
+			}
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+			if(embedded_mode) {
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function() {
+					$j('a[href]:not([href^="#"]):not([href^="javascript"]):not([href$="Embedded=1"]):not([href*="link.php?t="]):not([href^="mailto:"]):not([href$=".jpg"]):not([href$=".png"]):not([href$=".gif"])').each(
+						function() {
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode) {
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			} else {
+				post(
+					'parent-children.php', {
+						ParentTable: 'work_allocation',
+						SelectedID: '<%%VALUE(work_allocation_id)%%>',
+						Operation: 'show-children'
+					},
+					'work_allocation-children'
+				);
+			}
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'work_allocation',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+			enforce_uniqueness('work_allocation', 'uneconomical_repair');
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=work_allocation&id=<%%URLVALUE(work_allocation_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=work_allocation&id=<%%URLVALUE(work_allocation_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

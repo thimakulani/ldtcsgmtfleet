@@ -1,0 +1,23 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the parts_init() hook (in hooks/parts.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="parts-parts_id-<%%VALUE(parts_id)%%>" class="parts-parts_id text-right"><%%SELECT%%><%%VALUE(parts_id)%%><%%ENDSELECT%%></td>
+		<td id="parts-part_type-<%%VALUE(parts_id)%%>" class="parts-part_type"><%%SELECT%%><%%VALUE(part_type)%%><%%ENDSELECT%%></td>
+		<td id="parts-part_number-<%%VALUE(parts_id)%%>" class="parts-part_number"><%%SELECT%%><%%VALUE(part_number)%%><%%ENDSELECT%%></td>
+		<td id="parts-part_name-<%%VALUE(parts_id)%%>" class="parts-part_name"><%%SELECT%%><%%VALUE(part_name)%%><%%ENDSELECT%%></td>
+		<td id="parts-description-<%%VALUE(parts_id)%%>" class="parts-description"><%%SELECT%%><%%VALUE(description)%%><%%ENDSELECT%%></td>
+		<td id="parts-manufacturer-<%%VALUE(parts_id)%%>" class="parts-manufacturer"><%%SELECT%%><%%VALUE(manufacturer)%%><%%ENDSELECT%%></td>
+		<td id="parts-dealer-<%%VALUE(parts_id)%%>" class="parts-dealer"><%%SELECT%%><%%VALUE(dealer)%%><%%ENDSELECT%%></td>
+		<td id="parts-measure-<%%VALUE(parts_id)%%>" class="parts-measure"><%%SELECT%%><%%VALUE(measure)%%><%%ENDSELECT%%></td>
+		<td id="parts-unit_price-<%%VALUE(parts_id)%%>" class="parts-unit_price text-right"><%%SELECT%%><%%VALUE(unit_price)%%><%%ENDSELECT%%></td>
+		<td id="parts-quantity-<%%VALUE(parts_id)%%>" class="parts-quantity"><%%SELECT%%><%%VALUE(quantity)%%><%%ENDSELECT%%></td>
+		<td id="parts-freight-<%%VALUE(parts_id)%%>" class="parts-freight"><%%SELECT%%><%%VALUE(freight)%%><%%ENDSELECT%%></td>
+		<td id="parts-amount-<%%VALUE(parts_id)%%>" class="parts-amount text-right"><%%SELECT%%><%%VALUE(amount)%%><%%ENDSELECT%%></td>
+		<td id="parts-tax-<%%VALUE(parts_id)%%>" class="parts-tax"><%%SELECT%%><%%VALUE(tax)%%><%%ENDSELECT%%></td>
+		<td id="parts-total_amount-<%%VALUE(parts_id)%%>" class="parts-total_amount text-right"><%%SELECT%%><%%VALUE(total_amount)%%><%%ENDSELECT%%></td>
+		<td id="parts-discount_price-<%%VALUE(parts_id)%%>" class="parts-discount_price text-right"><%%SELECT%%><%%VALUE(discount_price)%%><%%ENDSELECT%%></td>
+		<td id="parts-net_part_price-<%%VALUE(parts_id)%%>" class="parts-net_part_price text-right"><%%SELECT%%><%%VALUE(net_part_price)%%><%%ENDSELECT%%></td>

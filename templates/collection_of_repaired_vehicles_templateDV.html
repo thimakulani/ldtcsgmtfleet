@@ -1,0 +1,496 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/collection_of_repaired_vehicles-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="collection_of_repaired_vehicles_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="collection_of_repaired_vehicles_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="collection_of_repaired_vehicles_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Repaired ID: -->
+				<div class="form-group collection_of_repaired_vehicles-collection_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="collection_id">Repaired ID:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="collection_id"><%%VALUE(collection_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Reception Name & Surname: -->
+				<div class="form-group collection_of_repaired_vehicles-reception_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="reception_name_and_surname" data-parent_link="view_parent_modal">Reception Name & Surname:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(reception_name_and_surname)%%><%%PLINK(reception_name_and_surname)%%><%%ADDNEW(reception)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Reception Persal Number: -->
+				<div class="form-group collection_of_repaired_vehicles-reception_persal_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Reception Persal Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="reception_persal_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Reception Contact Details: -->
+				<div class="form-group collection_of_repaired_vehicles-reception_contact_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Reception Contact Details:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="reception_contact_details"></div>
+					</div>
+				</div>
+
+				<!-- Field: Reception Email Address: -->
+				<div class="form-group collection_of_repaired_vehicles-reception_email_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Reception Email Address:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="reception_email_address"></div>
+					</div>
+				</div>
+
+				<!-- Field: Reception Signature: -->
+				<div class="form-group collection_of_repaired_vehicles-reception_signature">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Reception Signature: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#reception_signature-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="reception_signature-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 500 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="thumbnail.php?i=<%%VALUE(reception_signature)%%>&t=collection_of_repaired_vehicles&f=reception_signature&v=dv" class="img-thumbnail" id="reception_signature-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(reception_signature)%%>
+								<%%REMOVEFILE(reception_signature)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Driver Name And Surname: -->
+				<div class="form-group collection_of_repaired_vehicles-driver_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="driver_name_and_surname" data-parent_link="view_parent_modal">Driver Name And Surname:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(driver_name_and_surname)%%><%%PLINK(driver_name_and_surname)%%><%%ADDNEW(driver)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Driver Persal Number: -->
+				<div class="form-group collection_of_repaired_vehicles-driver_persal_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver Persal Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="driver_persal_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Driver Contacts Details: -->
+				<div class="form-group collection_of_repaired_vehicles-driver_contacts_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver Contacts Details:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="driver_contacts_details"></div>
+					</div>
+				</div>
+
+				<!-- Field: Driver Email Address: -->
+				<div class="form-group collection_of_repaired_vehicles-driver_email_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver Email Address:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="driver_email_address"></div>
+					</div>
+				</div>
+
+				<!-- Field: Driver License Upload: -->
+				<div class="form-group collection_of_repaired_vehicles-driver_license_upload">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver License Upload: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#driver_license_upload-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="driver_license_upload-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 2048 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="driver_license_upload-link" href="link.php?t=collection_of_repaired_vehicles&f=driver_license_upload&i=<%%VALUE(collection_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-picture" title="<%%VALUE(driver_license_upload)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(driver_license_upload)%%>
+								<%%REMOVEFILE(driver_license_upload)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_driver_license_upload = '<%%VALUE(driver_license_upload)%%>'; if(e_driver_license_upload == '' || e_driver_license_upload == '&nbsp;' || e_driver_license_upload == 'blank.gif') jQuery('#driver_license_upload-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Driver Signature: -->
+				<div class="form-group collection_of_repaired_vehicles-driver_signature">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver Signature: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#driver_signature-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="driver_signature-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 500 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="thumbnail.php?i=<%%VALUE(driver_signature)%%>&t=collection_of_repaired_vehicles&f=driver_signature&v=dv" class="img-thumbnail" id="driver_signature-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(driver_signature)%%>
+								<%%REMOVEFILE(driver_signature)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Government Garage Name: -->
+				<div class="form-group collection_of_repaired_vehicles-government_garage_name">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="government_garage_name" data-parent_link="view_parent_modal">Government Garage Name:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(government_garage_name)%%><%%PLINK(government_garage_name)%%><%%ADDNEW(districts)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Government Garage Contact Details: -->
+				<div class="form-group collection_of_repaired_vehicles-government_garage_contact_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="government_garage_contact_details">Government Garage Contact Details:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="government_garage_contact_details" id="government_garage_contact_details" value="<%%VALUE(government_garage_contact_details)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Government Garage Address: -->
+				<div class="form-group collection_of_repaired_vehicles-government_garage_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="government_garage_address">Government Garage Address:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(government_garage_address)%%>
+					</div>
+				</div>
+
+				<!-- Field: Government Garage Email Address: -->
+				<div class="form-group collection_of_repaired_vehicles-government_garage_email_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="government_garage_email_address-edit-link">Government Garage Email Address:</label>
+					<div class="col-lg-9">
+						<div>
+							<a id="government_garage_email_address-link" href="mailto:<%%VALUE(government_garage_email_address)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-envelope text-info" title="<%%VALUE(government_garage_email_address)%%>"></i></a>
+							<label for="government_garage_email_address"><button type="button" id="government_garage_email_address-edit-link" class="btn btn-default vspacer-sm" data-toggle="collapse" data-target="#government_garage_email_address" title="<%%TRANSLATION(Edit)%%>"><i class="glyphicon glyphicon-pencil"></i></button></label>
+							<input maxlength="40" type="text" class="form-control collapse" name="government_garage_email_address" id="government_garage_email_address" value="<%%VALUE(government_garage_email_address)%%>">
+						</div><script>jQuery(function() { var e_government_garage_email_address = '<%%VALUE(government_garage_email_address)%%>'; if(e_government_garage_email_address == '' || e_government_garage_email_address == '&nbsp;' || e_government_garage_email_address == 'blank.gif') jQuery('#government_garage_email_address-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Registration Number: -->
+				<div class="form-group collection_of_repaired_vehicles-vehicle_registration_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_registration_number" data-parent_link="view_parent_modal">Registration Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(vehicle_registration_number)%%><%%PLINK(vehicle_registration_number)%%><%%ADDNEW(gmt_fleet_register)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Engine Number: -->
+				<div class="form-group collection_of_repaired_vehicles-engine_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Engine Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="engine_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Make of Vehicle: -->
+				<div class="form-group collection_of_repaired_vehicles-make_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Make of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="make_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Inspection Done: -->
+				<div class="form-group collection_of_repaired_vehicles-vehicle_inspection">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Vehicle Inspection Done:</label>
+					<div class="col-lg-9">
+						<%%COMBO(vehicle_inspection)%%>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Inspection Form Uploaded: -->
+				<div class="form-group collection_of_repaired_vehicles-vehicle_inspection_form">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Vehicle Inspection Form Uploaded: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#vehicle_inspection_form-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="vehicle_inspection_form-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5120 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="vehicle_inspection_form-link" href="link.php?t=collection_of_repaired_vehicles&f=vehicle_inspection_form&i=<%%VALUE(collection_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(vehicle_inspection_form)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(vehicle_inspection_form)%%>
+								<%%REMOVEFILE(vehicle_inspection_form)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_vehicle_inspection_form = '<%%VALUE(vehicle_inspection_form)%%>'; if(e_vehicle_inspection_form == '' || e_vehicle_inspection_form == '&nbsp;' || e_vehicle_inspection_form == 'blank.gif') jQuery('#vehicle_inspection_form-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Interiour Condition: -->
+				<div class="form-group collection_of_repaired_vehicles-vehicle_interiour_condition">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_interiour_condition">Vehicle Interiour Condition:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(vehicle_interiour_condition)%%>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Exteriour Condition: -->
+				<div class="form-group collection_of_repaired_vehicles-vehicle_exteriour_condition">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_exteriour_condition">Vehicle Exteriour Condition:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(vehicle_exteriour_condition)%%>
+					</div>
+				</div>
+
+				<!-- Field: Vehicle Tyre Check: -->
+				<div class="form-group collection_of_repaired_vehicles-vehicle_tyre_check">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_tyre_check">Vehicle Tyre Check:</label>
+					<div class="col-lg-9">
+						<%%COMBO(vehicle_tyre_check)%%>
+					</div>
+				</div>
+
+				<!-- Field: Sign Off Time: -->
+				<div class="form-group collection_of_repaired_vehicles-sign_off_time">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="sign_off_time">Sign Off Time:</label>
+					<div class="col-lg-9">
+						<input type="text" class="form-control" name="sign_off_time" id="sign_off_time" value="<%%VALUE(sign_off_time)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Date of Vehicle Collection: -->
+				<div class="form-group collection_of_repaired_vehicles-date_of_repaired_vehicle_collection">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_of_repaired_vehicle_collection">Date of Vehicle Collection:</label>
+					<div class="col-lg-9">
+						<div class="input-group date datetimepicker"><input type="text" class="form-control" name="date_of_repaired_vehicle_collection" id="date_of_repaired_vehicle_collection" value="<%%VALUE(date_of_repaired_vehicle_collection)%%>"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="collection_of_repaired_vehicles_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			AppGini.once({
+				condition: function() { return bkLib != undefined; },
+				action: function() {
+					if($j('textarea#government_garage_address').length) new nicEditor({ fullPanel : true }).panelInstance('government_garage_address');
+					if($j('textarea#vehicle_interiour_condition').length) new nicEditor({ fullPanel : true }).panelInstance('vehicle_interiour_condition');
+					if($j('textarea#vehicle_exteriour_condition').length) new nicEditor({ fullPanel : true }).panelInstance('vehicle_exteriour_condition');
+				}
+			});
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) {
+				AppGini.once({
+					condition: function() {
+						return $j('.form-group.collection_of_repaired_vehicles-reception_name_and_surname')
+									.find('.nicEdit-main, .select2-container, input[type=radio]')
+									.length > 0
+								// or read-only DV
+								|| (!$j('#update').length && !$j('#insert').length);
+					},
+					action: function() {
+						$j('#collection_of_repaired_vehicles_dv_container-loading').addClass('hidden');
+						$j('#collection_of_repaired_vehicles_dv_container').removeClass('hidden');
+						AppGini.focusFormElement('collection_of_repaired_vehicles', 'reception_name_and_surname');
+					},
+					timeout:  5000,
+					doActionOnTimeout:  true
+				});
+			} else {
+				$j('#collection_of_repaired_vehicles_dv_container-loading').addClass('hidden');
+				$j('#collection_of_repaired_vehicles_dv_container').removeClass('hidden');
+			}
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			// try to detect rich text changes by adding 'input' handler after nicedit is loaded ...
+			AppGini.detectContentEditableChanges();
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'collection_of_repaired_vehicles',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=collection_of_repaired_vehicles&id=<%%URLVALUE(collection_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=collection_of_repaired_vehicles&id=<%%URLVALUE(collection_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

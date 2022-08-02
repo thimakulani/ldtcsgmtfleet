@@ -1,0 +1,956 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/purchase_orders-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="purchase_orders_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="purchase_orders_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="vehicle_history_view.php?filterer_purchased_order_number=<%%URLVALUE(purchase_order_id)%%>&<%%EMBEDDED%%>" id="vehicle_history_link"><i class="glyphicon glyphicon-list-alt"></i> Vehicle General History:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="vehicle_history_view.php?filterer_purchased_order_number=<%%URLVALUE(purchase_order_id)%%>&<%%EMBEDDED%%>" id="xs_vehicle_history_link"><i class="glyphicon glyphicon-list-alt"></i> Vehicle General History:</a>
+			<input type="hidden" id="vehicle_history_hclink" value="vehicle_history_view.php?filterer_purchased_order_number=<%%URLVALUE(purchase_order_id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="purchase_orders_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Purchase Order ID: -->
+				<div class="form-group purchase_orders-purchase_order_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="purchase_order_id">Purchase Order ID:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="purchase_order_id"><%%VALUE(purchase_order_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Purchased Order Number: -->
+				<div class="form-group purchase_orders-purchased_order_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="purchased_order_number">Purchased Order Number:<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="purchased_order_number" id="purchased_order_number" value="<%%VALUE(purchased_order_number)%%>" required>
+					</div>
+				</div>
+
+				<!-- Field: Purchased Date: -->
+				<div class="form-group purchase_orders-purchased_date">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="purchased_date-dd">Purchased Date:</label>
+					<div class="col-lg-9">
+						<%%COMBO(purchased_date)%%>
+					</div>
+				</div>
+
+				<!-- Field: Purchaser: -->
+				<div class="form-group purchase_orders-purchaser">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="purchaser">Purchaser:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="purchaser" id="purchaser" value="<%%VALUE(purchaser)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Registration Number: -->
+				<div class="form-group purchase_orders-vehicle_registration_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_registration_number" data-parent_link="view_parent_modal">Registration Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(vehicle_registration_number)%%><%%PLINK(vehicle_registration_number)%%><%%ADDNEW(gmt_fleet_register)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Type of Vehicle: -->
+				<div class="form-group purchase_orders-type_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Type of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="type_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Manufacturer: -->
+				<div class="form-group purchase_orders-manufacturer">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="manufacturer" data-parent_link="view_parent_modal">Manufacturer:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(manufacturer)%%><%%PLINK(manufacturer)%%><%%ADDNEW(manufacturer)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Service Type: -->
+				<div class="form-group purchase_orders-service_type">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="service_type">Service Type:</label>
+					<div class="col-lg-9">
+						<%%COMBO(service_type)%%>
+					</div>
+				</div>
+
+				<!-- Field: Service Category: -->
+				<div class="form-group purchase_orders-service_category">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="service_category" data-parent_link="view_parent_modal">Service Category:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(service_category)%%><%%PLINK(service_category)%%><%%ADDNEW(service_categories)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Service Item: -->
+				<div class="form-group purchase_orders-service_item">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="service_item">Service Item:</label>
+					<div class="col-lg-9">
+						<%%COMBO(service_item)%%>
+					</div>
+				</div>
+
+				<!-- Field: Documents (Upload Quotation): -->
+				<div class="form-group purchase_orders-upload_quotation">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Documents (Upload Quotation): <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#upload_quotation-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="upload_quotation-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5120 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="upload_quotation-link" href="link.php?t=purchase_orders&f=upload_quotation&i=<%%VALUE(purchase_order_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(upload_quotation)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(upload_quotation)%%>
+								<%%REMOVEFILE(upload_quotation)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_upload_quotation = '<%%VALUE(upload_quotation)%%>'; if(e_upload_quotation == '' || e_upload_quotation == '&nbsp;' || e_upload_quotation == 'blank.gif') jQuery('#upload_quotation-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Due Date: -->
+				<div class="form-group purchase_orders-due_date">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="due_date-dd">Due Date:</label>
+					<div class="col-lg-9">
+						<%%COMBO(due_date)%%>
+					</div>
+				</div>
+
+				<!-- Field: Merchant Name: -->
+				<div class="form-group purchase_orders-merchant_name">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="merchant_name" data-parent_link="view_parent_modal">Merchant Name:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(merchant_name)%%><%%PLINK(merchant_name)%%><%%ADDNEW(merchant)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Date of Service: -->
+				<div class="form-group purchase_orders-date_of_service">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_of_service-dd">Date of Service:</label>
+					<div class="col-lg-9">
+						<%%COMBO(date_of_service)%%>
+					</div>
+				</div>
+
+				<!-- Field: Odometer Reading (km): -->
+				<div class="form-group purchase_orders-closing_km">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="closing_km" data-parent_link="view_parent_modal">Odometer Reading (km):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(closing_km)%%><%%PLINK(closing_km)%%><%%ADDNEW(log_sheet)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Labour Category: -->
+				<div class="form-group purchase_orders-labour_category_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Labour Category:</label>
+					<div class="col-lg-9">
+						<%%COMBO(labour_category_1)%%>
+					</div>
+				</div>
+
+				<!-- Field: Part Number (1): -->
+				<div class="form-group purchase_orders-part_number_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_number_1" data-parent_link="view_parent_modal">Part Number (1):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_number_1)%%><%%PLINK(part_number_1)%%><%%ADDNEW(parts)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Part Name (1): -->
+				<div class="form-group purchase_orders-part_name_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_name_1" data-parent_link="view_parent_modal">Part Name (1):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_name_1)%%><%%PLINK(part_name_1)%%><%%ADDNEW(parts)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Part Manufacturer Name (1): -->
+				<div class="form-group purchase_orders-part_manufacturer_name_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_manufacturer_name_1" data-parent_link="view_parent_modal">Part Manufacturer Name (1):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_manufacturer_name_1)%%><%%PLINK(part_manufacturer_name_1)%%><%%ADDNEW(manufacturer)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Quantity -->
+				<div class="form-group purchase_orders-quantity_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="quantity_1">Quantity</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="quantity_1" id="quantity_1" value="<%%VALUE(quantity_1)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Expense Of Item 1 (R): -->
+				<div class="form-group purchase_orders-expense_of_item_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="expense_of_item_1">Expense Of Item 1 (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="expense_of_item_1" id="expense_of_item_1" value="<%%VALUE(expense_of_item_1)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Labour Category: -->
+				<div class="form-group purchase_orders-labour_category_2">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Labour Category:</label>
+					<div class="col-lg-9">
+						<%%COMBO(labour_category_2)%%>
+					</div>
+				</div>
+
+				<!-- Field: Part Number (2): -->
+				<div class="form-group purchase_orders-part_number_2">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_number_2" data-parent_link="view_parent_modal">Part Number (2):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_number_2)%%><%%PLINK(part_number_2)%%><%%ADDNEW(parts)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Part Name (2): -->
+				<div class="form-group purchase_orders-part_name_2">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_name_2" data-parent_link="view_parent_modal">Part Name (2):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_name_2)%%><%%PLINK(part_name_2)%%><%%ADDNEW(parts)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Part Manufacturer Name (2): -->
+				<div class="form-group purchase_orders-part_manufacturer_name_2">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_manufacturer_name_2" data-parent_link="view_parent_modal">Part Manufacturer Name (2):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_manufacturer_name_2)%%><%%PLINK(part_manufacturer_name_2)%%><%%ADDNEW(manufacturer)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Quantity -->
+				<div class="form-group purchase_orders-quantity_2">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="quantity_2">Quantity</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="quantity_2" id="quantity_2" value="<%%VALUE(quantity_2)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Expense Of Item 2 (R): -->
+				<div class="form-group purchase_orders-expense_of_item_2">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="expense_of_item_2">Expense Of Item 2 (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="expense_of_item_2" id="expense_of_item_2" value="<%%VALUE(expense_of_item_2)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Labour Category: -->
+				<div class="form-group purchase_orders-labour_category_3">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Labour Category:</label>
+					<div class="col-lg-9">
+						<%%COMBO(labour_category_3)%%>
+					</div>
+				</div>
+
+				<!-- Field: Part Number (3): -->
+				<div class="form-group purchase_orders-part_number_3">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_number_3" data-parent_link="view_parent_modal">Part Number (3):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_number_3)%%><%%PLINK(part_number_3)%%><%%ADDNEW(parts)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Part Name (3): -->
+				<div class="form-group purchase_orders-part_name_3">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Part Name (3):</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="part_name_3"></div>
+					</div>
+				</div>
+
+				<!-- Field: Part Manufacturer Name (3): -->
+				<div class="form-group purchase_orders-part_manufacturer_name_3">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_manufacturer_name_3" data-parent_link="view_parent_modal">Part Manufacturer Name (3):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_manufacturer_name_3)%%><%%PLINK(part_manufacturer_name_3)%%><%%ADDNEW(manufacturer)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Quantity -->
+				<div class="form-group purchase_orders-quantity_3">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="quantity_3">Quantity</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="quantity_3" id="quantity_3" value="<%%VALUE(quantity_3)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Expense Of Item 3 (R): -->
+				<div class="form-group purchase_orders-expense_of_item_3">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="expense_of_item_3">Expense Of Item 3 (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="expense_of_item_3" id="expense_of_item_3" value="<%%VALUE(expense_of_item_3)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Labour Category: -->
+				<div class="form-group purchase_orders-labour_category_4">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Labour Category:</label>
+					<div class="col-lg-9">
+						<%%COMBO(labour_category_4)%%>
+					</div>
+				</div>
+
+				<!-- Field: Part Number (4): -->
+				<div class="form-group purchase_orders-part_number_4">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_number_4" data-parent_link="view_parent_modal">Part Number (4):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_number_4)%%><%%PLINK(part_number_4)%%><%%ADDNEW(parts)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Part Name (4): -->
+				<div class="form-group purchase_orders-part_name_4">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Part Name (4):</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="part_name_4"></div>
+					</div>
+				</div>
+
+				<!-- Field: Part Manufacturer Name  (4): -->
+				<div class="form-group purchase_orders-part_manufacturer_name_4">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_manufacturer_name_4" data-parent_link="view_parent_modal">Part Manufacturer Name  (4):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_manufacturer_name_4)%%><%%PLINK(part_manufacturer_name_4)%%><%%ADDNEW(manufacturer)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Quantity -->
+				<div class="form-group purchase_orders-quantity_4">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="quantity_4">Quantity</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="quantity_4" id="quantity_4" value="<%%VALUE(quantity_4)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Expense Of Item 4 (R): -->
+				<div class="form-group purchase_orders-expense_of_item_4">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="expense_of_item_4">Expense Of Item 4 (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="expense_of_item_4" id="expense_of_item_4" value="<%%VALUE(expense_of_item_4)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Labour Category: -->
+				<div class="form-group purchase_orders-labour_category_5">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Labour Category:</label>
+					<div class="col-lg-9">
+						<%%COMBO(labour_category_5)%%>
+					</div>
+				</div>
+
+				<!-- Field: Part Number (5): -->
+				<div class="form-group purchase_orders-part_number_5">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_number_5" data-parent_link="view_parent_modal">Part Number (5):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_number_5)%%><%%PLINK(part_number_5)%%><%%ADDNEW(parts)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Part Name (5): -->
+				<div class="form-group purchase_orders-part_name_5">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Part Name (5):</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="part_name_5"></div>
+					</div>
+				</div>
+
+				<!-- Field: Part Manufacturer Name (5): -->
+				<div class="form-group purchase_orders-part_manufacturer_name_5">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_manufacturer_name_5" data-parent_link="view_parent_modal">Part Manufacturer Name (5):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_manufacturer_name_5)%%><%%PLINK(part_manufacturer_name_5)%%><%%ADDNEW(manufacturer)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Quantity -->
+				<div class="form-group purchase_orders-quantity_5">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="quantity_5">Quantity</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="quantity_5" id="quantity_5" value="<%%VALUE(quantity_5)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Expense Of Item 5 (R): -->
+				<div class="form-group purchase_orders-expense_of_item_5">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="expense_of_item_5">Expense Of Item 5 (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="expense_of_item_5" id="expense_of_item_5" value="<%%VALUE(expense_of_item_5)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Labour Category: -->
+				<div class="form-group purchase_orders-labour_category_6">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Labour Category:</label>
+					<div class="col-lg-9">
+						<%%COMBO(labour_category_6)%%>
+					</div>
+				</div>
+
+				<!-- Field: Part Number (6): -->
+				<div class="form-group purchase_orders-part_number_6">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_number_6" data-parent_link="view_parent_modal">Part Number (6):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_number_6)%%><%%PLINK(part_number_6)%%><%%ADDNEW(parts)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Part Name (6): -->
+				<div class="form-group purchase_orders-part_name_6">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_name_6" data-parent_link="view_parent_modal">Part Name (6):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_name_6)%%><%%PLINK(part_name_6)%%><%%ADDNEW(parts)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Part Manufacturer Name (6): -->
+				<div class="form-group purchase_orders-part_manufacturer_name_6">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_manufacturer_name_6" data-parent_link="view_parent_modal">Part Manufacturer Name (6):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_manufacturer_name_6)%%><%%PLINK(part_manufacturer_name_6)%%><%%ADDNEW(manufacturer)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Quantity -->
+				<div class="form-group purchase_orders-quantity_6">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="quantity_6">Quantity</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="quantity_6" id="quantity_6" value="<%%VALUE(quantity_6)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Expense Of Item 6 (R): -->
+				<div class="form-group purchase_orders-expense_of_item_6">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="expense_of_item_6">Expense Of Item 6 (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="expense_of_item_6" id="expense_of_item_6" value="<%%VALUE(expense_of_item_6)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Labour Category: -->
+				<div class="form-group purchase_orders-labour_category_7">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Labour Category:</label>
+					<div class="col-lg-9">
+						<%%COMBO(labour_category_7)%%>
+					</div>
+				</div>
+
+				<!-- Field: Part Number (7): -->
+				<div class="form-group purchase_orders-part_number_7">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_number_7" data-parent_link="view_parent_modal">Part Number (7):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_number_7)%%><%%PLINK(part_number_7)%%><%%ADDNEW(parts)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Part Name (7): -->
+				<div class="form-group purchase_orders-part_name_7">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_name_7" data-parent_link="view_parent_modal">Part Name (7):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_name_7)%%><%%PLINK(part_name_7)%%><%%ADDNEW(parts)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Part Manufacturer Name (7): -->
+				<div class="form-group purchase_orders-part_manufacturer_name_7">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_manufacturer_name_7" data-parent_link="view_parent_modal">Part Manufacturer Name (7):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_manufacturer_name_7)%%><%%PLINK(part_manufacturer_name_7)%%><%%ADDNEW(manufacturer)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Quantity -->
+				<div class="form-group purchase_orders-quantity_7">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="quantity_7">Quantity</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="quantity_7" id="quantity_7" value="<%%VALUE(quantity_7)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Expense Of Item 7 (R): -->
+				<div class="form-group purchase_orders-expense_of_item_7">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="expense_of_item_7">Expense Of Item 7 (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="expense_of_item_7" id="expense_of_item_7" value="<%%VALUE(expense_of_item_7)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Labour Category: -->
+				<div class="form-group purchase_orders-labour_category_8">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Labour Category:</label>
+					<div class="col-lg-9">
+						<%%COMBO(labour_category_8)%%>
+					</div>
+				</div>
+
+				<!-- Field: Part Number (8): -->
+				<div class="form-group purchase_orders-part_number_8">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_number_8" data-parent_link="view_parent_modal">Part Number (8):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_number_8)%%><%%PLINK(part_number_8)%%><%%ADDNEW(parts)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Part Name (8): -->
+				<div class="form-group purchase_orders-part_name_8">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_name_8" data-parent_link="view_parent_modal">Part Name (8):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_name_8)%%><%%PLINK(part_name_8)%%><%%ADDNEW(parts)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Part Manufacturer Name (8): -->
+				<div class="form-group purchase_orders-part_manufacturer_name_8">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="part_manufacturer_name_8" data-parent_link="view_parent_modal">Part Manufacturer Name (8):</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(part_manufacturer_name_8)%%><%%PLINK(part_manufacturer_name_8)%%><%%ADDNEW(manufacturer)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Expense Of Item 8 (R): -->
+				<div class="form-group purchase_orders-expense_of_item_8">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="expense_of_item_8">Expense Of Item 8 (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="expense_of_item_8" id="expense_of_item_8" value="<%%VALUE(expense_of_item_8)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Material Cost (R); -->
+				<div class="form-group purchase_orders-material_cost">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="material_cost">Material Cost (R);</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="material_cost" id="material_cost" value="<%%VALUE(material_cost)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Average Worktime Hrs: -->
+				<div class="form-group purchase_orders-average_worktime_hrs">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="average_worktime_hrs">Average Worktime Hrs:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="average_worktime_hrs" id="average_worktime_hrs" value="<%%VALUE(average_worktime_hrs)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Standard Labour Cost per Hour: -->
+				<div class="form-group purchase_orders-standard_labour_cost_per_hour">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="standard_labour_cost_per_hour">Standard Labour Cost per Hour:</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="standard_labour_cost_per_hour" id="standard_labour_cost_per_hour" value="<%%VALUE(standard_labour_cost_per_hour)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Labour Charges (R): -->
+				<div class="form-group purchase_orders-labour_charges">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="labour_charges">Labour Charges (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="labour_charges" id="labour_charges" value="<%%VALUE(labour_charges)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Vat 15 % (R): -->
+				<div class="form-group purchase_orders-vat">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vat">Vat 15 % (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="vat" id="vat" value="<%%VALUE(vat)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Total Amount (R): -->
+				<div class="form-group purchase_orders-total_amount">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="total_amount">Total Amount (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="total_amount" id="total_amount" value="<%%VALUE(total_amount)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Workshop Name: -->
+				<div class="form-group purchase_orders-workshop_name">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="workshop_name" data-parent_link="view_parent_modal">Workshop Name:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(workshop_name)%%><%%PLINK(workshop_name)%%><%%ADDNEW(service)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Work Order ID: -->
+				<div class="form-group purchase_orders-work_order_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="work_order_id" data-parent_link="view_parent_modal">Work Order ID:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(work_order_id)%%><%%PLINK(work_order_id)%%><%%ADDNEW(service)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Job Card Number: -->
+				<div class="form-group purchase_orders-job_card_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="job_card_number" data-parent_link="view_parent_modal">Job Card Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(job_card_number)%%><%%PLINK(job_card_number)%%><%%ADDNEW(reception)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Actual Completion Date: -->
+				<div class="form-group purchase_orders-completion_date">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="completion_date-dd">Actual Completion Date:</label>
+					<div class="col-lg-9">
+						<%%COMBO(completion_date)%%>
+					</div>
+				</div>
+
+				<!-- Field: Comments: -->
+				<div class="form-group purchase_orders-comments">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="comments">Comments:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(comments)%%>
+					</div>
+				</div>
+
+				<!-- Field: Documents (Upload Invoice): -->
+				<div class="form-group purchase_orders-upload_invoice">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Documents (Upload Invoice): <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#upload_invoice-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="upload_invoice-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5120 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="upload_invoice-link" href="link.php?t=purchase_orders&f=upload_invoice&i=<%%VALUE(purchase_order_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(upload_invoice)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(upload_invoice)%%>
+								<%%REMOVEFILE(upload_invoice)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_upload_invoice = '<%%VALUE(upload_invoice)%%>'; if(e_upload_invoice == '' || e_upload_invoice == '&nbsp;' || e_upload_invoice == 'blank.gif') jQuery('#upload_invoice-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Date Captured: -->
+				<div class="form-group purchase_orders-date_captured">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_captured-dd">Date Captured:</label>
+					<div class="col-lg-9">
+						<%%COMBO(date_captured)%%>
+					</div>
+				</div>
+
+				<!-- Field: Information Capture By  (Name & Surname): -->
+				<div class="form-group purchase_orders-data_capturer">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="data_capturer">Information Capture By  (Name & Surname):</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="data_capturer" id="data_capturer" value="<%%VALUE(data_capturer)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Data Capturer Contact e-Mail: -->
+				<div class="form-group purchase_orders-data_capturer_contact_email">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="data_capturer_contact_email-edit-link">Data Capturer Contact e-Mail:</label>
+					<div class="col-lg-9">
+						<div>
+							<a id="data_capturer_contact_email-link" href="mailto:<%%VALUE(data_capturer_contact_email)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-envelope text-info" title="<%%VALUE(data_capturer_contact_email)%%>"></i></a>
+							<label for="data_capturer_contact_email"><button type="button" id="data_capturer_contact_email-edit-link" class="btn btn-default vspacer-sm" data-toggle="collapse" data-target="#data_capturer_contact_email" title="<%%TRANSLATION(Edit)%%>"><i class="glyphicon glyphicon-pencil"></i></button></label>
+							<input maxlength="40" type="text" class="form-control collapse" name="data_capturer_contact_email" id="data_capturer_contact_email" value="<%%VALUE(data_capturer_contact_email)%%>">
+						</div><script>jQuery(function() { var e_data_capturer_contact_email = '<%%VALUE(data_capturer_contact_email)%%>'; if(e_data_capturer_contact_email == '' || e_data_capturer_contact_email == '&nbsp;' || e_data_capturer_contact_email == 'blank.gif') jQuery('#data_capturer_contact_email-link').hide(); });</script>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="purchase_orders_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="purchase_orders-children" class="children-tabs">
+				<div class="text-center"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+			</div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			AppGini.once({
+				condition: function() { return bkLib != undefined; },
+				action: function() {
+					if($j('textarea#comments').length) new nicEditor({ fullPanel : true }).panelInstance('comments');
+				}
+			});
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			$j('#purchase_orders_dv_container-loading').addClass('hidden');
+			$j('#purchase_orders_dv_container').removeClass('hidden');
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) AppGini.focusFormElement('purchase_orders', 'purchased_order_number');
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			// try to detect rich text changes by adding 'input' handler after nicedit is loaded ...
+			AppGini.detectContentEditableChanges();
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+			if(embedded_mode) {
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function() {
+					$j('a[href]:not([href^="#"]):not([href^="javascript"]):not([href$="Embedded=1"]):not([href*="link.php?t="]):not([href^="mailto:"]):not([href$=".jpg"]):not([href$=".png"]):not([href$=".gif"])').each(
+						function() {
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode) {
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			} else {
+				post(
+					'parent-children.php', {
+						ParentTable: 'purchase_orders',
+						SelectedID: '<%%VALUE(purchase_order_id)%%>',
+						Operation: 'show-children'
+					},
+					'purchase_orders-children'
+				);
+			}
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'purchase_orders',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=purchase_orders&id=<%%URLVALUE(purchase_order_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=purchase_orders&id=<%%URLVALUE(purchase_order_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

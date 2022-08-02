@@ -1,0 +1,93 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the ordering_of_spares_for_internal_repairs_init() hook (in hooks/ordering_of_spares_for_internal_repairs.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="ordering_of_spares_for_internal_repairs-spares_id-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-spares_id text-right"><%%VALUE(spares_id)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-workshop_name-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-workshop_name"><%%VALUE(workshop_name)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-job_card_number-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-job_card_number"><%%VALUE(job_card_number)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-artisan_name_and_surname-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-artisan_name_and_surname"><%%VALUE(artisan_name_and_surname)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-artisan_contacts-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-artisan_contacts"><%%VALUE(artisan_contacts)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-artisan_email_address-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-artisan_email_address"><a href="mailto:<%%VALUE(artisan_email_address)%%>" title="<%%VALUE(artisan_email_address)%%>" class="btn btn-default"><i class="glyphicon glyphicon-envelope text-info"></i></a></td>
+		<td id="ordering_of_spares_for_internal_repairs-artisan_signature-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-artisan_signature"><img src="thumbnail.php?i=<%%VALUE(artisan_signature)%%>&t=ordering_of_spares_for_internal_repairs&f=artisan_signature&v=tv" class="img-thumbnail"></td>
+		<td id="ordering_of_spares_for_internal_repairs-internal_requisition_to_stores-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-internal_requisition_to_stores"><%%VALUE(internal_requisition_to_stores)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-supervisor_name_and_surname-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-supervisor_name_and_surname"><%%VALUE(supervisor_name_and_surname)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-supervisor_contact_details-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-supervisor_contact_details"><%%VALUE(supervisor_contact_details)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-supervisor_email_address-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-supervisor_email_address"><a href="mailto:<%%VALUE(supervisor_email_address)%%>"><%%VALUE(supervisor_email_address)%%></a></td>
+		<td id="ordering_of_spares_for_internal_repairs-supervisor_signature-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-supervisor_signature"><%%VALUE(supervisor_signature)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-internal_requisition_to_stores_recommended-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-internal_requisition_to_stores_recommended"><%%VALUE(internal_requisition_to_stores_recommended)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-workshop_manager_name_and_surname-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-workshop_manager_name_and_surname"><%%VALUE(workshop_manager_name_and_surname)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-workshop_manager_contact_details-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-workshop_manager_contact_details"><%%VALUE(workshop_manager_contact_details)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-workshop_manager_email_address-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-workshop_manager_email_address"><a href="mailto:<%%VALUE(workshop_manager_email_address)%%>"><%%VALUE(workshop_manager_email_address)%%></a></td>
+		<td id="ordering_of_spares_for_internal_repairs-workshop_manager_signature-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-workshop_manager_signature"><%%VALUE(workshop_manager_signature)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-internal_requisition_to_stores_approved-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-internal_requisition_to_stores_approved"><%%VALUE(internal_requisition_to_stores_approved)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-date_parts_ordered-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-date_parts_ordered"><%%VALUE(date_parts_ordered)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-vehicle_registration_number-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-vehicle_registration_number"><%%VALUE(vehicle_registration_number)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-engine_number-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-engine_number"><%%VALUE(engine_number)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-make_of_vehicle-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-make_of_vehicle"><%%VALUE(make_of_vehicle)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-part_type_1-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-part_type_1"><%%VALUE(part_type_1)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-part_name_1-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-part_name_1"><%%VALUE(part_name_1)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-description_1-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-description_1"><%%VALUE(description_1)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-manufacture_1-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-manufacture_1"><%%VALUE(manufacture_1)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-quality_1-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-quality_1"><%%VALUE(quality_1)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-unit_price_1-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-unit_price_1 text-right"><%%VALUE(unit_price_1)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-net_part_price_1-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-net_part_price_1 text-right"><%%VALUE(net_part_price_1)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-part_type_2-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-part_type_2"><%%VALUE(part_type_2)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-part_name_2-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-part_name_2"><%%VALUE(part_name_2)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-description_2-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-description_2"><%%VALUE(description_2)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-manufacture_2-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-manufacture_2"><%%VALUE(manufacture_2)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-quality_2-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-quality_2"><%%VALUE(quality_2)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-unit_price_2-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-unit_price_2 text-right"><%%VALUE(unit_price_2)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-net_part_price_2-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-net_part_price_2 text-right"><%%VALUE(net_part_price_2)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-part_type_3-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-part_type_3"><%%VALUE(part_type_3)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-part_name_3-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-part_name_3"><%%VALUE(part_name_3)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-description_3-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-description_3"><%%VALUE(description_3)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-manufacture_3-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-manufacture_3"><%%VALUE(manufacture_3)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-quality_3-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-quality_3"><%%VALUE(quality_3)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-unit_price_3-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-unit_price_3 text-right"><%%VALUE(unit_price_3)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-net_part_price_3-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-net_part_price_3 text-right"><%%VALUE(net_part_price_3)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-part_type_4-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-part_type_4"><%%VALUE(part_type_4)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-part_name_4-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-part_name_4"><%%VALUE(part_name_4)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-description_4-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-description_4"><%%VALUE(description_4)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-manufacture_4-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-manufacture_4"><%%VALUE(manufacture_4)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-quality_4-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-quality_4"><%%VALUE(quality_4)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-unit_price_4-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-unit_price_4 text-right"><%%VALUE(unit_price_4)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-net_part_price_4-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-net_part_price_4 text-right"><%%VALUE(net_part_price_4)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-part_type_5-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-part_type_5"><%%VALUE(part_type_5)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-part_name_5-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-part_name_5"><%%VALUE(part_name_5)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-description_5-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-description_5"><%%VALUE(description_5)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-manufacture_5-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-manufacture_5"><%%VALUE(manufacture_5)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-quality_5-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-quality_5"><%%VALUE(quality_5)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-unit_price_5-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-unit_price_5 text-right"><%%VALUE(unit_price_5)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-net_part_price_5-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-net_part_price_5 text-right"><%%VALUE(net_part_price_5)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-part_type_6-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-part_type_6"><%%VALUE(part_type_6)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-part_name_6-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-part_name_6"><%%VALUE(part_name_6)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-description_6-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-description_6"><%%VALUE(description_6)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-manufacture_6-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-manufacture_6"><%%VALUE(manufacture_6)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-quality_6-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-quality_6"><%%VALUE(quality_6)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-unit_price_6-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-unit_price_6 text-right"><%%VALUE(unit_price_6)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-net_part_price_6-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-net_part_price_6 text-right"><%%VALUE(net_part_price_6)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-part_type_7-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-part_type_7"><%%VALUE(part_type_7)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-part_name_7-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-part_name_7"><%%VALUE(part_name_7)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-description_7-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-description_7"><%%VALUE(description_7)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-manufacture_7-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-manufacture_7"><%%VALUE(manufacture_7)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-quality_7-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-quality_7"><%%VALUE(quality_7)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-unit_price_7-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-unit_price_7 text-right"><%%VALUE(unit_price_7)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-net_part_price_7-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-net_part_price_7 text-right"><%%VALUE(net_part_price_7)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-part_type_8-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-part_type_8"><%%VALUE(part_type_8)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-part_name_8-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-part_name_8"><%%VALUE(part_name_8)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-description_8-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-description_8"><%%VALUE(description_8)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-manufacture_8-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-manufacture_8"><%%VALUE(manufacture_8)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-unit_price_8-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-unit_price_8 text-right"><%%VALUE(unit_price_8)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-quality_8-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-quality_8"><%%VALUE(quality_8)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-net_part_price_8-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-net_part_price_8 text-right"><%%VALUE(net_part_price_8)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-tax-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-tax text-right"><%%VALUE(tax)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-total_amount-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-total_amount text-right"><%%VALUE(total_amount)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-attached_requisition_form-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-attached_requisition_form"><a href="link.php?t=ordering_of_spares_for_internal_repairs&f=attached_requisition_form&i=<%%VALUE(spares_id)%%>" target="_blank" title="<%%VALUE(attached_requisition_form)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="ordering_of_spares_for_internal_repairs-work_allocation_reference_number-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-work_allocation_reference_number"><%%VALUE(work_allocation_reference_number)%%></td>
+		<td id="ordering_of_spares_for_internal_repairs-date_parts_received-<%%VALUE(spares_id)%%>" class="ordering_of_spares_for_internal_repairs-date_parts_received"><%%VALUE(date_parts_received)%%></td>
+		<script>$j(function() {
+			var e_attached_requisition_form = '<%%VALUE(attached_requisition_form)%%>'; if(e_attached_requisition_form == '' || e_attached_requisition_form == '&nbsp;') $j(/*<*/ '#ordering_of_spares_for_internal_repairs-attached_requisition_form-<%%VALUE(spares_id)%%>' /*>*/).html('');
+		});</script>

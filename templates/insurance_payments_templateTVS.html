@@ -1,0 +1,30 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the insurance_payments_init() hook (in hooks/insurance_payments.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="insurance_payments-insurance_payment_id-<%%VALUE(insurance_payment_id)%%>" class="insurance_payments-insurance_payment_id text-right"><%%VALUE(insurance_payment_id)%%></td>
+		<td id="insurance_payments-vehicle_registration_number-<%%VALUE(insurance_payment_id)%%>" class="insurance_payments-vehicle_registration_number"><%%VALUE(vehicle_registration_number)%%></td>
+		<td id="insurance_payments-engine_number-<%%VALUE(insurance_payment_id)%%>" class="insurance_payments-engine_number"><%%VALUE(engine_number)%%></td>
+		<td id="insurance_payments-chassis_number-<%%VALUE(insurance_payment_id)%%>" class="insurance_payments-chassis_number"><%%VALUE(chassis_number)%%></td>
+		<td id="insurance_payments-make_of_vehicle-<%%VALUE(insurance_payment_id)%%>" class="insurance_payments-make_of_vehicle"><%%VALUE(make_of_vehicle)%%></td>
+		<td id="insurance_payments-model_of_vehicle-<%%VALUE(insurance_payment_id)%%>" class="insurance_payments-model_of_vehicle"><%%VALUE(model_of_vehicle)%%></td>
+		<td id="insurance_payments-year_model_of_vehicle-<%%VALUE(insurance_payment_id)%%>" class="insurance_payments-year_model_of_vehicle"><%%VALUE(year_model_of_vehicle)%%></td>
+		<td id="insurance_payments-type_of_vehicle-<%%VALUE(insurance_payment_id)%%>" class="insurance_payments-type_of_vehicle"><%%VALUE(type_of_vehicle)%%></td>
+		<td id="insurance_payments-application_status-<%%VALUE(insurance_payment_id)%%>" class="insurance_payments-application_status"><%%VALUE(application_status)%%></td>
+		<td id="insurance_payments-barcode_number-<%%VALUE(insurance_payment_id)%%>" class="insurance_payments-barcode_number"><%%VALUE(barcode_number)%%></td>
+		<td id="insurance_payments-department-<%%VALUE(insurance_payment_id)%%>" class="insurance_payments-department"><%%VALUE(department)%%></td>
+		<td id="insurance_payments-insurance_reference-<%%VALUE(insurance_payment_id)%%>" class="insurance_payments-insurance_reference"><%%VALUE(insurance_reference)%%></td>
+		<td id="insurance_payments-insurance_expiration-<%%VALUE(insurance_payment_id)%%>" class="insurance_payments-insurance_expiration"><%%VALUE(insurance_expiration)%%></td>
+		<td id="insurance_payments-transaction_date-<%%VALUE(insurance_payment_id)%%>" class="insurance_payments-transaction_date"><%%VALUE(transaction_date)%%></td>
+		<td id="insurance_payments-reference_number-<%%VALUE(insurance_payment_id)%%>" class="insurance_payments-reference_number"><%%VALUE(reference_number)%%></td>
+		<td id="insurance_payments-merchant_name-<%%VALUE(insurance_payment_id)%%>" class="insurance_payments-merchant_name"><%%VALUE(merchant_name)%%></td>
+		<td id="insurance_payments-payment_amount-<%%VALUE(insurance_payment_id)%%>" class="insurance_payments-payment_amount text-right"><%%VALUE(payment_amount)%%></td>
+		<td id="insurance_payments-month_end-<%%VALUE(insurance_payment_id)%%>" class="insurance_payments-month_end"><%%VALUE(month_end)%%></td>
+		<td id="insurance_payments-documents-<%%VALUE(insurance_payment_id)%%>" class="insurance_payments-documents"><a href="link.php?t=insurance_payments&f=documents&i=<%%VALUE(insurance_payment_id)%%>" target="_blank" title="<%%VALUE(documents)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="insurance_payments-comments-<%%VALUE(insurance_payment_id)%%>" class="insurance_payments-comments"><%%VALUE(comments)%%></td>
+		<script>$j(function() {
+			var e_documents = '<%%VALUE(documents)%%>'; if(e_documents == '' || e_documents == '&nbsp;') $j(/*<*/ '#insurance_payments-documents-<%%VALUE(insurance_payment_id)%%>' /*>*/).html('');
+		});</script>

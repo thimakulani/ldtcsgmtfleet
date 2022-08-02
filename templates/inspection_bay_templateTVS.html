@@ -1,0 +1,32 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the inspection_bay_init() hook (in hooks/inspection_bay.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="inspection_bay-inspection_bay_id-<%%VALUE(inspection_bay_id)%%>" class="inspection_bay-inspection_bay_id text-right"><%%VALUE(inspection_bay_id)%%></td>
+		<td id="inspection_bay-inspection_bay_supervisor_name_and_surname-<%%VALUE(inspection_bay_id)%%>" class="inspection_bay-inspection_bay_supervisor_name_and_surname"><%%VALUE(inspection_bay_supervisor_name_and_surname)%%></td>
+		<td id="inspection_bay-supervisor_contact_details-<%%VALUE(inspection_bay_id)%%>" class="inspection_bay-supervisor_contact_details"><%%VALUE(supervisor_contact_details)%%></td>
+		<td id="inspection_bay-supervisor_email_address-<%%VALUE(inspection_bay_id)%%>" class="inspection_bay-supervisor_email_address"><a href="mailto:<%%VALUE(supervisor_email_address)%%>"><%%VALUE(supervisor_email_address)%%></a></td>
+		<td id="inspection_bay-supervisor_signature-<%%VALUE(inspection_bay_id)%%>" class="inspection_bay-supervisor_signature"><img src="thumbnail.php?i=<%%VALUE(supervisor_signature)%%>&t=inspection_bay&f=supervisor_signature&v=tv" class="img-thumbnail"></td>
+		<td id="inspection_bay-date_of_vehicle_entrance-<%%VALUE(inspection_bay_id)%%>" class="inspection_bay-date_of_vehicle_entrance"><%%VALUE(date_of_vehicle_entrance)%%></td>
+		<td id="inspection_bay-job_card_number-<%%VALUE(inspection_bay_id)%%>" class="inspection_bay-job_card_number"><%%VALUE(job_card_number)%%></td>
+		<td id="inspection_bay-vehicle_registration_number-<%%VALUE(inspection_bay_id)%%>" class="inspection_bay-vehicle_registration_number"><%%VALUE(vehicle_registration_number)%%></td>
+		<td id="inspection_bay-engine_number-<%%VALUE(inspection_bay_id)%%>" class="inspection_bay-engine_number"><%%VALUE(engine_number)%%></td>
+		<td id="inspection_bay-workshop_name-<%%VALUE(inspection_bay_id)%%>" class="inspection_bay-workshop_name"><%%VALUE(workshop_name)%%></td>
+		<td id="inspection_bay-work_allocation_reference_number-<%%VALUE(inspection_bay_id)%%>" class="inspection_bay-work_allocation_reference_number"><%%VALUE(work_allocation_reference_number)%%></td>
+		<td id="inspection_bay-make_of_vehicle-<%%VALUE(inspection_bay_id)%%>" class="inspection_bay-make_of_vehicle"><%%VALUE(make_of_vehicle)%%></td>
+		<td id="inspection_bay-inspection_bay_lane_number-<%%VALUE(inspection_bay_id)%%>" class="inspection_bay-inspection_bay_lane_number"><%%VALUE(inspection_bay_lane_number)%%></td>
+		<td id="inspection_bay-inspection_bay_condition-<%%VALUE(inspection_bay_id)%%>" class="inspection_bay-inspection_bay_condition"><%%VALUE(inspection_bay_condition)%%></td>
+		<td id="inspection_bay-allocation_feedback-<%%VALUE(inspection_bay_id)%%>" class="inspection_bay-allocation_feedback"><%%VALUE(allocation_feedback)%%></td>
+		<td id="inspection_bay-verification_of_defects-<%%VALUE(inspection_bay_id)%%>" class="inspection_bay-verification_of_defects"><%%VALUE(verification_of_defects)%%></td>
+		<td id="inspection_bay-additional_defects-<%%VALUE(inspection_bay_id)%%>" class="inspection_bay-additional_defects"><%%VALUE(additional_defects)%%></td>
+		<td id="inspection_bay-additional_defects_record-<%%VALUE(inspection_bay_id)%%>" class="inspection_bay-additional_defects_record"><a href="link.php?t=inspection_bay&f=additional_defects_record&i=<%%VALUE(inspection_bay_id)%%>" target="_blank" title="<%%VALUE(additional_defects_record)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="inspection_bay-repair_requirement_note-<%%VALUE(inspection_bay_id)%%>" class="inspection_bay-repair_requirement_note"><%%VALUE(repair_requirement_note)%%></td>
+		<td id="inspection_bay-repair_requirement_report-<%%VALUE(inspection_bay_id)%%>" class="inspection_bay-repair_requirement_report"><a href="link.php?t=inspection_bay&f=repair_requirement_report&i=<%%VALUE(inspection_bay_id)%%>" target="_blank" title="<%%VALUE(repair_requirement_report)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="inspection_bay-date_of_vehicle_exit-<%%VALUE(inspection_bay_id)%%>" class="inspection_bay-date_of_vehicle_exit"><%%VALUE(date_of_vehicle_exit)%%></td>
+		<script>$j(function() {
+			var e_additional_defects_record = '<%%VALUE(additional_defects_record)%%>'; if(e_additional_defects_record == '' || e_additional_defects_record == '&nbsp;') $j(/*<*/ '#inspection_bay-additional_defects_record-<%%VALUE(inspection_bay_id)%%>' /*>*/).html('');
+			var e_repair_requirement_report = '<%%VALUE(repair_requirement_report)%%>'; if(e_repair_requirement_report == '' || e_repair_requirement_report == '&nbsp;') $j(/*<*/ '#inspection_bay-repair_requirement_report-<%%VALUE(inspection_bay_id)%%>' /*>*/).html('');
+		});</script>

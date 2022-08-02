@@ -1,0 +1,28 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the identification_of_defects_init() hook (in hooks/identification_of_defects.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="identification_of_defects-defects_id-<%%VALUE(defects_id)%%>" class="identification_of_defects-defects_id text-right"><%%VALUE(defects_id)%%></td>
+		<td id="identification_of_defects-vehicle_registration_number-<%%VALUE(defects_id)%%>" class="identification_of_defects-vehicle_registration_number"><%%VALUE(vehicle_registration_number)%%></td>
+		<td id="identification_of_defects-engine_number-<%%VALUE(defects_id)%%>" class="identification_of_defects-engine_number"><%%VALUE(engine_number)%%></td>
+		<td id="identification_of_defects-make_of_vehicle-<%%VALUE(defects_id)%%>" class="identification_of_defects-make_of_vehicle"><%%VALUE(make_of_vehicle)%%></td>
+		<td id="identification_of_defects-end_user_name_and_surname-<%%VALUE(defects_id)%%>" class="identification_of_defects-end_user_name_and_surname"><%%VALUE(end_user_name_and_surname)%%></td>
+		<td id="identification_of_defects-end_user_contact_details-<%%VALUE(defects_id)%%>" class="identification_of_defects-end_user_contact_details"><%%VALUE(end_user_contact_details)%%></td>
+		<td id="identification_of_defects-end_user_persal_number-<%%VALUE(defects_id)%%>" class="identification_of_defects-end_user_persal_number"><%%VALUE(end_user_persal_number)%%></td>
+		<td id="identification_of_defects-end_user_email_address-<%%VALUE(defects_id)%%>" class="identification_of_defects-end_user_email_address"><a href="mailto:<%%VALUE(end_user_email_address)%%>" title="<%%VALUE(end_user_email_address)%%>" class="btn btn-default"><i class="glyphicon glyphicon-envelope text-info"></i></a></td>
+		<td id="identification_of_defects-end_user_signature-<%%VALUE(defects_id)%%>" class="identification_of_defects-end_user_signature"><img src="thumbnail.php?i=<%%VALUE(end_user_signature)%%>&t=identification_of_defects&f=end_user_signature&v=tv" class="img-thumbnail"></td>
+		<td id="identification_of_defects-types_of_defects-<%%VALUE(defects_id)%%>" class="identification_of_defects-types_of_defects"><%%VALUE(types_of_defects)%%></td>
+		<td id="identification_of_defects-courses_of_defects-<%%VALUE(defects_id)%%>" class="identification_of_defects-courses_of_defects"><%%VALUE(courses_of_defects)%%></td>
+		<td id="identification_of_defects-condition_of_defects-<%%VALUE(defects_id)%%>" class="identification_of_defects-condition_of_defects"><%%VALUE(condition_of_defects)%%></td>
+		<td id="identification_of_defects-transport_officer_name_and_surname-<%%VALUE(defects_id)%%>" class="identification_of_defects-transport_officer_name_and_surname"><%%VALUE(transport_officer_name_and_surname)%%></td>
+		<td id="identification_of_defects-transport_officer_persal_number-<%%VALUE(defects_id)%%>" class="identification_of_defects-transport_officer_persal_number"><%%VALUE(transport_officer_persal_number)%%></td>
+		<td id="identification_of_defects-transport_officer_contact_details-<%%VALUE(defects_id)%%>" class="identification_of_defects-transport_officer_contact_details"><%%VALUE(transport_officer_contact_details)%%></td>
+		<td id="identification_of_defects-transport_officer_email_address-<%%VALUE(defects_id)%%>" class="identification_of_defects-transport_officer_email_address"><img src="thumbnail.php?i=<%%VALUE(transport_officer_email_address)%%>&t=identification_of_defects&f=transport_officer_email_address&v=tv" class="img-thumbnail"></td>
+		<td id="identification_of_defects-government_garage_manager_name_and_surname-<%%VALUE(defects_id)%%>" class="identification_of_defects-government_garage_manager_name_and_surname"><%%VALUE(government_garage_manager_name_and_surname)%%></td>
+		<td id="identification_of_defects-government_garage_manager_contact_details-<%%VALUE(defects_id)%%>" class="identification_of_defects-government_garage_manager_contact_details"><%%VALUE(government_garage_manager_contact_details)%%></td>
+		<td id="identification_of_defects-government_garage_manager_address-<%%VALUE(defects_id)%%>" class="identification_of_defects-government_garage_manager_address"><%%VALUE(government_garage_manager_address)%%></td>
+		<td id="identification_of_defects-government_garage_manager_email_address-<%%VALUE(defects_id)%%>" class="identification_of_defects-government_garage_manager_email_address"><a href="mailto:<%%VALUE(government_garage_manager_email_address)%%>" title="<%%VALUE(government_garage_manager_email_address)%%>" class="btn btn-default"><i class="glyphicon glyphicon-envelope text-info"></i></a></td>
+		<td id="identification_of_defects-government_garage_manager_signature-<%%VALUE(defects_id)%%>" class="identification_of_defects-government_garage_manager_signature"><img src="thumbnail.php?i=<%%VALUE(government_garage_manager_signature)%%>&t=identification_of_defects&f=government_garage_manager_signature&v=tv" class="img-thumbnail"></td>

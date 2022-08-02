@@ -1,0 +1,54 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the log_sheet_init() hook (in hooks/log_sheet.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="log_sheet-fuel_log_sheet_id-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-fuel_log_sheet_id text-right"><%%SELECT%%><%%VALUE(fuel_log_sheet_id)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-vehicle_registration_number-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-vehicle_registration_number"><%%SELECT%%><%%VALUE(vehicle_registration_number)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-register_number-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-register_number"><%%SELECT%%><%%VALUE(register_number)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-make_of_vehicle-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-make_of_vehicle"><%%SELECT%%><%%VALUE(make_of_vehicle)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-model_of_vehicle-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-model_of_vehicle"><%%SELECT%%><%%VALUE(model_of_vehicle)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-year_model_specification-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-year_model_specification"><%%SELECT%%><%%VALUE(year_model_specification)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-colour_of_vehicle-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-colour_of_vehicle"><%%SELECT%%><%%VALUE(colour_of_vehicle)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-engine_capacity-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-engine_capacity"><%%SELECT%%><%%VALUE(engine_capacity)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-renewal_of_license-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-renewal_of_license"><%%SELECT%%><%%VALUE(renewal_of_license)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-district-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-district"><%%SELECT%%><%%VALUE(district)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-month-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-month"><%%SELECT%%><%%VALUE(month)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-drivers_name_and_surname-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-drivers_name_and_surname"><%%SELECT%%><%%VALUE(drivers_name_and_surname)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-drivers_persal_number-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-drivers_persal_number"><%%SELECT%%><%%VALUE(drivers_persal_number)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-opening_km-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-opening_km"><%%SELECT%%><%%VALUE(opening_km)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-total_trip_distance-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-total_trip_distance"><%%SELECT%%><%%VALUE(total_trip_distance)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-closing_km-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-closing_km"><%%SELECT%%><%%VALUE(closing_km)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-fuel_type-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-fuel_type"><%%SELECT%%><%%VALUE(fuel_type)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-fuel_tank_capacity-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-fuel_tank_capacity text-right"><%%SELECT%%><%%VALUE(fuel_tank_capacity)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-vendor-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-vendor"><%%SELECT%%><%%VALUE(vendor)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-fuel_cost_litre-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-fuel_cost_litre text-right"><%%SELECT%%><%%VALUE(fuel_cost_litre)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-refuel_quantity_1-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-refuel_quantity_1 text-right"><%%SELECT%%><%%VALUE(refuel_quantity_1)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-refuel_first_time_date-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-refuel_first_time_date"><%%SELECT%%><%%VALUE(refuel_first_time_date)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-trip_distance_refuel_1-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-trip_distance_refuel_1"><%%SELECT%%><%%VALUE(trip_distance_refuel_1)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-refuel_quantity_2-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-refuel_quantity_2 text-right"><%%SELECT%%><%%VALUE(refuel_quantity_2)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-refuel_second_time_date-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-refuel_second_time_date"><%%SELECT%%><%%VALUE(refuel_second_time_date)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-trip_distance_refuel_2-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-trip_distance_refuel_2"><%%SELECT%%><%%VALUE(trip_distance_refuel_2)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-refuel_quantity_3-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-refuel_quantity_3 text-right"><%%SELECT%%><%%VALUE(refuel_quantity_3)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-refuel_third_time_date-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-refuel_third_time_date"><%%SELECT%%><%%VALUE(refuel_third_time_date)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-trip_distance_refuel_3-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-trip_distance_refuel_3"><%%SELECT%%><%%VALUE(trip_distance_refuel_3)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-refuel_quantity_4-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-refuel_quantity_4 text-right"><%%SELECT%%><%%VALUE(refuel_quantity_4)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-refuel_fourth_time_date-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-refuel_fourth_time_date"><%%SELECT%%><%%VALUE(refuel_fourth_time_date)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-trip_distance_refuel_4-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-trip_distance_refuel_4"><%%SELECT%%><%%VALUE(trip_distance_refuel_4)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-refuel_quantity_5-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-refuel_quantity_5 text-right"><%%SELECT%%><%%VALUE(refuel_quantity_5)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-refuel_fifth_time_date-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-refuel_fifth_time_date"><%%SELECT%%><%%VALUE(refuel_fifth_time_date)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-trip_distance_refuel_5-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-trip_distance_refuel_5"><%%SELECT%%><%%VALUE(trip_distance_refuel_5)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-refuel_quantity_6-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-refuel_quantity_6 text-right"><%%SELECT%%><%%VALUE(refuel_quantity_6)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-trip_distance_refuel_6-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-trip_distance_refuel_6"><%%SELECT%%><%%VALUE(trip_distance_refuel_6)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-refuel_sixth_time_date-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-refuel_sixth_time_date"><%%SELECT%%><%%VALUE(refuel_sixth_time_date)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-times_refuel_current_month-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-times_refuel_current_month text-right"><%%SELECT%%><%%VALUE(times_refuel_current_month)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-total_fuel_quantity-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-total_fuel_quantity text-right"><%%SELECT%%><%%VALUE(total_fuel_quantity)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-fuel_consumption-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-fuel_consumption text-right"><%%SELECT%%><%%VALUE(fuel_consumption)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-fuel_total_cost-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-fuel_total_cost text-right"><%%SELECT%%><%%VALUE(fuel_total_cost)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-payment_e_fuel_card-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-payment_e_fuel_card"><%%SELECT%%><%%VALUE(payment_e_fuel_card)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-captured_by-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-captured_by"><%%SELECT%%><%%VALUE(captured_by)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-comments-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-comments"><%%SELECT%%><%%VALUE(comments)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-date_captured-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-date_captured"><%%SELECT%%><%%VALUE(date_captured)%%><%%ENDSELECT%%></td>
+		<td id="log_sheet-complete_fill_up-<%%VALUE(fuel_log_sheet_id)%%>" class="log_sheet-complete_fill_up"><%%SELECT%%><%%VALUE(complete_fill_up)%%><%%ENDSELECT%%></td>

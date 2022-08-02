@@ -1,0 +1,587 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/reception-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="reception_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="reception_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm vspacer-sm" href="service_view.php?filterer_receptionist=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>" id="service_link"><i class="glyphicon glyphicon-list-alt"></i> Service:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="service_view.php?filterer_receptionist=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>" id="xs_service_link"><i class="glyphicon glyphicon-list-alt"></i> Service:</a>
+			<input type="hidden" id="service_hclink" value="service_view.php?filterer_receptionist=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm vspacer-sm" href="purchase_orders_view.php?filterer_job_card_number=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>" id="purchase_orders_link"><i class="glyphicon glyphicon-list-alt"></i> Purchase Orders:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="purchase_orders_view.php?filterer_job_card_number=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>" id="xs_purchase_orders_link"><i class="glyphicon glyphicon-list-alt"></i> Purchase Orders:</a>
+			<input type="hidden" id="purchase_orders_hclink" value="purchase_orders_view.php?filterer_job_card_number=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm vspacer-sm" href="breakdown_services_view.php?filterer_description_of_vehicle_breakdown_notes=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>" id="breakdown_services_link"><i class="glyphicon glyphicon-list-alt"></i> Breakdown Services:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="breakdown_services_view.php?filterer_description_of_vehicle_breakdown_notes=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>" id="xs_breakdown_services_link"><i class="glyphicon glyphicon-list-alt"></i> Breakdown Services:</a>
+			<input type="hidden" id="breakdown_services_hclink" value="breakdown_services_view.php?filterer_description_of_vehicle_breakdown_notes=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm vspacer-sm" href="inspection_bay_view.php?filterer_job_card_number=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>" id="inspection_bay_link"><i class="glyphicon glyphicon-list-alt"></i> Inspection Bay:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="inspection_bay_view.php?filterer_job_card_number=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>" id="xs_inspection_bay_link"><i class="glyphicon glyphicon-list-alt"></i> Inspection Bay:</a>
+			<input type="hidden" id="inspection_bay_hclink" value="inspection_bay_view.php?filterer_job_card_number=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm vspacer-sm" href="internal_repairs_mechanical_view.php?filterer_job_card_number=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>" id="internal_repairs_mechanical_link"><i class="glyphicon glyphicon-list-alt"></i> Internal Repairs Mechanical:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="internal_repairs_mechanical_view.php?filterer_job_card_number=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>" id="xs_internal_repairs_mechanical_link"><i class="glyphicon glyphicon-list-alt"></i> Internal Repairs Mechanical:</a>
+			<input type="hidden" id="internal_repairs_mechanical_hclink" value="internal_repairs_mechanical_view.php?filterer_job_card_number=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm vspacer-sm" href="internal_repairs_body_view.php?filterer_job_card_number=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>" id="internal_repairs_body_link"><i class="glyphicon glyphicon-list-alt"></i> Internal Repairs Body:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="internal_repairs_body_view.php?filterer_job_card_number=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>" id="xs_internal_repairs_body_link"><i class="glyphicon glyphicon-list-alt"></i> Internal Repairs Body:</a>
+			<input type="hidden" id="internal_repairs_body_hclink" value="internal_repairs_body_view.php?filterer_job_card_number=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm vspacer-sm" href="ordering_of_spares_for_internal_repairs_view.php?filterer_job_card_number=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>" id="ordering_of_spares_for_internal_repairs_link"><i class="glyphicon glyphicon-list-alt"></i> Ordering Of Spares For Internal Repairs:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="ordering_of_spares_for_internal_repairs_view.php?filterer_job_card_number=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>" id="xs_ordering_of_spares_for_internal_repairs_link"><i class="glyphicon glyphicon-list-alt"></i> Ordering Of Spares For Internal Repairs:</a>
+			<input type="hidden" id="ordering_of_spares_for_internal_repairs_hclink" value="ordering_of_spares_for_internal_repairs_view.php?filterer_job_card_number=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm vspacer-sm" href="collection_of_repaired_vehicles_view.php?filterer_reception_name_and_surname=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>" id="collection_of_repaired_vehicles_link"><i class="glyphicon glyphicon-list-alt"></i> Collection Of Repaired Vehicles:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="collection_of_repaired_vehicles_view.php?filterer_reception_name_and_surname=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>" id="xs_collection_of_repaired_vehicles_link"><i class="glyphicon glyphicon-list-alt"></i> Collection Of Repaired Vehicles:</a>
+			<input type="hidden" id="collection_of_repaired_vehicles_hclink" value="collection_of_repaired_vehicles_view.php?filterer_reception_name_and_surname=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm vspacer-sm" href="costing_view.php?filterer_job_card_number=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>" id="costing_link"><i class="glyphicon glyphicon-list-alt"></i> Costing:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="costing_view.php?filterer_job_card_number=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>" id="xs_costing_link"><i class="glyphicon glyphicon-list-alt"></i> Costing:</a>
+			<input type="hidden" id="costing_hclink" value="costing_view.php?filterer_job_card_number=<%%URLVALUE(reception_user_id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="reception_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Reception User ID: -->
+				<div class="form-group reception-reception_user_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="reception_user_id">Reception User ID:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="reception_user_id"><%%VALUE(reception_user_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Reception Name & Surname: -->
+				<div class="form-group reception-reception_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="reception_name_and_surname">Reception Name & Surname:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="reception_name_and_surname" id="reception_name_and_surname" value="<%%VALUE(reception_name_and_surname)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Reception Persal Number: -->
+				<div class="form-group reception-reception_persal_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="reception_persal_number">Reception Persal Number:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="reception_persal_number" id="reception_persal_number" value="<%%VALUE(reception_persal_number)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Reception Contact Details: -->
+				<div class="form-group reception-reception_contact_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="reception_contact_details">Reception Contact Details:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="reception_contact_details" id="reception_contact_details" value="<%%VALUE(reception_contact_details)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Reception Email Address: -->
+				<div class="form-group reception-reception_email_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="reception_email_address-edit-link">Reception Email Address:</label>
+					<div class="col-lg-9">
+						<div>
+							<a id="reception_email_address-link" href="mailto:<%%VALUE(reception_email_address)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-envelope text-info" title="<%%VALUE(reception_email_address)%%>"></i></a>
+							<label for="reception_email_address"><button type="button" id="reception_email_address-edit-link" class="btn btn-default vspacer-sm" data-toggle="collapse" data-target="#reception_email_address" title="<%%TRANSLATION(Edit)%%>"><i class="glyphicon glyphicon-pencil"></i></button></label>
+							<input maxlength="40" type="text" class="form-control collapse" name="reception_email_address" id="reception_email_address" value="<%%VALUE(reception_email_address)%%>">
+						</div><script>jQuery(function() { var e_reception_email_address = '<%%VALUE(reception_email_address)%%>'; if(e_reception_email_address == '' || e_reception_email_address == '&nbsp;' || e_reception_email_address == 'blank.gif') jQuery('#reception_email_address-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Reception Signature: -->
+				<div class="form-group reception-reception_signature">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Reception Signature: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#reception_signature-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="reception_signature-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 500 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="thumbnail.php?i=<%%VALUE(reception_signature)%%>&t=reception&f=reception_signature&v=dv" class="img-thumbnail" id="reception_signature-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(reception_signature)%%>
+								<%%REMOVEFILE(reception_signature)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Date of Vehicle Entrance: -->
+				<div class="form-group reception-date_of_vehicle_entrance">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_of_vehicle_entrance">Date of Vehicle Entrance:</label>
+					<div class="col-lg-9">
+						<div class="input-group date datetimepicker"><input type="text" class="form-control" name="date_of_vehicle_entrance" id="date_of_vehicle_entrance" value="<%%VALUE(date_of_vehicle_entrance)%%>"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div>
+					</div>
+				</div>
+
+				<!-- Field: Service Status: -->
+				<div class="form-group reception-service_status">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="service_status">Service Status:</label>
+					<div class="col-lg-9">
+						<%%COMBO(service_status)%%>
+					</div>
+				</div>
+
+                      	<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="status_progress_bar" class="control-label col-lg-3">Status/Progress of Servicing Vehicle:</label>
+					<div class="col-lg-5">
+
+						<div class="container">
+
+
+
+					  <input type="radio" class="radio" name="progress" value="five" id="five">
+					  <label for="five" class="label">5%</label>
+
+					  <input type="radio" class="radio" name="progress" value="twentyfive" id="twentyfive" >
+					  <label for="twentyfive" class="label">25%</label>
+
+					  <input type="radio" class="radio" name="progress" value="fifty" id="fifty">
+					  <label for="fifty" class="label">50%</label>
+
+					  <input type="radio" class="radio" name="progress" value="seventyfive" id="seventyfive">
+					  <label for="seventyfive" class="label">75%</label>
+
+					  <input type="radio" class="radio" name="progress" value="onehundred" id="onehundred" checked>
+					  <label for="onehundred" class="label">100%</label>
+
+
+
+					  <div class="progress">
+					    <div class="progress-bar"></div>
+					  </div>
+					</div>
+					</div>
+				</div>
+
+    <hr><b style="color:#77060A;">WORKSHOP DETAILS:</b><p><br>
+				<!-- Field: District: -->
+				<div class="form-group reception-district">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="district" data-parent_link="view_parent_modal">District: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#district-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="district-description"><div class="alert alert-info bspacer-xs">Capture the district and stations detail</div></span>
+						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(district)%%><%%PLINK(district)%%><%%ADDNEW(districts)%%><span id="districtLoading"></span></div>
+					</div>
+				</div>
+
+				<!-- Field: Workshop Name/Station: -->
+				<div class="form-group reception-location">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Workshop Name/Station:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="location"></div>
+					</div>
+				</div>
+
+				<!-- Field: Workshop Address: -->
+				<div class="form-group reception-workshop_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="workshop_address">Workshop Address:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(workshop_address)%%>
+					</div>
+				</div>
+
+				<!-- Field: Registration Number: -->
+				<div class="form-group reception-vehicle_registration_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_registration_number" data-parent_link="view_parent_modal">Registration Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" style="white-space: nowrap; overflow-x: hidden;"><%%COMBO(vehicle_registration_number)%%><%%PLINK(vehicle_registration_number)%%><%%ADDNEW(gmt_fleet_register)%%><span id="vehicle_registration_numberLoading"></span></div>
+					</div>
+				</div>
+
+				<!-- Field: Engine Number: -->
+				<div class="form-group reception-engine_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Engine Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="engine_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Make of Vehicle: -->
+				<div class="form-group reception-make_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Make of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="make_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Breakdown Of Vehicle: -->
+				<div class="form-group reception-breakdown_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="breakdown_of_vehicle">Breakdown Of Vehicle:</label>
+					<div class="col-lg-9">
+						<%%COMBO(breakdown_of_vehicle)%%>
+					</div>
+				</div>
+
+				<!-- Field: Description of Vehicle Breakdown (Notes): -->
+				<div class="form-group reception-description_of_vehicle_breakdown_notes">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="description_of_vehicle_breakdown_notes">Description of Vehicle Breakdown (Notes): <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#description_of_vehicle_breakdown_notes-description"></i></label>
+					<div class="col-lg-9 has-nicedit">
+						<span class="help-block bspacer-xs collapse" id="description_of_vehicle_breakdown_notes-description"><div class="alert alert-info bspacer-xs">Note a short description as per Reporting Officer.</div></span>
+						<%%HTMLAREA(description_of_vehicle_breakdown_notes)%%>
+					</div>
+				</div>
+
+				<!-- Field: Description Of Vehicle Report: -->
+				<div class="form-group reception-description_of_vehicle_report">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Description Of Vehicle Report: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#description_of_vehicle_report-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="description_of_vehicle_report-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5204 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="description_of_vehicle_report-link" href="link.php?t=reception&f=description_of_vehicle_report&i=<%%VALUE(reception_user_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(description_of_vehicle_report)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(description_of_vehicle_report)%%>
+								<%%REMOVEFILE(description_of_vehicle_report)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_description_of_vehicle_report = '<%%VALUE(description_of_vehicle_report)%%>'; if(e_description_of_vehicle_report == '' || e_description_of_vehicle_report == '&nbsp;' || e_description_of_vehicle_report == 'blank.gif') jQuery('#description_of_vehicle_report-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Description Of Vehicle Report: -->
+				<div class="form-group reception-upload_of_vehicle_report">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Description Of Vehicle Report: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#upload_of_vehicle_report-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="upload_of_vehicle_report-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5204 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="upload_of_vehicle_report-link" href="link.php?t=reception&f=upload_of_vehicle_report&i=<%%VALUE(reception_user_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(upload_of_vehicle_report)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(upload_of_vehicle_report)%%>
+								<%%REMOVEFILE(upload_of_vehicle_report)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_upload_of_vehicle_report = '<%%VALUE(upload_of_vehicle_report)%%>'; if(e_upload_of_vehicle_report == '' || e_upload_of_vehicle_report == '&nbsp;' || e_upload_of_vehicle_report == 'blank.gif') jQuery('#upload_of_vehicle_report-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Description Of Vehicle Breakdown: -->
+				<div class="form-group reception-description_of_vehicle_breakdown">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="description_of_vehicle_breakdown">Description Of Vehicle Breakdown:</label>
+					<div class="col-lg-9">
+						<textarea class="form-control" name="description_of_vehicle_breakdown" id="description_of_vehicle_breakdown" rows=" 5"><%%VALUE(description_of_vehicle_breakdown)%%></textarea>
+					</div>
+				</div>
+
+				<!-- Field: Job Card Number: -->
+				<div class="form-group reception-job_card_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="job_card_number">Job Card Number:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="job_card_number" id="job_card_number" value="<%%VALUE(job_card_number)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Visual Inspection Form: -->
+				<div class="form-group reception-visual_inspection_form">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Visual Inspection Form: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#visual_inspection_form-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="visual_inspection_form-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5120 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="visual_inspection_form-link" href="link.php?t=reception&f=visual_inspection_form&i=<%%VALUE(reception_user_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(visual_inspection_form)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(visual_inspection_form)%%>
+								<%%REMOVEFILE(visual_inspection_form)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_visual_inspection_form = '<%%VALUE(visual_inspection_form)%%>'; if(e_visual_inspection_form == '' || e_visual_inspection_form == '&nbsp;' || e_visual_inspection_form == 'blank.gif') jQuery('#visual_inspection_form-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Damage Report: -->
+				<div class="form-group reception-damage_report">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Damage Report: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#damage_report-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="damage_report-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5120 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="damage_report-link" href="link.php?t=reception&f=damage_report&i=<%%VALUE(reception_user_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(damage_report)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(damage_report)%%>
+								<%%REMOVEFILE(damage_report)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_damage_report = '<%%VALUE(damage_report)%%>'; if(e_damage_report == '' || e_damage_report == '&nbsp;' || e_damage_report == 'blank.gif') jQuery('#damage_report-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Date of Vehicle Exit: -->
+				<div class="form-group reception-date_of_vehicle_exit">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_of_vehicle_exit">Date of Vehicle Exit:</label>
+					<div class="col-lg-9">
+						<div class="input-group date datetimepicker"><input type="text" class="form-control" name="date_of_vehicle_exit" id="date_of_vehicle_exit" value="<%%VALUE(date_of_vehicle_exit)%%>"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div>
+					</div>
+				</div>
+
+				<!-- Field: Payment: -->
+				<div class="form-group reception-payment">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Payment:</label>
+					<div class="col-lg-9">
+						<%%COMBO(payment)%%>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="reception_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="reception-children" class="children-tabs">
+				<div class="text-center"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+			</div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			AppGini.once({
+				condition: function() { return bkLib != undefined; },
+				action: function() {
+					if($j('textarea#workshop_address').length) new nicEditor({ fullPanel : true }).panelInstance('workshop_address');
+					if($j('textarea#description_of_vehicle_breakdown_notes').length) new nicEditor({ fullPanel : true }).panelInstance('description_of_vehicle_breakdown_notes');
+				}
+			});
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			$j('#reception_dv_container-loading').addClass('hidden');
+			$j('#reception_dv_container').removeClass('hidden');
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) AppGini.focusFormElement('reception', 'reception_name_and_surname');
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			// try to detect rich text changes by adding 'input' handler after nicedit is loaded ...
+			AppGini.detectContentEditableChanges();
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+			if(embedded_mode) {
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function() {
+					$j('a[href]:not([href^="#"]):not([href^="javascript"]):not([href$="Embedded=1"]):not([href*="link.php?t="]):not([href^="mailto:"])').each(
+						function() {
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode) {
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			} else {
+				post(
+					'parent-children.php', {
+						ParentTable: 'reception',
+						SelectedID: '<%%VALUE(reception_user_id)%%>',
+						Operation: 'show-children'
+					},
+					'reception-children'
+				);
+			}
+
+			if(true /* !embedded_mode */) {
+				/* add a horizontal spacer to [add new parent] buttons that don't have a spacered element before them */
+				$j('.add_new_parent').prev(':not(.hspacer-md)').next().addClass('hspacer-md');
+
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'reception',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=reception&id=<%%URLVALUE(reception_user_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=reception&id=<%%URLVALUE(reception_user_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

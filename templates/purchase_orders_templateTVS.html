@@ -1,0 +1,88 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the purchase_orders_init() hook (in hooks/purchase_orders.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="purchase_orders-purchase_order_id-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-purchase_order_id text-right"><%%VALUE(purchase_order_id)%%></td>
+		<td id="purchase_orders-purchased_order_number-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-purchased_order_number"><%%VALUE(purchased_order_number)%%></td>
+		<td id="purchase_orders-purchased_date-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-purchased_date"><%%VALUE(purchased_date)%%></td>
+		<td id="purchase_orders-purchaser-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-purchaser"><%%VALUE(purchaser)%%></td>
+		<td id="purchase_orders-vehicle_registration_number-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-vehicle_registration_number"><%%VALUE(vehicle_registration_number)%%></td>
+		<td id="purchase_orders-type_of_vehicle-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-type_of_vehicle"><%%VALUE(type_of_vehicle)%%></td>
+		<td id="purchase_orders-manufacturer-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-manufacturer"><%%VALUE(manufacturer)%%></td>
+		<td id="purchase_orders-service_type-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-service_type"><%%VALUE(service_type)%%></td>
+		<td id="purchase_orders-service_category-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-service_category"><%%VALUE(service_category)%%></td>
+		<td id="purchase_orders-service_item-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-service_item"><%%VALUE(service_item)%%></td>
+		<td id="purchase_orders-upload_quotation-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-upload_quotation"><a href="link.php?t=purchase_orders&f=upload_quotation&i=<%%VALUE(purchase_order_id)%%>" target="_blank" title="<%%VALUE(upload_quotation)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="purchase_orders-due_date-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-due_date"><%%VALUE(due_date)%%></td>
+		<td id="purchase_orders-merchant_name-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-merchant_name"><%%VALUE(merchant_name)%%></td>
+		<td id="purchase_orders-date_of_service-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-date_of_service"><%%VALUE(date_of_service)%%></td>
+		<td id="purchase_orders-closing_km-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-closing_km"><%%VALUE(closing_km)%%></td>
+		<td id="purchase_orders-labour_category_1-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-labour_category_1"><%%VALUE(labour_category_1)%%></td>
+		<td id="purchase_orders-part_number_1-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-part_number_1"><%%VALUE(part_number_1)%%></td>
+		<td id="purchase_orders-part_name_1-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-part_name_1"><%%VALUE(part_name_1)%%></td>
+		<td id="purchase_orders-part_manufacturer_name_1-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-part_manufacturer_name_1"><%%VALUE(part_manufacturer_name_1)%%></td>
+		<td id="purchase_orders-quantity_1-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-quantity_1"><%%VALUE(quantity_1)%%></td>
+		<td id="purchase_orders-expense_of_item_1-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-expense_of_item_1 text-right"><%%VALUE(expense_of_item_1)%%></td>
+		<td id="purchase_orders-labour_category_2-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-labour_category_2"><%%VALUE(labour_category_2)%%></td>
+		<td id="purchase_orders-part_number_2-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-part_number_2"><%%VALUE(part_number_2)%%></td>
+		<td id="purchase_orders-part_name_2-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-part_name_2"><%%VALUE(part_name_2)%%></td>
+		<td id="purchase_orders-part_manufacturer_name_2-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-part_manufacturer_name_2"><%%VALUE(part_manufacturer_name_2)%%></td>
+		<td id="purchase_orders-quantity_2-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-quantity_2"><%%VALUE(quantity_2)%%></td>
+		<td id="purchase_orders-expense_of_item_2-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-expense_of_item_2 text-right"><%%VALUE(expense_of_item_2)%%></td>
+		<td id="purchase_orders-labour_category_3-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-labour_category_3"><%%VALUE(labour_category_3)%%></td>
+		<td id="purchase_orders-part_number_3-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-part_number_3"><%%VALUE(part_number_3)%%></td>
+		<td id="purchase_orders-part_name_3-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-part_name_3"><%%VALUE(part_name_3)%%></td>
+		<td id="purchase_orders-part_manufacturer_name_3-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-part_manufacturer_name_3"><%%VALUE(part_manufacturer_name_3)%%></td>
+		<td id="purchase_orders-quantity_3-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-quantity_3"><%%VALUE(quantity_3)%%></td>
+		<td id="purchase_orders-expense_of_item_3-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-expense_of_item_3 text-right"><%%VALUE(expense_of_item_3)%%></td>
+		<td id="purchase_orders-labour_category_4-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-labour_category_4"><%%VALUE(labour_category_4)%%></td>
+		<td id="purchase_orders-part_number_4-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-part_number_4"><%%VALUE(part_number_4)%%></td>
+		<td id="purchase_orders-part_name_4-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-part_name_4"><%%VALUE(part_name_4)%%></td>
+		<td id="purchase_orders-part_manufacturer_name_4-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-part_manufacturer_name_4"><%%VALUE(part_manufacturer_name_4)%%></td>
+		<td id="purchase_orders-quantity_4-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-quantity_4"><%%VALUE(quantity_4)%%></td>
+		<td id="purchase_orders-expense_of_item_4-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-expense_of_item_4 text-right"><%%VALUE(expense_of_item_4)%%></td>
+		<td id="purchase_orders-labour_category_5-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-labour_category_5"><%%VALUE(labour_category_5)%%></td>
+		<td id="purchase_orders-part_number_5-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-part_number_5"><%%VALUE(part_number_5)%%></td>
+		<td id="purchase_orders-part_name_5-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-part_name_5"><%%VALUE(part_name_5)%%></td>
+		<td id="purchase_orders-part_manufacturer_name_5-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-part_manufacturer_name_5"><%%VALUE(part_manufacturer_name_5)%%></td>
+		<td id="purchase_orders-quantity_5-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-quantity_5"><%%VALUE(quantity_5)%%></td>
+		<td id="purchase_orders-expense_of_item_5-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-expense_of_item_5 text-right"><%%VALUE(expense_of_item_5)%%></td>
+		<td id="purchase_orders-labour_category_6-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-labour_category_6"><%%VALUE(labour_category_6)%%></td>
+		<td id="purchase_orders-part_number_6-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-part_number_6"><%%VALUE(part_number_6)%%></td>
+		<td id="purchase_orders-part_name_6-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-part_name_6"><%%VALUE(part_name_6)%%></td>
+		<td id="purchase_orders-part_manufacturer_name_6-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-part_manufacturer_name_6"><%%VALUE(part_manufacturer_name_6)%%></td>
+		<td id="purchase_orders-quantity_6-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-quantity_6"><%%VALUE(quantity_6)%%></td>
+		<td id="purchase_orders-expense_of_item_6-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-expense_of_item_6 text-right"><%%VALUE(expense_of_item_6)%%></td>
+		<td id="purchase_orders-labour_category_7-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-labour_category_7"><%%VALUE(labour_category_7)%%></td>
+		<td id="purchase_orders-part_number_7-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-part_number_7"><%%VALUE(part_number_7)%%></td>
+		<td id="purchase_orders-part_name_7-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-part_name_7"><%%VALUE(part_name_7)%%></td>
+		<td id="purchase_orders-part_manufacturer_name_7-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-part_manufacturer_name_7"><%%VALUE(part_manufacturer_name_7)%%></td>
+		<td id="purchase_orders-quantity_7-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-quantity_7"><%%VALUE(quantity_7)%%></td>
+		<td id="purchase_orders-expense_of_item_7-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-expense_of_item_7 text-right"><%%VALUE(expense_of_item_7)%%></td>
+		<td id="purchase_orders-labour_category_8-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-labour_category_8"><%%VALUE(labour_category_8)%%></td>
+		<td id="purchase_orders-part_number_8-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-part_number_8"><%%VALUE(part_number_8)%%></td>
+		<td id="purchase_orders-part_name_8-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-part_name_8"><%%VALUE(part_name_8)%%></td>
+		<td id="purchase_orders-part_manufacturer_name_8-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-part_manufacturer_name_8"><%%VALUE(part_manufacturer_name_8)%%></td>
+		<td id="purchase_orders-expense_of_item_8-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-expense_of_item_8 text-right"><%%VALUE(expense_of_item_8)%%></td>
+		<td id="purchase_orders-material_cost-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-material_cost text-right"><%%VALUE(material_cost)%%></td>
+		<td id="purchase_orders-average_worktime_hrs-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-average_worktime_hrs"><%%VALUE(average_worktime_hrs)%%></td>
+		<td id="purchase_orders-standard_labour_cost_per_hour-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-standard_labour_cost_per_hour text-right"><%%VALUE(standard_labour_cost_per_hour)%%></td>
+		<td id="purchase_orders-labour_charges-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-labour_charges text-right"><%%VALUE(labour_charges)%%></td>
+		<td id="purchase_orders-vat-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-vat text-right"><%%VALUE(vat)%%></td>
+		<td id="purchase_orders-total_amount-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-total_amount text-right"><%%VALUE(total_amount)%%></td>
+		<td id="purchase_orders-workshop_name-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-workshop_name"><%%VALUE(workshop_name)%%></td>
+		<td id="purchase_orders-work_order_id-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-work_order_id"><%%VALUE(work_order_id)%%></td>
+		<td id="purchase_orders-job_card_number-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-job_card_number"><%%VALUE(job_card_number)%%></td>
+		<td id="purchase_orders-completion_date-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-completion_date"><%%VALUE(completion_date)%%></td>
+		<td id="purchase_orders-comments-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-comments"><%%VALUE(comments)%%></td>
+		<td id="purchase_orders-upload_invoice-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-upload_invoice"><a href="link.php?t=purchase_orders&f=upload_invoice&i=<%%VALUE(purchase_order_id)%%>" target="_blank" title="<%%VALUE(upload_invoice)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<td id="purchase_orders-date_captured-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-date_captured"><%%VALUE(date_captured)%%></td>
+		<td id="purchase_orders-data_capturer-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-data_capturer"><%%VALUE(data_capturer)%%></td>
+		<td id="purchase_orders-data_capturer_contact_email-<%%VALUE(purchase_order_id)%%>" class="purchase_orders-data_capturer_contact_email"><a href="mailto:<%%VALUE(data_capturer_contact_email)%%>" title="<%%VALUE(data_capturer_contact_email)%%>" class="btn btn-default"><i class="glyphicon glyphicon-envelope text-info"></i></a></td>
+		<script>$j(function() {
+			var e_upload_quotation = '<%%VALUE(upload_quotation)%%>'; if(e_upload_quotation == '' || e_upload_quotation == '&nbsp;') $j(/*<*/ '#purchase_orders-upload_quotation-<%%VALUE(purchase_order_id)%%>' /*>*/).html('');
+			var e_upload_invoice = '<%%VALUE(upload_invoice)%%>'; if(e_upload_invoice == '' || e_upload_invoice == '&nbsp;') $j(/*<*/ '#purchase_orders-upload_invoice-<%%VALUE(purchase_order_id)%%>' /*>*/).html('');
+		});</script>

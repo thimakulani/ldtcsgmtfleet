@@ -1,0 +1,9 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the application_status_init() hook (in hooks/application_status.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="application_status-application_id-<%%VALUE(application_id)%%>" class="application_status-application_id text-right"><%%SELECT%%><%%VALUE(application_id)%%><%%ENDSELECT%%></td>
+		<td id="application_status-application_status-<%%VALUE(application_id)%%>" class="application_status-application_status"><%%SELECT%%><%%VALUE(application_status)%%><%%ENDSELECT%%></td>

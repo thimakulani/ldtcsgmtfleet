@@ -1,0 +1,85 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Forms ID: -->
+		<div class="form-group forms-forms_id" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Forms ID:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(forms_id)%%></div>
+			</div>
+		</div>
+		<!-- Field: Government Motor Transport Handbook: -->
+		<div class="form-group forms-government_motor_transport_handbook" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Government Motor Transport Handbook:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="government_motor_transport_handbook-link" href="link.php?t=forms&f=government_motor_transport_handbook&i=<%%VALUE(forms_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(government_motor_transport_handbook)%%>"></i></a><script>jQuery(function() { var e_government_motor_transport_handbook = '<%%VALUE(government_motor_transport_handbook)%%>'; if(e_government_motor_transport_handbook == '' || e_government_motor_transport_handbook == '&nbsp;' || e_government_motor_transport_handbook == 'blank.gif') jQuery('#government_motor_transport_handbook-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Approved Workshop Procedure Manual: -->
+		<div class="form-group forms-approved_workshop_procedure_manual" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Approved Workshop Procedure Manual:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="approved_workshop_procedure_manual-link" href="link.php?t=forms&f=approved_workshop_procedure_manual&i=<%%VALUE(forms_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(approved_workshop_procedure_manual)%%>"></i></a><script>jQuery(function() { var e_approved_workshop_procedure_manual = '<%%VALUE(approved_workshop_procedure_manual)%%>'; if(e_approved_workshop_procedure_manual == '' || e_approved_workshop_procedure_manual == '&nbsp;' || e_approved_workshop_procedure_manual == 'blank.gif') jQuery('#approved_workshop_procedure_manual-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Vehicle Check List And Appraisal Report: -->
+		<div class="form-group forms-vehicle_daily_check_list_and_appraisal_report" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Vehicle Check List And Appraisal Report:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="vehicle_daily_check_list_and_appraisal_report-link" href="link.php?t=forms&f=vehicle_daily_check_list_and_appraisal_report&i=<%%VALUE(forms_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(vehicle_daily_check_list_and_appraisal_report)%%>"></i></a><script>jQuery(function() { var e_vehicle_daily_check_list_and_appraisal_report = '<%%VALUE(vehicle_daily_check_list_and_appraisal_report)%%>'; if(e_vehicle_daily_check_list_and_appraisal_report == '' || e_vehicle_daily_check_list_and_appraisal_report == '&nbsp;' || e_vehicle_daily_check_list_and_appraisal_report == 'blank.gif') jQuery('#vehicle_daily_check_list_and_appraisal_report-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Z181_Report on Accidentl: -->
+		<div class="form-group forms-z181_report_on_accident" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Z181_Report on Accidentl:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="z181_report_on_accident-link" href="link.php?t=forms&f=z181_report_on_accident&i=<%%VALUE(forms_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(z181_report_on_accident)%%>"></i></a><script>jQuery(function() { var e_z181_report_on_accident = '<%%VALUE(z181_report_on_accident)%%>'; if(e_z181_report_on_accident == '' || e_z181_report_on_accident == '&nbsp;' || e_z181_report_on_accident == 'blank.gif') jQuery('#z181_report_on_accident-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Vehicle Handing Over Ckecklist: -->
+		<div class="form-group forms-vehicle_handing_over_ckecklist" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Vehicle Handing Over Ckecklist:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="vehicle_handing_over_ckecklist-link" href="link.php?t=forms&f=vehicle_handing_over_ckecklist&i=<%%VALUE(forms_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(vehicle_handing_over_ckecklist)%%>"></i></a><script>jQuery(function() { var e_vehicle_handing_over_ckecklist = '<%%VALUE(vehicle_handing_over_ckecklist)%%>'; if(e_vehicle_handing_over_ckecklist == '' || e_vehicle_handing_over_ckecklist == '&nbsp;' || e_vehicle_handing_over_ckecklist == 'blank.gif') jQuery('#vehicle_handing_over_ckecklist-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Vehicle  Return List: -->
+		<div class="form-group forms-vehicle_return_list" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Vehicle  Return List:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="vehicle_return_list-link" href="link.php?t=forms&f=vehicle_return_list&i=<%%VALUE(forms_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(vehicle_return_list)%%>"></i></a><script>jQuery(function() { var e_vehicle_return_list = '<%%VALUE(vehicle_return_list)%%>'; if(e_vehicle_return_list == '' || e_vehicle_return_list == '&nbsp;' || e_vehicle_return_list == 'blank.gif') jQuery('#vehicle_return_list-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Indicates and list details of damages deficiencies and lost found: -->
+		<div class="form-group forms-indicates_and_list_details_of_damages_deficiencies" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Indicates and list details of damages deficiencies and lost found:</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="indicates_and_list_details_of_damages_deficiencies-link" href="link.php?t=forms&f=indicates_and_list_details_of_damages_deficiencies&i=<%%VALUE(forms_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(indicates_and_list_details_of_damages_deficiencies)%%>"></i></a><script>jQuery(function() { var e_indicates_and_list_details_of_damages_deficiencies = '<%%VALUE(indicates_and_list_details_of_damages_deficiencies)%%>'; if(e_indicates_and_list_details_of_damages_deficiencies == '' || e_indicates_and_list_details_of_damages_deficiencies == '&nbsp;' || e_indicates_and_list_details_of_damages_deficiencies == 'blank.gif') jQuery('#indicates_and_list_details_of_damages_deficiencies-link').hide(); });</script></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>

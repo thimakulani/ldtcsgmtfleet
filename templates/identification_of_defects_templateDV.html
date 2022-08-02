@@ -1,0 +1,436 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/identification_of_defects-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="identification_of_defects_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="identification_of_defects_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="identification_of_defects_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Defects ID: -->
+				<div class="form-group identification_of_defects-defects_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="defects_id">Defects ID:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="defects_id"><%%VALUE(defects_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Registration Number: -->
+				<div class="form-group identification_of_defects-vehicle_registration_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_registration_number" data-parent_link="view_parent_modal">Registration Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(vehicle_registration_number)%%><%%PLINK(vehicle_registration_number)%%><%%ADDNEW(gmt_fleet_register)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Engine Number: -->
+				<div class="form-group identification_of_defects-engine_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Engine Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="engine_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Make of Vehicle: -->
+				<div class="form-group identification_of_defects-make_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Make of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="make_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: End User Name & Surname: -->
+				<div class="form-group identification_of_defects-end_user_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="end_user_name_and_surname">End User Name & Surname:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="end_user_name_and_surname" id="end_user_name_and_surname" value="<%%VALUE(end_user_name_and_surname)%%>">
+					</div>
+				</div>
+
+				<!-- Field: End User Contact Details: -->
+				<div class="form-group identification_of_defects-end_user_contact_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="end_user_contact_details">End User Contact Details:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="end_user_contact_details" id="end_user_contact_details" value="<%%VALUE(end_user_contact_details)%%>">
+					</div>
+				</div>
+
+				<!-- Field: End User Persal Number: -->
+				<div class="form-group identification_of_defects-end_user_persal_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="end_user_persal_number">End User Persal Number:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="end_user_persal_number" id="end_user_persal_number" value="<%%VALUE(end_user_persal_number)%%>">
+					</div>
+				</div>
+
+				<!-- Field: End User Email Address: -->
+				<div class="form-group identification_of_defects-end_user_email_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="end_user_email_address-edit-link">End User Email Address:</label>
+					<div class="col-lg-9">
+						<div>
+							<a id="end_user_email_address-link" href="mailto:<%%VALUE(end_user_email_address)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-envelope text-info" title="<%%VALUE(end_user_email_address)%%>"></i></a>
+							<label for="end_user_email_address"><button type="button" id="end_user_email_address-edit-link" class="btn btn-default vspacer-sm" data-toggle="collapse" data-target="#end_user_email_address" title="<%%TRANSLATION(Edit)%%>"><i class="glyphicon glyphicon-pencil"></i></button></label>
+							<input maxlength="40" type="text" class="form-control collapse" name="end_user_email_address" id="end_user_email_address" value="<%%VALUE(end_user_email_address)%%>">
+						</div><script>jQuery(function() { var e_end_user_email_address = '<%%VALUE(end_user_email_address)%%>'; if(e_end_user_email_address == '' || e_end_user_email_address == '&nbsp;' || e_end_user_email_address == 'blank.gif') jQuery('#end_user_email_address-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: End User Signature: -->
+				<div class="form-group identification_of_defects-end_user_signature">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">End User Signature: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#end_user_signature-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="end_user_signature-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 500 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="thumbnail.php?i=<%%VALUE(end_user_signature)%%>&t=identification_of_defects&f=end_user_signature&v=dv" class="img-thumbnail" id="end_user_signature-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(end_user_signature)%%>
+								<%%REMOVEFILE(end_user_signature)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Types Of Defects: -->
+				<div class="form-group identification_of_defects-types_of_defects">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="types_of_defects">Types Of Defects:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(types_of_defects)%%>
+					</div>
+				</div>
+
+				<!-- Field: Courses Of Defects: -->
+				<div class="form-group identification_of_defects-courses_of_defects">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="courses_of_defects">Courses Of Defects:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(courses_of_defects)%%>
+					</div>
+				</div>
+
+				<!-- Field: Condition Of Defects: -->
+				<div class="form-group identification_of_defects-condition_of_defects">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="condition_of_defects">Condition Of Defects:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(condition_of_defects)%%>
+					</div>
+				</div>
+
+				<!-- Field: Transport Officer Name & Surname: -->
+				<div class="form-group identification_of_defects-transport_officer_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="transport_officer_name_and_surname">Transport Officer Name & Surname:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="transport_officer_name_and_surname" id="transport_officer_name_and_surname" value="<%%VALUE(transport_officer_name_and_surname)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Transport Officer Persal Number: -->
+				<div class="form-group identification_of_defects-transport_officer_persal_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="transport_officer_persal_number">Transport Officer Persal Number:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="transport_officer_persal_number" id="transport_officer_persal_number" value="<%%VALUE(transport_officer_persal_number)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Transport Officer Contact Details: -->
+				<div class="form-group identification_of_defects-transport_officer_contact_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="transport_officer_contact_details">Transport Officer Contact Details:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="transport_officer_contact_details" id="transport_officer_contact_details" value="<%%VALUE(transport_officer_contact_details)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Transport Officer Email Address: -->
+				<div class="form-group identification_of_defects-transport_officer_email_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Transport Officer Email Address: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#transport_officer_email_address-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="transport_officer_email_address-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 500 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="thumbnail.php?i=<%%VALUE(transport_officer_email_address)%%>&t=identification_of_defects&f=transport_officer_email_address&v=dv" class="img-thumbnail" id="transport_officer_email_address-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(transport_officer_email_address)%%>
+								<%%REMOVEFILE(transport_officer_email_address)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Garage Manager Name & Surname: -->
+				<div class="form-group identification_of_defects-government_garage_manager_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="government_garage_manager_name_and_surname">Garage Manager Name & Surname:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="government_garage_manager_name_and_surname" id="government_garage_manager_name_and_surname" value="<%%VALUE(government_garage_manager_name_and_surname)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Government Garage Manager Contact Details: -->
+				<div class="form-group identification_of_defects-government_garage_manager_contact_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="government_garage_manager_contact_details">Government Garage Manager Contact Details:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="government_garage_manager_contact_details" id="government_garage_manager_contact_details" value="<%%VALUE(government_garage_manager_contact_details)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Government Garage Manager Address: -->
+				<div class="form-group identification_of_defects-government_garage_manager_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="government_garage_manager_address">Government Garage Manager Address:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(government_garage_manager_address)%%>
+					</div>
+				</div>
+
+				<!-- Field: Government Garage Manager Email Address: -->
+				<div class="form-group identification_of_defects-government_garage_manager_email_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="government_garage_manager_email_address-edit-link">Government Garage Manager Email Address:</label>
+					<div class="col-lg-9">
+						<div>
+							<a id="government_garage_manager_email_address-link" href="mailto:<%%VALUE(government_garage_manager_email_address)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-envelope text-info" title="<%%VALUE(government_garage_manager_email_address)%%>"></i></a>
+							<label for="government_garage_manager_email_address"><button type="button" id="government_garage_manager_email_address-edit-link" class="btn btn-default vspacer-sm" data-toggle="collapse" data-target="#government_garage_manager_email_address" title="<%%TRANSLATION(Edit)%%>"><i class="glyphicon glyphicon-pencil"></i></button></label>
+							<input maxlength="40" type="text" class="form-control collapse" name="government_garage_manager_email_address" id="government_garage_manager_email_address" value="<%%VALUE(government_garage_manager_email_address)%%>">
+						</div><script>jQuery(function() { var e_government_garage_manager_email_address = '<%%VALUE(government_garage_manager_email_address)%%>'; if(e_government_garage_manager_email_address == '' || e_government_garage_manager_email_address == '&nbsp;' || e_government_garage_manager_email_address == 'blank.gif') jQuery('#government_garage_manager_email_address-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Government Garage Manager Signature: -->
+				<div class="form-group identification_of_defects-government_garage_manager_signature">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Government Garage Manager Signature: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#government_garage_manager_signature-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="government_garage_manager_signature-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 500 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="thumbnail.php?i=<%%VALUE(government_garage_manager_signature)%%>&t=identification_of_defects&f=government_garage_manager_signature&v=dv" class="img-thumbnail" id="government_garage_manager_signature-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(government_garage_manager_signature)%%>
+								<%%REMOVEFILE(government_garage_manager_signature)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="identification_of_defects_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			AppGini.once({
+				condition: function() { return bkLib != undefined; },
+				action: function() {
+					if($j('textarea#types_of_defects').length) new nicEditor({ fullPanel : true }).panelInstance('types_of_defects');
+					if($j('textarea#courses_of_defects').length) new nicEditor({ fullPanel : true }).panelInstance('courses_of_defects');
+					if($j('textarea#condition_of_defects').length) new nicEditor({ fullPanel : true }).panelInstance('condition_of_defects');
+					if($j('textarea#government_garage_manager_address').length) new nicEditor({ fullPanel : true }).panelInstance('government_garage_manager_address');
+				}
+			});
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) {
+				AppGini.once({
+					condition: function() {
+						return $j('.form-group.identification_of_defects-vehicle_registration_number')
+									.find('.nicEdit-main, .select2-container, input[type=radio]')
+									.length > 0
+								// or read-only DV
+								|| (!$j('#update').length && !$j('#insert').length);
+					},
+					action: function() {
+						$j('#identification_of_defects_dv_container-loading').addClass('hidden');
+						$j('#identification_of_defects_dv_container').removeClass('hidden');
+						AppGini.focusFormElement('identification_of_defects', 'vehicle_registration_number');
+					},
+					timeout:  5000,
+					doActionOnTimeout:  true
+				});
+			} else {
+				$j('#identification_of_defects_dv_container-loading').addClass('hidden');
+				$j('#identification_of_defects_dv_container').removeClass('hidden');
+			}
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			// try to detect rich text changes by adding 'input' handler after nicedit is loaded ...
+			AppGini.detectContentEditableChanges();
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'identification_of_defects',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=identification_of_defects&id=<%%URLVALUE(defects_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=identification_of_defects&id=<%%URLVALUE(defects_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

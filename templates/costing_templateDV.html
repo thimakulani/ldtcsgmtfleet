@@ -1,0 +1,602 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/costing-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="costing_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="costing_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm vspacer-sm" href="billing_view.php?filterer_job_card_number=<%%URLVALUE(costing_id)%%>&<%%EMBEDDED%%>" id="billing_link"><img src="resources/table_icons/Invoice_Paid_Document.png"> Billing:</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="billing_view.php?filterer_job_card_number=<%%URLVALUE(costing_id)%%>&<%%EMBEDDED%%>" id="xs_billing_link"><img src="resources/table_icons/Invoice_Paid_Document.png"> Billing:</a>
+			<input type="hidden" id="billing_hclink" value="billing_view.php?filterer_job_card_number=<%%URLVALUE(costing_id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="costing_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Costing ID: -->
+				<div class="form-group costing-costing_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="costing_id">Costing ID:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="costing_id"><%%VALUE(costing_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Government Garage Name: -->
+				<div class="form-group costing-government_garage_name">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="government_garage_name" data-parent_link="view_parent_modal">Government Garage Name:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(government_garage_name)%%><%%PLINK(government_garage_name)%%><%%ADDNEW(districts)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Supervisor Name & Surname: -->
+				<div class="form-group costing-supervisor_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="supervisor_name_and_surname">Supervisor Name & Surname:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="supervisor_name_and_surname" id="supervisor_name_and_surname" value="<%%VALUE(supervisor_name_and_surname)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Supervisor Contact Details: -->
+				<div class="form-group costing-supervisor_contact_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="supervisor_contact_details">Supervisor Contact Details:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="supervisor_contact_details" id="supervisor_contact_details" value="<%%VALUE(supervisor_contact_details)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Supervisor Email Address: -->
+				<div class="form-group costing-supervisor_email_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="supervisor_email_address-edit-link">Supervisor Email Address:</label>
+					<div class="col-lg-9">
+						<div>
+							<a id="supervisor_email_address-link" href="mailto:<%%VALUE(supervisor_email_address)%%>" target="_blank" class="rspacer-lg"><%%VALUE(supervisor_email_address)%%></a>
+							<label for="supervisor_email_address"><button type="button" id="supervisor_email_address-edit-link" class="btn btn-default vspacer-sm" data-toggle="collapse" data-target="#supervisor_email_address" title="<%%TRANSLATION(Edit)%%>"><i class="glyphicon glyphicon-pencil"></i></button></label>
+							<input maxlength="40" type="text" class="form-control collapse" name="supervisor_email_address" id="supervisor_email_address" value="<%%VALUE(supervisor_email_address)%%>">
+						</div><script>jQuery(function() { var e_supervisor_email_address = '<%%VALUE(supervisor_email_address)%%>'; if(e_supervisor_email_address == '' || e_supervisor_email_address == '&nbsp;' || e_supervisor_email_address == 'blank.gif') jQuery('#supervisor_email_address-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Supervisor Signature: -->
+				<div class="form-group costing-supervisor_signature">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Supervisor Signature: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#supervisor_signature-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="supervisor_signature-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 500 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="thumbnail.php?i=<%%VALUE(supervisor_signature)%%>&t=costing&f=supervisor_signature&v=dv" class="img-thumbnail" id="supervisor_signature-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(supervisor_signature)%%>
+								<%%REMOVEFILE(supervisor_signature)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Job Card Number: -->
+				<div class="form-group costing-job_card_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="job_card_number" data-parent_link="view_parent_modal">Job Card Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(job_card_number)%%><%%PLINK(job_card_number)%%><%%ADDNEW(reception)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Registration Number: -->
+				<div class="form-group costing-vehicle_registration_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_registration_number" data-parent_link="view_parent_modal">Registration Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(vehicle_registration_number)%%><%%PLINK(vehicle_registration_number)%%><%%ADDNEW(gmt_fleet_register)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Engine Number: -->
+				<div class="form-group costing-engine_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Engine Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="engine_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Make of Vehicle: -->
+				<div class="form-group costing-make_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Make of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="make_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Reconciliation of Total Cost By Costing Officer: -->
+				<div class="form-group costing-reconciliation_of_total_costs_by_costing_officer">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Reconciliation of Total Cost By Costing Officer:</label>
+					<div class="col-lg-9">
+						<%%COMBO(reconciliation_of_total_costs_by_costing_officer)%%>
+					</div>
+				</div>
+
+				<!-- Field: Costing Officer Name & Surname: -->
+				<div class="form-group costing-costing_officer_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="costing_officer_name_and_surname">Costing Officer Name & Surname:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="costing_officer_name_and_surname" id="costing_officer_name_and_surname" value="<%%VALUE(costing_officer_name_and_surname)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Costing Officer Contact Details: -->
+				<div class="form-group costing-costing_officer_contact_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="costing_officer_contact_details">Costing Officer Contact Details:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="costing_officer_contact_details" id="costing_officer_contact_details" value="<%%VALUE(costing_officer_contact_details)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Costing Officer Email Address: -->
+				<div class="form-group costing-costing_officer_email_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="costing_officer_email_address-edit-link">Costing Officer Email Address:</label>
+					<div class="col-lg-9">
+						<div>
+							<a id="costing_officer_email_address-link" href="mailto:<%%VALUE(costing_officer_email_address)%%>" target="_blank" class="rspacer-lg"><%%VALUE(costing_officer_email_address)%%></a>
+							<label for="costing_officer_email_address"><button type="button" id="costing_officer_email_address-edit-link" class="btn btn-default vspacer-sm" data-toggle="collapse" data-target="#costing_officer_email_address" title="<%%TRANSLATION(Edit)%%>"><i class="glyphicon glyphicon-pencil"></i></button></label>
+							<input maxlength="40" type="text" class="form-control collapse" name="costing_officer_email_address" id="costing_officer_email_address" value="<%%VALUE(costing_officer_email_address)%%>">
+						</div><script>jQuery(function() { var e_costing_officer_email_address = '<%%VALUE(costing_officer_email_address)%%>'; if(e_costing_officer_email_address == '' || e_costing_officer_email_address == '&nbsp;' || e_costing_officer_email_address == 'blank.gif') jQuery('#costing_officer_email_address-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Costing Officer Signature: -->
+				<div class="form-group costing-costing_officer_signature">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Costing Officer Signature: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#costing_officer_signature-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="costing_officer_signature-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 500 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="thumbnail.php?i=<%%VALUE(costing_officer_signature)%%>&t=costing&f=costing_officer_signature&v=dv" class="img-thumbnail" id="costing_officer_signature-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(costing_officer_signature)%%>
+								<%%REMOVEFILE(costing_officer_signature)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Material Cost (R): -->
+				<div class="form-group costing-material_cost">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="material_cost">Material Cost (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="material_cost" id="material_cost" value="<%%VALUE(material_cost)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Spare Orders Quotation (R): -->
+				<div class="form-group costing-spares_orders_quotation">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="spares_orders_quotation">Spare Orders Quotation (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="spares_orders_quotation" id="spares_orders_quotation" value="<%%VALUE(spares_orders_quotation)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Spare Orders Quotation Upload: -->
+				<div class="form-group costing-spares_orders_quotation_upload">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Spare Orders Quotation Upload: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#spares_orders_quotation_upload-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="spares_orders_quotation_upload-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 4096 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="spares_orders_quotation_upload-link" href="link.php?t=costing&f=spares_orders_quotation_upload&i=<%%VALUE(costing_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(spares_orders_quotation_upload)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(spares_orders_quotation_upload)%%>
+								<%%REMOVEFILE(spares_orders_quotation_upload)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_spares_orders_quotation_upload = '<%%VALUE(spares_orders_quotation_upload)%%>'; if(e_spares_orders_quotation_upload == '' || e_spares_orders_quotation_upload == '&nbsp;' || e_spares_orders_quotation_upload == 'blank.gif') jQuery('#spares_orders_quotation_upload-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Standard Labour Cost per Hour: -->
+				<div class="form-group costing-standard_labour_cost_per_hour">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="standard_labour_cost_per_hour">Standard Labour Cost per Hour:</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="standard_labour_cost_per_hour" id="standard_labour_cost_per_hour" value="<%%VALUE(standard_labour_cost_per_hour)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Labour Quotation (R): -->
+				<div class="form-group costing-labour_quotation">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="labour_quotation">Labour Quotation (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="labour_quotation" id="labour_quotation" value="<%%VALUE(labour_quotation)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Labour Quotation Upload: -->
+				<div class="form-group costing-labour_quotation_upload">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Labour Quotation Upload: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#labour_quotation_upload-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="labour_quotation_upload-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 4096 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="labour_quotation_upload-link" href="link.php?t=costing&f=labour_quotation_upload&i=<%%VALUE(costing_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(labour_quotation_upload)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(labour_quotation_upload)%%>
+								<%%REMOVEFILE(labour_quotation_upload)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_labour_quotation_upload = '<%%VALUE(labour_quotation_upload)%%>'; if(e_labour_quotation_upload == '' || e_labour_quotation_upload == '&nbsp;' || e_labour_quotation_upload == 'blank.gif') jQuery('#labour_quotation_upload-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Vat 15 % (R): -->
+				<div class="form-group costing-vat">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vat">Vat 15 % (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="vat" id="vat" value="<%%VALUE(vat)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Total Amount (R): -->
+				<div class="form-group costing-total_amount">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="total_amount">Total Amount (R):</label>
+					<div class="col-lg-9">
+						<input maxlength="13" type="text" class="form-control" name="total_amount" id="total_amount" value="<%%VALUE(total_amount)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Workshop Manager Name & Surname: -->
+				<div class="form-group costing-workshop_manager_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="workshop_manager_name_and_surname">Workshop Manager Name & Surname:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="workshop_manager_name_and_surname" id="workshop_manager_name_and_surname" value="<%%VALUE(workshop_manager_name_and_surname)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Workshop Manager Contact Details: -->
+				<div class="form-group costing-workshop_manager_contact_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="workshop_manager_contact_details">Workshop Manager Contact Details:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="workshop_manager_contact_details" id="workshop_manager_contact_details" value="<%%VALUE(workshop_manager_contact_details)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Workshop Manager Email Address: -->
+				<div class="form-group costing-workshop_manager_email_address">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="workshop_manager_email_address-edit-link">Workshop Manager Email Address:</label>
+					<div class="col-lg-9">
+						<div>
+							<a id="workshop_manager_email_address-link" href="mailto:<%%VALUE(workshop_manager_email_address)%%>" target="_blank" class="rspacer-lg"><%%VALUE(workshop_manager_email_address)%%></a>
+							<label for="workshop_manager_email_address"><button type="button" id="workshop_manager_email_address-edit-link" class="btn btn-default vspacer-sm" data-toggle="collapse" data-target="#workshop_manager_email_address" title="<%%TRANSLATION(Edit)%%>"><i class="glyphicon glyphicon-pencil"></i></button></label>
+							<input maxlength="40" type="text" class="form-control collapse" name="workshop_manager_email_address" id="workshop_manager_email_address" value="<%%VALUE(workshop_manager_email_address)%%>">
+						</div><script>jQuery(function() { var e_workshop_manager_email_address = '<%%VALUE(workshop_manager_email_address)%%>'; if(e_workshop_manager_email_address == '' || e_workshop_manager_email_address == '&nbsp;' || e_workshop_manager_email_address == 'blank.gif') jQuery('#workshop_manager_email_address-link').hide(); });</script>
+					</div>
+				</div>
+
+				<!-- Field: Workshop Manager Signature: -->
+				<div class="form-group costing-workshop_manager_signature">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Workshop Manager Signature: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#workshop_manager_signature-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="workshop_manager_signature-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 500 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="thumbnail.php?i=<%%VALUE(workshop_manager_signature)%%>&t=costing&f=workshop_manager_signature&v=dv" class="img-thumbnail" id="workshop_manager_signature-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(workshop_manager_signature)%%>
+								<%%REMOVEFILE(workshop_manager_signature)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Internal Requisition to Stores Approved: -->
+				<div class="form-group costing-invoice_approved">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Internal Requisition to Stores Approved:</label>
+					<div class="col-lg-9">
+						<%%COMBO(invoice_approved)%%>
+					</div>
+				</div>
+
+				<!-- Field: Invoice Date: -->
+				<div class="form-group costing-invoice_date">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="invoice_date-dd">Invoice Date:</label>
+					<div class="col-lg-9">
+						<%%COMBO(invoice_date)%%>
+					</div>
+				</div>
+
+				<!-- Field: Invoice Upload: -->
+				<div class="form-group costing-upload_invoice">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Invoice Upload: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#upload_invoice-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="upload_invoice-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 5240 KB.<br>Allowed file types: txt, doc, docx, docm, odt, pdf, rtf</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><a id="upload_invoice-link" href="link.php?t=costing&f=upload_invoice&i=<%%VALUE(costing_id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-file" title="<%%VALUE(upload_invoice)%%>" style="font-size: 4em;"></i></a></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(upload_invoice)%%>
+								<%%REMOVEFILE(upload_invoice)%%>
+								<div class="text-bold text-danger file-type-error hidden">
+									<%%TRANSLATION(invalid file type)%%>
+								</div>
+								<div class="text-bold text-danger file-size-error hidden">
+									<%%TRANSLATION(file too large)%%>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<script>jQuery(function() { var e_upload_invoice = '<%%VALUE(upload_invoice)%%>'; if(e_upload_invoice == '' || e_upload_invoice == '&nbsp;' || e_upload_invoice == 'blank.gif') jQuery('#upload_invoice-link').hide(); });</script>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="costing_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="costing-children" class="children-tabs">
+				<div class="text-center"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+			</div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) {
+				AppGini.once({
+					condition: function() {
+						return $j('.form-group.costing-government_garage_name')
+									.find('.nicEdit-main, .select2-container, input[type=radio]')
+									.length > 0
+								// or read-only DV
+								|| (!$j('#update').length && !$j('#insert').length);
+					},
+					action: function() {
+						$j('#costing_dv_container-loading').addClass('hidden');
+						$j('#costing_dv_container').removeClass('hidden');
+						AppGini.focusFormElement('costing', 'government_garage_name');
+					},
+					timeout:  5000,
+					doActionOnTimeout:  true
+				});
+			} else {
+				$j('#costing_dv_container-loading').addClass('hidden');
+				$j('#costing_dv_container').removeClass('hidden');
+			}
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+			if(embedded_mode) {
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function() {
+					$j('a[href]:not([href^="#"]):not([href^="javascript"]):not([href$="Embedded=1"]):not([href*="link.php?t="]):not([href^="mailto:"]):not([href$=".jpg"]):not([href$=".png"]):not([href$=".gif"])').each(
+						function() {
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode) {
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			} else {
+				post(
+					'parent-children.php', {
+						ParentTable: 'costing',
+						SelectedID: '<%%VALUE(costing_id)%%>',
+						Operation: 'show-children'
+					},
+					'costing-children'
+				);
+			}
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'costing',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=costing&id=<%%URLVALUE(costing_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=costing&id=<%%URLVALUE(costing_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

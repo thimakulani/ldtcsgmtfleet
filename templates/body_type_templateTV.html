@@ -1,0 +1,9 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the body_type_init() hook (in hooks/body_type.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="body_type-body_type_id-<%%VALUE(body_type_id)%%>" class="body_type-body_type_id text-right"><%%SELECT%%><%%VALUE(body_type_id)%%><%%ENDSELECT%%></td>
+		<td id="body_type-type_of_vehicle-<%%VALUE(body_type_id)%%>" class="body_type-type_of_vehicle"><%%SELECT%%><%%VALUE(type_of_vehicle)%%><%%ENDSELECT%%></td>

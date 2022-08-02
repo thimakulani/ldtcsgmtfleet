@@ -1,0 +1,60 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the modification_to_vehicle_init() hook (in hooks/modification_to_vehicle.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="modification_to_vehicle-modification_id-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-modification_id text-right"><%%SELECT%%><%%VALUE(modification_id)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-type_of_vehicle-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-type_of_vehicle"><%%SELECT%%><%%VALUE(type_of_vehicle)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-directorate-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-directorate"><%%SELECT%%><%%VALUE(directorate)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-head_office-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-head_office"><%%SELECT%%><%%VALUE(head_office)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-district-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-district"><%%SELECT%%><%%VALUE(district)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-location-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-location"><%%SELECT%%><%%VALUE(location)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-drivers_name_and_surname-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-drivers_name_and_surname"><%%SELECT%%><%%VALUE(drivers_name_and_surname)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-drivers_persal_number-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-drivers_persal_number"><%%SELECT%%><%%VALUE(drivers_persal_number)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-drivers_contact_details-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-drivers_contact_details"><%%SELECT%%><%%VALUE(drivers_contact_details)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-driver_rank-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-driver_rank"><%%SELECT%%><%%VALUE(driver_rank)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-driver_signature-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-driver_signature"><%%SELECT%%><img src="thumbnail.php?i=<%%VALUE(driver_signature)%%>&t=modification_to_vehicle&f=driver_signature&v=tv" class="img-thumbnail"><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-vehicle_registration_number-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-vehicle_registration_number"><%%SELECT%%><%%VALUE(vehicle_registration_number)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-make_of_vehicle-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-make_of_vehicle"><%%SELECT%%><%%VALUE(make_of_vehicle)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-model_of_vehicle-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-model_of_vehicle"><%%SELECT%%><%%VALUE(model_of_vehicle)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-closing_km-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-closing_km"><%%SELECT%%><%%VALUE(closing_km)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-job_card_number-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-job_card_number"><%%SELECT%%><%%VALUE(job_card_number)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-objective-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-objective"><%%SELECT%%><%%VALUE(objective)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-fuel_gauge_amount-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-fuel_gauge_amount"><%%SELECT%%><%%VALUE(fuel_gauge_amount)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-keys_ignition-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-keys_ignition"><%%SELECT%%><%%VALUE(keys_ignition)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-petrol_cap_with_keys-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-petrol_cap_with_keys"><%%SELECT%%><%%VALUE(petrol_cap_with_keys)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-padlock_with_keys-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-padlock_with_keys"><%%SELECT%%><%%VALUE(padlock_with_keys)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-tyre_r_f-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-tyre_r_f"><%%SELECT%%><%%VALUE(tyre_r_f)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-tyre_r_f_1-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-tyre_r_f_1"><%%SELECT%%><%%VALUE(tyre_r_f_1)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-tyre_r_r-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-tyre_r_r"><%%SELECT%%><%%VALUE(tyre_r_r)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-tyre_r_r_1-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-tyre_r_r_1"><%%SELECT%%><%%VALUE(tyre_r_r_1)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-tyre_l_f-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-tyre_l_f"><%%SELECT%%><%%VALUE(tyre_l_f)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-tyre_l_f_1-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-tyre_l_f_1"><%%SELECT%%><%%VALUE(tyre_l_f_1)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-tyer_l_r-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-tyer_l_r"><%%SELECT%%><%%VALUE(tyer_l_r)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-tyer_l_r_1-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-tyer_l_r_1"><%%SELECT%%><%%VALUE(tyer_l_r_1)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-tyre_spare-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-tyre_spare"><%%SELECT%%><%%VALUE(tyre_spare)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-tyre_spare_1-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-tyre_spare_1"><%%SELECT%%><%%VALUE(tyre_spare_1)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-wheel_cups-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-wheel_cups"><%%SELECT%%><%%VALUE(wheel_cups)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-other-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-other"><%%SELECT%%><%%VALUE(other)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-battery-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-battery"><%%SELECT%%><%%VALUE(battery)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-battery_voltage-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-battery_voltage"><%%SELECT%%><%%VALUE(battery_voltage)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-wheel_spanner-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-wheel_spanner"><%%SELECT%%><%%VALUE(wheel_spanner)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-jack_with_handle-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-jack_with_handle"><%%SELECT%%><%%VALUE(jack_with_handle)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-radio_dvd_combination-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-radio_dvd_combination"><%%SELECT%%><%%VALUE(radio_dvd_combination)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-petrol_card-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-petrol_card"><%%SELECT%%><%%VALUE(petrol_card)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-valid_license_disc-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-valid_license_disc"><%%SELECT%%><%%VALUE(valid_license_disc)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-valid_license_disc_date-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-valid_license_disc_date"><%%SELECT%%><%%VALUE(valid_license_disc_date)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-fire_extinguisher-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-fire_extinguisher"><%%SELECT%%><%%VALUE(fire_extinguisher)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-warning_signs_traingle-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-warning_signs_traingle"><%%SELECT%%><%%VALUE(warning_signs_traingle)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-date_checked_in-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-date_checked_in"><%%SELECT%%><%%VALUE(date_checked_in)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-testing_officer_name_and_surname-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-testing_officer_name_and_surname"><%%SELECT%%><%%VALUE(testing_officer_name_and_surname)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-testing_officer_persal_number-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-testing_officer_persal_number"><%%SELECT%%><%%VALUE(testing_officer_persal_number)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-testing_officer_rank-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-testing_officer_rank"><%%SELECT%%><%%VALUE(testing_officer_rank)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-testing_officer_signature-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-testing_officer_signature"><%%SELECT%%><img src="thumbnail.php?i=<%%VALUE(testing_officer_signature)%%>&t=modification_to_vehicle&f=testing_officer_signature&v=tv" class="img-thumbnail"><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-date_received-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-date_received"><%%SELECT%%><%%VALUE(date_received)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-supervisor_for_allocation_name_and_surname-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-supervisor_for_allocation_name_and_surname"><%%SELECT%%><%%VALUE(supervisor_for_allocation_name_and_surname)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-supervisor_for_allocation_persal_number-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-supervisor_for_allocation_persal_number"><%%SELECT%%><%%VALUE(supervisor_for_allocation_persal_number)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-supervisor_for_allocation_rank-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-supervisor_for_allocation_rank"><%%SELECT%%><%%VALUE(supervisor_for_allocation_rank)%%><%%ENDSELECT%%></td>
+		<td id="modification_to_vehicle-supervisor_for_allocation_signature-<%%VALUE(modification_id)%%>" class="modification_to_vehicle-supervisor_for_allocation_signature"><%%SELECT%%><img src="thumbnail.php?i=<%%VALUE(supervisor_for_allocation_signature)%%>&t=modification_to_vehicle&f=supervisor_for_allocation_signature&v=tv" class="img-thumbnail"><%%ENDSELECT%%></td>

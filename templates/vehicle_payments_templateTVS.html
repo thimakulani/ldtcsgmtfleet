@@ -1,0 +1,43 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the vehicle_payments_init() hook (in hooks/vehicle_payments.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="vehicle_payments-vehicle_payment_id-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-vehicle_payment_id text-right"><%%VALUE(vehicle_payment_id)%%></td>
+		<td id="vehicle_payments-vehicle_registration_number-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-vehicle_registration_number"><%%VALUE(vehicle_registration_number)%%></td>
+		<td id="vehicle_payments-engine_number-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-engine_number"><%%VALUE(engine_number)%%></td>
+		<td id="vehicle_payments-chassis_number-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-chassis_number"><%%VALUE(chassis_number)%%></td>
+		<td id="vehicle_payments-make_of_vehicle-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-make_of_vehicle"><%%VALUE(make_of_vehicle)%%></td>
+		<td id="vehicle_payments-model_of_vehicle-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-model_of_vehicle"><%%VALUE(model_of_vehicle)%%></td>
+		<td id="vehicle_payments-year_model_of_vehicle-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-year_model_of_vehicle"><%%VALUE(year_model_of_vehicle)%%></td>
+		<td id="vehicle_payments-type_of_vehicle-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-type_of_vehicle"><%%VALUE(type_of_vehicle)%%></td>
+		<td id="vehicle_payments-application_status-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-application_status"><%%VALUE(application_status)%%></td>
+		<td id="vehicle_payments-barcode_number-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-barcode_number"><%%VALUE(barcode_number)%%></td>
+		<td id="vehicle_payments-purchase_price-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-purchase_price text-right"><%%VALUE(purchase_price)%%></td>
+		<td id="vehicle_payments-depreciation_value-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-depreciation_value text-right"><%%VALUE(depreciation_value)%%></td>
+		<td id="vehicle_payments-closing_km-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-closing_km"><%%VALUE(closing_km)%%></td>
+		<td id="vehicle_payments-department-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-department"><%%VALUE(department)%%></td>
+		<td id="vehicle_payments-acquisition_reference-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-acquisition_reference"><%%VALUE(acquisition_reference)%%></td>
+		<td id="vehicle_payments-date_of_acquisition-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-date_of_acquisition"><%%VALUE(date_of_acquisition)%%></td>
+		<td id="vehicle_payments-odometer_at_acquisition-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-odometer_at_acquisition"><%%VALUE(odometer_at_acquisition)%%></td>
+		<td id="vehicle_payments-merchant_name-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-merchant_name"><%%VALUE(merchant_name)%%></td>
+		<td id="vehicle_payments-value_at_acquisition-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-value_at_acquisition text-right"><%%VALUE(value_at_acquisition)%%></td>
+		<td id="vehicle_payments-term-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-term"><%%VALUE(term)%%></td>
+		<td id="vehicle_payments-month_end-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-month_end"><%%VALUE(month_end)%%></td>
+		<td id="vehicle_payments-installment_per_month-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-installment_per_month text-right"><%%VALUE(installment_per_month)%%></td>
+		<td id="vehicle_payments-payment_amount-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-payment_amount text-right"><%%VALUE(payment_amount)%%></td>
+		<td id="vehicle_payments-payment_frequency-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-payment_frequency"><%%VALUE(payment_frequency)%%></td>
+		<td id="vehicle_payments-interest_rate-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-interest_rate text-right"><%%VALUE(interest_rate)%%></td>
+		<td id="vehicle_payments-payment_reference-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-payment_reference"><%%VALUE(payment_reference)%%></td>
+		<td id="vehicle_payments-paid_so_far-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-paid_so_far text-right"><%%VALUE(paid_so_far)%%></td>
+		<td id="vehicle_payments-remaining_balance-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-remaining_balance text-right"><%%VALUE(remaining_balance)%%></td>
+		<td id="vehicle_payments-depreciation_since_purchase-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-depreciation_since_purchase"><%%VALUE(depreciation_since_purchase)%%></td>
+		<td id="vehicle_payments-actual_resale_value-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-actual_resale_value"><%%VALUE(actual_resale_value)%%></td>
+		<td id="vehicle_payments-warranty_expires_on-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-warranty_expires_on"><%%VALUE(warranty_expires_on)%%></td>
+		<td id="vehicle_payments-comments-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-comments"><%%VALUE(comments)%%></td>
+		<td id="vehicle_payments-documents-<%%VALUE(vehicle_payment_id)%%>" class="vehicle_payments-documents"><a href="link.php?t=vehicle_payments&f=documents&i=<%%VALUE(vehicle_payment_id)%%>" target="_blank" title="<%%VALUE(documents)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-file text-info"></i></a></td>
+		<script>$j(function() {
+			var e_documents = '<%%VALUE(documents)%%>'; if(e_documents == '' || e_documents == '&nbsp;') $j(/*<*/ '#vehicle_payments-documents-<%%VALUE(vehicle_payment_id)%%>' /*>*/).html('');
+		});</script>

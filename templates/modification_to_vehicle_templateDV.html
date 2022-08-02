@@ -1,0 +1,719 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/modification_to_vehicle-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="modification_to_vehicle_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="modification_to_vehicle_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="modification_to_vehicle_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Modification ID: -->
+				<div class="form-group modification_to_vehicle-modification_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="modification_id">Modification ID:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="modification_id"><%%VALUE(modification_id)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Type of Vehicle: -->
+				<div class="form-group modification_to_vehicle-type_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="type_of_vehicle" data-parent_link="view_parent_modal">Type of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(type_of_vehicle)%%><%%PLINK(type_of_vehicle)%%><%%ADDNEW(body_type)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Directorate: -->
+				<div class="form-group modification_to_vehicle-directorate">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="directorate">Directorate:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="directorate" id="directorate" value="<%%VALUE(directorate)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Head Office: -->
+				<div class="form-group modification_to_vehicle-head_office">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Head Office:</label>
+					<div class="col-lg-9">
+						<%%COMBO(head_office)%%>
+					</div>
+				</div>
+
+				<!-- Field: District: -->
+				<div class="form-group modification_to_vehicle-district">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="district" data-parent_link="view_parent_modal">District: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#district-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="district-description"><div class="alert alert-info bspacer-xs">Capture the district and stations detail</div></span>
+						<div class="lookup-flex"><%%COMBO(district)%%><%%PLINK(district)%%><%%ADDNEW(districts)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Station: -->
+				<div class="form-group modification_to_vehicle-location">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Station:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="location"></div>
+					</div>
+				</div>
+
+				<!-- Field: Driver's Name & Surname: -->
+				<div class="form-group modification_to_vehicle-drivers_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="drivers_name_and_surname" data-parent_link="view_parent_modal">Driver's Name & Surname:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(drivers_name_and_surname)%%><%%PLINK(drivers_name_and_surname)%%><%%ADDNEW(driver)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Driver's Persal Number: -->
+				<div class="form-group modification_to_vehicle-drivers_persal_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver's Persal Number:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="drivers_persal_number"></div>
+					</div>
+				</div>
+
+				<!-- Field: Driver's Contact Details: -->
+				<div class="form-group modification_to_vehicle-drivers_contact_details">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver's Contact Details:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="drivers_contact_details"></div>
+					</div>
+				</div>
+
+				<!-- Field: Driver Rank/Designation: -->
+				<div class="form-group modification_to_vehicle-driver_rank">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="driver_rank">Driver Rank/Designation:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="driver_rank" id="driver_rank" value="<%%VALUE(driver_rank)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Driver Signature: -->
+				<div class="form-group modification_to_vehicle-driver_signature">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Driver Signature: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#driver_signature-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="driver_signature-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 500 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="thumbnail.php?i=<%%VALUE(driver_signature)%%>&t=modification_to_vehicle&f=driver_signature&v=dv" class="img-thumbnail" id="driver_signature-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(driver_signature)%%>
+								<%%REMOVEFILE(driver_signature)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Registration Number: -->
+				<div class="form-group modification_to_vehicle-vehicle_registration_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="vehicle_registration_number" data-parent_link="view_parent_modal">Registration Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(vehicle_registration_number)%%><%%PLINK(vehicle_registration_number)%%><%%ADDNEW(gmt_fleet_register)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Make of Vehicle: -->
+				<div class="form-group modification_to_vehicle-make_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Make of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="make_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Model of Vehicle: -->
+				<div class="form-group modification_to_vehicle-model_of_vehicle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Model of Vehicle:</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="model_of_vehicle"></div>
+					</div>
+				</div>
+
+				<!-- Field: Closing KM: -->
+				<div class="form-group modification_to_vehicle-closing_km">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="closing_km" data-parent_link="view_parent_modal">Closing KM:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(closing_km)%%><%%PLINK(closing_km)%%><%%ADDNEW(log_sheet)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Job Card Number: -->
+				<div class="form-group modification_to_vehicle-job_card_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="job_card_number" data-parent_link="view_parent_modal">Job Card Number:</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(job_card_number)%%><%%PLINK(job_card_number)%%><%%ADDNEW(service)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Objective: -->
+				<div class="form-group modification_to_vehicle-objective">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="objective">Objective:</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(objective)%%>
+					</div>
+				</div>
+
+				<!-- Field: Fuel Gauge Amount: -->
+				<div class="form-group modification_to_vehicle-fuel_gauge_amount">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="fuel_gauge_amount">Fuel Gauge Amount:</label>
+					<div class="col-lg-9">
+						<%%COMBO(fuel_gauge_amount)%%>
+					</div>
+				</div>
+
+				<!-- Field: Keys/Ignition: -->
+				<div class="form-group modification_to_vehicle-keys_ignition">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="keys_ignition">Keys/Ignition:</label>
+					<div class="col-lg-9">
+						<%%COMBO(keys_ignition)%%>
+					</div>
+				</div>
+
+				<!-- Field: Petrol Cap with Keys: -->
+				<div class="form-group modification_to_vehicle-petrol_cap_with_keys">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="petrol_cap_with_keys">Petrol Cap with Keys:</label>
+					<div class="col-lg-9">
+						<%%COMBO(petrol_cap_with_keys)%%>
+					</div>
+				</div>
+
+				<!-- Field: Padlock with Keys: -->
+				<div class="form-group modification_to_vehicle-padlock_with_keys">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="padlock_with_keys">Padlock with Keys:</label>
+					<div class="col-lg-9">
+						<%%COMBO(padlock_with_keys)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tyre R/F (Available): -->
+				<div class="form-group modification_to_vehicle-tyre_r_f">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Tyre R/F (Available):</label>
+					<div class="col-lg-9">
+						<%%COMBO(tyre_r_f)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tyre R/F (Thread Condition): -->
+				<div class="form-group modification_to_vehicle-tyre_r_f_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="tyre_r_f_1">Tyre R/F (Thread Condition):</label>
+					<div class="col-lg-9">
+						<%%COMBO(tyre_r_f_1)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tyre R/R (Available): -->
+				<div class="form-group modification_to_vehicle-tyre_r_r">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Tyre R/R (Available):</label>
+					<div class="col-lg-9">
+						<%%COMBO(tyre_r_r)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tyre R/R (Thread Condition): -->
+				<div class="form-group modification_to_vehicle-tyre_r_r_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="tyre_r_r_1">Tyre R/R (Thread Condition):</label>
+					<div class="col-lg-9">
+						<%%COMBO(tyre_r_r_1)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tyre L/F (Available): -->
+				<div class="form-group modification_to_vehicle-tyre_l_f">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Tyre L/F (Available):</label>
+					<div class="col-lg-9">
+						<%%COMBO(tyre_l_f)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tyre L/F (Thread Condition): -->
+				<div class="form-group modification_to_vehicle-tyre_l_f_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="tyre_l_f_1">Tyre L/F (Thread Condition):</label>
+					<div class="col-lg-9">
+						<%%COMBO(tyre_l_f_1)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tyre L/R (Available): -->
+				<div class="form-group modification_to_vehicle-tyer_l_r">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Tyre L/R (Available):</label>
+					<div class="col-lg-9">
+						<%%COMBO(tyer_l_r)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tyre L/R (Thread Condition): -->
+				<div class="form-group modification_to_vehicle-tyer_l_r_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="tyer_l_r_1">Tyre L/R (Thread Condition):</label>
+					<div class="col-lg-9">
+						<%%COMBO(tyer_l_r_1)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tyre Spare (Available): -->
+				<div class="form-group modification_to_vehicle-tyre_spare">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Tyre Spare (Available):</label>
+					<div class="col-lg-9">
+						<%%COMBO(tyre_spare)%%>
+					</div>
+				</div>
+
+				<!-- Field: Tyre Spare (Thread Condition): -->
+				<div class="form-group modification_to_vehicle-tyre_spare_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="tyre_spare_1">Tyre Spare (Thread Condition):</label>
+					<div class="col-lg-9">
+						<%%COMBO(tyre_spare_1)%%>
+					</div>
+				</div>
+
+				<!-- Field: Wheel Hub Cups (Available): -->
+				<div class="form-group modification_to_vehicle-wheel_cups">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="wheel_cups">Wheel Hub Cups (Available):</label>
+					<div class="col-lg-9">
+						<%%COMBO(wheel_cups)%%>
+					</div>
+				</div>
+
+				<!-- Field: Other (specify): -->
+				<div class="form-group modification_to_vehicle-other">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="other">Other (specify):</label>
+					<div class="col-lg-9 has-nicedit">
+						<%%HTMLAREA(other)%%>
+					</div>
+				</div>
+
+				<!-- Field: Battery (Make): -->
+				<div class="form-group modification_to_vehicle-battery">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="battery">Battery (Make):</label>
+					<div class="col-lg-9">
+						<%%COMBO(battery)%%>
+					</div>
+				</div>
+
+				<!-- Field: Battery (Voltage): -->
+				<div class="form-group modification_to_vehicle-battery_voltage">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Battery (Voltage):</label>
+					<div class="col-lg-9">
+						<%%COMBO(battery_voltage)%%>
+					</div>
+				</div>
+
+				<!-- Field: Wheel Spanner: -->
+				<div class="form-group modification_to_vehicle-wheel_spanner">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Wheel Spanner:</label>
+					<div class="col-lg-9">
+						<%%COMBO(wheel_spanner)%%>
+					</div>
+				</div>
+
+				<!-- Field: Jack with Handle: -->
+				<div class="form-group modification_to_vehicle-jack_with_handle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="jack_with_handle">Jack with Handle:</label>
+					<div class="col-lg-9">
+						<%%COMBO(jack_with_handle)%%>
+					</div>
+				</div>
+
+				<!-- Field: Radio/DVD Combination: -->
+				<div class="form-group modification_to_vehicle-radio_dvd_combination">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Radio/DVD Combination:</label>
+					<div class="col-lg-9">
+						<%%COMBO(radio_dvd_combination)%%>
+					</div>
+				</div>
+
+				<!-- Field: Petrol Card: -->
+				<div class="form-group modification_to_vehicle-petrol_card">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Petrol Card:</label>
+					<div class="col-lg-9">
+						<%%COMBO(petrol_card)%%>
+					</div>
+				</div>
+
+				<!-- Field: Valid License Disc: -->
+				<div class="form-group modification_to_vehicle-valid_license_disc">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Valid License Disc:</label>
+					<div class="col-lg-9">
+						<%%COMBO(valid_license_disc)%%>
+					</div>
+				</div>
+
+				<!-- Field: Valid License Disc (Expire date): -->
+				<div class="form-group modification_to_vehicle-valid_license_disc_date">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="valid_license_disc_date-dd">Valid License Disc (Expire date):</label>
+					<div class="col-lg-9">
+						<%%COMBO(valid_license_disc_date)%%>
+					</div>
+				</div>
+
+				<!-- Field: Fire Extinguisher: -->
+				<div class="form-group modification_to_vehicle-fire_extinguisher">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Fire Extinguisher:</label>
+					<div class="col-lg-9">
+						<%%COMBO(fire_extinguisher)%%>
+					</div>
+				</div>
+
+				<!-- Field: Warning Signs & Traingle: -->
+				<div class="form-group modification_to_vehicle-warning_signs_traingle">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="warning_signs_traingle">Warning Signs & Traingle:</label>
+					<div class="col-lg-9">
+						<%%COMBO(warning_signs_traingle)%%>
+					</div>
+				</div>
+
+				<!-- Field: Declaration Date & Time: -->
+				<div class="form-group modification_to_vehicle-date_checked_in">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_checked_in">Declaration Date & Time: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#date_checked_in-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="date_checked_in-description"><div class="alert alert-info bspacer-xs">Time when driver checked in at the Government Garage with vehicle for modification, repairs or service.</div></span>
+						<div class="input-group date datetimepicker"><input type="text" class="form-control" name="date_checked_in" id="date_checked_in" value="<%%VALUE(date_checked_in)%%>"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div>
+					</div>
+				</div>
+
+				<!-- Field: Testing Officer/Tradesman Aid Details: -->
+				<div class="form-group modification_to_vehicle-testing_officer_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="testing_officer_name_and_surname">Testing Officer/Tradesman Aid Details: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#testing_officer_name_and_surname-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="testing_officer_name_and_surname-description"><div class="alert alert-info bspacer-xs">Testing Officer/Tradesman Aid declaration that all of above is correctly received when checking in.</div></span>
+						<input maxlength="40" type="text" class="form-control" name="testing_officer_name_and_surname" id="testing_officer_name_and_surname" value="<%%VALUE(testing_officer_name_and_surname)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Testing Officer/Tradesman Aid Persal Number: -->
+				<div class="form-group modification_to_vehicle-testing_officer_persal_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="testing_officer_persal_number">Testing Officer/Tradesman Aid Persal Number:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="testing_officer_persal_number" id="testing_officer_persal_number" value="<%%VALUE(testing_officer_persal_number)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Testing Officer/Tradesman Aid Rank/Designation: -->
+				<div class="form-group modification_to_vehicle-testing_officer_rank">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="testing_officer_rank">Testing Officer/Tradesman Aid Rank/Designation:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="testing_officer_rank" id="testing_officer_rank" value="<%%VALUE(testing_officer_rank)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Testing Officer/Tradesman Aid Signature: -->
+				<div class="form-group modification_to_vehicle-testing_officer_signature">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Testing Officer/Tradesman Aid Signature: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#testing_officer_signature-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="testing_officer_signature-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 500 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="thumbnail.php?i=<%%VALUE(testing_officer_signature)%%>&t=modification_to_vehicle&f=testing_officer_signature&v=dv" class="img-thumbnail" id="testing_officer_signature-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(testing_officer_signature)%%>
+								<%%REMOVEFILE(testing_officer_signature)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+				<!-- Field: Declaration Date & Time (Vehicle Received): -->
+				<div class="form-group modification_to_vehicle-date_received">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="date_received">Declaration Date & Time (Vehicle Received): <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#date_received-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="date_received-description"><div class="alert alert-info bspacer-xs">Time when Testing Officer/Tradesman Aid received the vehicle in inspection bay for modification, repairs or service.</div></span>
+						<div class="input-group date datetimepicker"><input type="text" class="form-control" name="date_received" id="date_received" value="<%%VALUE(date_received)%%>"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div>
+					</div>
+				</div>
+
+				<!-- Field: Supervisor for Allocation Details: -->
+				<div class="form-group modification_to_vehicle-supervisor_for_allocation_name_and_surname">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="supervisor_for_allocation_name_and_surname">Supervisor for Allocation Details: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#supervisor_for_allocation_name_and_surname-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="supervisor_for_allocation_name_and_surname-description"><div class="alert alert-info bspacer-xs">Supervisor for Allocation declaration that all of above is correctly received when checking back.</div></span>
+						<input maxlength="40" type="text" class="form-control" name="supervisor_for_allocation_name_and_surname" id="supervisor_for_allocation_name_and_surname" value="<%%VALUE(supervisor_for_allocation_name_and_surname)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Supervisor for Allocation Persal Number: -->
+				<div class="form-group modification_to_vehicle-supervisor_for_allocation_persal_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="supervisor_for_allocation_persal_number">Supervisor for Allocation Persal Number:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="supervisor_for_allocation_persal_number" id="supervisor_for_allocation_persal_number" value="<%%VALUE(supervisor_for_allocation_persal_number)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Supervisor for Allocation Rank/Designation: -->
+				<div class="form-group modification_to_vehicle-supervisor_for_allocation_rank">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="supervisor_for_allocation_rank">Supervisor for Allocation Rank/Designation:</label>
+					<div class="col-lg-9">
+						<input maxlength="40" type="text" class="form-control" name="supervisor_for_allocation_rank" id="supervisor_for_allocation_rank" value="<%%VALUE(supervisor_for_allocation_rank)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Supervisor for Allocation Signature: -->
+				<div class="form-group modification_to_vehicle-supervisor_for_allocation_signature">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Supervisor for Allocation Signature: <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#supervisor_for_allocation_signature-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="supervisor_for_allocation_signature-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 500 KB.<br>Allowed file types: jpg, jpeg, gif, png</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="pull-left"><img src="thumbnail.php?i=<%%VALUE(supervisor_for_allocation_signature)%%>&t=modification_to_vehicle&f=supervisor_for_allocation_signature&v=dv" class="img-thumbnail" id="supervisor_for_allocation_signature-image"></div>
+							<div class="pull-right well upload-toolbox">
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<%%UPLOADFILE(supervisor_for_allocation_signature)%%>
+								<%%REMOVEFILE(supervisor_for_allocation_signature)%%>
+								<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+								<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="modification_to_vehicle_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			AppGini.once({
+				condition: function() { return bkLib != undefined; },
+				action: function() {
+					if($j('textarea#objective').length) new nicEditor({ fullPanel : true }).panelInstance('objective');
+					if($j('textarea#other').length) new nicEditor({ fullPanel : true }).panelInstance('other');
+				}
+			});
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) {
+				AppGini.once({
+					condition: function() {
+						return $j('.form-group.modification_to_vehicle-type_of_vehicle')
+									.find('.nicEdit-main, .select2-container, input[type=radio]')
+									.length > 0
+								// or read-only DV
+								|| (!$j('#update').length && !$j('#insert').length);
+					},
+					action: function() {
+						$j('#modification_to_vehicle_dv_container-loading').addClass('hidden');
+						$j('#modification_to_vehicle_dv_container').removeClass('hidden');
+						AppGini.focusFormElement('modification_to_vehicle', 'type_of_vehicle');
+					},
+					timeout:  5000,
+					doActionOnTimeout:  true
+				});
+			} else {
+				$j('#modification_to_vehicle_dv_container-loading').addClass('hidden');
+				$j('#modification_to_vehicle_dv_container').removeClass('hidden');
+			}
+
+			$j('form').eq(0).change(function() {
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			// try to detect rich text changes by adding 'input' handler after nicedit is loaded ...
+			AppGini.detectContentEditableChanges();
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function() {
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = localStorage.getItem(pt + '_last_added_id');
+							if(new_id === null) return;
+
+							localStorage.removeItem(pt + '_last_added_id');
+							AppGini.lookupText({
+								id: new_id,
+								table: 'modification_to_vehicle',
+								field: field_id,
+								callback: function(data) {
+									$j('#' + field_id + '-container').select2('data', data, true);
+								}
+							});
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length) {
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				} else {
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length) {
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != '') {
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function() {
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+
+									// in case the parent record was updated, we should update auto-fills
+									var updaterName = field_id + '_update_autofills';
+									if(typeof(window[updaterName]) == 'function')
+										window[updaterName]();
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=modification_to_vehicle&id=<%%URLVALUE(modification_id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=modification_to_vehicle&id=<%%URLVALUE(modification_id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function() {
+				if($j('#deselect.btn-warning').length) {
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>
