@@ -123,7 +123,8 @@
                                                 <div>
                                                     <select class="form-control m-2" name="report_type">
                                                         <option <?php if($_POST['report_type'] == 'Fuel Log Sheet'){echo 'selected';} ?> value="Fuel Log Sheet" >Fuel Log Sheet</option>
-                                                        <option <?php if($_POST['report_type'] == 'Claims'){echo 'selected';} ?> value="Claims">Claims</option>
+                                                        <!--<option <?php // if($_POST['report_type'] == 'Claims'){echo 'selected';}
+                                                        ?> value="Claims">Claims</option> -->
                                                         <option <?php if($_POST['report_type'] == 'Service Schedule'){echo 'selected';} ?> value="Service Schedule">Service Schedule</option>
                                                         <option <?php if($_POST['report_type'] == 'Accidents'){echo 'selected';} ?> value="Accidents" >Accidents</option>
                                                     </select>
